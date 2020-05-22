@@ -1,113 +1,82 @@
 Below we have an examples of copyright + license source code headers. The license header portion is dependent on the license you use.
 
-# Apache V2
+# MIT
 
 ```
-Copyright 2020 Adobe. All rights reserved.
-This file is licensed to you under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License. You may obtain a copy
-of the License at http://www.apache.org/licenses/LICENSE-2.0
+MIT License
 
-Unless required by applicable law or agreed to in writing, software distributed under
-the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-OF ANY KIND, either express or implied. See the License for the specific language
-governing permissions and limitations under the License.
-```
+Copyright (c) 2020 Adobe
 
-### Javascript, Java, C, C++, Swift, Go, Objective C
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-```
-/*
-Copyright 2020 Adobe. All rights reserved.
-This file is licensed to you under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License. You may obtain a copy
-of the License at http://www.apache.org/licenses/LICENSE-2.0
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-Unless required by applicable law or agreed to in writing, software distributed under
-the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-OF ANY KIND, either express or implied. See the License for the specific language
-governing permissions and limitations under the License.
-*/
-```
-
-### Bash, Ruby, Python 
-
-```
-#Copyright 2020 Adobe. All rights reserved.
-#This file is licensed to you under the Apache License, Version 2.0 (the "License");
-#you may not use this file except in compliance with the License. You may obtain a copy
-#of the License at http://www.apache.org/licenses/LICENSE-2.0
-
-#Unless required by applicable law or agreed to in writing, software distributed under
-#the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-#OF ANY KIND, either express or implied. See the License for the specific language
-#governing permissions and limitations under the License.
-```
-
-### Windows Batch File
-
-```batch
-rem Copyright 2020 Adobe. All rights reserved.
-rem This file is licensed to you under the Apache License, Version 2.0 (the "License");
-rem you may not use this file except in compliance with the License. You may obtain a copy
-rem of the License at http://www.apache.org/licenses/LICENSE-2.0
-rem 
-rem Unless required by applicable law or agreed to in writing, software distributed under
-rem the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-rem OF ANY KIND, either express or implied. See the License for the specific language
-rem governing permissions and limitations under the License.
-```
-
-# Magento Projects
-
-### Text
-
-```
-Copyright © Magento, Inc. All rights reserved.
-See COPYING.txt for license details.
-```
-
-# Other Licenses
-
-We will continue to add examples of headers for other licenses as they come up. For now, if you are not using Apache V2, make sure to add a copyright header to all source files where it makes sense (do not add them to `.json` or machine-generated files).
-
-### Text
-
-```
-Copyright 2020 Adobe
-All Rights Reserved.
-
-NOTICE: Adobe permits you to use, modify, and distribute this file in
-accordance with the terms of the Adobe license agreement accompanying
-it. If you have received this file from a source other than Adobe,
-then your use, modification, or distribution of it requires the prior
-written permission of Adobe. 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ```
 
 ### Javascript, Java, C, C++, Swift, Go, Objective C
 
 ```
 /*
-Copyright 2020 Adobe
-All Rights Reserved.
+MIT License
 
-NOTICE: Adobe permits you to use, modify, and distribute this file in
-accordance with the terms of the Adobe license agreement accompanying
-it. If you have received this file from a source other than Adobe,
-then your use, modification, or distribution of it requires the prior
-written permission of Adobe. 
+Copyright (c) 2020 Adobe
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 */
 ```
 
-### Bash, Ruby, Python 
+### Bash, Ruby, Python
 
 ```
-# Copyright 2020 Adobe
-# All Rights Reserved.
-
-# NOTICE: Adobe permits you to use, modify, and distribute this file in
-# accordance with the terms of the Adobe license agreement accompanying
-# it. If you have received this file from a source other than Adobe,
-# then your use, modification, or distribution of it requires the prior
-# written permission of Adobe. 
+# MIT License
+#
+# Copyright (c) 2020 Adobe
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 ```
+
