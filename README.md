@@ -1,44 +1,20 @@
-# Open Source Starter Repo
+# developer.adobe.com
 
-This repository contains templates for project documentation, ensuring necessary
-legal and contributor documentation is explicit. All sections below in this `README.md`
-should be considered a template for a typical project `README.md`.
+This project is a static sister to the current adobe.io site. It is meant as an origin source for the fastly configuration and a future publishing desination for the parliament-based site.
 
-## PROJECT NAME
+## Developing for this project
 
-A short description of what this project does.
+* Javacript code style should follow the [Airbnb JavaScript Style Guide()](https://github.com/airbnb/javascript)
 
-## Goals
+### Requirements
 
-It is a good idea to provide a mission statement for your project, enshrining
-what the project wants to accomplish so that as more people join your project
-everyone can work in alignment.
-
-## Non-Goals
-
-It is also a good idea to declare what are _not_ goals of the project to prevent
-potential feature creep.
+* [Ruby](https://www.ruby-lang.org/en/downloads/) version **{{ site.data.ruby.min_version }}** or above, including all development headers (ruby version can be checked by running `ruby -v`)
+* [RubyGems](https://rubygems.org/pages/download) (which you can check by running `gem -v`)
+* [GCC](https://gcc.gnu.org/install/) and [Make](https://www.gnu.org/software/make/) (in case your system doesn't have them installed, which you can check by running `gcc -v`,`g++ -v`  and `make -v` in your system's command line interface)
 
 ### Installation
 
-Instructions for how to download/install the code onto your machine.
-
-Example:
-```
-npm install myProject --save
-```
-
-### Usage
-
-Usage instructions for your code.
-
-Example:
-
-```
-var myMod = require('mymodule');
-
-myMod.foo('hi');
-```
+Though this will change, the current version is based on [Jekyll](https://jekyllrb.com/). See the [Jekyll Docs](https://jekyllrb.com/docs/) for installation details.
 
 ### Contributing
 
@@ -46,4 +22,4 @@ Contributions are welcomed! Read the [Contributing Guide](./.github/CONTRIBUTING
 
 ### Licensing
 
-This project is licensed under the Apache V2 License. See [LICENSE](LICENSE) for more information.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for more information.
