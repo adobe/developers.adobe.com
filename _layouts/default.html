@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html class="spectrum spectrum--medium spectrum--light">
+  <head>
+    <title>Adobe Developers - {{ page.title }}</title>
+    <head>
+      <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-global.css">
+      <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-medium.css">
+      <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-light.css">
+      <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/components/typography/index-vars.css">
+      <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css-grid@0.x/dist/spectrum-css-grid.css">
+      <link rel="stylesheet" href="/stylesheets/style.css">
+    </head>
+  </head>
+  <body>
+    {% include topnav.html %}
+    <div>
+      {{ content }}
+    </div>
+    {% include footer.html %}
+  </body>
+</html>
