@@ -1,4 +1,4 @@
-# developer.adobe.com
+# developers.adobe.com
 
 This project is a static sister to the current adobe.io site. It is meant as an origin source for the fastly configuration and a future publishing desination for the parliament-based site.
 
