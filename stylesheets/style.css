@@ -2,47 +2,9 @@ html, body {
   margin: 0;
   padding: 0;
 }
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
 
-nav ul li {
-  float: left;
-  height: 80px;
-  margin: auto;
-
-}
-
-nav ul li.right {float: right;}
-
-
-nav ul li a {
-  display: block;
-  text-align: center;
-  padding: 40px 40px;
-  text-decoration: none;
-}
-
-nav ul li:hover {
-  background-color: #eee;
-}
-
-nav ul li.logo a {
-  color: #000;
-  font-size: 16px;
-  font-weight: 700;
-}
-
-nav ul li.logo a:hover {
-  text-decoration: underline;
-}
-
-@media screen and (max-width: 600px) {
-  nav ul li.right,
-  nav ul li {float: none;}
+#content{
+  background-color: #f8f5f5;
 }
 
 footer {

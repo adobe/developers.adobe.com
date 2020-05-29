@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html class="spectrum spectrum--medium spectrum--light">
+<html class="spectrum--medium">
   <head>
     <title>Adobe Developers - {{ page.title }}</title>
     <head>
       <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-global.css">
       <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-medium.css">
       <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-light.css">
+      <link rel="stylesheet" href="https://unpkg.com/spectrum-css@1.1.5/static/latest/spectrum-full.min.css">
       <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/components/typography/index-vars.css">
       <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css-grid@0.x/dist/spectrum-css-grid.css">
       <link rel="stylesheet" href="/stylesheets/style.css">
+      <link rel="stylesheet" href="/stylesheets/topnav.css">
     </head>
   </head>
-  <body>
+  <body class="spectrum spectrum--light">
     {% include topnav.html %}
-    <div>
+    <div class="spectrum--large spectrum spectrum--light" id="content">
       {{ content }}
     </div>
     {% include footer.html %}
