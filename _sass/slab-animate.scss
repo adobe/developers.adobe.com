@@ -1,0 +1,260 @@
+
+
+
+// .flash-dots{
+//   max-width: 1280px;
+//   position: relative;
+//   margin: 0 auto;
+//   background: url("../assets/img/slab-animate/background_circuit_2x.png");
+//   background-repeat: no-repeat;
+//   background-position: center top;
+//   background-size: contain;
+//   z-index:1;
+//    @media screen and (max-width: 640px) {
+//      /* Mobile */
+//       background: url("../assets/img/slab-animate/background_circuit_2x_mobile.png");       
+//     }
+//   }
+
+  .slab-animated-item-container {
+    position:relative;
+    display:flex;
+    height: 450px;
+
+    @media screen and (max-width: 640px) {
+      /* Mobile */
+      height: 325px;     
+    }
+
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+      /* Styles */
+      height: 350px; 
+    }
+      
+
+    @media screen and (max-width: 801px) and (min-width:961px) {
+      /* Mobile */
+      height: 350px;     
+    }
+
+    justify-content: center;
+    
+    .flash-dots-container{
+      max-width: 1280px;
+      width:1280px;
+      height:inherit;
+      margin: 0 auto;      
+
+      z-index:1;
+
+      .animate-bkg{
+        height:inherit;
+        background: url("../assets/img/slab-animate/background_circuit_2x.png");
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: contain;
+        //border:1px solid #000;
+
+       @media screen and (max-width: 640px) {
+         /* Mobile */
+          background: url("../assets/img/slab-animate/background_circuit_2x_mobile.png");       
+        }
+      }
+
+     // visibility:hidden;
+     opacity:0;
+    }
+
+    .slab-animated-item-wrapper {
+      max-width: 1280px;
+          // position: relative;
+      margin: 0 auto;
+      position:absolute;
+
+      z-index:2;
+          //top: -450px;
+      top:1px;
+      
+     .animated-items {
+        position: relative;
+        top: -40px;
+        @media screen and (max-width: 979px) {
+          /* Tablet */
+          height: 450px;
+        }
+        @media screen and (max-width: 640px) {
+          /* Mobile */
+          height: 368px;
+          margin-top: -50px;
+        }
+        /*Laptop */
+        .laptop {
+          position: relative;
+          width: 58%;
+          z-index: 1;
+          left: 14.5%;
+         // visibility: hidden;
+         opacity:0;
+          margin-top: -12px;
+          @media screen and (min-width: 980px) {
+            /* Desktop */
+            display: block;
+            //visibility: visible;
+            opacity:0;
+          }
+          @media screen and (max-width: 979px) {
+            /* Tablet */
+            visibility: visible!important;
+            width: 73% !important;
+            top: 7% !important;
+            left: 4.9% !important;
+          }
+          @media screen and (max-width: 640px) {
+            /* Mobile */
+            display: none;
+          }
+        }
+
+        .lp-pointer {
+          position: absolute;
+          width: 18%;
+          z-index: 2;
+          top: 53%;
+          left: 19.5%;
+          //visibility: hidden;
+          opacity:0;
+          @media screen and (min-width: 980px) {
+            /* Desktop */
+          }
+          @media screen and (max-width: 979px) {
+            /* Tablet */
+            width: 26% !important;
+            top: 55% !important;
+            left: 9.1% !important;
+          }
+          @media screen and (max-width: 768px) {}
+          @media screen and (max-width: 640px) {
+            /* Mobile */
+            display: none;
+          }
+        }
+        /*Ipad */
+        .ipad {
+          position: absolute;
+          width: 32%;
+          z-index: 3;
+          top: 13%;
+          left: 45.5%;
+        // visibility: hidden;
+        opacity:0;
+          @media screen and (max-width: 979px) {
+            /* Tablet */
+            /* position:relative!important; */
+            position: absolute;
+            width: 41% !important;
+            top: 19% !important;
+            left: 43.5% !important;
+          }
+          @media screen and (max-width: 768px) {
+            position: absolute!important;
+          }
+          @media screen and (max-width: 640px) {
+            /* Mobile */
+            position: relative !important;
+            width: 100% !important;
+            left: -12.5% !important;
+          }
+        }
+        /*Ipad pointer*/
+        .ipad-pointer {
+          position: absolute;
+          width: 16%;
+          z-index: 4;
+          top: 57%;
+          left: 47.3%;
+      // visibility: hidden;
+      opacity:0;
+          @media screen and (max-width: 979px) {
+            /* Tablet */
+            width: 21% !important;
+            top: 59.6% !important;
+            left: 46% !important;
+          }
+          @media screen and (max-width: 640px) {
+            /* Mobile */
+            width: 58% !important;
+            left: -10.5% !important;
+            top: 66% !important;
+          }
+        }
+        /*Phone */
+        .phone {
+          position: absolute;
+          width: 15%;
+          z-index: 5;
+          top: 12.5%;
+          left: 64.5%;
+      //visibility: hidden;
+      opacity:0;
+          @media screen and (max-width: 979px) {
+            /* Tablet */
+            width: 21% !important;
+            z-index: 5 !important;
+            top: 15.5% !important;
+            left: 68% !important;
+          }
+          @media screen and (max-width: 640px) {
+            /* Mobile */
+            width: 50% !important;
+            left: 48.5% !important;
+            top: 33.5% !important;
+          }
+        }
+
+        .phone-pointer {
+          position: absolute;
+          width: 16%;
+          z-index: 6;
+          top: 35%;
+          left: 63.9%;
+      //visibility: hidden;
+      opacity:0;
+          @media screen and (max-width: 979px) {
+            /* Tablet */
+            width: 23% !important;
+            top: 39% !important;
+            left: 67.3% !important;
+          }
+          @media screen and (max-width: 640px) {
+            /* Mobile */
+            width: 58% !important;
+            left: 44.5% !important;
+            top: 58% !important;
+          }
+        }
+      }
+    }
+  }
+
+
+  @keyframes slideUpFade
+{ from {top:40px; opacity: 0;}
+to {top:0px; opacity: 1}
+}
+
+	
+@-webkit-keyframes slideUpFade
+{ from {top:40px; opacity: 0;}
+to {top:0px; opacity: 1}
+}
+
+  .slab-header-copy-wrapper{
+    width:100%;
+    position:relative;
+    text-align: center;
+    z-index:25;
+    margin-bottom: 65px;
+     
+      //opacity:0;
+    
+  }
