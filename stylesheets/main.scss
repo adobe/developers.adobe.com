@@ -68,6 +68,7 @@ body {
     padding-bottom: 0.5625rem;
     text-transform: uppercase;
     text-align: left;
+    letter-spacing:1px;
     @media screen and (min-width: 768px) {
       text-align: center;
     }
@@ -113,6 +114,7 @@ body {
   border-width: 2px;
   border-style: solid;
   border-radius: 16px;
+
   max-height: 32px;
   height: auto;
   min-width: 72px;
@@ -121,6 +123,7 @@ body {
   padding-top: 3.5px;
   font-size: 14px;
   font-weight: 700;
+  font-family: 'Adobe Clean';
   color: $grey !important;
 
   &:hover{
@@ -437,7 +440,7 @@ body {
         padding-top: 3.5px;
         font-size: 14px;
         font-weight: 700;
-        color: #4b4b4b;
+        color: $grey;
 
       }
 
@@ -487,6 +490,7 @@ body {
     h5 {
       color: $grey;
       font-size: 1rem;
+      font-weight: normal;
       margin: 0;
       text-align: left;
       padding-bottom: 0.75rem;
@@ -494,6 +498,7 @@ body {
 
     li {
       color: $grey;
+      font-family: 'Adobe Clean Light';
       font-size: 1rem;
       padding-bottom: 0.5rem;
     }
@@ -677,8 +682,11 @@ section.home-card {
     }
 
     p {
-      margin: 0 0 2rem 0;
+      margin: 2rem 0 0 0;
       text-align: center;
+      &:first-of-type {
+        margin: 0;
+      }
     }
 
     .callout-item {
@@ -750,27 +758,37 @@ section.dctsdk-work-flow {
     }
   }
 
+  #home-menu{
+    margin-top:3.375rem;
+  }
   .work-flow_menu ul li {
     color: $grey;
     cursor: pointer;
     font-size: 1.1875rem;
-    margin-bottom: 1.875rem;
+   // margin-bottom: 1.875rem;
+   //GN-c margin-bottom: 0.625rem;
+    margin-bottom: 3.85rem;
     width:290px;
     @media screen and (min-width: 768px) {
-      // margin-bottom: 0; /* lr */
-      margin-bottom: 0.35rem;
+   //GN-c margin-bottom: 0.625rem;
+    margin-bottom: 2.4rem;
     }
   }
 
   .work-flow_menu ul li .work-flow-menu-copy {
-    margin-top: -2rem;
-    margin-left: 2.25rem;
+    // #GN-c margin-top: -2rem;
+    // #GN-c margin-left: 2.25rem;
+
+     //#GN
+     margin-top:  -2.51rem;
+     margin-left: 2.875rem;
   }
 
   .work-flow_menu ul li .shadow-box.dctsdk {
     margin: -1.375rem 0 0;
     @media screen and (min-width: 768px) {
-      padding: 1.25rem 2rem;
+      //#GN-c padding: 1.25rem 2rem;
+      padding:0.8125rem 1rem;
     }
   }
 
@@ -778,8 +796,8 @@ section.dctsdk-work-flow {
     @media screen and (min-width: 768px) {
       background: $white;
       box-shadow: 0 3px 16px #46303029;
-      border-radius: 6px;
-      padding: 1.25rem 2rem;
+      //#GN-c padding: 1.25rem 2rem;
+      padding:0.8125rem 1rem;
     }
   }
 
@@ -791,7 +809,7 @@ section.dctsdk-work-flow {
 
   .work-flow-menu-support {
     font-size: 1.0625rem;
-    margin-top: 1.625rem;
+    //GN-c margin-top: 1.625rem;
     padding-bottom: 1.875rem;
     border-bottom: 1px solid $lt-grey;
     @media screen and (min-width: 768px) {
@@ -833,10 +851,10 @@ section.dctsdk-work-flow {
   }
 
   .work-flow_menu ul li .create {
-    width: 23px;
-    height: 27px;
-    background-size: 23px;
+     background-size: 18px 21px;
     background-image: url("../assets/svg/s_createpdf_color_24.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 
   .work-flow_menu ul li .apply {
@@ -847,147 +865,167 @@ section.dctsdk-work-flow {
   }
 
   .work-flow_menu ul li .combine {
-    width: 26px;
-    height: 25px;
-    background-size: 26px;
+    background-size: 24px 24px;
     background-image: url("../assets/svg/s_combinefiles_color_24.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 
   .work-flow_menu ul li .protect {
-    width: 25px;
-    height: 27px;
-    background-size: 21px;
+    background-size: 18px 23px;
     background-image: url("../assets/svg/a12_protect.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 
   .work-flow_menu ul li .embed {
-    width: 35px;
-    height: 24px;
-    background-size: 28px;
+    background-size: 26px 22px;
     background-image: url("../assets/svg/menu-icons/embed.svg");
+    background-repeat: no-repeat;
+    background-position:center center;
   }
 
   .work-flow_menu ul li .annotations {
-    width: 28px;
-    height: 28px;
-    background-size: 28px;
+    background-size: 22px 24px;
     background-image: url("../assets/svg/menu-icons/annotations.svg");
+    background-repeat: no-repeat;
+    background-position:center center;
   }
 
   .work-flow_menu ul li .save {
-    width: 26px;
-    height: 25px;
-    background-size: 25px;
+    background-size: 17px 17px;
     background-image: url("../assets/svg/menu-icons/save_control.svg");
+    background-repeat: no-repeat;
+    background-position:center center;
   }
 
   .work-flow_menu ul li .collaborative {
-    width: 28px;
-    height: 24px;
-    background-size: 28px;
+    background-size: 26px 22px;
     background-image: url("../assets/svg/menu-icons/collaborative_settings.svg");
+    background-repeat: no-repeat;
+    background-position:center center;
   }
 
   .work-flow_menu ul li .analitics {
-    width: 26px;
-    height: 28px;
-    background-size: 24px;
+    background-size: 18px 21px;
     background-image: url("../assets/svg/menu-icons/analytics.svg");
+    background-repeat: no-repeat;
+    background-position:center center;
   }
 
   .work-flow_menu ul li .tool {
-    width: 28px;
-    height: 22px;
-    background-size: 28px;
+    background-size: 25px 18px;
     background-image: url("../assets/svg/menu-icons/menu_tool_options.svg");
+    background-repeat: no-repeat;
+    background-position:center center;
   }
 
     .work-flow_menu ul li .reorder {
-    width: 26px;
-    height: 22px;
-    background-size: 18px;
+    background-size: 24px 19px;
     background-image: url("../assets/svg/menu-icons/reorder_page.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 
   .work-flow_menu ul li .insert {
-    width: 23px;
-    height: 27px;
-    background-size: 22px;
+    background-size: 17px 21px;
     background-image: url("../assets/svg/menu-icons/insert_page.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 
   .work-flow_menu ul li .linearize {
-    width: 26px;
-    height: 22px;
-    background-size: 18px;
+    background-size: 17px 24px;
     background-image: url("../assets/svg/menu-icons/linearize_pdf.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 
   .work-flow_menu ul li .rotate {
-    width: 26px;
-    height: 24px;
-    background-size: 24px;
+    // width: 26px;
+    // height: 24px;
+    background-size: 24px 24px;
     background-image: url("../assets/svg/menu-icons/rotate_page.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 
     .work-flow_menu ul li .reorder {
-    width: 26px;
-    height: 22px;
-    background-size: 25px;
+    // width: 26px;
+    // height: 22px;
+    background-size: 24px 19px;
     background-image: url("../assets/svg/menu-icons/reorder_page.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 
   .work-flow_menu ul li .delete {
-    width: 26px;
-    height: 23px;
-    background-size: 23px;
+    // width: 26px;
+    // height: 23px;
+    background-size: 24px 24px;
     background-image: url("../assets/svg/menu-icons/delete_page.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 
   .work-flow_menu ul li .linearize {
-    width: 23px;
-    height: 27px;
-    background-size: 23px;
+    // width: 23px;
+    // height: 27px;
+    background-size: 17px 24px;
     background-image: url("../assets/svg/menu-icons/linearize_pdf.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 
   .work-flow_menu ul li .replace {
-    width: 26px;
-    height: 24px;
-    background-size: 25px;
+    // width: 26px;
+    // height: 24px;
+    background-size: 23px 22px;
     background-image: url("../assets/svg/menu-icons/replace_page.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 
   .work-flow_menu ul li .compress {
-    width: 26px;
-    height: 22px;
-    background-size: 18px;
+    // width: 26px;
+    // height: 22px;
+    background-size: 23px 20px;
     background-image: url("../assets/svg/menu-icons/compress_pdf.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 
   .work-flow_menu ul li .recognize {
-    width: 17px;
-    height: 21px;
+    // width: 17px;
+    // height: 21px;
     background-size: 17px 21px;
     background-image: url("../assets/svg/menu-icons/recognize_text.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 
   .work-flow_menu ul li .export {
-    width: 26px;
-    height: 27px;
-    background-size: 25px;
+    // width: 26px;
+    // height: 27px;
+    background-size: 22px 23px;
     background-image: url("../assets/svg/menu-icons/export_page.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 
   .work-flow_menu ul li .icon-align {
-    margin-left: 1rem;
-    margin-top: 1rem;
+    //#GN
+    // margin-left: 1rem;
+    // margin-top: 1rem;
+    width:40px;
+    height:40px;
   }
 
   .work-flow_menu ul li .icon-align.dctsdk {
     margin-left: 0;
     margin-top: 0;
   }
+
 
   .work-flow_menu ul li .work-flow-icon {
     background-color: transparent;
@@ -1025,30 +1063,36 @@ section.dctsdk-work-flow {
   }
 
   .work-flow-support-mode-mobile.open {
+    margin-top: 2.125rem;
     display: block;
 
-    .button-link{
-      border:0;
-      background:transparent;
-      color:#0D66D0 !important;
-      font-weight:normal!important;
-      margin-left:0px !important;
-      padding-left:0 !important;
+
+    .button-link {
+      border: 0;
+      background: transparent;
+      color: $blue !important;
+      display: block;
+      font-size: 1.0625rem;
+      font-weight: normal !important;
+      margin-left: 0 !important;
+      margin-top: -2rem;
+      padding-left: 0 !important;
       &:hover{
-        color:#0D66D0!important;
+        color: $blue !important;
       }
     }
   }
 
-  .work-flow_menu ul li.active{
+  .work-flow_menu ul li.active {
+
 
     .shadow-box.dctsdk{
       @media screen and (min-width: 768px) {
-      background: #FFFFFF;
+      background: $white;
       box-shadow: 0 3px 16px #46303029;
       border-radius: 6px;
       margin-bottom: 0;
-      color: #2C2C2C;
+      color: $dk-grey;
       font-weight: bold;
       cursor: pointer;
       }
@@ -1060,6 +1104,28 @@ section.dctsdk-work-flow {
       }
     }
 
+  }
+}
+
+.work-flow-menu-item {
+
+  position:relative;
+
+  .chev-arrow-right {
+    position:absolute;
+    transform: initial;
+    transition-duration: 150ms;
+    top:6px;
+  }
+}
+
+.work-flow-menu-item.open {
+
+  position:relative;
+
+  .chev-arrow-right {
+    transform: rotate(90deg);
+    transition-duration: 150ms;
   }
 }
 /* Work flow end */
