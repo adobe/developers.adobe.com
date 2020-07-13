@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html class="spectrum--medium">
   <head>
-    <title>Adobe Developers - {{ page.title }}</title>
+    <title>SDK Developers Kit | {{ page.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <head>
       <meta charset="UTF-8">
       <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-global.css">
       <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-medium.css">
       <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-light.css">
+      <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-dark.css">
+      <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-darkest.css">
+      <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.18.0/dist/components/tabs/index.css">
+      <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.18.0/dist/components/tabs/colorStops/dark.css">
+      <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.18.0/dist/components/tabs/colorStops/darkest.css">
       <link rel="stylesheet" href="https://unpkg.com/spectrum-css@1.1.5/static/latest/spectrum-full.min.css">
       <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/components/typography/index-vars.css">
       <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css-grid@0.x/dist/spectrum-css-grid.css">
       <link rel="stylesheet" href="stylesheets/style.css">
-      <!-- <link rel="stylesheet" href="stylesheets/subnav.css"> -->
       <link rel="stylesheet" href="stylesheets/topnav.css">
-
+      <link rel="stylesheet" href="stylesheets/prism-adobe.css">
 
       <link rel="stylesheet" href="stylesheets/main.css">
       <link rel="stylesheet" type="text/css" href="stylesheets/slick/slick.css"/>
       <link rel="stylesheet" type="text/css" href="stylesheets/slick/slick-theme.css"/>
       <link rel="stylesheet" type="text/css" href="stylesheets/animation-lib.css"/>
 
+      <!-- Temp test of Coral Spectrum -->
+      <link rel="stylesheet" href="https://unpkg.com/@adobe/coral-spectrum@4.5.0/dist/css/coral.min.css">
+      <script src="https://unpkg.com/@adobe/coral-spectrum@4.5.0/dist/js/coral.min.js" data-coral-icons-external="js"></script>
+
     </head>
   </head>
-  <body class="spectrum spectrum--light">
+  <body class="spectrum spectrum--light {% if page.style %}{{ page.style }} {% endif %}" >
     {% include topnav.html %}
     {% include subnav.html %}
     <div class="spectrum--large spectrum spectrum--light" id="content">
@@ -41,6 +49,50 @@
      <script type="text/javascript">
 
         $(document).ready(function(){
+          $('.card-slider-container-logos').slick({
+            dots: false,
+            mobileFirst : true,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            // variableWidth: true,
+            // variableHeight: true,
+            responsive: [
+              {
+                breakpoint: 1440,
+                settings: {
+                  slidesToShow: 4,
+                  slidesToScroll: 1,
+                  dots: false
+                }
+              },
+              {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 1,
+                  dots: false,
+                  autoplay: true,
+                  infinite: true
+                }
+              },
+              {
+                breakpoint: 0,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  dots: false,
+                  autoplay: true,
+                  fade: true,
+                  infinite: true
+                }
+              }
+              // You can unslick at a given breakpoint now by adding:
+              // settings: "unslick"
+              // instead of a settings object
+            ]
+          });
           $('.card-slider-container-home').slick({
             dots: false,
             mobileFirst : true,
@@ -131,5 +183,6 @@
 
   </script>
 
+  <script src="js/prism.js"></script>
   </body>
 </html>

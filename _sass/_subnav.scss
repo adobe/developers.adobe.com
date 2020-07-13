@@ -48,7 +48,8 @@
 
       button.sub-nav-trigger{      
        // border:1px solid goldenrod; 
-        //display:none;         
+        //display:none; 
+        height:80px;        
       }
 
       >.main-nav-items {
@@ -96,6 +97,10 @@
       text-transform: uppercase;
 
       &.allowHover:hover{
+        background: #E7E7E7;
+      }
+
+      &.active{
         background: #E7E7E7;
       }
    
@@ -167,11 +172,10 @@
 
       .mobile-home{
         
-        @media screen and (min-width: 790px){
+        @media screen and (min-width: 1440px){
           display: none;
         }
-      }
-      
+      }      
 
       .sub-nav-menu-item {
         margin: auto 0;
@@ -199,6 +203,10 @@
 
         &.no-hover:hover{          
           background-color: transparent;         
+        }
+        
+        &.active{
+          background: #E7E7E7;
         }
 
         .sub-nav-menu-label {
@@ -248,9 +256,6 @@
             }
           }
 
-          &.active{
-            background: #E7E7E7;
-          }
         }
 
         @media screen and (min-width: 900px){

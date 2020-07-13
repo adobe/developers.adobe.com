@@ -1,28 +1,29 @@
+
 <nav class="sub-nav-menu-wrapper">
   <button class="sub-nav-trigger" aria-expanded="true" aria-haspopup="true" aria-label="Home"></button>
   
-  <div class="sub-nav-product-item allowHover">
-      <a class="sub-nav-product-item-wrapper has-sub-nav" href="">
-          <image src="assets/svg/adobe_trifoil.svg" alt="" class="sub-nav-icon"/>
+  <div class="sub-nav-product-item allowHover {% if page.active == 'home' %} active{% endif %}">
+      <a class="sub-nav-product-item-wrapper has-sub-nav" href="./">
+          <image src="assets/svg/adobe_trifoil.svg" alt="adove trifoil icon" class="sub-nav-icon"/>
           <span>Adobe Document Services</span>
       </a>
   </div>
   <ul class="sub-nav">
 
     <li class="sub-nav-menu-item mobile-home">          
-        <a class="sub-nav-menu-label" href="./">Overview</a>
+        <a rel="canonical" class="sub-nav-menu-label" href="./">Overview</a>
     </li>
 
-      <li class="sub-nav-menu-item">          
-          <a class="sub-nav-menu-label " href="embed-sdk.html">PDF Embed API</a>
+      <li class="sub-nav-menu-item {% if page.active == 'embed-sdk' %} active{% endif %}">          
+          <a rel="canonical" class="sub-nav-menu-label" href="embed-sdk.html">PDF Embed API</a>
       </li>        
       
-      <li class="sub-nav-menu-item">
-        <a class="sub-nav-menu-label" href="tools-sdk.html">PDF Tools API</a>        
+      <li class="sub-nav-menu-item {% if page.active == 'tools-sdk' %} active{% endif %}">
+        <a rel="canonical" class="sub-nav-menu-label" href="tools-sdk.html">PDF Tools API</a>        
       </li>      
         
-      <li class="sub-nav-menu-item">          
-          <a class="sub-nav-menu-label " href="#">Documentation</a>
+      <li class="sub-nav-menu-item  {% if page.active == 'documentation' %} active{% endif %}">          
+          <a class="sub-nav-menu-label" href="documentatinon.html">Documentation</a>
       </li>      
     
       <li class="sub-nav-menu-item no-hover">

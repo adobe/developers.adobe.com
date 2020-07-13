@@ -21,6 +21,8 @@ body {
 
 .main {
   font-family: 'Adobe Clean';
+  overflow-x: hidden;
+
   a {
     text-decoration: none;
     color: $blue;
@@ -33,7 +35,7 @@ body {
     line-height: 2.75rem;
     margin: 0;
     padding: 1.5rem 0 0.375rem;
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 768px) {      
       text-align: center;
     }
 
@@ -144,7 +146,7 @@ body {
 .slick-dots {
   bottom: -1rem !important;
   @media screen and (min-width: 768px) {
-    bottom: -2.25rem !important;
+    bottom: -1.25rem !important;
   }
   li {
     margin: 0 -2px !important;
@@ -187,7 +189,7 @@ body {
   }
 
   h1 {
-    font-size: 1.6875rem;
+    font-size: 2.125rem;
     line-height: 2.1875rem;
     padding: 0 0 0.375rem;
     @media screen and (min-width: 768px) {
@@ -621,6 +623,7 @@ section.header {
 
   .button-link {
     color: $grey !important;
+    font-size: 1.0625rem;
     //display: inline-block;
     @media screen and (min-width: 1440px) {
       font-size: 0.875rem;
@@ -654,8 +657,12 @@ section.slab {
   // background-repeat: no-repeat;
   // background-position: center top;
   color: $white;
-  margin: 0 0 4.375rem;
-  padding: 1.125rem 2.75rem 8.75rem;
+  margin: 0 0 4.375rem;  
+  padding: 1.125rem 0px 8.75rem;
+
+  @media screen and (min-width: 1440px) {
+    padding: 1.125rem 2.75rem 8.75rem;
+  }
 
   h1,
   h2 {
@@ -770,9 +777,16 @@ section.dctsdk-work-flow {
     margin-bottom: 3.85rem;
     width:290px;
     @media screen and (min-width: 768px) {
-   //GN-c margin-bottom: 0.625rem;
-    margin-bottom: 2.4rem;
+    //GN-c margin-bottom: 0.625rem;
+      width:224px;
+      margin-bottom: 2.4rem;
     }
+
+      @media screen and (min-width: 1440px) {
+      //GN-c margin-bottom: 0.625rem;
+        width:290px;
+        margin-bottom: 2.4rem;
+      }
   }
 
   .work-flow_menu ul li .work-flow-menu-copy {
@@ -817,10 +831,21 @@ section.dctsdk-work-flow {
     }
   }
 
-  .menu-item-info-content .work-flow-menu-support {
-    @media screen and (min-width: 768px) {
-      display: block;
+  .menu-item-info-content{
+
+    .work-flow-menu-support {
+      @media screen and (min-width: 768px) {
+        display: block;
+      }
+      
     }
+
+    .code-viewer-wrapper {
+      p{
+       display:none;
+      }
+    }
+
   }
 
   .mobile-no-button {
@@ -1035,15 +1060,45 @@ section.dctsdk-work-flow {
 
   .work-flow_code {
     display: none;
+    padding-left:0.0625rem;
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+    
     @media screen and (min-width: 768px) {
       display: block;
+      padding-left:0.0625rem;
+
+      
+      .code-viewer-wrapper {
+
+        .sdk-embed-wrapper {
+          display:none;
+
+          &.code-window-opened{
+            display:block;
+          }
+        }
+
+       
+
+      } 
+ 
+    }
+
+    @media screen and (min-width: 1440px) {
       padding-left: 2rem;
     }
-    .menu-item-info-content{
+
+     .menu-item-info-content{
       text-align:left;
+
+
       h4{
         text-align:left;
       }
+
       .work-flow-menu-support{
         text-align:left;
 
@@ -1054,8 +1109,12 @@ section.dctsdk-work-flow {
           font-size:1rem;
           a{text-align:left;}
         }
+
+        
       }
     }
+
+
   }
 
   .work-flow-menu-support.work-flow-support-mode-mobile {
@@ -1156,47 +1215,19 @@ section.grey-bar {
 /* grey bar end */
 /* customer logos */
 section.customer {
-  margin: 4.375rem 2.75rem 0;
+  margin: 4.375rem 0;
 
-  .customer-container{
-    max-width: 1260px;
+  .customer-container {
+    max-width: 78.75rem;
     margin: 0 auto;
   }
-
-  img {
-    display: none;
-    margin: 0 auto;
-    vertical-align: top;
+  .slick-track {
+    padding: 0 !important;
   }
-
-  img:first-of-type {
-    display: block;
-  }
-  @media screen and (min-width: 768px) and (max-width: 1439px) {
-    margin: 4.375rem 2.75rem 5.125rem;
-
-    img,
-    img:first-of-type {
-      display: inline-block;
-      max-width: 32%;
+  .card {
+    img {
+      width: 100%;
     }
-
-    img:last-of-type {
-      display: none;
-    }
-  }
-  @media screen and (min-width: 1440px) {
-    margin: 4.375rem 2.75rem 5.125rem;
-
-    img,
-    img:first-of-type {
-      display: inline-block;
-      max-width: 25%;
-    }
-  }
-
-  img.broadsign {
-    padding: 3vw 4rem;
   }
 }
 /* customer logos end */

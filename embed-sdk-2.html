@@ -101,20 +101,20 @@ active: embed-sdk
                         <!--  The code snippets MUST be to the left as all whitespace is preserved. 
                               Indents in the code samples should be tabs, not spaces. -->
                         {% prism html %}
-<div id="adobe-dc-view" style="height: 360px; width: 500px;"></div>
-<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-<script type="text/javascript">
-document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
-var adobeDCView = new AdobeDC.View({clientId: "<YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
-adobeDCView.previewFile({
-  content:{location: {url: "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf"}},
-  metaData:{fileName: "Bodea Brochure.pdf"}
-},
-{
-  embedMode: "SIZED_CONTAINER"
-});
-});
-</script>
+                        <div id="adobe-dc-view" style="height: 360px; width: 500px;"></div>
+                        <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+                        <script type="text/javascript">
+                          document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
+                            var adobeDCView = new AdobeDC.View({clientId: "<YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
+                            adobeDCView.previewFile({
+                              content:{location: {url: "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf"}},
+                              metaData:{fileName: "Bodea Brochure.pdf"}
+                            },
+                            {
+                              embedMode: "SIZED_CONTAINER"
+                            });
+                          });
+                        </script>
                         {% endprism %}
                             </coral-panel>
                     </coral-panelstack>
@@ -161,19 +161,19 @@ adobeDCView.previewFile({
                         <!--  The code snippets MUST be to the left as all whitespace is preserved. 
                               Indents in the code samples should be tabs, not spaces. -->
                         {% prism html %}
-<script type="text/javascript">
-document.addEventListener("adobe_dc_view_sdk.ready", function()
-{
-  var adobeDCView = new AdobeDC.View({clientId: "<YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
-  adobeDCView.previewFile(
-{
-    content:   {location: {url: "(path to your PDF)/yourfilename.pdf"}},
-    metaData: {fileName: "yourfilename.pdf"}
-},
-{showAnnotationTools: true});
-});
+                        <script type="text/javascript">
+                         document.addEventListener("adobe_dc_view_sdk.ready", function()
+                          {
+                            var adobeDCView = new AdobeDC.View({clientId: "<YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
+                            adobeDCView.previewFile(
+                          {
+                              content:   {location: {url: "(path to your PDF)/yourfilename.pdf"}},
+                              metaData: {fileName: "yourfilename.pdf"}
+                          },
+                          {showAnnotationTools: true});
+                          });
 
-</script>
+                        </script>
                         {% endprism %}
                       </coral-panel>
                     </coral-panelstack>
@@ -205,6 +205,11 @@ document.addEventListener("adobe_dc_view_sdk.ready", function()
                   <coral-tabview>
                     <coral-tablist size="S">
                       <coral-tab>HTML</coral-tab>
+                      <!-- This page doesn't actually have the tabs for languages. 
+                      <coral-tab class="is-selected">Node.js</coral-tab>
+                      <coral-tab>.Net</coral-tab>
+                      <coral-tab>Java</coral-tab>
+                      -->
                       <div class="tab-item-copy">Copy</div>
                     </coral-tablist>
                     <coral-panelstack>
@@ -212,20 +217,20 @@ document.addEventListener("adobe_dc_view_sdk.ready", function()
                         <!--  The code snippets MUST be to the left as all whitespace is preserved. 
                               Indents in the code samples should be tabs, not spaces. -->
                         {% prism html %}
-<script type="text/javascript">
-  adobeDCView.registerCallback(
-/* Type of call back */
-AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
-/* call back function */
-function(event) {
-console.log(event);
-},
-{
-enablePDFAnalytics: true,
-}
-);
+                        <script type="text/javascript">
+                          adobeDCView.registerCallback(
+     /* Type of call back */
+     AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
+     /* call back function */
+     function(event) {
+         console.log(event);
+     },
+     {
+         enablePDFAnalytics: true,
+     }
+ );
 
-</script>
+                        </script>
                         {% endprism %}
                       </coral-panel>
                     </coral-panelstack>
@@ -268,28 +273,31 @@ enablePDFAnalytics: true,
                         <!--  The code snippets MUST be to the left as all whitespace is preserved. 
                               Indents in the code samples should be tabs, not spaces. -->
                         {% prism html %}
-<script type="text/javascript">
-    const profile = {
-      userProfile: {
-          name: '<name of user>',
-          firstName: '<first name>',
-          lastName: '<last name>',
-          email: '<user email>'
-      }
-    };
+                        <script type="text/javascript">
+                            const profile = {
+                              userProfile: {
+                                  name: '<name of user>',
+                                  firstName: '<first name>',
+                                  lastName: '<last name>',
+                                  email: '<user email>'
+                              }
+                            };
 
-  adobeDCView.registerCallback(
-    AdobeDC.View.Enum.CallbackType.GET_USER_PROFILE_API,
-    function() {
-      return new Promise((resolve, reject) => {
-          resolve({
-            code: AdobeDC.View.Enum.ApiResponseCode.SUCCESS,
-            data: profile
-          });
-      }); 
-    }
-  );
-</script>
+                          adobeDCView.registerCallback(
+                            AdobeDC.View.Enum.CallbackType.GET_USER_PROFILE_API,
+                            function() {
+                              return new Promise((resolve, reject) => {
+                                  resolve({
+                                    code: AdobeDC.View.Enum.ApiResponseCode.SUCCESS,
+                                    data: profile
+                                  });
+                              }); 
+                            }
+                          );
+
+
+
+                        </script>
                         {% endprism %}
                       </coral-panel>
                     </coral-panelstack>
@@ -332,21 +340,21 @@ enablePDFAnalytics: true,
                         <!--  The code snippets MUST be to the left as all whitespace is preserved. 
                               Indents in the code samples should be tabs, not spaces. -->
                         {% prism html %}
-<script type="text/javascript">
-  const saveOptions = {
-        autoSaveFrequency: <Number, default=0>,
-        enableFocusPolling: <Boolean, default=false>,
-        showSaveButton: <Boolean, default=true>
-}
+                        <script type="text/javascript">
+                         const saveOptions = {
+                                autoSaveFrequency: <Number, default=0>,
+                                enableFocusPolling: <Boolean, default=false>,
+                                showSaveButton: <Boolean, default=true>
+                        }
 
-adobeDCView.registerCallback(
-        AdobeDC.View.Enum.CallbackType.SAVE_API,
-        function(metadata, content, options) {...},
-        saveOptions
+                        adobeDCView.registerCallback(
+                                AdobeDC.View.Enum.CallbackType.SAVE_API,
+                                function(metadata, content, options) {...},
+                                saveOptions
 
-);
+                        );
 
-</script>
+                        </script>
                         {% endprism %}
                       </coral-panel>
                     </coral-panelstack>
@@ -390,21 +398,21 @@ adobeDCView.registerCallback(
                         <!--  The code snippets MUST be to the left as all whitespace is preserved. 
                               Indents in the code samples should be tabs, not spaces. -->
                         {% prism html %}
-<script type="text/javascript">
-<div id="adobe-dc-view"></div>
-<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-<script type="text/javascript">
-document.addEventListener("adobe_dc_view_sdk.ready", function () {
-  var adobeDCView = new AdobeDC.View({clientId: "<YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
-  adobeDCView.previewFile({
-    content:{location: {url: "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf"}},
-    metaData:{fileName: "Bodea Brochure.pdf"}
-  }, {"showLeftHandPanel":true,"showPageControls":false});
-});
-</script>
+                        <script type="text/javascript">
+                         <div id="adobe-dc-view"></div>
+                          <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+                          <script type="text/javascript">
+                            document.addEventListener("adobe_dc_view_sdk.ready", function () {
+                              var adobeDCView = new AdobeDC.View({clientId: "<YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
+                              adobeDCView.previewFile({
+                                content:{location: {url: "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf"}},
+                                metaData:{fileName: "Bodea Brochure.pdf"}
+                              }, {"showLeftHandPanel":true,"showPageControls":false});
+                            });
+                            </script>
 
 
-</script>
+                        </script>
                         {% endprism %}
                       </coral-panel>
                     </coral-panelstack>
