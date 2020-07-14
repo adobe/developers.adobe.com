@@ -4,9 +4,21 @@
     .sdk-embed-wrapper {
       background: var( --spectrum-global-color-gray-300 ); /* --spectrum-alias-background-color-default */
       border-radius: 4px;
+      position:relative;
     }
     .sdk-embed-wrapper coral-tablist {
       border-color: transparent;
+    }
+
+    .code-toolbar .toolbar .toolbar-item button{
+      position: absolute;
+      top: 0px;
+      background: transparent;
+      color: #fff;
+      right: 5px;
+      outline: none;
+      border: none;
+      margin-top: 7px;
     }
     
     .tab-item-copy {
@@ -36,7 +48,7 @@
 <coral-tab>.Net</coral-tab>
 <coral-tab>Java</coral-tab>                     
 
-<div class="tab-item-copy">Copy</div>
+<!-- <div class="tab-item-copy copy">Copy</div> -->
 </coral-tablist>
 <coral-panelstack>
 
@@ -45,20 +57,22 @@
 {% prism js %}
 
 //Create an ExecutionContext using credentials and create a new operation instance.
-ExecutionContext executionContext = ExecutionContext.Create(credentials);
+ExecutionContext executionContext = ExecutionContext.Create( credentials );
 CreatePDFOperation htmlToPDFOperation = CreatePDFOperation.CreateNew();
 
 // Set operation input from a source file.
-FileRef source = FileRef.CreateFromLocalFile(@"createPDFFromStaticHtmlInput.zip");
+FileRef source = FileRef
+  .CreateFromLocalFile( @"createPDFFromStaticHtmlInput.zip" );
 htmlToPDFOperation.SetInput(source);
 
 // Provide any custom configuration options for the operation.
-SetCustomOptions(htmlToPDFOperation);
+SetCustomOptions( htmlToPDFOperation );
 
 // Execute the operation.
-FileRef result = htmlToPDFOperation.Execute(executionContext);
+FileRef result = htmlToPDFOperation.Execute( executionContext );
 // Save the result to the specified location.
-result.SaveAs(Directory.GetCurrentDirectory() + "/output/createPdfFromStaticHtmlOutput.pdf");
+result.SaveAs( Directory.GetCurrentDirectory() + 
+  "/output/createPdfFromStaticHtmlOutput.pdf" );
                        
 {% endprism %}
                         </coral-panel>
@@ -66,21 +80,22 @@ result.SaveAs(Directory.GetCurrentDirectory() + "/output/createPdfFromStaticHtml
                         <coral-panel>
 {% prism clike %}
 //Create an ExecutionContext using credentials and create a new operation instance.
-ExecutionContext executionContext = ExecutionContext.create(credentials);
+ExecutionContext executionContext = ExecutionContext.create( credentials );
 CreatePDFOperation htmlToPDFOperation = CreatePDFOperation.createNew();
 
 // Set operation input from a source file.
-FileRef source = FileRef.createFromLocalFile("src/main/resources/createPDFFromStaticHtmlInput.zip");
-htmlToPDFOperation.setInput(source);
+FileRef source = FileRef
+  .createFromLocalFile( "src/main/resources/createPDFFromStaticHtmlInput.zip" );
+htmlToPDFOperation.setInput( source );
 
 // Provide any custom configuration options for the operation.
-setCustomOptions(htmlToPDFOperation);
+setCustomOptions( htmlToPDFOperation );
 
 // Execute the operation.
-FileRef result = htmlToPDFOperation.execute(executionContext);
+FileRef result = htmlToPDFOperation.execute( executionContext );
 
 // Save the result to the specified location.
-result.saveAs("output/createPDFFromStaticHtmlOutput.pdf");
+result.saveAs( "output/createPDFFromStaticHtmlOutput.pdf" );
 
 {% endprism %}
                         </coral-panel>
@@ -88,21 +103,22 @@ result.saveAs("output/createPDFFromStaticHtmlOutput.pdf");
                         <coral-panel>
 {% prism java %}
 //Create an ExecutionContext using credentials and create a new operation instance.
-ExecutionContext executionContext = ExecutionContext.create(credentials);
+ExecutionContext executionContext = ExecutionContext.create( credentials );
 CreatePDFOperation htmlToPDFOperation = CreatePDFOperation.createNew();
 
 // Set operation input from a source file.
-FileRef source = FileRef.createFromLocalFile("src/main/resources/createPDFFromStaticHtmlInput.zip");
+FileRef source = FileRef
+  .createFromLocalFile( "src/main/resources/createPDFFromStaticHtmlInput.zip" );
 htmlToPDFOperation.setInput(source);
 
 // Provide any custom configuration options for the operation.
-setCustomOptions(htmlToPDFOperation);
+setCustomOptions( htmlToPDFOperation );
 
 // Execute the operation.
-FileRef result = htmlToPDFOperation.execute(executionContext);
+FileRef result = htmlToPDFOperation.execute( executionContext );
 
 // Save the result to the specified location.
-result.saveAs("output/createPDFFromStaticHtmlOutput.pdf");
+result.saveAs( "output/createPDFFromStaticHtmlOutput.pdf" );
 
 {% endprism %}
                                     </coral-panel>
@@ -122,7 +138,7 @@ result.saveAs("output/createPDFFromStaticHtmlOutput.pdf");
             <coral-tab>.Net</coral-tab>
             <coral-tab>Java</coral-tab>
             
-            <div class="tab-item-copy">Copy</div>
+            <!-- <div class="tab-item-copy">Copy</div> -->
         </coral-tablist>
         <coral-panelstack>
     
@@ -131,20 +147,26 @@ result.saveAs("output/createPDFFromStaticHtmlOutput.pdf");
     {% prism js %}
     
 //Export 1 Create an ExecutionContext using credentials and create a new operation instance.
-ExecutionContext executionContext = ExecutionContext.Create(credentials);
+ExecutionContext executionContext = ExecutionContext.Create( credentials );
 CreatePDFOperation htmlToPDFOperation = CreatePDFOperation.CreateNew();
 
 // Set operation input from a source file.
-FileRef source = FileRef.CreateFromLocalFile(@"createPDFFromStaticHtmlInput.zip");
-htmlToPDFOperation.SetInput(source);
+FileRef source = FileRef
+  .CreateFromLocalFile( @"createPDFFromStaticHtmlInput.zip" );
+htmlToPDFOperation.SetInput( source );
 
 // Provide any custom configuration options for the operation.
-SetCustomOptions(htmlToPDFOperation);
+SetCustomOptions( htmlToPDFOperation );
 
 // Execute the operation.
-FileRef result = htmlToPDFOperation.Execute(executionContext);
+FileRef result = htmlToPDFOperation.Execute( executionContext );
+<<<<<<< HEAD
+
+=======
+>>>>>>> fe33ab2a11554daddcc509347aabd508c52a6c68
 // Save the result to the specified location.
-result.SaveAs(Directory.GetCurrentDirectory() + "/output/createPdfFromStaticHtmlOutput.pdf");
+result.SaveAs( Directory.GetCurrentDirectory() + 
+  "/output/createPdfFromStaticHtmlOutput.pdf" );
                         
 {% endprism %}
                                                         </coral-panel>
@@ -152,21 +174,22 @@ result.SaveAs(Directory.GetCurrentDirectory() + "/output/createPdfFromStaticHtml
                                                         <coral-panel >
                          {% prism clike %}
 //Export 2 Create an ExecutionContext using credentials and create a new operation instance.
-ExecutionContext executionContext = ExecutionContext.create(credentials);
+ExecutionContext executionContext = ExecutionContext.create( credentials );
 CreatePDFOperation htmlToPDFOperation = CreatePDFOperation.createNew();
 
 // Set operation input from a source file.
-FileRef source = FileRef.createFromLocalFile("src/main/resources/createPDFFromStaticHtmlInput.zip");
-htmlToPDFOperation.setInput(source);
+FileRef source = FileRef
+  .createFromLocalFile( "src/main/resources/createPDFFromStaticHtmlInput.zip" );
+htmlToPDFOperation.setInput( source );
 
 // Provide any custom configuration options for the operation.
-setCustomOptions(htmlToPDFOperation);
+setCustomOptions( htmlToPDFOperation );
 
 // Execute the operation.
-FileRef result = htmlToPDFOperation.execute(executionContext);
+FileRef result = htmlToPDFOperation.execute( executionContext );
 
 // Save the result to the specified location.
-result.saveAs("output/createPDFFromStaticHtmlOutput.pdf");
+result.saveAs( "output/createPDFFromStaticHtmlOutput.pdf" );
 
     {% endprism %}
                                                         </coral-panel>
@@ -174,21 +197,22 @@ result.saveAs("output/createPDFFromStaticHtmlOutput.pdf");
                                                         <coral-panel>
                 {% prism java %}
 //Export 3 Create an ExecutionContext using credentials and create a new operation instance.
-ExecutionContext executionContext = ExecutionContext.create(credentials);
+ExecutionContext executionContext = ExecutionContext.create( credentials );
 CreatePDFOperation htmlToPDFOperation = CreatePDFOperation.createNew();
 
 // Set operation input from a source file.
-FileRef source = FileRef.createFromLocalFile("src/main/resources/createPDFFromStaticHtmlInput.zip");
-htmlToPDFOperation.setInput(source);
+FileRef source = FileRef
+  .createFromLocalFile( "src/main/resources/createPDFFromStaticHtmlInput.zip" );
+htmlToPDFOperation.setInput( source );
 
 // Provide any custom configuration options for the operation.
-setCustomOptions(htmlToPDFOperation);
+setCustomOptions( htmlToPDFOperation );
 
 // Execute the operation.
-FileRef result = htmlToPDFOperation.execute(executionContext);
+FileRef result = htmlToPDFOperation.execute( executionContext );
 
 // Save the result to the specified location.
-result.saveAs("output/createPDFFromStaticHtmlOutput.pdf");
+result.saveAs( "output/createPDFFromStaticHtmlOutput.pdf" );
 
     {% endprism %}
                                                                                     </coral-panel>
@@ -208,7 +232,7 @@ result.saveAs("output/createPDFFromStaticHtmlOutput.pdf");
         <coral-tab>.Net</coral-tab>
         <coral-tab>Java</coral-tab>
         
-        <div class="tab-item-copy">Copy</div>
+        <!-- <div class="tab-item-copy">Copy</div> -->
     </coral-tablist>
     <coral-panelstack>
 
@@ -218,24 +242,24 @@ result.saveAs("output/createPDFFromStaticHtmlOutput.pdf");
 
 // Create an ExecutionContext using credentials and create a new operation instance.
 const executionContext = PDFToolsSdk.ExecutionContext.create(credentials),
-    ocrOperation = PDFToolsSdk.OCR.Operation.createNew();
+  ocrOperation = PDFToolsSdk.OCR.Operation.createNew();
 
 // Set operation input from a source file.
 const input = PDFToolsSdk.FileRef.createFromLocalFile(
     'resources/ocrInput.pdf',
     PDFToolsSdk.OCR.SupportedMediaTypes.pdf
-    );
+  );
 ocrOperation.setInput(input);
 
 // Execute the operation and Save the result to the specified location.
 ocrOperation.execute(executionContext)
-    .then(result => result.saveAsFile('output/ocrOutput.pdf'))
+  .then(result => result.saveAsFile('output/ocrOutput.pdf'))
 
                         
 {% endprism %}
-                                                    </coral-panel>
+</coral-panel>
                                                     
-                                                    <coral-panel >
+<coral-panel >
 {% prism clike %}
 //Create an ExecutionContext using credentials and create a new operation instance.
 ExecutionContext executionContext = ExecutionContext.Create(credentials);
@@ -249,13 +273,13 @@ ocrOperation.SetInput(sourceFileRef);
 FileRef result = ocrOperation.Execute(executionContext);
 
 // Save the result to the specified location.
-result.SaveAs(Directory.GetCurrentDirectory() + "/output/ocrOperationOutput.pdf");
-
+result.SaveAs(Directory.GetCurrentDirectory() + 
+  "/output/ocrOperationOutput.pdf");
 
 {% endprism %}
-                                                    </coral-panel>
-                            
-                                                    <coral-panel>
+</coral-panel>
+
+<coral-panel>
 {% prism java %}
 //Create an ExecutionContext using credentials and create a new operation instance.
 ExecutionContext executionContext = ExecutionContext.create(credentials);
@@ -270,7 +294,6 @@ FileRef result = ocrOperation.execute(executionContext);
 
 // Save the result at the specified location
 result.saveAs("output/ocrOutput.pdf");
-
 
 {% endprism %}
                                                                                 </coral-panel>
@@ -290,32 +313,35 @@ result.saveAs("output/ocrOutput.pdf");
             <coral-tab>.Net</coral-tab>
             <coral-tab>Java</coral-tab>                     
          
-            <div class="tab-item-copy">Copy</div>
+            <!-- <div class="tab-item-copy">Copy</div> -->
             </coral-tablist>
             <coral-panelstack>
             <coral-panel>
                 {% prism js %}
 // Create an ExecutionContext using credentials and create a new operation instance.
 const executionContext = PDFToolsSdk.ExecutionContext.create(credentials),
-rotatePagesOperation = PDFToolsSdk.RotatePages.Operation.createNew();
+  rotatePagesOperation = PDFToolsSdk.RotatePages.Operation.createNew();
 
 // Set operation input from a source file.
-const input = PDFToolsSdk.FileRef.createFromLocalFile('resources/rotatePagesInput.pdf');
+const input = PDFToolsSdk.FileRef
+  .createFromLocalFile('resources/rotatePagesInput.pdf');
 rotatePagesOperation.setInput(input);
 
-// Sets angle by 90 degrees (in clockwise direction) for rotating the specified pages of
-// the input PDF file.
+// Sets angle by 90 degrees (in clockwise direction) for rotating the specified 
+// pages of the input PDF file.
 const firstPageRange = getFirstPageRangeForRotation();
-rotatePagesOperation.setAngleToRotatePagesBy(PDFToolsSdk.RotatePages.Angle._90, firstPageRange);
+rotatePagesOperation
+  .setAngleToRotatePagesBy(PDFToolsSdk.RotatePages.Angle._90, firstPageRange);
 
-// Sets angle by 180 degrees (in clockwise direction) for rotating the specified pages of
-// the input PDF file.
+// Sets angle by 180 degrees (in clockwise direction) for rotating the 
+// specified pages of the input PDF file.
 const secondPageRange = getSecondPageRangeForRotation();
-rotatePagesOperation.setAngleToRotatePagesBy(PDFToolsSdk.RotatePages.Angle._180,secondPageRange);
+rotatePagesOperation
+  .setAngleToRotatePagesBy(PDFToolsSdk.RotatePages.Angle._180,secondPageRange);
 
 // Execute the operation and Save the result to the specified location.
 rotatePagesOperation.execute(executionContext)
-.then(result => result.saveAsFile('output/rotatePagesOutput.pdf'))
+  .then(result => result.saveAsFile('output/rotatePagesOutput.pdf'))
                 
                  {% endprism %}
             </coral-panel>   
@@ -323,23 +349,30 @@ rotatePagesOperation.execute(executionContext)
                  {% prism clike %}
 // Create an ExecutionContext using credentials.
 ExecutionContext executionContext = ExecutionContext.Create(credentials); 
+
 // Create a new operation instance
 RotatePagesOperation rotatePagesOperation = RotatePagesOperation.CreateNew(); 
+
 // Set operation input from a source file.
 FileRef sourceFileRef = FileRef.CreateFromLocalFile(@"rotatePagesInput.pdf");
 rotatePagesOperation.SetInput(sourceFileRef); 
-// Sets angle by 90 degrees (in clockwise direction) for rotating the specified pages of
-// the input PDF file.
+
+// Sets angle by 90 degrees (in clockwise direction) for rotating the specified 
+// pages of the input PDF file.
 PageRanges firstPageRange = GetFirstPageRangeForRotation();
 rotatePagesOperation.SetAngleToRotatePagesBy(Angle._90, firstPageRange); 
-// Sets angle by 180 degrees (in clockwise direction) for rotating the specified pages of
-// the input PDF file.
+
+// Sets angle by 180 degrees (in clockwise direction) for rotating the 
+// specified pages of the input PDF file.
 PageRanges secondPageRange = GetSecondPageRangeForRotation();
 rotatePagesOperation.SetAngleToRotatePagesBy(Angle._180, secondPageRange);
+
 // Execute the operation.
 FileRef result = rotatePagesOperation.Execute(executionContext); 
+
 // Save the result to the specified location.
-result.SaveAs(Directory.GetCurrentDirectory() + "/output/rotatePagesOutput.pdf");
+result.SaveAs(Directory.GetCurrentDirectory() + 
+  "/output/rotatePagesOutput.pdf");
                  
                  {% endprism %}
              </coral-panel>    
@@ -351,16 +384,17 @@ ExecutionContext executionContext = ExecutionContext.create(credentials);
 RotatePagesOperation rotatePagesOperation = RotatePagesOperation.createNew();
 
 // Set operation input from a source file.
-FileRef source = FileRef.createFromLocalFile("src/main/resources/rotatePagesInput.pdf");
+FileRef source = FileRef
+  .createFromLocalFile("src/main/resources/rotatePagesInput.pdf");
 rotatePagesOperation.setInput(source);
 
-// Sets angle by 90 degrees (in clockwise direction) for rotating the specified pages of
-// the input PDF file.
+// Sets angle by 90 degrees (in clockwise direction) for rotating the specified 
+// pages of the input PDF file.
 PageRanges firstPageRange = getFirstPageRangeForRotation();
 rotatePagesOperation.setAngleToRotatePagesBy(Angle._90, firstPageRange);
 
-// Sets angle by 180 degrees (in clockwise direction) for rotating the specified pages of
-// the input PDF file.
+// Sets angle by 180 degrees (in clockwise direction) for rotating the 
+// specified pages of the input PDF file.
 PageRanges secondPageRange = getSecondPageRangeForRotation();
 rotatePagesOperation.setAngleToRotatePagesBy(Angle._180, secondPageRange);
 
@@ -388,17 +422,18 @@ result.saveAs("output/rotatePagesOutput.pdf");
             <coral-tab>.Net</coral-tab>
             <coral-tab>Java</coral-tab>                     
          
-            <div class="tab-item-copy">Copy</div>
+            <!-- <div class="tab-item-copy">Copy</div> -->
             </coral-tablist>
             <coral-panelstack>
             <coral-panel>
                 {% prism js %}
 // Create an ExecutionContext using credentials and create a new operation instance.
 const executionContext = PDFToolsSdk.ExecutionContext.create(credentials),
-    deletePagesOperation = PDFToolsSdk.DeletePages.Operation.createNew();
+  deletePagesOperation = PDFToolsSdk.DeletePages.Operation.createNew();
 
 // Set operation input from a source file.
-const input = PDFToolsSdk.FileRef.createFromLocalFile('resources/deletePagesInput.pdf');
+const input = PDFToolsSdk.FileRef
+  .createFromLocalFile('resources/deletePagesInput.pdf');
 deletePagesOperation.setInput(input);
 
 // Delete pages of the document (as specified by PageRanges).
@@ -407,7 +442,7 @@ deletePagesOperation.setPageRanges(pageRangesForDeletion);
 
 // Execute the operation and Save the result to the specified location.
 deletePagesOperation.execute(executionContext)
-    .then(result => result.saveAsFile('output/deletePagesOutput.pdf'))
+  .then(result => result.saveAsFile('output/deletePagesOutput.pdf'))
                 
                  {% endprism %}
             </coral-panel>   
@@ -415,18 +450,24 @@ deletePagesOperation.execute(executionContext)
                  {% prism clike %}
 // Create an ExecutionContext using credentials.
 ExecutionContext executionContext = ExecutionContext.Create(credentials); 
+
 // Create a new operation instance
 DeletePagesOperation deletePagesOperation = DeletePagesOperation.CreateNew(); 
+
 // Set operation input from a source file.
 FileRef sourceFileRef = FileRef.CreateFromLocalFile(@"deletePagesInput.pdf");
 deletePagesOperation.SetInput(sourceFileRef); 
+
 // Delete pages of the document (as specified by PageRanges).
 PageRanges pageRangeForDeletion = GetPageRangeForDeletion();
 deletePagesOperation.SetPageRanges(pageRangeForDeletion); 
+
 // Execute the operation.
 FileRef result = deletePagesOperation.Execute(executionContext); 
+
 // Save the result to the specified location.
-result.SaveAs(Directory.GetCurrentDirectory() + "/output/deletePagesOutput.pdf");
+result.SaveAs(Directory.GetCurrentDirectory() + 
+  "/output/deletePagesOutput.pdf");
                  
                  {% endprism %}
              </coral-panel>    
@@ -436,14 +477,19 @@ result.SaveAs(Directory.GetCurrentDirectory() + "/output/deletePagesOutput.pdf")
 // Create an ExecutionContext using credentials and create a new operation instance.
 ExecutionContext executionContext = ExecutionContext.create(credentials);
 DeletePagesOperation deletePagesOperation = DeletePagesOperation.createNew();
+
 // Set operation input from a source file.
-FileRef source = FileRef.createFromLocalFile("src/main/resources/deletePagesInput.pdf");
+FileRef source = 
+  FileRef.createFromLocalFile("src/main/resources/deletePagesInput.pdf");
 deletePagesOperation.setInput(source);
+
 // Delete pages of the document (as specified by PageRanges).
 PageRanges pageRangeForDeletion = getPageRangeForDeletion();
 deletePagesOperation.setPageRanges(pageRangeForDeletion);
+
 // Execute the operation.
 FileRef result = deletePagesOperation.execute(executionContext);
+
 // Save the result to the specified location.
 result.saveAs("output/deletePagesOutput.pdf");
 
@@ -465,36 +511,41 @@ result.saveAs("output/deletePagesOutput.pdf");
             <coral-tab>.Net</coral-tab>
             <coral-tab>Java</coral-tab>                     
          
-            <div class="tab-item-copy">Copy</div>
+            <!-- <div class="tab-item-copy">Copy</div> -->
             </coral-tablist>
             <coral-panelstack>
             <coral-panel>
                 {% prism js %}
-// Create an ExecutionContext using credentials and create a new operation instance.
+// Create an ExecutionContext using credentials and create a                          
+// new operation instance.
 const executionContext = PDFToolsSdk.ExecutionContext.create(credentials),
 replacePagesOperation = PDFToolsSdk.ReplacePages.Operation.createNew();
 
 // Set operation base input from a source file.
-const baseInputFile = PDFToolsSdk.FileRef.createFromLocalFile('resources/baseInput.pdf');
+const baseInputFile = PDFToolsSdk.FileRef
+  .createFromLocalFile('resources/baseInput.pdf');
 replacePagesOperation.setBaseInput(baseInputFile);
 
 // Create a FileRef instance using a local file.
-const firstInputFile = PDFToolsSdk.FileRef.createFromLocalFile('resources/replacePagesInput1.pdf'),
+const firstInputFile = PDFToolsSdk.FileRef
+  .createFromLocalFile('resources/replacePagesInput1.pdf'),
 pageRanges = getPageRangesForFirstFile();
 
-// Adds the pages (specified by the page ranges) of the input PDF file for replacing the
-// page of the base PDF file.
+// Adds the pages (specified by the page ranges) of the input PDF file 
+// for replacing the page of the base PDF file.
 replacePagesOperation.addPagesForReplace(1, firstInputFile, pageRanges);
 
 // Create a FileRef instance using a local file.
-const secondInputFile = PDFToolsSdk.FileRef.createFromLocalFile('resources/replacePagesInput2.pdf');
+const secondInputFile = PDFToolsSdk.FileRef
+  .createFromLocalFile('resources/replacePagesInput2.pdf');
 
-// Adds all the pages of the input PDF file for replacing the page of the base PDF file.
+// Adds all the pages of the input PDF file for replacing the page of 
+// the base PDF file.
 replacePagesOperation.addPagesForReplace(3, secondInputFile);
 
 // Execute the operation and Save the result to the specified location.
 replacePagesOperation.execute(executionContext)
-.then(result => result.saveAsFile('output/replacePagesOutput.pdf'))
+  .then(result => result.saveAsFile('output/replacePagesOutput.pdf'))
                 
                  {% endprism %}
             </coral-panel>   
@@ -502,25 +553,36 @@ replacePagesOperation.execute(executionContext)
                  {% prism clike %}
 // Create an ExecutionContext using credentials.
 ExecutionContext executionContext = ExecutionContext.Create(credentials);
+
 // Create a new operation instance
 ReplacePagesOperation replacePagesOperation = ReplacePagesOperation.CreateNew(); 
+
 // Set operation base input from a source file.
 FileRef baseSourceFile = FileRef.CreateFromLocalFile(@"baseInput.pdf");
 replacePagesOperation.SetBaseInput(baseSourceFile); 
+
 // Create a FileRef instance using a local file.
 FileRef firstInputFile = FileRef.CreateFromLocalFile(@"replacePagesInput1.pdf");
 PageRanges pageRanges = GetPageRangeForFirstFile(); 
-// Adds the pages (specified by the page ranges) of the input PDF file for replacing the
-// page of the base PDF file.
+
+// Adds the pages (specified by the page ranges) of the input PDF file 
+// for replacing the page of the base PDF file.
 replacePagesOperation.AddPagesForReplace(firstInputFile, pageRanges, 1); 
+
 // Create a FileRef instance using a local file.
-FileRef secondInputFile = FileRef.CreateFromLocalFile(@"replacePagesInput2.pdf"); 
-// Adds all the pages of the input PDF file for replacing the page of the base PDF file.
+FileRef secondInputFile = 
+  FileRef.CreateFromLocalFile(@"replacePagesInput2.pdf"); 
+
+// Adds all the pages of the input PDF file for replacing the page of 
+// the base PDF file.
 replacePagesOperation.AddPagesForReplace(secondInputFile, 3); 
+
 // Execute the operation.
 FileRef result = replacePagesOperation.Execute(executionContext); 
+
 // Save the result to the specified location.
-result.SaveAs(Directory.GetCurrentDirectory() + "/output/replacePagesOutput.pdf");
+result.SaveAs(Directory.GetCurrentDirectory() + 
+  "/output/replacePagesOutput.pdf");
                  
                  {% endprism %}
              </coral-panel>    
@@ -536,17 +598,20 @@ FileRef baseSourceFile = FileRef.createFromLocalFile("src/main/resources/baseInp
 replacePagesOperation.setBaseInput(baseSourceFile);
 
 // Create a FileRef instance using a local file.
-FileRef firstInputFile = FileRef.createFromLocalFile("src/main/resources/replacePagesInput1.pdf");
+FileRef firstInputFile = 
+  FileRef.createFromLocalFile("src/main/resources/replacePagesInput1.pdf");
 PageRanges pageRanges = getPageRangeForFirstFile();
 
-// Adds the pages (specified by the page ranges) of the input PDF file for replacing the
-// page of the base PDF file.
+// Adds the pages (specified by the page ranges) of the input PDF file 
+// for replacing the page of the base PDF file.
 replacePagesOperation.addPagesForReplace(firstInputFile, pageRanges, 1);
 
 // Create a FileRef instance using a local file.
-FileRef secondInputFile = FileRef.createFromLocalFile("src/main/resources/replacePagesInput2.pdf");
+FileRef secondInputFile = 
+  FileRef.createFromLocalFile("src/main/resources/replacePagesInput2.pdf");
 
-// Adds all the pages of the input PDF file for replacing the page of the base PDF file.
+// Adds all the pages of the input PDF file for replacing the page of 
+// the base PDF file.
 replacePagesOperation.addPagesForReplace(secondInputFile, 3);
 
 // Execute the operation
@@ -573,7 +638,7 @@ result.saveAs("output/replacePagesOutput.pdf");
             <coral-tab>.Net</coral-tab>
             <coral-tab>Java</coral-tab>                     
          
-            <div class="tab-item-copy">Copy</div>
+            <!-- <div class="tab-item-copy">Copy</div> -->
             </coral-tablist>
             <coral-panelstack>
             <coral-panel>
@@ -584,13 +649,13 @@ linearizePDF = PDFToolsSdk.LinearizePDF,
 linearizePDFOperation = linearizePDF.Operation.createNew();
 
 // Set operation input from a source file.
-const input = PDFToolsSdk.FileRef.createFromLocalFile('resources/linearizePDFInput.pdf');
+const input = PDFToolsSdk.FileRef
+  .createFromLocalFile('resources/linearizePDFInput.pdf');
 linearizePDFOperation.setInput(input);
 
 // Execute the operation and Save the result to the specified location.
 linearizePDFOperation.execute(executionContext)
-.then(result => result.saveAsFile('output/linearizePDFOutput.pdf'))
-                
+  .then(result => result.saveAsFile('output/linearizePDFOutput.pdf'))
                 
                  {% endprism %}
             </coral-panel>   
@@ -599,14 +664,17 @@ linearizePDFOperation.execute(executionContext)
 // Create an ExecutionContext using credentials and create a new operation instance.
 ExecutionContext executionContext = ExecutionContext.Create(credentials);
 LinearizePDFOperation linearizePDFOperation = LinearizePDFOperation.CreateNew(); 
+
 // Set operation input from a source file.
 FileRef sourceFileRef = FileRef.CreateFromLocalFile(@"linearizePDFInput.pdf");
 linearizePDFOperation.SetInput(sourceFileRef); 
+
 // Execute the operation.
 FileRef result = linearizePDFOperation.Execute(executionContext); 
+
 // Save the result to the specified location.
-result.SaveAs(Directory.GetCurrentDirectory() + "/output/linearizePDFOutput.pdf");
-                 
+result.SaveAs(Directory.GetCurrentDirectory() + 
+  "/output/linearizePDFOutput.pdf");
                  
                  {% endprism %}
              </coral-panel>    
@@ -618,7 +686,8 @@ ExecutionContext executionContext = ExecutionContext.create(credentials);
 LinearizePDFOperation linearizePDFOperation = LinearizePDFOperation.createNew();
 
 // Set operation input from a source file.
-FileRef source = FileRef.createFromLocalFile("src/main/resources/linearizePDFInput.pdf");
+FileRef source = 
+  FileRef.createFromLocalFile("src/main/resources/linearizePDFInput.pdf");
 linearizePDFOperation.setInput(source);
 
 // Execute the operation
@@ -645,15 +714,15 @@ result.saveAs("output/linearizePDFOutput.pdf");
             <coral-tab>.Net</coral-tab>
             <coral-tab>Java</coral-tab>                     
          
-            <div class="tab-item-copy">Copy</div>
+            <!-- <div class="tab-item-copy">Copy</div> -->
             </coral-tablist>
             <coral-panelstack>
             <coral-panel>
                 {% prism js %}
 // Create an ExecutionContext using credentials and create a new operation instance.
 const executionContext = PDFToolsSdk.ExecutionContext.create(credentials),
-    compressPDF = PDFToolsSdk.CompressPDF,
-    compressPDFOperation = compressPDF.Operation.createNew();
+  compressPDF = PDFToolsSdk.CompressPDF,
+  compressPDFOperation = compressPDF.Operation.createNew();
 
 // Set operation input from a source file.
 const input = PDFToolsSdk.FileRef.createFromLocalFile('resources/compressPDFInput.pdf');
@@ -661,9 +730,8 @@ compressPDFOperation.setInput(input);
 
 // Execute the operation and Save the result to the specified location.
 compressPDFOperation.execute(executionContext)
-    .then(result => result.saveAsFile('output/compressPDFOutput.pdf'))
-
-
+  .then(result => result.saveAsFile('output/compressPDFOutput.pdf'))
+  
                  {% endprism %}
             </coral-panel>   
             <coral-panel>
@@ -671,11 +739,14 @@ compressPDFOperation.execute(executionContext)
 // Create an ExecutionContext using credentials and create a new operation instance.
 ExecutionContext executionContext = ExecutionContext.Create(credentials);
 CompressPDFOperation compressPDFOperation = CompressPDFOperation.CreateNew();
+
 // Set operation input from a source file.
 FileRef sourceFileRef = FileRef.CreateFromLocalFile(@"compressPDFInput.pdf");
 compressPDFOperation.SetInput(sourceFileRef); 
+
 // Execute the operation.
 FileRef result = compressPDFOperation.Execute(executionContext); 
+
 // Save the result to the specified location.
 result.SaveAs(Directory.GetCurrentDirectory() + "/output/compressPDFOutput.pdf");
                  
@@ -689,7 +760,8 @@ ExecutionContext executionContext = ExecutionContext.create(credentials);
 CompressPDFOperation compressPDFOperation = CompressPDFOperation.createNew();
 
 // Set operation input from a source file.
-FileRef source = FileRef.createFromLocalFile("src/main/resources/compressPDFInput.pdf");
+FileRef source = 
+  FileRef.createFromLocalFile("src/main/resources/compressPDFInput.pdf");
 compressPDFOperation.setInput(source);
 
 // Execute the operation
@@ -716,7 +788,7 @@ result.saveAs("output/compressPDFOutput.pdf");
             <coral-tab>.Net</coral-tab>
             <coral-tab>Java</coral-tab>                     
          
-            <div class="tab-item-copy">Copy</div>
+            <!-- <div class="tab-item-copy">Copy</div> -->
             </coral-tablist>
             <coral-panelstack>
             <coral-panel>
@@ -725,16 +797,17 @@ result.saveAs("output/compressPDFOutput.pdf");
 const executionContext = PDFToolsSdk.ExecutionContext.create(credentials),
 reorderPagesOperation = PDFToolsSdk.ReorderPages.Operation.createNew();
 
-// Set operation input from a source file, along with specifying the order of the pages for
-// rearranging the pages in a PDF file.
-const input = PDFToolsSdk.FileRef.createFromLocalFile('resources/reorderPagesInput.pdf');
+// Set operation input from a source file, along with specifying the order of 
+// the pages for rearranging the pages in a PDF file.
+const input = PDFToolsSdk.FileRef
+  .createFromLocalFile('resources/reorderPagesInput.pdf');
 const pageRanges = getPageRangeForReorder();
 reorderPagesOperation.setInput(input);
 reorderPagesOperation.setPagesOrder(pageRanges);
 
 // Execute the operation and Save the result to the specified location.
 reorderPagesOperation.execute(executionContext)
-.then(result => result.saveAsFile('output/reorderPagesOutput.pdf'))
+  .then(result => result.saveAsFile('output/reorderPagesOutput.pdf'))
                 
                  {% endprism %}
             </coral-panel>   
@@ -742,30 +815,36 @@ reorderPagesOperation.execute(executionContext)
                  {% prism clike %}
 // Create an ExecutionContext using credentials.
 ExecutionContext executionContext = ExecutionContext.Create(credentials); 
+
 // Create a new operation instance
 ReorderPagesOperation reorderPagesOperation = ReorderPagesOperation.CreateNew(); 
-// Set operation input from a source file, along with specifying the order of the pages for
-// rearranging the pages in a PDF file.
+
+// Set operation input from a source file, along with specifying the order of 
+// the pages for rearranging the pages in a PDF file.
 FileRef sourceFileRef = FileRef.CreateFromLocalFile(@"reorderPagesInput.pdf");
 reorderPagesOperation.SetInput(sourceFileRef);
 PageRanges pageRanges = GetPageRangeForReorder();
 reorderPagesOperation.SetPagesOrder(pageRanges); 
+
 // Execute the operation.
 FileRef result = reorderPagesOperation.Execute(executionContext); 
+
 // Save the result to the specified location.
-result.SaveAs(Directory.GetCurrentDirectory() + "/output/reorderPagesOutput.pdf");
+result.SaveAs(Directory.GetCurrentDirectory() + 
+  "/output/reorderPagesOutput.pdf");
                  
                  {% endprism %}
              </coral-panel>    
                 
             <coral-panel>
                  {% prism java %}
-// Create an ExecutionContext using credentials and create a new operation instance.
+// Create an ExecutionContext using credentials and create a 
+// new operation instance.
 ExecutionContext executionContext = ExecutionContext.create(credentials);
 ReorderPagesOperation reorderPagesOperation = ReorderPagesOperation.createNew();
 
-// Set operation input from a source file, along with specifying the order of the pages for
-// rearranging the pages in a PDF file.
+// Set operation input from a source file, along with specifying the order of 
+// the pages for rearranging the pages in a PDF file.
 FileRef source = FileRef.createFromLocalFile("src/main/resources/reorderPagesInput.pdf");
 PageRanges pageRanges = getPageRangeForReorder(); 
 reorderPagesOperation.setInput(source);
@@ -786,7 +865,7 @@ result.saveAs("output/reorderPagesOutput.pdf");
   </p>
 <!--  /Reorder-->
 
-<!--  Comnine-->
+<!--  Combine-->
 <p>
     <div id="combine-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
       <coral-tabview>
@@ -795,66 +874,73 @@ result.saveAs("output/reorderPagesOutput.pdf");
             <coral-tab>.Net</coral-tab>
             <coral-tab>Java</coral-tab>                     
          
-            <div class="tab-item-copy">Copy</div>
+            <!-- <div class="tab-item-copy">Copy</div> -->
             </coral-tablist>
             <coral-panelstack>
             <coral-panel>
                 {% prism js %}
 // Create an ExecutionContext using credentials and create a new operation instance.
-const executionContext = PDFToolsSdk.ExecutionContext.create(credentials),
-    combineFilesOperation = PDFToolsSdk.CombineFiles.Operation.createNew();
+const executionContext = PDFToolsSdk.ExecutionContext.create( credentials ),
+  combineFilesOperation = PDFToolsSdk.CombineFiles.Operation.createNew();
 
 // Set operation input from a source file.
-const combineSource1 = PDFToolsSdk.FileRef.createFromLocalFile('resources/combineFilesInput1.pdf'),
-    combineSource2 = PDFToolsSdk.FileRef.createFromLocalFile('resources/combineFilesInput2.pdf');
-combineFilesOperation.addInput(combineSource1);
-combineFilesOperation.addInput(combineSource2);
+const combineSource1 = PDFToolsSdk.FileRef
+    .createFromLocalFile( 'resources/combineFilesInput1.pdf' ),
+  combineSource2 = PDFToolsSdk.FileRef
+    .createFromLocalFile( 'resources/combineFilesInput2.pdf' );
+combineFilesOperation.addInput( combineSource1 );
+combineFilesOperation.addInput( combineSource2 );
 
 // Execute the operation and Save the result to the specified location.
-combineFilesOperation.execute(executionContext)
-    .then(result => result.saveAsFile('output/combineFilesOutput.pdf'))
+combineFilesOperation
+  .execute( executionContext )
+  .then(result => result.saveAsFile( 'output/combineFilesOutput.pdf' ));
              
                  {% endprism %}
             </coral-panel>   
             <coral-panel>
                  {% prism clike %}
 //Create an ExecutionContext using credentials and create a new operation instance.
-ExecutionContext executionContext = ExecutionContext.Create(credentials);
+ExecutionContext executionContext = ExecutionContext.Create( credentials );
 CombineFilesOperation combineFilesOperation = CombineFilesOperation.CreateNew();
 
 // Add operation input from source files.
-FileRef combineSource1 = FileRef.CreateFromLocalFile(@"combineFilesInput1.pdf");
-FileRef combineSource2 = FileRef.CreateFromLocalFile(@"combineFilesInput2.pdf");
-combineFilesOperation.AddInput(combineSource1);
-combineFilesOperation.AddInput(combineSource2);
+FileRef combineSource1 = FileRef
+  .CreateFromLocalFile( @"combineFilesInput1.pdf" );
+FileRef combineSource2 = FileRef
+  .CreateFromLocalFile( @"combineFilesInput2.pdf" );
+combineFilesOperation.AddInput( combineSource1 );
+combineFilesOperation.AddInput( combineSource2 );
 
 // Execute the operation.
-FileRef result = combineFilesOperation.Execute(executionContext);
+FileRef result = combineFilesOperation.Execute( executionContext );
 
 // Save the result to the specified location.
-result.SaveAs(Directory.GetCurrentDirectory() + "/output/combineFilesOutput.pdf");
+result.SaveAs( Directory.GetCurrentDirectory() + 
+  "/output/combineFilesOutput.pdf" );
 
-        
-                 {% endprism %}
+  {% endprism %}
              </coral-panel>    
                 
             <coral-panel>
                  {% prism java %}
 //Create an ExecutionContext using credentials and create a new operation instance.
-ExecutionContext executionContext = ExecutionContext.create(credentials);
+ExecutionContext executionContext = ExecutionContext.create( credentials );
 CombineFilesOperation combineFilesOperation = CombineFilesOperation.createNew();
 
 // Add operation input from source files.
-FileRef combineSource1 = FileRef.createFromLocalFile("src/main/resources/combineFilesInput1.pdf");
-FileRef combineSource2 = FileRef.createFromLocalFile("src/main/resources/combineFilesInput2.pdf");
-combineFilesOperation.addInput(combineSource1);
-combineFilesOperation.addInput(combineSource2);
+FileRef combineSource1 = FileRef
+  .createFromLocalFile( "src/main/resources/combineFilesInput1.pdf" );
+FileRef combineSource2 = FileRef
+  .createFromLocalFile( "src/main/resources/combineFilesInput2.pdf" );
+combineFilesOperation.addInput( combineSource1 );
+combineFilesOperation.addInput( combineSource2 );
 
 // Execute the operation.
-FileRef result = combineFilesOperation.execute(executionContext);
+FileRef result = combineFilesOperation.execute( executionContext );
 
 // Save the result to the specified location.
-result.saveAs("output/combineFilesOutput.pdf");
+result.saveAs( "output/combineFilesOutput.pdf" );
           
                  {% endprism %}
             </coral-panel>
@@ -874,37 +960,40 @@ result.saveAs("output/combineFilesOutput.pdf");
             <coral-tab>.Net</coral-tab>
             <coral-tab>Java</coral-tab>                     
          
-            <div class="tab-item-copy">Copy</div>
+            <!-- <div class="tab-item-copy">Copy</div> -->
             </coral-tablist>
             <coral-panelstack>
             <coral-panel>
                 {% prism js %}
 // Create an ExecutionContext using credentials and create a new operation instance.
 const executionContext = PDFToolsSdk.ExecutionContext.create(credentials),
-    insertPagesOperation = PDFToolsSdk.InsertPages.Operation.createNew();
+  insertPagesOperation = PDFToolsSdk.InsertPages.Operation.createNew();
 
 // Set operation base input from a source file.
-const baseInputFile = PDFToolsSdk.FileRef.createFromLocalFile('resources/baseInput.pdf');
+const baseInputFile = PDFToolsSdk.FileRef
+  .createFromLocalFile('resources/baseInput.pdf');
 insertPagesOperation.setBaseInput(baseInputFile);
 
 // Create a FileRef instance using a local file.
-const firstFileToInsert = PDFToolsSdk.FileRef.createFromLocalFile('resources/firstFileToInsertInput.pdf'),
-    pageRanges = getPageRangesForFirstFile();
+const firstFileToInsert = PDFToolsSdk.FileRef
+  .createFromLocalFile('resources/firstFileToInsertInput.pdf'),
+  pageRanges = getPageRangesForFirstFile();
 
-// Adds the pages (specified by the page ranges) of the input PDF file to be inserted at
-// the specified page of the base PDF file.
+// Adds the pages (specified by the page ranges) of the input PDF file to be 
+// inserted at the specified page of the base PDF file.
 insertPagesOperation.addPagesToInsertAt(2, firstFileToInsert, pageRanges);
 
 // Create a FileRef instance using a local file.
-const secondFileToInsert = PDFToolsSdk.FileRef.createFromLocalFile('resources/secondFileToInsertInput.pdf');
+const secondFileToInsert = PDFToolsSdk
+  .FileRef.createFromLocalFile('resources/secondFileToInsertInput.pdf');
 
-// Adds all the pages of the input PDF file to be inserted at the specified page of the
-// base PDF file.
+// Adds all the pages of the input PDF file to be inserted at the specified 
+// page of the base PDF file.
 insertPagesOperation.addPagesToInsertAt(3, secondFileToInsert);
 
 // Execute the operation and Save the result to the specified location.
 insertPagesOperation.execute(executionContext)
-    .then(result => result.saveAsFile('output/insertPagesOutput.pdf'))
+  .then(result => result.saveAsFile('output/insertPagesOutput.pdf'))
                 
                  {% endprism %}
             </coral-panel>   
@@ -912,24 +1001,34 @@ insertPagesOperation.execute(executionContext)
                  {% prism clike %}
 // Create an ExecutionContext using credentials.
 ExecutionContext executionContext = ExecutionContext.Create(credentials); 
+
 // Create a new operation instance
 InsertPagesOperation insertPagesOperation = InsertPagesOperation.CreateNew(); 
+
 // Set operation base input from a source file.
 FileRef baseSourceFile = FileRef.CreateFromLocalFile(@"baseInput.pdf");
 insertPagesOperation.SetBaseInput(baseSourceFile); 
+
 // Create a FileRef instance using a local file.
-FileRef firstFileToInsert = FileRef.CreateFromLocalFile(@"firstFileToInsertInput.pdf");
+FileRef firstFileToInsert = 
+  FileRef.CreateFromLocalFile(@"firstFileToInsertInput.pdf");
 PageRanges pageRanges = GetPageRangeForFirstFile();
-// Adds the pages (specified by the page ranges) of the input PDF file to be inserted at
-// the specified page of the base PDF file.
+
+// Adds the pages (specified by the page ranges) of the input PDF file to be 
+// inserted at the specified page of the base PDF file.
 insertPagesOperation.AddPagesToInsertAt(firstFileToInsert, pageRanges, 2); 
+
 // Create a FileRef instance using a local file.
-FileRef secondFileToInsert = FileRef.CreateFromLocalFile(@"secondFileToInsertInput.pdf"); 
-// Adds all the pages of the input PDF file to be inserted at the specified page of the
-// base PDF file.
+FileRef secondFileToInsert = 
+  FileRef.CreateFromLocalFile(@"secondFileToInsertInput.pdf"); 
+
+// Adds all the pages of the input PDF file to be inserted at the specified 
+// page of the base PDF file.
 insertPagesOperation.AddPagesToInsertAt(secondFileToInsert, 3); 
+
 // Execute the operation.
 FileRef result = insertPagesOperation.Execute(executionContext); 
+
 // Save the result to the specified location.
 result.SaveAs(Directory.GetCurrentDirectory() + "/output/insertPagesOutput.pdf");
                  
@@ -941,24 +1040,31 @@ result.SaveAs(Directory.GetCurrentDirectory() + "/output/insertPagesOutput.pdf")
 // Create an ExecutionContext using credentials and create a new operation instance.
 ExecutionContext executionContext = ExecutionContext.create(credentials);
 InsertPagesOperation insertPagesOperation = InsertPagesOperation.createNew();
+
 // Set operation base input from a source file.
 FileRef baseSourceFile = FileRef.createFromLocalFile("src/main/resources/baseInput.pdf");
 insertPagesOperation.setBaseInput(baseSourceFile);
+
 // Create a FileRef instance using a local file.
 FileRef firstFileToInsert =                      
-FileRef.createFromLocalFile("src/main/resources/firstFileToInsertInput.pdf");
+  FileRef.createFromLocalFile("src/main/resources/firstFileToInsertInput.pdf");
 PageRanges pageRanges = getPageRangeForFirstFile ();
-// Adds the pages (specified by the page ranges) of the input PDF file to be inserted at
-// the specified page of the base PDF file.
+
+// Adds the pages (specified by the page ranges) of the input PDF file to be 
+// inserted at the specified page of the base PDF file.
 insertPagesOperation.addPagesToInsertAt(firstFileToInsert, pageRanges, 2);
+
 // Create a FileRef instance using a local file.
 FileRef secondFileToInsert =   
 FileRef.createFromLocalFile("src/main/resources/secondFileToInsertInput.pdf");
-// Adds all the pages of the input PDF file to be inserted at the specified page of the
-// base PDF file.
+
+// Adds all the pages of the input PDF file to be inserted at the specified 
+// page of the base PDF file.
 insertPagesOperation.addPagesToInsertAt(secondFileToInsert, 3);
+
 // Execute the operation.
 FileRef result = insertPagesOperation.execute(executionContext);
+
 // Save the result to the specified location.
 result.saveAs("output/insertPagesOutput.pdf");
 
@@ -980,54 +1086,64 @@ result.saveAs("output/insertPagesOutput.pdf");
             <coral-tab>.Net</coral-tab>
             <coral-tab>Java</coral-tab>                     
          
-            <div class="tab-item-copy">Copy</div>
+            <!-- <div class="tab-item-copy">Copy</div> -->
             </coral-tablist>
             <coral-panelstack>
             <coral-panel>
                 {% prism js %}
 // Create an ExecutionContext using credentials
-const executionContext = PDFToolsSdk.ExecutionContext.create(credentials);
+const executionContext = PDFToolsSdk.ExecutionContext.create( credentials );             
 
 // Build ProtectPDF options by setting a User Password and Encryption
 // Algorithm (used for encrypting the PDF file).
 const protectPDF = PDFToolsSdk.ProtectPDF,
 options = new protectPDF.options.PasswordProtectOptions.Builder()
-                                .setUserPassword("encryptPassword")
-                                .setEncryptionAlgorithm(PDFToolsSdk.ProtectPDF.options.EncryptionAlgorithm.AES_256)
-                                    .build();
+  .setUserPassword( "encryptPassword" )
+  .setEncryptionAlgorithm(
+    PDFToolsSdk.ProtectPDF.options.EncryptionAlgorithm.AES_256 )
+  .build();
 
 // Create a new operation instance.
 const protectPDFOperation = protectPDF.Operation.createNew(options);
 
 // Set operation input from a source file.
-const input = PDFToolsSdk.FileRef.createFromLocalFile('resources/protectPDFInput.pdf');
+const input = 
+  PDFToolsSdk.FileRef.createFromLocalFile('resources/protectPDFInput.pdf');
 protectPDFOperation.setInput(input);
 
 // Execute the operation and Save the result to the specified location.
-protectPDFOperation.execute(executionContext)
-.then(result => result.saveAsFile('output/protectPDFOutput.pdf'))
-                
+protectPDFOperation
+  .execute(executionContext)
+  .then(result => result.saveAsFile('output/protectPDFOutput.pdf')); 
                  {% endprism %}
             </coral-panel>   
             <coral-panel>
                  {% prism clike %}
 // Create an ExecutionContext using credentials.
-ExecutionContext executionContext = ExecutionContext.Create(credentials);
+ExecutionContext executionContext = ExecutionContext.Create(credentials); 
+
 // Build ProtectPDF options by setting a User Password and Encryption
 // Algorithm (used for encrypting the PDF file).
-ProtectPDFOptions protectPDFOptions = ProtectPDFOptions.PasswordProtectOptionsBuilder()
-                        .SetUserPassword("encryptPassword")                       
-                        .SetEncryptionAlgorithm(EncryptionAlgorithm.AES_256)
-                        .Build();
+ProtectPDFOptions protectPDFOptions = ProtectPDFOptions
+  .PasswordProtectOptionsBuilder()
+  .SetUserPassword("encryptPassword")                       
+  .SetEncryptionAlgorithm(EncryptionAlgorithm.AES_256)
+  .Build();
+
 // Create a new operation instance
-ProtectPDFOperation protectPDFOperation = ProtectPDFOperation.CreateNew(protectPDFOptions);
+ProtectPDFOperation protectPDFOperation = 
+  ProtectPDFOperation.CreateNew(protectPDFOptions);
+
 // Set operation input from a source file.
 FileRef sourceFileRef = FileRef.CreateFromLocalFile(@"protectPDFInput.pdf");
 protectPDFOperation.SetInput(sourceFileRef);
+
 // Execute the operation.
 FileRef result = protectPDFOperation.Execute(executionContext);
+
 // Save the result to the specified location.
-result.SaveAs(Directory.GetCurrentDirectory() + "/output/protectPDFOutput.pdf");
+result.SaveAs(Directory.GetCurrentDirectory() + 
+  "/output/protectPDFOutput.pdf");
 
                  {% endprism %}
              </coral-panel>    
@@ -1039,13 +1155,15 @@ ExecutionContext executionContext = ExecutionContext.create(credentials);
 
 // Build ProtectPDF options by setting a User Password and Encryption
 // Algorithm (used for encrypting the PDF file).
-ProtectPDFOptions protectPDFOptions = ProtectPDFOptions.passwordProtectOptionsBuilder()
-                                .setUserPassword("encryptPassword")
-                                .setEncryptionAlgorithm(EncryptionAlgorithm.AES_256)
-                                .build();
+ProtectPDFOptions protectPDFOptions = ProtectPDFOptions
+  .passwordProtectOptionsBuilder()
+  .setUserPassword("encryptPassword")
+  .setEncryptionAlgorithm(EncryptionAlgorithm.AES_256)
+  .build();
 
 // Create a new operation instance.
-ProtectPDFOperation protectPDFOperation = ProtectPDFOperation.createNew(protectPDFOptions);
+ProtectPDFOperation protectPDFOperation = 
+  ProtectPDFOperation.createNew(protectPDFOptions);
 
 // Set operation input from a source file.
 FileRef source = FileRef.createFromLocalFile("src/main/resources/protectPDFInput.pdf");
@@ -1072,7 +1190,7 @@ result.saveAs("output/protectPDFOutput.pdf");
       <coral-tabview>
         <coral-tablist size="S">
           <coral-tab>HTML</coral-tab>
-          <div class="tab-item-copy">Copy</div>
+          <!-- <div class="tab-item-copy">Copy</div> -->
         </coral-tablist>
         <coral-panelstack>
           <coral-panel>
@@ -1081,16 +1199,17 @@ result.saveAs("output/protectPDFOutput.pdf");
 <div id="adobe-dc-view" style="height: 360px; width: 500px;"></div>
 <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
 <script type="text/javascript">
-document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
-var adobeDCView = new AdobeDC.View({clientId: "<YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
-adobeDCView.previewFile({
-    content:{location: {url: "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf"}},
-    metaData:{fileName: "Bodea Brochure.pdf"}
-},
-{
-    embedMode: "SIZED_CONTAINER"
-});
-});
+  document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
+    var adobeDCView = new AdobeDC.View({
+      clientId: "<YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
+    adobeDCView.previewFile({
+        content:{ location: { url: "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea%20Brochure.pdf"}},
+        metaData:{fileName: "Bodea Brochure.pdf"}
+    },
+    {
+        embedMode: "SIZED_CONTAINER"
+    });
+  });
 </script>
             {% endprism %}
                 </coral-panel>
@@ -1100,6 +1219,174 @@ adobeDCView.previewFile({
   </p>
 <!-- /Embed -->
 
+<!-- Annotations -->
+<p>
+  <div id="annotations-code" class="sdk-embed-wrapper tab-container-annotations spectrum spectrum--darkest">
+    <coral-tabview>
+      <coral-tablist size="S">
+        <coral-tab>HTML</coral-tab>
+      </coral-tablist>
+      <coral-panelstack>
+        <coral-panel>
+          {% prism html %}
+<script type="text/javascript">
+document.addEventListener("adobe_dc_view_sdk.ready", function(){
+var adobeDCView = new AdobeDC.View({clientId: "<YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
+adobeDCView.previewFile({
+content:   {location: {url: "(path to your PDF)/yourfilename.pdf"}},
+metaData: {fileName: "yourfilename.pdf"}
+},
+{showAnnotationTools: true});
+});
+</script>
+          {% endprism %}
+        </coral-panel>
+      </coral-panelstack>
+    </coral-tabview>
+  </div>
+</p>
+<!-- /Annotations -->
+
+<!-- Analytics -->
+<p>
+  <div id="analytics-code"  class="sdk-embed-wrapper tab-container-annotations spectrum spectrum--darkest">
+    <coral-tabview>
+      <coral-tablist size="S">
+        <coral-tab>HTML</coral-tab>
+      </coral-tablist>
+      <coral-panelstack>
+        <coral-panel>
+          {% prism html %}
+<script type="text/javascript">
+adobeDCView.registerCallback(
+/* Type of call back */
+AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
+/* call back function */
+function(event) {
+console.log(event);
+},
+{ enablePDFAnalytics: true }
+);
+</script>
+          {% endprism %}
+        </coral-panel>
+      </coral-panelstack>
+    </coral-tabview>
+  </div>
+</p>
+<!-- /Analytics -->
+
+<!-- Collaborative -->
+<p>
+  <div id = "collaborative-code" class="sdk-embed-wrapper tab-container-annotations spectrum spectrum--darkest">
+    <coral-tabview>
+      <coral-tablist size="S">
+        <coral-tab>HTML</coral-tab>
+      </coral-tablist>
+      <coral-panelstack>
+        <coral-panel>
+          {% prism html %}
+<script type="text/javascript">
+const profile = {
+userProfile: {
+name: '<name of user>',
+firstName: '<first name>',
+lastName: '<last name>',
+email: '<user email>'
+}
+};
+
+adobeDCView.registerCallback(
+AdobeDC.View.Enum.CallbackType.GET_USER_PROFILE_API,
+function() {
+return new Promise((resolve, reject) => {
+resolve({
+code: AdobeDC.View.Enum.ApiResponseCode.SUCCESS,
+data: profile
+});
+}); 
+}
+);
+</script>
+          {% endprism %}
+        </coral-panel>
+      </coral-panelstack>
+    </coral-tabview>
+  </div>
+</p>
+<!-- /Collaborative -->
+
+
+<!-- Save Controls-->
+<p>
+  <div id="Save-code" class="sdk-embed-wrapper tab-container-annotations spectrum spectrum--darkest">
+    <coral-tabview>
+      <coral-tablist size="S">
+        <coral-tab>HTML</coral-tab>
+      </coral-tablist>
+      <coral-panelstack>
+        <coral-panel>
+          {% prism html %}
+<script type="text/javascript">
+const saveOptions = {
+autoSaveFrequency: <Number, default=0>,
+enableFocusPolling: <Boolean, default=false>,
+showSaveButton: <Boolean, default=true>
+};
+
+adobeDCView.registerCallback(
+AdobeDC.View.Enum.CallbackType.SAVE_API,
+function(metadata, content, options) {...},
+saveOptions
+);
+</script>
+          {% endprism %}
+        </coral-panel>
+      </coral-panelstack>
+    </coral-tabview>
+  </div>
+</p>
+<!-- /Save COntrols-->
+
+<!-- Menu Tools Options -->
+<p>
+  <div id="tools" class="sdk-embed-wrapper tab-container-annotations spectrum spectrum--darkest">
+    <coral-tabview>
+      <coral-tablist size="S">
+        <coral-tab>HTML</coral-tab>
+      </coral-tablist>
+      <coral-panelstack>
+        <coral-panel>
+          {% prism html %}
+<script type="text/javascript">
+<div id="adobe-dc-view"></div>
+<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+<script type="text/javascript">
+document.addEventListener("adobe_dc_view_sdk.ready", function () {
+var adobeDCView = new AdobeDC.View({clientId: "<YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
+adobeDCView.previewFile({
+content:{location: {url: "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf"}},
+metaData:{fileName: "Bodea Brochure.pdf"}
+}, {"showLeftHandPanel":true, "showPageControls":false});
+});
+</script>
+</script>
+          {% endprism %}
+        </coral-panel>
+      </coral-panelstack>
+    </coral-tabview>
+  </div>
+</p>
+<!-- /Menu Tools Options -->
+
+<!--  -->
+<!--  -->
+
+<!--  -->
+<!--  -->
+
+<!--  -->
+<!--  -->
 
 
 

@@ -97,11 +97,13 @@
       text-transform: uppercase;
 
       &.allowHover:hover{
-        background: #E7E7E7;
+       // background: #E7E7E7;
       }
 
       &.active{
-        background: #E7E7E7;
+        @media screen and (min-width: 768px){
+         background: #E7E7E7;
+        }
       }
    
 
@@ -206,7 +208,9 @@
         }
         
         &.active{
+          @media screen and (min-width: 768px) {
           background: #E7E7E7;
+          }
         }
 
         .sub-nav-menu-label {

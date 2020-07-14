@@ -1,41 +1,17 @@
 ---
 layout: default
-title: DC Platform Tools SDK
+title: PDF Embed API | Embed PDF in HTML | Adobe Document Services
+meta: Adobe PDF Embed API is a JavaScript library that allows you to quickly and easily embed PDFs in web applications with only a few lines of code. Learn more now.
 active: embed-sdk
 ---
 
-<!-- Temp test of Coral Spectrum -->
-<style>
-  .sdk-embed-wrapper {
-    background: var( --spectrum-global-color-gray-300 ); /* --spectrum-alias-background-color-default */
-    border-radius: 4px;
-  }
-  .sdk-embed-wrapper coral-tablist {
-    border-color: transparent;
-  }
-  .tab-item-copy {
-    color: var( --spectrum-alias-title-text-color );
-    margin-left: auto !important;
-  }
-  ._coral-Tabs-itemLabel {
-    color: var( --spectrum-alias-title-text-color );
-  }
-  
-  ._coral-Tabs-selectionIndicator {
-    background-color: var( --spectrum-global-color-blue-700 ); /*  */
-  }
-  code[class*="language-"], 
-  pre[class*="language-"] {
-    white-space: pre-wrap;
-  }
-</style>
 
 <div class="main secondary-page">
 
   <div class="gradient">
     <section class="header">
       <h1>Use our free JavaScript API to embed high-fidelity PDFs</h1>
-      <h2>control appearance, enable collaboration, and see analytics <span class="xl-only"><a title="Try the demo" alt="Try the demo" id="try_demo" href="#" class="button-link">Try the demo</a></span></h2>
+      <h2>Control appearance, enable collaboration, and see analytics <span class="xl-only"><a title="Try the demo" alt="Try the demo" id="try_demo" href="#" class="button-link">Try the demo</a></span></h2>
       <span class="mobile-only"><a title="Try the demo" alt="Try the demo" id="try_demo" href="#" class="button-link">Try the demo</a></span>
     </section>
 
@@ -69,7 +45,7 @@ active: embed-sdk
     <div class="work-flow-container">
       <div class="work-flow_menu">
         <ul>
-          <li class="dctsdk active">
+          <li id="embed" class="dctsdk active">
             <div class="work-flow-menu-item open">
               <div class="chev-arrow-right"></div>
               <div class="shadow-box dctsdk">
@@ -82,51 +58,10 @@ active: embed-sdk
               <h4>Embed Modes</h4>
               <p class="work-flow-menu-support-copy">Control how you embed PDFs, with support for full-sized windows, sized containers, in-line display, and lightboxes</p>
               <a href="https://www.adobe.com/devnet-docs/dcsdk_io/viewSDK/howtos.html#embed-modes" class="button-link">See documentation</a>
-
-              <!-- Code Viewer -->
-              <p>
-                <div class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
-                  <coral-tabview>
-                    <coral-tablist size="S">
-                      <coral-tab>HTML</coral-tab>
-                      <!-- This page doesn't actually have the tabs for languages. 
-                      <coral-tab class="is-selected">Node.js</coral-tab>
-                      <coral-tab>.Net</coral-tab>
-                      <coral-tab>Java</coral-tab>
-                      -->
-                      <div class="tab-item-copy">Copy</div>
-                    </coral-tablist>
-                    <coral-panelstack>
-                      <coral-panel>
-                        <!--  The code snippets MUST be to the left as all whitespace is preserved. 
-                              Indents in the code samples should be tabs, not spaces. -->
-                        {% prism html %}
-<div id="adobe-dc-view" style="height: 360px; width: 500px;"></div>
-<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-<script type="text/javascript">
-document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
-var adobeDCView = new AdobeDC.View({clientId: "<YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
-adobeDCView.previewFile({
-  content:{location: {url: "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf"}},
-  metaData:{fileName: "Bodea Brochure.pdf"}
-},
-{
-  embedMode: "SIZED_CONTAINER"
-});
-});
-</script>
-                        {% endprism %}
-                            </coral-panel>
-                    </coral-panelstack>
-                  </coral-tabview>
-                </div>
-              </p>
-              <!-- /Code Viewer -->
-
             </div>
           </li>
 
-          <li class="dctsdk">
+          <li id="annotations" class="dctsdk">
             <div class="work-flow-menu-item">
               <div class="chev-arrow-right"></div>
               <div class="shadow-box dctsdk">
@@ -143,49 +78,10 @@ adobeDCView.previewFile({
               </p>
               <a href="https://www.adobe.com/devnet-docs/dcsdk_io/viewSDK/howtos_comments.html#" class="button-link">See documentation</a>
 
-              <!-- Code Viewer -->
-              <p>
-                <div class="sdk-embed-wrapper tab-container-annotations spectrum spectrum--darkest">
-                  <coral-tabview>
-                    <coral-tablist size="S">
-                      <coral-tab>HTML</coral-tab>
-                      <!-- This page doesn't actually have the tabs for languages. 
-                      <coral-tab class="is-selected">Node.js</coral-tab>
-                      <coral-tab>.Net</coral-tab>
-                      <coral-tab>Java</coral-tab>
-                      -->
-                      <div class="tab-item-copy">Copy</div>
-                    </coral-tablist>
-                    <coral-panelstack>
-                      <coral-panel>
-                        <!--  The code snippets MUST be to the left as all whitespace is preserved. 
-                              Indents in the code samples should be tabs, not spaces. -->
-                        {% prism html %}
-<script type="text/javascript">
-document.addEventListener("adobe_dc_view_sdk.ready", function()
-{
-  var adobeDCView = new AdobeDC.View({clientId: "<YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
-  adobeDCView.previewFile(
-{
-    content:   {location: {url: "(path to your PDF)/yourfilename.pdf"}},
-    metaData: {fileName: "yourfilename.pdf"}
-},
-{showAnnotationTools: true});
-});
-
-</script>
-                        {% endprism %}
-                      </coral-panel>
-                    </coral-panelstack>
-                  </coral-tabview>
-                </div>
-              </p>
-              <!-- /Code Viewer -->
-
             </div>
           </li>
 
-          <li class="dctsdk">
+          <li id="analytics" class="dctsdk">
             <div class="work-flow-menu-item">
               <div class="chev-arrow-right"></div>
               <div class="shadow-box dctsdk">
@@ -194,49 +90,14 @@ document.addEventListener("adobe_dc_view_sdk.ready", function()
               </div>
             </div>
             <!-- Shared with code area -->
-            <div id="OCR" class="work-flow-menu-support work-flow-support-mode-mobile">
+            <div class="work-flow-menu-support work-flow-support-mode-mobile">
               <h4>PDF Analytics</h4>
               <p class="work-flow-menu-support-copy">Easily integrate Adobe Analytics with only a few steps, or leverage the user events to push data to other analytics tools</p>
               <a href="https://www.adobe.com/devnet-docs/dcsdk_io/viewSDK/howtodata.html#" class="button-link">See documentation</a>
-
-               <!-- Code Viewer -->
-               <p>
-                <div class="sdk-embed-wrapper tab-container-annotations spectrum spectrum--darkest">
-                  <coral-tabview>
-                    <coral-tablist size="S">
-                      <coral-tab>HTML</coral-tab>
-                      <div class="tab-item-copy">Copy</div>
-                    </coral-tablist>
-                    <coral-panelstack>
-                      <coral-panel>
-                        <!--  The code snippets MUST be to the left as all whitespace is preserved. 
-                              Indents in the code samples should be tabs, not spaces. -->
-                        {% prism html %}
-<script type="text/javascript">
-  adobeDCView.registerCallback(
-/* Type of call back */
-AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
-/* call back function */
-function(event) {
-console.log(event);
-},
-{
-enablePDFAnalytics: true,
-}
-);
-
-</script>
-                        {% endprism %}
-                      </coral-panel>
-                    </coral-panelstack>
-                  </coral-tabview>
-                </div>
-              </p>
-              <!-- /Code Viewer -->
             </div>
           </li>
 
-          <li class="dctsdk">
+          <li id="collaborative" class="dctsdk">
             <div class="work-flow-menu-item">
               <div class="chev-arrow-right"></div>
               <div class="shadow-box dctsdk">
@@ -245,62 +106,14 @@ enablePDFAnalytics: true,
               </div>
             </div>
             <!-- Shared with code area -->
-            <div id="OCR" class="work-flow-menu-support work-flow-support-mode-mobile">
+            <div class="work-flow-menu-support work-flow-support-mode-mobile">
               <h4>Collaborative Settings</h4>
               <p class="work-flow-menu-support-copy">For multi-user document collaboration, identify reviewers by name or email address and save annotation settings through custom callbacks (default settings display GUEST as the reviewer name for all comments)</p>
               <a href="https://www.adobe.com/devnet-docs/dcsdk_io/viewSDK/howtos_ui.html#user-profiles" class="button-link">See documentation</a>
-
-               <!-- Code Viewer -->
-               <p>
-                <div class="sdk-embed-wrapper tab-container-annotations spectrum spectrum--darkest">
-                  <coral-tabview>
-                    <coral-tablist size="S">
-                      <coral-tab>HTML</coral-tab>
-                      <!-- This page doesn't actually have the tabs for languages. 
-                      <coral-tab class="is-selected">Node.js</coral-tab>
-                      <coral-tab>.Net</coral-tab>
-                      <coral-tab>Java</coral-tab>
-                      -->
-                      <div class="tab-item-copy">Copy</div>
-                    </coral-tablist>
-                    <coral-panelstack>
-                      <coral-panel>
-                        <!--  The code snippets MUST be to the left as all whitespace is preserved. 
-                              Indents in the code samples should be tabs, not spaces. -->
-                        {% prism html %}
-<script type="text/javascript">
-    const profile = {
-      userProfile: {
-          name: '<name of user>',
-          firstName: '<first name>',
-          lastName: '<last name>',
-          email: '<user email>'
-      }
-    };
-
-  adobeDCView.registerCallback(
-    AdobeDC.View.Enum.CallbackType.GET_USER_PROFILE_API,
-    function() {
-      return new Promise((resolve, reject) => {
-          resolve({
-            code: AdobeDC.View.Enum.ApiResponseCode.SUCCESS,
-            data: profile
-          });
-      }); 
-    }
-  );
-</script>
-                        {% endprism %}
-                      </coral-panel>
-                    </coral-panelstack>
-                  </coral-tabview>
-                </div>
-              </p>
-              <!-- /Code Viewer -->
             </div>
           </li>
 
-          <li class="dctsdk">
+          <li id="Save" class="dctsdk">
             <div class="work-flow-menu-item">
               <div class="chev-arrow-right"></div>
               <div class="shadow-box dctsdk">
@@ -309,55 +122,15 @@ enablePDFAnalytics: true,
               </div>
             </div>
             <!-- Shared with code area -->
-            <div id="OCR" class="work-flow-menu-support work-flow-support-mode-mobile">
+            <div class="work-flow-menu-support work-flow-support-mode-mobile">
               <h4>Save Controls</h4>
               <p class="work-flow-menu-support-copy">Support auto-save to local drives or external storage, with options for frequency and polling, along with success/fail events capture; use file modification and status polling events for multi-user workflows</p>
               <a href="https://www.adobe.com/devnet-docs/dcsdk_io/viewSDK/howtos_ui.html#save-a-pdf" class="button-link">See documentation</a>
 
-               <!-- Code Viewer -->
-               <p>
-                <div class="sdk-embed-wrapper tab-container-annotations spectrum spectrum--darkest">
-                  <coral-tabview>
-                    <coral-tablist size="S">
-                      <coral-tab>HTML</coral-tab>
-                      <!-- This page doesn't actually have the tabs for languages. 
-                      <coral-tab class="is-selected">Node.js</coral-tab>
-                      <coral-tab>.Net</coral-tab>
-                      <coral-tab>Java</coral-tab>
-                      -->
-                      <div class="tab-item-copy">Copy</div>
-                    </coral-tablist>
-                    <coral-panelstack>
-                      <coral-panel>
-                        <!--  The code snippets MUST be to the left as all whitespace is preserved. 
-                              Indents in the code samples should be tabs, not spaces. -->
-                        {% prism html %}
-<script type="text/javascript">
-  const saveOptions = {
-        autoSaveFrequency: <Number, default=0>,
-        enableFocusPolling: <Boolean, default=false>,
-        showSaveButton: <Boolean, default=true>
-}
-
-adobeDCView.registerCallback(
-        AdobeDC.View.Enum.CallbackType.SAVE_API,
-        function(metadata, content, options) {...},
-        saveOptions
-
-);
-
-</script>
-                        {% endprism %}
-                      </coral-panel>
-                    </coral-panelstack>
-                  </coral-tabview>
-                </div>
-              </p>
-              <!-- /Code Viewer -->
             </div>
           </li>
 
-          <li class="dctsdk">
+          <li id="tools" class="dctsdk">
             <div class="work-flow-menu-item">
               <div class="chev-arrow-right"></div>
               <div class="shadow-box dctsdk">
@@ -367,52 +140,12 @@ adobeDCView.registerCallback(
             </div>
 
             <!-- Shared with code area -->
-            <div id="OCR" class="work-flow-menu-support work-flow-support-mode-mobile">
+            <div class="work-flow-menu-support work-flow-support-mode-mobile">
               <h4>Menu &amp; Tool Options</h4>
               <p class="work-flow-menu-support-copy">Programmatically enable or disable the left-hand panel, comments pane, toolbars, print, and download options</p>
               <a href="https://www.adobe.com/devnet-docs/dcsdk_io/viewSDK/howtos_ui.html#menu-and-tool-options" class="button-link">See Documentation</a>
 
-               <!-- Code Viewer -->
-               <p>
-                <div class="sdk-embed-wrapper tab-container-annotations spectrum spectrum--darkest">
-                  <coral-tabview>
-                    <coral-tablist size="S">
-                      <coral-tab>HTML</coral-tab>
-                      <!-- This page doesn't actually have the tabs for languages. 
-                      <coral-tab class="is-selected">Node.js</coral-tab>
-                      <coral-tab>.Net</coral-tab>
-                      <coral-tab>Java</coral-tab>
-                      -->
-                      <div class="tab-item-copy">Copy</div>
-                    </coral-tablist>
-                    <coral-panelstack>
-                      <coral-panel>
-                        <!--  The code snippets MUST be to the left as all whitespace is preserved. 
-                              Indents in the code samples should be tabs, not spaces. -->
-                        {% prism html %}
-<script type="text/javascript">
-<div id="adobe-dc-view"></div>
-<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-<script type="text/javascript">
-document.addEventListener("adobe_dc_view_sdk.ready", function () {
-  var adobeDCView = new AdobeDC.View({clientId: "<YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
-  adobeDCView.previewFile({
-    content:{location: {url: "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf"}},
-    metaData:{fileName: "Bodea Brochure.pdf"}
-  }, {"showLeftHandPanel":true,"showPageControls":false});
-});
-</script>
-
-
-</script>
-                        {% endprism %}
-                      </coral-panel>
-                    </coral-panelstack>
-                  </coral-tabview>
-                </div>
-              </p>
-              <!-- /Code Viewer -->
-            </div>
+           </div>
           </li>
         </ul>
       </div>
@@ -422,43 +155,16 @@ document.addEventListener("adobe_dc_view_sdk.ready", function () {
             <div class="work-flow-menu-support">
               <h4>Embed Modes</h4>
               <p class="work-flow-menu-support-copy">Embed Modes, including static and dynamic HTML; Microsoft Word, PowerPoint, and Excel; as well as text, image, and, Zip</p>
-              <a href="#" class="button-link">See Documentation</a>
-
-              <p>
-                <div class="sdk-embed-wrapper spectrum spectrum--darkest">
-                  <coral-tabview>
-                    <coral-tablist size="S">
-                      <coral-tab>HTML</coral-tab>
-                      <div class="tab-item-copy">Copy</div>
-                    </coral-tablist>
-                    <coral-panelstack>
-                      <coral-panel> 
-                      <!--  The code snippets MUST be to the left as all whitespace is preserved. 
-                            Indents in the code samples should be tabs, not spaces. -->
-                       {% prism html %}
-                      <div id="adobe-dc-view" style="height: 360px; width: 500px;"></div>
-                      <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-                      <script type="text/javascript">
-                        document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
-                          var adobeDCView = new AdobeDC.View({clientId: "<YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
-                          adobeDCView.previewFile({
-                            content:{location: {url: "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf"}},
-                            metaData:{fileName: "Bodea Brochure.pdf"}
-                          },
-                          {
-                            embedMode: "SIZED_CONTAINER"
-                          });
-                        });
-                      </script>
-                      {% endprism %}                  
-                      </coral-panel>
-                    </coral-panelstack>
-                  </coral-tabview>
-              </p>
+              <a href="#" class="button-link">See Documentation</a>              
             </div> 
-          </div> 
-          
 
+            <div class="code-viewer-wrapper">
+              <!-- Code Viewer -->
+              {% include code-sample.html %}
+              <!-- /Code Viewer -->
+          </div>
+
+          </div> 
         </div>
     </div>
   </section>
@@ -491,7 +197,7 @@ document.addEventListener("adobe_dc_view_sdk.ready", function () {
       <li>
         <div>
           <p>
-            Add credentials to your code and run
+            Add credentials to your code and run!
           </p>
           <p>
             <a title="See documentation" alt="See documentation" href="#" class="button-link">See Documentation</a>
@@ -514,7 +220,7 @@ document.addEventListener("adobe_dc_view_sdk.ready", function () {
     <div>
       <span class="card-icon"><img src="assets/img/adobe-analytics@2x.png"></span>
       <h4>Adobe Analytics</h4>
-      <p>Out of the box Adobe Analytics integration allows customers to seamlessly enable rich analytics and gain insights on end user experience or extend additional functionality based on user interactions.</p>
+      <p>Out of the box Adobe Analytics integration allows customers to seamlessly enable rich analytics and gain insights on end user experience. Extend functionality with chatbots or calls to action based on user interactions.</p>
       <p class="callout-item"><a href="#">Learn more</a></p>
     </div>
   </section>
@@ -531,17 +237,17 @@ document.addEventListener("adobe_dc_view_sdk.ready", function () {
         <li>Enable real-time team collaboration using comments, highlighting, and drawing tools</li>
         <li>Analyze usage statistics to gain insights into document consumption and interaction patterns</li>
       </ul>
-      <h5>Common use cases: Insurance workflows, publishing applications</h5>
+      <h5>Common use cases: Insurance workflows, publishing applications, marketing asset approvals</h5>
     </div>
 
     <div>
-      <h4>Reporting</h4>
-      <h5>Use PDF Embed API to generate custom reports:</h5>
+      <h4>Document Viewing</h4>
+      <h5>Use PDF Embed API for a rich end user document viewing experience:</h5>
       <ul>
-        <li>Provide consistent, embedded PDF viewing with analytics</li>
-        <li>Integrate callbacks to provide event driven chats with helpful tips, information links, and context specific details</li>
+        <li>Provide consistent, embedded PDF viewing with analytics for custom reports, documents of record, and forms</li>
+        <li>Integrate callbacks to provide event driven chats with helpful tips, information links, and context-specific details</li>
       </ul>
-      <h5>Common use cases: Financial reports, real estate transactions</h5>
+      <h5>Common use cases: Financial reports, real estate and legal transactions</h5>
     </div>
 
     <p>Learn about our <a href="#" class="section-links">PDF Tools API</a> for programmatic document manipulation</p>

@@ -2,7 +2,8 @@
 <html class="spectrum--medium">
   <head>
     <title>SDK Developers Kit | {{ page.title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="{{page.meta}}"/>
     <head>
       <meta charset="UTF-8">
       <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-global.css">
@@ -43,8 +44,6 @@
     <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" defer="defer" src="js/slick/slick.min.js"></script>
 
-    <script type="text/javascript" defer="defer" src="js/work-flow-nav.js"></script>
-    <!-- <script type="text/javascript" defer="defer" src="js/dctsdk-slider.js"></script> -->
 
      <script type="text/javascript">
 
@@ -60,7 +59,7 @@
             // variableHeight: true,
             responsive: [
               {
-                breakpoint: 1440,
+                breakpoint: 1439,
                 settings: {
                   slidesToShow: 4,
                   slidesToScroll: 1,
@@ -68,7 +67,7 @@
                 }
               },
               {
-                breakpoint: 768,
+                breakpoint: 767,
                 settings: {
                   slidesToShow: 3,
                   slidesToScroll: 1,
@@ -104,7 +103,7 @@
             // variableHeight: true,
             responsive: [
               {
-                breakpoint: 1440,
+                breakpoint: 1439,
                 settings: {
                   slidesToShow: 1,
                   slidesToScroll: 1,
@@ -112,7 +111,7 @@
                 }
               },
               {
-                breakpoint: 768,
+                breakpoint: 767,
                 settings: {
                   slidesToShow: 1,
                   slidesToScroll: 1,
@@ -135,7 +134,7 @@
           $('.card-slider-container').slick({
             dots: false,
             mobileFirst : true,
-            infinite: false,
+            infinite: true,
             autoplay: true,
             speed: 300,
             slidesToShow: 3,
@@ -144,7 +143,7 @@
             // variableHeight: true,
             responsive: [
               {
-                breakpoint: 1440,
+                breakpoint: 1439,
                 settings: {
                   slidesToShow: 3,
                   slidesToScroll: 1,
@@ -152,7 +151,7 @@
                 }
               },
               {
-                breakpoint: 768,
+                breakpoint: 767,
                 settings: {
                   slidesToShow: 1,
                   slidesToScroll: 1,
@@ -183,6 +182,10 @@
 
   </script>
 
-  <script src="js/prism.js"></script>
+
+  <script type="text/javascript" src="js/prism.js"></script>
+  <script type="text/javascript" src="js/prism-toolbar.min.js"></script>
+<script type="text/javascript" src="js/prism-copy-to-clipboard.min.js"></script>
+  <script type="text/javascript" defer="defer" src="js/work-flow-nav.js"></script>
   </body>
 </html>

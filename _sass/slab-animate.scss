@@ -47,8 +47,11 @@
           background: url("../assets/img/slab-animate/background_circuit_2x_mobile.png");   
           background-repeat: no-repeat;
           background-position: center center ;
-          background-size: 435px 200px;   
-        }      
+          //background-size: 435px 200px;  
+          background-size: 415px 200px;
+        }   
+        
+        //Need to handle landscape for small devices here
 
       }
 
