@@ -36,20 +36,37 @@
       z-index:1;
 
       .animate-bkg{
-        height:inherit;
-        background: url("../assets/img/slab-animate/background_circuit_2x.png");
-        background-repeat: no-repeat;
-        background-position: center top;
-        background-size: contain;
 
-       @media screen and (max-width: 640px) {
-         /* Mobile */
-          background: url("../assets/img/slab-animate/background_circuit_2x_mobile.png");   
+        height:inherit;        
+        background: url("../assets/img/slab-animate/background_circuit_2x_mobile.png"); 
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 415px 200px;
+
+        @media screen and (min-width: 768px) {
+          background: url("../assets/img/slab-animate/background_circuit_2x.png");
           background-repeat: no-repeat;
-          background-position: center center ;
+          background-position: center top;
+          background-size: contain;
+        }
+
+        //iphone 11
+        @media only screen and (min-width: 414px) and (max-width: 767px) { /* Your Styles... */
+         /* Mobile */
+        //  background: url("../assets/img/slab-animate/background_circuit_2x_mobile.png");   
+        //  background-repeat: no-repeat;
+            background-position: center center ;
+            background-size: 465px 200px;
+        }
+
+      // @media screen and (max-width: 640px) {
+         /* Mobile */
+          // background: url("../assets/img/slab-animate/background_circuit_2x_mobile.png");   
+          // background-repeat: no-repeat;
+          // background-position: center center ;
           //background-size: 435px 200px;  
-          background-size: 415px 200px;
-        }   
+         // background-size: 415px 200px;
+       // }   
         
         //Need to handle landscape for small devices here
 

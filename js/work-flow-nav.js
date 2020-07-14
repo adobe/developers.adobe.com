@@ -71,7 +71,6 @@ $(document).ready(function(){
     // create clipboard for every copy element
     const clipboardJS = new clipboardJS('.copy', {
         target: (trigger) => {
-            console.log("I made it here");
             return trigger.nextElementSibling;
         }
     });
