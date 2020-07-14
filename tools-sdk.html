@@ -1,0 +1,364 @@
+---
+layout: default
+title: DC Platform Tools SDK
+meta: 
+active: tools-sdk
+---
+
+<div class="main secondary-page">
+
+  <div class="gradient">
+    <section class="header">
+      <h1>Use our PDF Tools API for creating, combining,<br>exporting PDFs and more</h1>
+      <h2>With SDKs for popular languages such as Node.js, Java, and .NET</h2>
+    </section>
+
+    <section class="home-card card-slider-container">
+      <div class="card blanche">
+        <div class="card-icon"><img src="assets/svg/create_secure_support.svg" alt="Converting a word document into a secure pdf"></div>
+        <h2>Create, secure, and export PDF documents</h2>
+        <p>Create a PDF from Microsoft Office documents, protect the content, and export to other formats</p>
+      </div>
+
+      <div class="card blanche">
+        <div class="card-icon"><img src="assets/svg/modify_pages.svg" alt="PDF APIs converting and optimizing pdfs"></div>
+        <h2>Modify PDFs and optimize output</h2>
+        <p>Programmatically alter a document, such as reordering, inserting, and rotating pages, as well as compressing the file</p>
+      </div>
+
+      <div class="card blanche">
+        <div class="card-icon"><img src="assets/svg/cloud_services.svg" alt="Cloud-based API"></div>
+        <h2>Leverage Adobe's cloud-based services</h2>
+        <p>Access the same cloud-based APIs that power Adobe's end user applications to quickly deliver scalable, secure solutions</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- work-flow-->
+  <section class="dctsdk-work-flow">
+    <h3>Key Features of Our PDF Tools API</h3>
+    <div class="work-flow-container">
+      <div class="work-flow_menu">
+        <ul>
+          <!-- Create -->
+          <li  id="create" class="dctsdk active">
+            <div class="work-flow-menu-item open">
+              <div class="chev-arrow-right"></div>
+              <div class="shadow-box dctsdk">
+                <div class="work-flow-icon icon-align dctsdk create" title="Create PDF from Word doc"></div>
+                <div class="work-flow-menu-copy">Create</div>
+              </div>
+            </div>
+            <!-- Shared with code area -->
+            <div class="work-flow-menu-support work-flow-support-mode-mobile open">
+              <h4>Create a PDF File</h4>
+              <p class="work-flow-menu-support-copy">Create PDFs from a variety of formats, including static and dynamic HTML; Microsoft Word, PowerPoint, and Excel; as well as text, image, and, Zip</p>
+              <a href="https://www.adobe.com/devnet-docs/dcsdk_io/servicesSDK/howtos.html#create-a-pdf-from-static-html" class="button-link">See Documentation</a>
+            </div>
+          </li>
+
+          <!-- Export -->
+          <li id="export" class="dctsdk">
+            <div class="work-flow-menu-item">
+              <div class="chev-arrow-right"></div>
+              <div class="shadow-box dctsdk">
+                <div class="work-flow-icon icon-align dctsdk export" title="Export"></div>
+                <div class="work-flow-menu-copy">Export</div>
+              </div>
+            </div>
+            <!-- Shared with code area -->
+            <div class="work-flow-menu-support work-flow-support-mode-mobile">
+              <h4>Export</h4>
+              <p class="work-flow-menu-support-copy">Convert existing PDFs to popular formats, such as Microsoft Word, Excel, and PowerPoint, as well as text and image</p>
+              <a href="https://www.adobe.com/devnet-docs/dcsdk_io/servicesSDK/howtos.html#export-a-pdf" target="_blank" class="button-link">See Documentation</a>
+            </div>
+          </li>
+
+          <!-- OCR / Recognize -->
+          <li id="ocr" class="dctsdk">
+            <div class="work-flow-menu-item">
+              <div class="chev-arrow-right"></div>
+              <div class="shadow-box dctsdk">
+                <div class="work-flow-icon icon-align dctsdk recognize" title="Recognize Text"></div>
+                <div class="work-flow-menu-copy">OCR</div>
+              </div>
+            </div>
+
+            <!-- Shared with code area -->
+            <div class="work-flow-menu-support work-flow-support-mode-mobile">
+              <h4>OCR</h4>
+              <p class="work-flow-menu-support-copy">
+                Use built-in optical character recognition (OCR) to convert images to text and enable document searching</p>
+              <a href="https://www.adobe.com/devnet-docs/dcsdk_io/servicesSDK/howtos.html#text-recognition-ocr" target="_blank" class="button-link">See Documentation</a>
+            </div>
+          </li>
+
+          <!-- Protect -->
+          <li id="protect" class="dctsdk">
+            <div class="work-flow-menu-item">
+              <div class="chev-arrow-right"></div>
+              <div class="shadow-box dctsdk">
+                <div class="work-flow-icon icon-align dctsdk protect" title="Protect PDF"></div>
+                <div class="work-flow-menu-copy">Protect</div>
+              </div>
+            </div>
+
+            <!-- Shared with code area -->
+            <div class="work-flow-menu-support work-flow-support-mode-mobile">
+              <h4>Protect</h4>
+              <p class="work-flow-menu-support-copy">Set and enforce passwords for opening and viewing PDFs</p>
+              <a href="#" class="button-link">See Documentation</a>
+             
+            </div>
+          </li>
+
+          <!-- Combine *new* -->
+          <li id="combine" class="dctsdk">
+            <div class="work-flow-menu-item">
+              <div class="chev-arrow-right"></div>
+              <div class="shadow-box dctsdk">
+                <div class="work-flow-icon icon-align dctsdk combine" title="Combine"></div>
+                <div class="work-flow-menu-copy">Combine</div>
+              </div>
+            </div>
+
+            <!-- Shared with code area -->
+            <div class="work-flow-menu-support work-flow-support-mode-mobile">
+              <h4>Combine</h4>
+              <p class="work-flow-menu-support-copy">Combine two or more documents into a single PDF</p>
+              <a href="https://www.adobe.com/devnet-docs/dcsdk_io/servicesSDK/howtos.html#combine-files" target="_blank" class="button-link">See Documentation</a>
+              
+            </div>
+          </li>
+
+          <!-- Compress *new* -->
+          <li id="compress" class="dctsdk">
+            <div class="work-flow-menu-item">
+              <div class="chev-arrow-right"></div>
+              <div class="shadow-box dctsdk">
+                <div class="work-flow-icon icon-align dctsdk compress" title="Compress"></div>
+                <div class="work-flow-menu-copy">Compress</div>
+              </div>
+            </div>
+
+            <!-- Shared with code area -->
+            <div class="work-flow-menu-support work-flow-support-mode-mobile">
+              <h4>Compress</h4>
+              <p class="work-flow-menu-support-copy">Reduce the size of PDFs while determining the quality of images and graphics </p>
+              <a href="#" class="button-link">See sample code</a>
+             
+            </div>
+          </li>
+
+          <!-- Reorder -->
+          <li id="reorder" class="dctsdk">
+            <div class="work-flow-menu-item">
+              <div class="chev-arrow-right"></div>
+              <div class="shadow-box dctsdk">
+                <div class="work-flow-icon icon-align dctsdk reorder" title="Reorder Pages"></div>
+                <div class="work-flow-menu-copy">Reorder</div>
+              </div>
+            </div>
+
+            <!-- Shared with code area -->
+            <div class="work-flow-menu-support work-flow-support-mode-mobile">
+              <h4>Reorder</h4>
+              <p class="work-flow-menu-support-copy">Reorder the pages of an existing document</p>
+              <a href="#" class="button-link">See Documentation</a>
+          
+            </div>
+          </li>
+
+          <!-- Linearize -->
+          <li id="linearize" class="dctsdk">
+            <div class="work-flow-menu-item">
+              <div class="chev-arrow-right"></div>
+              <div class="shadow-box dctsdk">
+                <div class="work-flow-icon icon-align dctsdk linearize" title="Linearize PDF"></div>
+                <div class="work-flow-menu-copy">Linearize</div>
+              </div>
+            </div>
+
+            <!-- Shared with code area -->
+            <div class="work-flow-menu-support work-flow-support-mode-mobile">
+              <h4>Linearize</h4>
+              <p class="work-flow-menu-support-copy">Optimize PDFs for quick viewing on the web, especially for mobile clients</p>
+              <a href="#" class="button-link">See Documentation</a>
+           
+            </div>
+          </li>
+
+          <!-- Insert -->
+          <li id="insert" class="dctsdk">
+            <div class="work-flow-menu-item">
+              <div class="chev-arrow-right"></div>
+              <div class="shadow-box dctsdk">
+                <div class="work-flow-icon icon-align dctsdk insert" title="Insert"></div>
+                <div class="work-flow-menu-copy">Insert</div>
+              </div>
+            </div>
+
+            <!-- Shared with code area -->
+            <div class="work-flow-menu-support work-flow-support-mode-mobile">
+              <h4>Insert</h4>
+              <p class="work-flow-menu-support-copy">Insert one or more pages into an existing document</p>
+              <a href="#" class="button-link">See Documentation</a>
+            
+             
+            </div>
+          </li>
+
+          <!-- Replace -->
+          <li id="replace" class="dctsdk">
+            <div class="work-flow-menu-item">
+              <div class="chev-arrow-right"></div>
+              <div class="shadow-box dctsdk">
+                <div class="work-flow-icon icon-align dctsdk replace" title="Replace"></div>
+                <div class="work-flow-menu-copy">Replace</div>
+              </div>
+            </div>
+
+            <!-- Shared with code area -->
+            <div class="work-flow-menu-support work-flow-support-mode-mobile">
+              <h4>Replace</h4>
+              <p class="work-flow-menu-support-copy">Replace one or more pages with another page</p>
+              <a href="#" class="button-link">See Documentation</a>
+           
+            </div>
+          </li>
+
+          <!-- Delete -->
+          <li id="delete" class="dctsdk">
+            <div class="work-flow-menu-item">
+              <div class="chev-arrow-right"></div>
+              <div class="shadow-box dctsdk">
+                <div class="work-flow-icon icon-align dctsdk delete" title="Delete"></div>
+                <div class="work-flow-menu-copy">Delete</div>
+              </div>
+            </div>
+
+            <!-- Shared with code area -->
+            <div class="work-flow-menu-support work-flow-support-mode-mobile">
+              <h4>Delete</h4>
+              <p class="work-flow-menu-support-copy">Delete one or more pages from a document</p>
+              <a href="#" class="button-link">See Documentation</a>
+           
+            </div>
+          </li>
+
+          <!-- Rotate -->
+          <li id="rotate" class="dctsdk">
+            <div class="work-flow-menu-item">
+              <div class="chev-arrow-right"></div>
+              <div class="shadow-box dctsdk">
+                <div class="work-flow-icon icon-align dctsdk rotate" title="Rotate"></div>
+                <div class="work-flow-menu-copy">Rotate</div>
+              </div>
+            </div>
+
+            <!-- Shared with code area -->
+            <div class="work-flow-menu-support work-flow-support-mode-mobile">
+              <h4>Rotate</h4>
+              <p class="work-flow-menu-support-copy">Rotate a page in an existing document</p>
+              <a href="#" class="button-link">See Documentation</a>
+   
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="work-flow_code">
+        <div id="sdk-support" class="menu-item-info-content">
+            <div class="work-flow-menu-support">
+              <h4>Create a PDF File</h4>
+              <p class="work-flow-menu-support-copy">Create PDFs from a variety of formats, including static and dynamic HTML; Microsoft Word, PowerPoint, and Excel; as well as text, image, and, Zip</p>
+              <a href="https://www.adobe.com/devnet-docs/dcsdk_io/servicesSDK/howtos.html#create-a-pdf-from-static-html" class="button-link">See Documentation</a>
+            </div>
+            <div class="code-viewer-wrapper">
+                <!-- Code Viewer -->
+                {% include code-sample.html %}
+                <!-- /Code Viewer -->
+            </div>
+                          
+        </div>
+ 
+      </div>
+
+    </div>
+
+  </section>
+  <!-- work-flow end -->
+
+  <!-- Get Started start -->
+  <section class="grey-bar get-started">
+
+    <h3>Get Started in Minutes</h3>
+
+    <ol>
+      <li>
+        <div>
+          <p>
+            Obtain credentials
+          </p>
+          <p>
+            <a title="Get started" alt="Get started" href="#" class="button-link">Get started</a>
+          </p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <p>
+            Download ready to run samples for Node.js, Java, and .NET
+          </p>
+          <p class="gs-callout-item">
+            <a title="Node.js" alt="Node.js" href="#" class="button-link step2">Node.js</a>
+            <a title="Java" alt="Java" href="#" class="button-link step2">Java</a>
+            <a title=".Net" alt=".Net" href="#" class="button-link  step2">.Net</a>
+          </p>
+        </div>
+      <li>
+        <div>
+          <p>
+            Add credentials to your code and run!
+          </p>
+          <p>
+            <a title="See documentation" alt="See documentation" href="#" class="button-link">See documentation</a>
+          </p>
+        </div>
+      </li>
+    </ol>
+
+  </section>
+  <!-- Get Started end -->
+
+  <!-- use case -->
+  <section class="use-case">
+    <h3>Use Cases for PDF Tools API</h3>
+
+    <div>
+      <h4>Document Management</h4>
+      <h5>Programmatically manage document workflows through high performance, cloud-based APIs:</h5>
+      <ul>
+        <li>Create PDF documents from dynamic or static html content, such as web forms, charts</li>
+        <li>Secure PDF documents in the embedded PDF viewer and disable printing, downloading, and document manipulation</li>
+      </ul>
+      <h5>Common use cases: Manufacturing operations, government workflows</h5>
+    </div>
+
+    <div>
+      <h4>Business Process Automation</h4>
+      <h5>Eliminate manual processes with automated workflows through powerful PDF APIs:</h5>
+      <ul>
+        <li>Automate document workflows through programmatic creation and manipulation of PDF files from digital assets</li>
+        <li>Streamline sharing of attachments and consumption of PDF documents for fast web viewing</li>
+      </ul>
+      <h5>Common use cases: Retail sales and invoicing, eLearning systems</h5>
+    </div>
+
+    <p>Learn about our <a href="embed-sdk.html" class="section-links">PDF Embed API</a> to embed high-fidelity PDFs and control appearance, enable collaboration, and see analytics</p>
+
+  </section>
+  <!-- use case end -->
+
+</div>
