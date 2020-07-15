@@ -14,12 +14,12 @@
     <li class="sub-nav-menu-item {% if page.active == 'tools-sdk' %} active{% endif %}">
       <a href="/apis/documentcloud/dcsdk/pdf-tools.html" rel="canonical" class="sub-nav-menu-label">PDF Tools API</a>
     </li>
-    <li class="sub-nav-menu-item">
-      <a href="https://www.adobe.io/apis/documentcloud/dcsdk/docs.html" class="sub-nav-menu-label">Documentation</a>
+    <li class="sub-nav-menu-item {% if page.active == 'docs' %} active{% endif %}">
+      <a href="/apis/documentcloud/dcsdk/docs.html" class="sub-nav-menu-label">Documentation</a>
     </li>
-    <li class="sub-nav-menu-item no-hover">
+    <li class="sub-nav-menu-item {% if page.active == 'getstarted' %} active{% endif %}">
       <div class="sub-nav-menu-label">
-        <a href="https://www.adobe.com/go/dcsdks_credentials" class="sub-nav-get-started-button">Get Started</a>
+      <a href="/apis/documentcloud/dcsdk/getstarted.html" class="sub-nav-get-started-button">Get Started</a>
       </div>
     </li>
   </ul>
