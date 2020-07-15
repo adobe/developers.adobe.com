@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="spectrum--medium">
   <head>
-    <title>SDK Developers Kit | {{ page.title }}</title>
+    <title><title>Adobe Developers - {{ page.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="{{page.meta}}"/>
     <head>
@@ -43,148 +43,144 @@
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" defer="defer" src="js/slick/slick.min.js"></script>
-
-
-     <script type="text/javascript">
-
-        $(document).ready(function(){
-          $('.card-slider-container-logos').slick({
-            dots: false,
-            mobileFirst : true,
-            infinite: false,
-            speed: 300,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            // variableWidth: true,
-            // variableHeight: true,
-            responsive: [
-              {
-                breakpoint: 1439,
-                settings: {
-                  slidesToShow: 4,
-                  slidesToScroll: 1,
-                  dots: false
-                }
-              },
-              {
-                breakpoint: 767,
-                settings: {
-                  slidesToShow: 3,
-                  slidesToScroll: 1,
-                  dots: false,
-                  autoplay: true,
-                  infinite: true
-                }
-              },
-              {
-                breakpoint: 0,
-                settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1,
-                  dots: false,
-                  autoplay: true,
-                  fade: true,
-                  infinite: true
-                }
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.card-slider-container-logos').slick({
+          dots: false,
+          mobileFirst : true,
+          infinite: false,
+          speed: 300,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          // variableWidth: true,
+          // variableHeight: true,
+          responsive: [
+            {
+              breakpoint: 1439,
+              settings: {
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                dots: false
               }
-              // You can unslick at a given breakpoint now by adding:
-              // settings: "unslick"
-              // instead of a settings object
-            ]
-          });
-          $('.card-slider-container-home').slick({
-            dots: false,
-            mobileFirst : true,
-            infinite: false,
-            speed: 300,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            // variableWidth: true,
-            // variableHeight: true,
-            responsive: [
-              {
-                breakpoint: 1439,
-                settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1,
-                  dots: true
-                }
-              },
-              {
-                breakpoint: 767,
-                settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1,
-                  dots: true
-                }
-              },
-              {
-                breakpoint: 0,
-                settings: {
-                  slidesToShow: 1,
-                  centerMode: true,
-                  slidesToScroll: 1,
-                  dots: true
-                }
+            },
+            {
+              breakpoint: 767,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                dots: false,
+                autoplay: true,
+                infinite: true
               }
-              // You can unslick at a given breakpoint now by adding:
-              // settings: "unslick"
-              // instead of a settings object
-            ]
-          });
-          $('.card-slider-container').slick({
-            dots: false,
-            mobileFirst : true,
-            infinite: true,
-            autoplay: true,
-            speed: 300,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            responsive: [
-              {
-                breakpoint: 1439,
-                settings: {
-                  slidesToShow: 3,
-                  slidesToScroll: 1,
-                  dots: false
-                }
-              },
-              {
-                breakpoint: 767,
-                settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1,
-                  dots: true
-                }
-              },
-              {
-                breakpoint: 0,
-                settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1,
-                  dots: true
-                }
+            },
+            {
+              breakpoint: 0,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: false,
+                autoplay: true,
+                fade: true,
+                infinite: true
               }
-              // You can unslick at a given breakpoint now by adding:
-              // settings: "unslick"
-              // instead of a settings object
-            ]
-          });
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+          ]
         });
+        $('.card-slider-container-home').slick({
+          dots: false,
+          mobileFirst : true,
+          infinite: false,
+          speed: 300,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          // variableWidth: true,
+          // variableHeight: true,
+          responsive: [
+            {
+              breakpoint: 1439,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 767,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 0,
+              settings: {
+                slidesToShow: 1,
+                centerMode: true,
+                slidesToScroll: 1,
+                dots: true
+              }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+          ]
+        });
+        $('.card-slider-container').slick({
+          dots: false,
+          mobileFirst : true,
+          infinite: true,
+          autoplay: true,
+          speed: 300,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          responsive: [
+            {
+              breakpoint: 1439,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                dots: false
+              }
+            },
+            {
+              breakpoint: 767,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 0,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true
+              }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+          ]
+        });
+      });
 
-        var nPage = window.location.pathname;
-        nPage = nPage.substring(nPage.lastIndexOf('/') + 1);
-        var strNewClass = nPage.split('.')[0];
-        if(strNewClass == ""){strNewClass = "home"}
-        $('body').addClass(strNewClass);
-        console.log("You are in : "  + strNewClass)
+      var nPage = window.location.pathname;
+      nPage = nPage.substring(nPage.lastIndexOf('/') + 1);
+      var strNewClass = nPage.split('.')[0];
+      if (strNewClass == "") {
+        strNewClass = "home";
+      }
+      $('body').addClass(strNewClass);
 
-  </script>
-
-
-  <script type="text/javascript" src="js/prism.js"></script>
-  <script type="text/javascript" src="js/prism-toolbar.min.js"></script>
-<script type="text/javascript" src="js/prism-copy-to-clipboard.min.js"></script>
-  <script type="text/javascript" defer="defer" src="js/work-flow-nav.js"></script>
+    </script>
+    <script type="text/javascript" src="js/prism.js"></script>
+    <script type="text/javascript" src="js/prism-toolbar.min.js"></script>
+    <script type="text/javascript" src="js/prism-copy-to-clipboard.min.js"></script>
+    <script type="text/javascript" defer="defer" src="js/work-flow-nav.js"></script>
   </body>
 </html>
