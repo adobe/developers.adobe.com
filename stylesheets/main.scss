@@ -241,8 +241,34 @@ body {
     }
 
     .card-icon {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+
+      
+      .embed-icon-1{
+        width:73.5px;
+        height:80.38px;
+        margin:0 !important;
+        vertical-align:middle;
+      }
+
+      .embed-icon-2{
+        width: 86.7px;
+        height:68.3px;
+        margin:0px;
+       
+        vertical-align:middle;
+      }
+
+      .embed-icon-3{
+        width:68.5px;
+        height:68.3px;
+        vertical-align:middle;
+      }
+
       &.push-down {
-        margin-bottom: 50px;
+        //margin-bottom: 50px;
 
         img {
           transform: scale(1.25);
@@ -251,7 +277,7 @@ body {
 
       img {
         margin: 0 auto 1.5rem;
-      }
+     }
     }
 
     h2 {
@@ -393,7 +419,6 @@ body {
     }
 
     div {
-      //#GN display: inline-block;
       padding-left: 0.75rem;
       @media screen and (min-width: 1440px) {
         padding-left: 0;
@@ -507,13 +532,11 @@ body {
     }
 
     h4 {
-      //font-size: 0.9375rem;
       font-size: 1.0625rem;
       line-height: 24px;
       text-align: left;
       padding-bottom: 0.75rem;
       @media screen and (min-width: 768px) {
-        //@GN font-size: 1rem; 
         font-size: 1.0625rem;
         line-height: 25.5px;
       }
@@ -660,7 +683,6 @@ section.header {
   .button-link {
     color: $grey !important;
     font-size: 1.0625rem;
-    //display: inline-block;
     @media screen and (min-width: 1440px) {
       font-size: 0.875rem;
       margin-left: 1rem;
@@ -689,8 +711,6 @@ section.header {
 
 section.slab {
   background: #FA0F00;
-  // background-repeat: no-repeat;
-  // background-position: center top;
   color: $white;
   margin: 0 0 4.375rem;
   padding: 1.125rem 0 8.75rem;
@@ -713,7 +733,6 @@ section.home-card {
     box-shadow: 0 3px 26px #00000010;
     border-radius: 10px;
     margin: 0 1.25rem 1.5rem;
-    //margin: 0 0rem 1.5rem;
     min-height: 24rem;
     width: 17.75rem !important;
     @media screen and (min-width: 768px) and (max-width: 1439px) {
@@ -782,6 +801,8 @@ section.home-card {
     margin: -11rem auto 4.375rem;
     max-width: 46.125rem;
   }
+
+  .slick-slide:focus { outline: none; }
 }
 /* home cards end */
 /* Work flow */
@@ -819,17 +840,13 @@ section.dctsdk-work-flow {
     color: $grey;
     cursor: pointer;
     font-size: 1.1875rem;
-    // margin-bottom: 1.875rem;
-    //GN-c margin-bottom: 0.625rem;
     margin-bottom: 3.85rem;
     width: 290px;
     @media screen and (min-width: 768px) {
-      //GN-c margin-bottom: 0.625rem;
       width: 224px;
       margin-bottom: 2.4rem;
     }
     @media screen and (min-width: 1440px) {
-      //GN-c margin-bottom: 0.625rem;
       width: 290px;
       margin-bottom: 2.4rem;
     }
@@ -843,7 +860,6 @@ section.dctsdk-work-flow {
   .work-flow_menu ul li .shadow-box.dctsdk {
     margin: -1.375rem 0 0;
     @media screen and (min-width: 768px) {
-      //#GN padding: 0.8125rem 1rem;
       padding: 1.0625rem 1rem;
     }
   }
@@ -853,7 +869,6 @@ section.dctsdk-work-flow {
       background: $white;
       box-shadow: 0 3px 16px #46303029;
       border-radius: 6px;
-      //#GN padding: 0.8125rem 1rem;
       padding: 1.0625rem 1rem;
     }
   }
@@ -866,7 +881,6 @@ section.dctsdk-work-flow {
 
   .work-flow-menu-support {
     font-size: 1.0625rem;
-    //GN-c margin-top: 1.625rem;
     padding-bottom: 1.875rem;
     border-bottom: 1px solid $lt-grey;
     @media screen and (min-width: 768px) {
@@ -889,7 +903,6 @@ section.dctsdk-work-flow {
   }
 
   .mobile-no-button {
-    // display: flex;
     overflow: hidden;
   }
 
@@ -1007,8 +1020,6 @@ section.dctsdk-work-flow {
   }
 
   .work-flow_menu ul li .rotate {
-    // width: 26px;
-    // height: 24px;
     background-size: 24px 24px;
     background-image: url("../assets/svg/menu-icons/rotate_page.svg");
     background-repeat: no-repeat;
@@ -1016,8 +1027,6 @@ section.dctsdk-work-flow {
   }
 
   .work-flow_menu ul li .reorder {
-    // width: 26px;
-    // height: 22px;
     background-size: 24px 19px;
     background-image: url("../assets/svg/menu-icons/reorder_page.svg");
     background-repeat: no-repeat;
@@ -1025,8 +1034,6 @@ section.dctsdk-work-flow {
   }
 
   .work-flow_menu ul li .delete {
-    // width: 26px;
-    // height: 23px;
     background-size: 24px 24px;
     background-image: url("../assets/svg/menu-icons/delete_page.svg");
     background-repeat: no-repeat;
@@ -1034,8 +1041,6 @@ section.dctsdk-work-flow {
   }
 
   .work-flow_menu ul li .linearize {
-    // width: 23px;
-    // height: 27px;
     background-size: 17px 24px;
     background-image: url("../assets/svg/menu-icons/linearize_pdf.svg");
     background-repeat: no-repeat;
@@ -1043,8 +1048,6 @@ section.dctsdk-work-flow {
   }
 
   .work-flow_menu ul li .replace {
-    // width: 26px;
-    // height: 24px;
     background-size: 23px 22px;
     background-image: url("../assets/svg/menu-icons/replace_page.svg");
     background-repeat: no-repeat;
@@ -1052,8 +1055,6 @@ section.dctsdk-work-flow {
   }
 
   .work-flow_menu ul li .compress {
-    // width: 26px;
-    // height: 22px;
     background-size: 23px 20px;
     background-image: url("../assets/svg/menu-icons/compress_pdf.svg");
     background-repeat: no-repeat;
@@ -1061,8 +1062,6 @@ section.dctsdk-work-flow {
   }
 
   .work-flow_menu ul li .recognize {
-    // width: 17px;
-    // height: 21px;
     background-size: 17px 21px;
     background-image: url("../assets/svg/menu-icons/recognize_text.svg");
     background-repeat: no-repeat;
@@ -1070,8 +1069,6 @@ section.dctsdk-work-flow {
   }
 
   .work-flow_menu ul li .export {
-    // width: 26px;
-    // height: 27px;
     background-size: 22px 23px;
     background-image: url("../assets/svg/menu-icons/export_page.svg");
     background-repeat: no-repeat;
@@ -1079,9 +1076,6 @@ section.dctsdk-work-flow {
   }
 
   .work-flow_menu ul li .icon-align {
-    //#GN
-    // margin-left: 1rem;
-    // margin-top: 1rem;
     width: 40px;
     height: 40px;
   }
@@ -1101,7 +1095,6 @@ section.dctsdk-work-flow {
     display: none;
     padding-left: 0.0625rem;
     @media screen and (min-width: 768px) {
-      //#GN display: none;
       display: block;
 
       .code-viewer-wrapper {
@@ -1166,8 +1159,6 @@ section.dctsdk-work-flow {
     margin-top: 2.125rem;
     display: block;
     @media screen and (min-width: 1440px) {
-      //padding-left: 2rem;
-      //#GN display: block;
       display: none;
     }
 
@@ -1256,7 +1247,6 @@ section.grey-bar {
   p {
     padding: 0 2rem;
     @media screen and (min-width: 1440px) {
-      //#GN  padding: 0 2rem 0 0;
       padding: 0 1rem 0 0;
     }
   }
@@ -1292,10 +1282,6 @@ section.customer {
 
   .slick-track {
     padding: 0 !important;
-
-    img {
-      filter: grayscale(1);
-    }
   }
 
   .card {
