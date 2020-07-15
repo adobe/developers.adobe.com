@@ -1,0 +1,37 @@
+---
+layout: default
+title: PDF Embed API | Embed PDF in HTML | Adobe Document Services
+meta: Adobe PDF Embed API is a JavaScript library that allows you to quickly and easily embed PDFs in web applications with only a few lines of code. Learn more now.
+active: docs
+---
+
+
+<div class="main secondary-page">
+
+  <iframe id="iframe-1" src="https://www.adobe.com/devnet-docs/dcsdk_io/index.html" width="100%" height="750px"></iframe>
+
+  <script type="text/javascript">
+    function IsJsonString(str) {
+      try {
+        JSON.parse(str);
+      }
+      catch (e) {
+        return false;
+      }
+      return true;
+    };
+
+    window.addEventListener('message', (e) => {
+    if (IsJsonString(e.data)) {
+      const message = JSON.parse(e.data);
+      if (message.action === 'resize') {
+        document.getElementById('iframe-1').height = message.height;
+      }
+      else if (message.action === 'scrollTo') {
+        window.scrollTo(0, message.scrollTo + 160 );
+      }
+    }
+  });
+  </script>
+
+</div>
