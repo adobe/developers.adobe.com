@@ -2,22 +2,182 @@
 <html class="spectrum--medium">
   <head>
     <title>Adobe Developers - {{ page.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="{{page.meta}}"/>
     <head>
+      <meta charset="UTF-8">
       <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-global.css">
       <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-medium.css">
       <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-light.css">
+      <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-dark.css">
+      <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-darkest.css">
+      <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.18.0/dist/components/tabs/index.css">
+      <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.18.0/dist/components/tabs/colorStops/dark.css">
+      <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.18.0/dist/components/tabs/colorStops/darkest.css">
       <link rel="stylesheet" href="https://unpkg.com/spectrum-css@1.1.5/static/latest/spectrum-full.min.css">
       <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/components/typography/index-vars.css">
       <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css-grid@0.x/dist/spectrum-css-grid.css">
-      <link rel="stylesheet" href="/stylesheets/style.css">
-      <link rel="stylesheet" href="/stylesheets/topnav.css">
+      <link rel="stylesheet" href="/gh-assets/stylesheets/style.css">
+      <link rel="stylesheet" href="/gh-assets/stylesheets/topnav.css">
+      <link rel="stylesheet" href="/gh-assets/stylesheets/prism-adobe.css">
+
+      <link rel="stylesheet" href="/gh-assets/stylesheets/main.css" type="text/css" />
+      <link rel="stylesheet" href="/gh-assets/stylesheets/slick/slick.css" type="text/css" />
+      <link rel="stylesheet" href="/gh-assets/stylesheets/slick/slick-theme.css" type="text/css" />
+      <link rel="stylesheet" href="/gh-assets/stylesheets/animation-lib.css" type="text/css" />
+
+
     </head>
   </head>
-  <body class="spectrum spectrum--light">
+  <body class="spectrum spectrum--light {% if page.style %}{{ page.style }} {% endif %}" >
     {% include topnav.html %}
+    {% include subnav.html %}
     <div class="spectrum--large spectrum spectrum--light" id="content">
       {{ content }}
     </div>
     {% include footer.html %}
+
+    <script type="text/javascript" src="/gh-assets/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="/gh-assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" defer="defer" src="/gh-assets/js/slick/slick.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.card-slider-container-logos').slick({
+          dots: false,
+          mobileFirst : true,
+          infinite: false,
+          speed: 300,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          // variableWidth: true,
+          // variableHeight: true,
+          responsive: [
+            {
+              breakpoint: 1439,
+              settings: {
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                dots: false
+              }
+            },
+            {
+              breakpoint: 767,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                dots: false,
+                autoplay: true,
+                infinite: true
+              }
+            },
+            {
+              breakpoint: 0,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: false,
+                autoplay: true,
+                fade: true,
+                infinite: true
+              }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+          ]
+        });
+        $('.card-slider-container-home').slick({
+          dots: false,
+          mobileFirst : true,
+          infinite: false,
+          speed: 300,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          // variableWidth: true,
+          // variableHeight: true,
+          responsive: [
+            {
+              breakpoint: 1439,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 767,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 0,
+              settings: {
+                slidesToShow: 1,
+                centerMode: true,
+                slidesToScroll: 1,
+                dots: true
+              }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+          ]
+        });
+        $('.card-slider-container').slick({
+          dots: false,
+          mobileFirst : true,
+          infinite: true,
+          autoplay: true,
+          speed: 300,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          responsive: [
+            {
+              breakpoint: 1439,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                dots: false
+              }
+            },
+            {
+              breakpoint: 767,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 0,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true
+              }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+          ]
+        });
+      });
+
+      var nPage = window.location.pathname;
+      nPage = nPage.substring(nPage.lastIndexOf('/') + 1);
+      var strNewClass = nPage.split('.')[0];
+      if (strNewClass == "") {
+        strNewClass = "home";
+      }
+      $('body').addClass(strNewClass);
+
+    </script>
+    <script type="text/javascript" src="/gh-assets/js/prism.js"></script>
+    <script type="text/javascript" src="/gh-assets/js/prism-toolbar.min.js"></script>
+    <script type="text/javascript" src="/gh-assets/js/prism-copy-to-clipboard.min.js"></script>
+    <script type="text/javascript" src="/gh-assets/js/work-flow-nav.js" defer="defer"></script>
   </body>
 </html>

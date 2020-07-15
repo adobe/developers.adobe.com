@@ -1,0 +1,165 @@
+/**
+ *  Copyright 2020 Adobe. All rights reserved.
+ *  This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License. You may obtain a copy
+ *  of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software distributed under
+ *  the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *  OF ANY KIND, either express or implied. See the License for the specific language
+ *  governing permissions and limitations under the License.
+ */
+
+/*
+  --hljs-color: var(--spectrum-global-color-gray-800);
+  --hljs-background: var(--spectrum-global-color-gray-75);
+  --hljs-keyword-color: var(--spectrum-global-color-fuchsia-700);
+  --hljs-section-color: var(--spectrum-global-color-red-600);
+  --hljs-string-color: var(--spectrum-global-color-green-600);
+  --hljs-literal-color: var(--spectrum-global-color-purple-700);
+  --hljs-attribute-color: var(--spectrum-global-color-indigo-700);
+  --hljs-class-color: var(--spectrum-global-color-seafoam-600);
+  --hljs-function-color: var(--spectrum-global-color-blue-600);
+  --hljs-variable-color: var(--spectrum-global-color-magenta-600);
+  --hljs-title-color: var(--spectrum-global-color-indigo-700);
+  --hljs-comment-color: var(--spectrum-global-color-gray-700);
+  */
+
+  code[class*="language-"],
+  pre[class*="language-"] {
+    /*   --hljs-color: var(--spectrum-global-color-gray-800); */
+    color: var(--spectrum-global-color-gray-800);
+    background: none;
+    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    font-size: 1em;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    border-radius: 4px;
+  
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+  
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+  
+  /* Code blocks */
+  pre[class*="language-"] {
+    padding: 1em;
+    margin: 0.5em 0;
+    overflow: auto;
+  }
+  
+  :not(pre) > code[class*="language-"],
+  pre[class*="language-"] {
+    /* --hljs-background: var(--spectrum-global-color-gray-75); */
+    background: var(--spectrum-global-color-gray-75);
+  }
+  
+  /* Inline code */
+  :not(pre) > code[class*="language-"] {
+    color: var(--spectrum-global-color-gray-800);
+    font-size: 14px;
+    background-color: var(--spectrum-global-color-gray-100);
+    border-radius: 4px;
+    border-color: var(--spectrum-global-color-gray-200);
+    padding: 4px;
+    white-space: pre-wrap;
+  }
+  
+  .token.comment,
+  .token.block-comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    /* --hljs-comment-color: var(--spectrum-global-color-gray-700); */
+    color: var(--spectrum-global-color-gray-700);
+  }
+  
+  .token.punctuation {
+    color: var(--spectrum-global-color-gray-800);
+  }
+  
+  .token.tag,
+  .token.namespace,
+  .token.deleted {
+    color: var(--spectrum-global-color-magenta-700);
+  }
+  
+  .token.boolean,
+  .token.number,
+  .token.attr-name,
+  .token.function,
+  .token.function-name {
+    /* --hljs-function-color: var(--spectrum-global-color-blue-600); */
+    color: var(--spectrum-global-color-blue-600);
+  }
+  
+  .token.attr-name {
+    /* --hljs-attribute-color: var(--spectrum-global-color-indigo-700); */
+    color: var(--spectrum-global-color-indigo-700);
+  }
+  
+  .token.property,
+  .token.class-name,
+  .token.constant,
+  .token.symbol {
+    /* --hljs-literal-color: var(--spectrum-global-color-purple-700); */
+    color: var(--spectrum-global-color-purple-700);
+  }
+  
+  .token.class-name {
+    /* --hljs-class-color: var(--spectrum-global-color-seafoam-600);
+   */
+    color: var(--spectrum-global-color-seafoam-600);
+  }
+  
+  .token.selector,
+  .token.important,
+  .token.atrule,
+  .token.keyword,
+  .token.builtin {
+    color: var(--spectrum-global-color-fuchsia-700);
+  }
+  
+  .token.string,
+  .token.char,
+  .token.attr-value,
+  .token.regex {
+    /* --hljs-string-color: var(--spectrum-global-color-green-600); */
+    color: var(--spectrum-global-color-green-600);
+  }
+  
+  .token.variable {
+    /* --hljs-variable-color: var(--spectrum-global-color-magenta-600);; */
+    color: var(--spectrum-global-color-magenta-600);
+  }
+  
+  .token.operator,
+  .token.entity,
+  .token.url {
+    color: var(--spectrum-global-color-blue-600);
+  }
+  
+  .token.important,
+  .token.bold {
+    font-weight: bold;
+  }
+  .token.italic {
+    font-style: italic;
+  }
+  
+  .token.entity {
+    cursor: help;
+  }
+  
+  .token.inserted {
+    color: var(--spectrum-global-color-green-600);
+  }

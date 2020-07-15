@@ -28,8 +28,11 @@ github_username: adobe
 
 # Build settings
 #theme: minima
-#plugins:
-#  - jekyll-feed
+plugins:
+  - jekyll-feed
+sass:
+sass_dir: ./_sass
+style: compressed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -50,3 +53,4 @@ github_username: adobe
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+

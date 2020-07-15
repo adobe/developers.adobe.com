@@ -1,0 +1,327 @@
+/*
+==============================================
+CSS3 ANIMATION CHEAT SHEET
+==============================================
+
+Made by Justin Aguilar
+
+www.justinaguilar.com/animations/
+
+Questions, comments, concerns, love letters:
+justin@justinaguilar.com
+==============================================
+*/
+
+/*
+==============================================
+slideDown
+==============================================
+*/
+
+
+/*
+==============================================
+slideUp
+==============================================
+*/
+.fadeItIn {
+	animation: fadeItIn  ease-in-out 1s forwards;
+	-webkit-animation: fadeItIn  ease-in-out .8s forwards;
+	-moz-animation: fadeItIn  ease-in-out 1s forwards;
+	-o-animation: fadeItIn  ease-in-out 1s forwards;
+	-ms-animation: fadeItIn  ease-in-out 1s forwards;
+}
+	@keyframes fadeItIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+	}
+	
+	@-moz-keyframes fadeItIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+	}
+	
+	@-webkit-keyframes fadeItIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+	}
+	
+	@-o-keyframes fadeItIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+	}
+	
+	@-ms-keyframes fadeItIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+	}
+
+	/*******************************************************************/
+
+	/* Fade and move up */
+.slideUpFade{
+	animation:slideUpFade .3s ease-in forwards;	
+
+	/* Safari and Chrome */
+	-webkit-animation:slideUpFade .3s;
+}
+
+
+
+.delayPt3{
+	animation-delay: .3s;
+}
+
+.delayPt4{
+	animation-delay: .4s;
+}
+
+.delayPt5{
+	animation-delay: .5s;
+}
+.delayPt6{
+	animation-delay: .6s;
+}
+
+.delayPt7{
+	animation-delay: .7s;
+}
+
+.delayPt8{
+	animation-delay: .8s;
+}
+
+.delay1{
+	animation-delay: 1s;
+}
+
+.delay1pt2{
+	animation-delay: 1.2s;
+}
+
+.delay1pt3{
+	animation-delay: 1.3s;
+}
+.delay1pt4{
+	animation-delay: 1.4s;
+}
+
+.delay1pt5{
+	animation-delay: 1.5s;
+}
+
+.delay1pt6{
+	animation-delay: 1.6s;
+}
+
+.delay1pt8{
+	animation-delay: 1.8s;
+}
+
+
+
+@-webkit-keyframes slideUpFade /* Safari and Chrome */
+{
+	from {top:40px; opacity: 0;}
+	to {top:0px; opacity: 1}
+}
+
+
+.slideUp{
+	animation-name: slideUp;
+	-webkit-animation-name: slideUp;	
+
+	animation-duration: 1s;	
+	-webkit-animation-duration: 1s;
+
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;
+
+	visibility: visible !important;			
+}
+
+@keyframes slideUp {
+	0% {
+		transform: translateY(100%);
+	}
+	50%{
+		transform: translateY(-8%);
+	}
+	65%{
+		transform: translateY(4%);
+	}
+	80%{
+		transform: translateY(-4%);
+	}
+	95%{
+		transform: translateY(2%);
+	}			
+	100% {
+		transform: translateY(0%);
+	}	
+}
+
+@-webkit-keyframes slideUp {
+	0% {
+		-webkit-transform: translateY(100%);
+	}
+	50%{
+		-webkit-transform: translateY(-8%);
+	}
+	65%{
+		-webkit-transform: translateY(4%);
+	}
+	80%{
+		-webkit-transform: translateY(-4%);
+	}
+	95%{
+		-webkit-transform: translateY(2%);
+	}			
+	100% {
+		-webkit-transform: translateY(0%);
+	}	
+}
+
+
+.slideFadeRight{
+	animation-name: slideFadeRight;
+	-webkit-animation-name: slideFadeRight;	
+
+	animation-duration: .3s forwards;	
+	-webkit-animation-duration: .3s forwards;
+
+	animation-timing-function: ease-in-out;	
+	-webkit-animation-timing-function: ease-in-out;	
+}
+
+@keyframes slideFadeRight /* Safari and Chrome */
+{
+	from {opacity: 0;}
+	to {opacity: 1}
+}
+
+@-webkit-keyframes slideFadeRight /* Safari and Chrome */
+{
+	from {opacity: 0;}
+	to {opacity: 1}
+}
+
+/*
+==============================================
+slideRight
+==============================================
+*/
+
+
+.slideRight{
+	animation-name: slideRight;
+	-webkit-animation-name: slideRight;	
+
+	animation-duration: .3s;	
+	-webkit-animation-duration: .3s;
+
+	animation-timing-function: ease-in-out;	
+	-webkit-animation-timing-function: ease-in-out;		
+
+	visibility: visible !important;	
+}
+
+@keyframes slideRight {
+	0% {
+		transform: translateX(-150%);
+	}
+	50%{
+		transform: translateX(8%);
+	}
+	65%{
+		transform: translateX(-4%);
+	}
+	80%{
+		transform: translateX(4%);
+	}
+	95%{
+		transform: translateX(-2%);
+	}			
+	100% {
+		transform: translateX(0%);
+	}	
+}
+
+@-webkit-keyframes slideRight {
+	0% {
+		-webkit-transform: translateX(-150%);
+	}
+	50%{
+		-webkit-transform: translateX(8%);
+	}
+	65%{
+		-webkit-transform: translateX(-4%);
+	}
+	80%{
+		-webkit-transform: translateX(4%);
+	}
+	95%{
+		-webkit-transform: translateX(-2%);
+	}			
+	100% {
+		-webkit-transform: translateX(0%);
+	}
+}
+
+
+/*
+==============================================
+fadeIn
+==============================================
+*/
+
+.fadeIn{
+	animation-name: fadeIn;
+	-webkit-animation-name: fadeIn;	
+
+	animation-duration: .3s;	
+	-webkit-animation-duration: .3s;
+
+	animation-timing-function: ease-in-out;	
+	-webkit-animation-timing-function: ease-in-out;		
+
+	visibility: visible !important;	
+}
+
+@keyframes fadeIn {
+	0% {
+		transform: scale(0);
+		opacity: 0.0;		
+	}
+	60% {
+		transform: scale(1.1);	
+	}
+	80% {
+		transform: scale(0.9);
+		opacity: 1;	
+	}	
+	100% {
+		transform: scale(1);
+		opacity: 1;	
+	}		
+}
+
+@-webkit-keyframes fadeIn {
+	0% {
+		-webkit-transform: scale(0);
+		opacity: 0.0;		
+	}
+	60% {
+		-webkit-transform: scale(1.1);
+	}
+	80% {
+		-webkit-transform: scale(0.9);
+		opacity: 1;	
+	}	
+	100% {
+		-webkit-transform: scale(1);
+		opacity: 1;	
+	}		
+}
+
+
