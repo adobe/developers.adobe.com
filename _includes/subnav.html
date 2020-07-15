@@ -1,37 +1,29 @@
-
 <nav class="sub-nav-menu-wrapper">
   <button class="sub-nav-trigger" aria-expanded="true" aria-haspopup="true" aria-label="Home"></button>
-  
   <div class="sub-nav-product-item allowHover">
-      <a class="sub-nav-product-item-wrapper has-sub-nav" href="./">
-          <image src="assets/svg/adobe_trifoil.svg" alt="adove trifoil icon" class="sub-nav-icon"/>
-          <span>Adobe Document Services</span>
-      </a>
+    <a class="sub-nav-product-item-wrapper has-sub-nav" href="./">
+      <image src="assets/svg/adobe_trifoil.svg" alt="Adobe trifoil icon" class="sub-nav-icon"/>
+      <span>Adobe Document Services</span>
+    </a>
   </div>
   <ul class="sub-nav">
-
-    <li class="sub-nav-menu-item mobile-home">          
-        <a rel="canonical" class="sub-nav-menu-label" href="./">Overview</a>
+    <li class="sub-nav-menu-item mobile-home">
+      <a href="/apis/documentcloud/dcsdk/" rel="canonical" class="sub-nav-menu-label">Overview</a>
     </li>
+    <li class="sub-nav-menu-item {% if page.active == 'embed-sdk' %} active{% endif %}">
 
-      <li class="sub-nav-menu-item {% if page.active == 'embed-sdk' %} active{% endif %}">          
-          <a rel="canonical" class="sub-nav-menu-label" href="pdf-embed.html">PDF Embed API</a>
-      </li>        
-      
-      <li class="sub-nav-menu-item {% if page.active == 'tools-sdk' %} active{% endif %}">
-        <a rel="canonical" class="sub-nav-menu-label" href="pdf-tools.html">PDF Tools API</a>        
-      </li>      
-        
-      <li class="sub-nav-menu-item  {% if page.active == 'documentation' %} active{% endif %}">          
-          <a class="sub-nav-menu-label" href="documentatinon.html">Documentation</a>
-      </li>      
-    
-      <li class="sub-nav-menu-item no-hover">
-          <div class="sub-nav-menu-label">
-             <a class="sub-nav-get-started-button" href="https://www.adobe.com/go/dcsdks_credentials">Get Started</a>
-          </div>
-      </li>
+      <a href="/apis/documentcloud/dcsdk/pdf-embed.html" rel="canonical" class="sub-nav-menu-label">PDF Embed API</a>
+    </li>
+    <li class="sub-nav-menu-item {% if page.active == 'tools-sdk' %} active{% endif %}">
+      <a href="/apis/documentcloud/dcsdk/pdf-tools.html" rel="canonical" class="sub-nav-menu-label">PDF Tools API</a>
+    </li>
+    <li class="sub-nav-menu-item">
+      <a href="https://www.adobe.io/apis/documentcloud/dcsdk/docs.html" class="sub-nav-menu-label">Documentation</a>
+    </li>
+    <li class="sub-nav-menu-item no-hover">
+      <div class="sub-nav-menu-label">
+        <a href="https://www.adobe.com/go/dcsdks_credentials" class="sub-nav-get-started-button">Get Started</a>
+      </div>
+    </li>
   </ul>
-
- 
 </nav>
