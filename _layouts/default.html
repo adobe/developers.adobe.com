@@ -50,6 +50,7 @@
     <script type="text/javascript" src="/gh-assets/js/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" defer="defer" src="/gh-assets/js/slick/slick.min.js"></script>
     <script type="text/javascript">
+
       $(document).ready(function(){
         $('.card-slider-container-logos').slick({
           dots: false,
@@ -98,7 +99,8 @@
         $('.card-slider-container-home').slick({
           dots: false,
           mobileFirst : true,
-          infinite: false,
+          infinite: true,
+          autoplay: true,
           speed: 300,
           slidesToShow: 3,
           slidesToScroll: 3,
@@ -178,10 +180,9 @@
       var nPage = window.location.pathname;
       nPage = nPage.substring(nPage.lastIndexOf('/') + 1);
       var strNewClass = nPage.split('.')[0];
-      if (strNewClass == "") {
-        strNewClass = "home";
-      }
+      if(strNewClass == ""){strNewClass = "home"}
       $('body').addClass(strNewClass);
+      console.log("You are in : "  + strNewClass)
 
     </script>
     <script type="text/javascript" src="/gh-assets/js/prism.js"></script>
