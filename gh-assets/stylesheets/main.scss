@@ -10,8 +10,7 @@ $md-grey: #323232;
 $lt-grey: #e1e1e1;
 $base-font-size: 16px;
 $header-font-size: 27px;
-
-@import "_main-top-nav";
+@import "main-top-nav";
 @import "subnav";
 @import "font-style";
 @import "slab-animate";
@@ -912,7 +911,7 @@ section.dctsdk-work-flow {
     width: 1.5rem;
     height: 1.5rem;
     background-size: 1.5rem;
-    background-image: url("/gh-assets/svg/smock_chevronright_18_n.svg");
+    background-image: url("../assets/svg/smock_chevronright_18_n.svg");
     margin-left: -1.875rem;
     @media screen and (min-width: 768px) {
       visibility: hidden;
@@ -923,7 +922,7 @@ section.dctsdk-work-flow {
     width: 1.5rem;
     height: 1.5rem;
     background-size: 1.5rem;
-    background-image: url("/gh-assets/svg/smock_chevronright_18_n.svg");
+    background-image: url("../assets/svg/smock_chevronright_18_n.svg");
     margin-left: -1.875rem;
     @media screen and (min-width: 768px) {
       visibility: hidden;
@@ -932,7 +931,7 @@ section.dctsdk-work-flow {
 
   .work-flow_menu ul li .create {
     background-size: 18px 21px;
-    background-image: url("/gh-assets/svg/s_createpdf_color_24.svg");
+    background-image: url("../assets/svg/s_createpdf_color_24.svg");
     background-repeat: no-repeat;
     background-position: center center;
   }
@@ -941,138 +940,138 @@ section.dctsdk-work-flow {
     width: 23px;
     height: 24px;
     background-size: 24px;
-    background-image: url("/gh-assets/svg/a12_enhancescanstool.svg");
+    background-image: url("../assets/svg/a12_enhancescanstool.svg");
   }
 
   .work-flow_menu ul li .combine {
     background-size: 24px 24px;
-    background-image: url("/gh-assets/svg/s_combinefiles_color_24.svg");
+    background-image: url("../assets/svg/s_combinefiles_color_24.svg");
     background-repeat: no-repeat;
     background-position: center center;
   }
 
   .work-flow_menu ul li .protect {
     background-size: 18px 23px;
-    background-image: url("/gh-assets/svg/a12_protect.svg");
+    background-image: url("../assets/svg/a12_protect.svg");
     background-repeat: no-repeat;
     background-position: center center;
   }
 
   .work-flow_menu ul li .embed {
     background-size: 26px 22px;
-    background-image: url("/gh-assets/svg/menu-icons/embed.svg");
+    background-image: url("../assets/svg/menu-icons/embed.svg");
     background-repeat: no-repeat;
     background-position: center center;
   }
 
   .work-flow_menu ul li .annotations {
     background-size: 22px 24px;
-    background-image: url("/gh-assets/svg/menu-icons/annotations.svg");
+    background-image: url("../assets/svg/menu-icons/annotations.svg");
     background-repeat: no-repeat;
     background-position: center center;
   }
 
   .work-flow_menu ul li .save {
     background-size: 17px 17px;
-    background-image: url("/gh-assets/svg/menu-icons/save_control.svg");
+    background-image: url("../assets/svg/menu-icons/save_control.svg");
     background-repeat: no-repeat;
     background-position: center center;
   }
 
   .work-flow_menu ul li .collaborative {
     background-size: 26px 22px;
-    background-image: url("/gh-assets/svg/menu-icons/collaborative_settings.svg");
+    background-image: url("../assets/svg/menu-icons/collaborative_settings.svg");
     background-repeat: no-repeat;
     background-position: center center;
   }
 
   .work-flow_menu ul li .analitics {
     background-size: 18px 21px;
-    background-image: url("/gh-assets/svg/menu-icons/analytics.svg");
+    background-image: url("../assets/svg/menu-icons/analytics.svg");
     background-repeat: no-repeat;
     background-position: center center;
   }
 
   .work-flow_menu ul li .tool {
     background-size: 25px 18px;
-    background-image: url("/gh-assets/svg/menu-icons/menu_tool_options.svg");
+    background-image: url("../assets/svg/menu-icons/menu_tool_options.svg");
     background-repeat: no-repeat;
     background-position: center center;
   }
 
   .work-flow_menu ul li .reorder {
     background-size: 24px 19px;
-    background-image: url("/gh-assets/svg/menu-icons/reorder_page.svg");
+    background-image: url("../assets/svg/menu-icons/reorder_page.svg");
     background-repeat: no-repeat;
     background-position: center center;
   }
 
   .work-flow_menu ul li .insert {
     background-size: 17px 21px;
-    background-image: url("/gh-assets/svg/menu-icons/insert_page.svg");
+    background-image: url("../assets/svg/menu-icons/insert_page.svg");
     background-repeat: no-repeat;
     background-position: center center;
   }
 
   .work-flow_menu ul li .linearize {
     background-size: 17px 24px;
-    background-image: url("/gh-assets/svg/menu-icons/linearize_pdf.svg");
+    background-image: url("../assets/svg/menu-icons/linearize_pdf.svg");
     background-repeat: no-repeat;
     background-position: center center;
   }
 
   .work-flow_menu ul li .rotate {
     background-size: 24px 24px;
-    background-image: url("/gh-assets/svg/menu-icons/rotate_page.svg");
+    background-image: url("../assets/svg/menu-icons/rotate_page.svg");
     background-repeat: no-repeat;
     background-position: center center;
   }
 
   .work-flow_menu ul li .reorder {
     background-size: 24px 19px;
-    background-image: url("/gh-assets/svg/menu-icons/reorder_page.svg");
+    background-image: url("../assets/svg/menu-icons/reorder_page.svg");
     background-repeat: no-repeat;
     background-position: center center;
   }
 
   .work-flow_menu ul li .delete {
     background-size: 24px 24px;
-    background-image: url("/gh-assets/svg/menu-icons/delete_page.svg");
+    background-image: url("../assets/svg/menu-icons/delete_page.svg");
     background-repeat: no-repeat;
     background-position: center center;
   }
 
   .work-flow_menu ul li .linearize {
     background-size: 17px 24px;
-    background-image: url("/gh-assets/svg/menu-icons/linearize_pdf.svg");
+    background-image: url("../assets/svg/menu-icons/linearize_pdf.svg");
     background-repeat: no-repeat;
     background-position: center center;
   }
 
   .work-flow_menu ul li .replace {
     background-size: 23px 22px;
-    background-image: url("/gh-assets/svg/menu-icons/replace_page.svg");
+    background-image: url("../assets/svg/menu-icons/replace_page.svg");
     background-repeat: no-repeat;
     background-position: center center;
   }
 
   .work-flow_menu ul li .compress {
     background-size: 23px 20px;
-    background-image: url("/gh-assets/svg/menu-icons/compress_pdf.svg");
+    background-image: url("../assets/svg/menu-icons/compress_pdf.svg");
     background-repeat: no-repeat;
     background-position: center center;
   }
 
   .work-flow_menu ul li .recognize {
     background-size: 17px 21px;
-    background-image: url("/gh-assets/svg/menu-icons/recognize_text.svg");
+    background-image: url("../assets/svg/menu-icons/recognize_text.svg");
     background-repeat: no-repeat;
     background-position: center center;
   }
 
   .work-flow_menu ul li .export {
     background-size: 22px 23px;
-    background-image: url("/gh-assets/svg/menu-icons/export_page.svg");
+    background-image: url("../assets/svg/menu-icons/export_page.svg");
     background-repeat: no-repeat;
     background-position: center center;
   }
@@ -1228,10 +1227,6 @@ section.grey-bar {
   padding: 1.125rem 0.75rem 1.5625rem;
   border-radius: 10px;
   @media screen and (max-width: 767px) {
-    .slick-track {
-      width: calc(17.75rem * 5) !important;
-    }
-
     .slick-list {
       padding: 0 !important;
     }
@@ -1249,7 +1244,7 @@ section.grey-bar {
   p {
     padding: 0 2rem;
     @media screen and (min-width: 1440px) {
-      padding: 0 1rem 0 0;
+      padding: 0 2rem 0 0;
     }
   }
   @media screen and (min-width: 1440px) {
