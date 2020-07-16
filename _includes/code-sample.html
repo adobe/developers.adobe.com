@@ -65,7 +65,7 @@ const executionContext = PDFToolsSdk.ExecutionContext.create(credentials),
 
 // Set operation input from a source file.
 const input = PDFToolsSdk.FileRef
-  .createFromLocalFile('resources/createPDFFromStaticHtmlInput.zip');
+  .createFromLocalFile( 'resources/createPDFFromStaticHtmlInput.zip' );
 htmlToPDFOperation.setInput(input);
 
 // Provide any custom configuration options for the operation.
@@ -73,7 +73,10 @@ setCustomOptions(htmlToPDFOperation);
 
 // Execute the operation and Save the result to the specified location.
 htmlToPDFOperation.execute(executionContext)
-  .then(result => result.saveAsFile('output/createPdfFromStaticHtmlOutput.pdf'))
+  .then(result => 
+    result.saveAsFile(
+      'output/createPdfFromStaticHtmlOutput.pdf'
+  ))
 </code></pre>
       </coral-panel>
 
@@ -139,7 +142,7 @@ result.saveAs( "output/createPDFFromStaticHtmlOutput.pdf" );
 // credentials and create a new 
 // operation instance.
 ExecutionContext executionContext = ExecutionContext.Create(credentials);
-ExportPDFOperation exportPdfOperation = ExportPDFOperation.CreateNew(ExportPDFTargetFormat.DOCX);
+ExportPDFOperation exportPdfOperation = ExportPDFOperation.CreateNew( ExportPDFTargetFormat.DOCX );
 
 // Set operation input from a local PDF file
 FileRef sourceFileRef = FileRef.CreateFromLocalFile(@"exportPdfInput.pdf");
@@ -149,7 +152,8 @@ exportPdfOperation.SetInput(sourceFileRef);
 FileRef result = exportPdfOperation.Execute(executionContext);
 
 // Save the result to the specified location.
-result.SaveAs(Directory.GetCurrentDirectory() + "/output/exportPdfOutput.docx");
+result.SaveAs(Directory.GetCurrentDirectory() 
+  + "/output/exportPdfOutput.docx");
 </code></pre>
         </coral-panel>
 
@@ -158,7 +162,7 @@ result.SaveAs(Directory.GetCurrentDirectory() + "/output/exportPdfOutput.docx");
 // credentials and create a new 
 // operation instance.
 ExecutionContext executionContext = ExecutionContext.Create(credentials);
-ExportPDFOperation exportPdfOperation = ExportPDFOperation.CreateNew(ExportPDFTargetFormat.DOCX);
+ExportPDFOperation exportPdfOperation = ExportPDFOperation.CreateNew( ExportPDFTargetFormat.DOCX );
 
 // Set operation input from a local PDF file
 FileRef sourceFileRef = FileRef.CreateFromLocalFile(@"exportPdfInput.pdf");
@@ -168,7 +172,8 @@ exportPdfOperation.SetInput(sourceFileRef);
 FileRef result = exportPdfOperation.Execute(executionContext);
 
 // Save the result to the specified location.
-result.SaveAs(Directory.GetCurrentDirectory() + "/output/exportPdfOutput.docx");
+result.SaveAs(Directory.GetCurrentDirectory() 
+  + "/output/exportPdfOutput.docx");
 </code></pre>
         </coral-panel>
 
@@ -177,10 +182,14 @@ result.SaveAs(Directory.GetCurrentDirectory() + "/output/exportPdfOutput.docx");
 // credentials and create a new 
 // operation instance.
 ExecutionContext executionContext = ExecutionContext.create(credentials);
-ExportPDFOperation exportPdfOperation = ExportPDFOperation.createNew(ExportPDFTargetFormat.DOCX);
+ExportPDFOperation exportPdfOperation = ExportPDFOperation
+  .createNew(ExportPDFTargetFormat.DOCX);
 
 // Set operation input from a local PDF file
-FileRef sourceFileRef = FileRef.createFromLocalFile("src/main/resources/exportPDFInput.pdf");
+FileRef sourceFileRef = FileRef
+  .createFromLocalFile(
+    "src/main/resources/exportPDFInput.pdf"
+  );
 exportPdfOperation.setInput(sourceFileRef);
 
 // Execute the operation.
@@ -1242,7 +1251,7 @@ result.saveAs("output/protectPDFOutput.pdf");
       </coral-tablist>
       <coral-panelstack>
         <coral-panel>
-<pre><code class="language-html">adobeDCView.registerCallback(
+<pre><code class="language-js">adobeDCView.registerCallback(
   /* Type of call back */
   AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
   /* call back function */
@@ -1268,7 +1277,7 @@ result.saveAs("output/protectPDFOutput.pdf");
       </coral-tablist>
       <coral-panelstack>
         <coral-panel>
-<pre><code class="language-html">const profile = {
+<pre><code class="language-js">const profile = {
   userProfile: {
     name: '<name of user>',
     firstName: '<first name>',
