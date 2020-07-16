@@ -14,7 +14,6 @@ $(document).ready(function(){
 
         }else{
 
-
            $('div.work-flow-menu-support.work-flow-support-mode-mobile.open ').removeClass('open');
 
            //remove recently added info copy and button
@@ -37,6 +36,10 @@ $(document).ready(function(){
         }
     });
 
+
+    $('.main-nav-hamburger').on( "click", function(e) {
+        $('.sub-nav-menu-wrapper').toggleClass( 'opened');
+    })
 
     $('.sub-nav-menu-wrapper').on( "click", function(e) {
         $( this ).toggleClass( 'opened');
