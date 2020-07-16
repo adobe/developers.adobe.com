@@ -30,7 +30,7 @@
                 height: 80px;
                 padding: 0 20px;
                 width: auto;
-                z-index: 1;                
+                z-index: 1;
             }
 
             //display:none;
@@ -39,25 +39,26 @@
                 font-size: 16px;
                 font-weight: 700;
                 margin: auto;
-    
+
                 @media screen and (min-width: 900px){
-                    
+
                         display: inline;
-                    
+
                 }
              }
         }
 
-  
+
         .main-nav-wrapper {
             display: flex;
             width: auto;
+            background-color: #fff;
             position: relative;
 
-            @media screen and (min-width: 900px){            
+            @media screen and (min-width: 900px){
                 flex-grow: 1;
                 justify-content: center;
-            }           
+            }
 
             .main-nav-hamburger {
                 padding: 0 20px;
@@ -86,8 +87,8 @@
                 cursor: pointer;
                 background-color: transparent;
 
-                @media screen and (min-width: 900px){                    
-                    display: none;                    
+                @media screen and (min-width: 900px){
+                    display: none;
                 }
             }
 
@@ -153,7 +154,7 @@
                 z-index: 2;
                 margin: 0;
 
-                @media screen and (min-width: 900px){               
+                @media screen and (min-width: 900px){
                     display: flex;
                     position: static;
                     flex-direction: row;
@@ -165,7 +166,7 @@
                         height: inherit;
                         border-top: none;
                     }
-                }   
+                }
             }
 
             .main-nav-items, .udp-topNav {
@@ -180,10 +181,9 @@
                 .main-nav-menu-item {
                     position: relative;
                     display: block;
-                    border-top: 1px solid #f3f3f3;
                     content: "";
                 }
-            
+
                 .main-nav-menu-label {
                     position: relative;
                     padding: 0 20px;
@@ -202,8 +202,8 @@
                     height: 55px;
                     padding: 0 18px;
                 }
-            }            
-            
+            }
+
             .signin-wrapper {
                 display: table-column;
                 position: absolute;
@@ -213,7 +213,7 @@
                 width: auto;
                 z-index: 10;
             }
-        
+
             .signin-component-wrapper {
                 float: right;
             }
@@ -223,7 +223,7 @@
                 font-weight: 700;
                 cursor: pointer;
             }
-        
+
             .signin-component-username {
                 color: gray;
             }
@@ -278,9 +278,9 @@ a.spectrum-ActionButton, a.spectrum-Button {
 
 
 
- 
 
- 
+
+
 
 
 
