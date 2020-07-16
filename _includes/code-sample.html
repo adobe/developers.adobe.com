@@ -128,66 +128,66 @@ result.saveAs( "output/createPDFFromStaticHtmlOutput.pdf" );
 <p>
   <div id="export-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
     <coral-tabview>
-      <coral-tablist size="S"></coral-tablist>
+      <coral-tablist size="S">
         <coral-tab class="is-selected">Node.js</coral-tab>
         <coral-tab>.Net</coral-tab>
         <coral-tab>Java</coral-tab>
       </coral-tablist>
       <coral-panelstack>
-        <coral-panel>
-<pre><code class="language-javascript">// Create an ExecutionContext using credentials 
-// and create a new operation instance.
-const executionContext = PDFToolsSdk.ExecutionContext.create(credentials),
-  exportPDF = PDFToolsSdk.ExportPDF,
-  exportPdfOperation = exportPDF.Operation.createNew(exportPDF.SupportedTargetFormats.DOCX);
-
-// Set operation input from a source file
-const input = PDFToolsSdk.FileRef.createFromLocalFile('resources/exportPDFInput.pdf');
-exportPdfOperation.setInput(input);
-
-// Execute the operation and Save the result to the specified location.
-exportPdfOperation
-  .execute(executionContext)
-  .then(result => result.saveAsFile(
-    'output/exportPdfOutput.docx'))
+        <coral-panel id="panel1">
+<pre><code class="language-javascript">// Create an ExecutionContext using 
+  // credentials and create a new 
+  // operation instance.
+  ExecutionContext executionContext = ExecutionContext.Create(credentials);
+  ExportPDFOperation exportPdfOperation = ExportPDFOperation.CreateNew(ExportPDFTargetFormat.DOCX);
+  
+  // Set operation input from a local PDF file
+  FileRef sourceFileRef = FileRef.CreateFromLocalFile(@"exportPdfInput.pdf");
+  exportPdfOperation.SetInput(sourceFileRef);
+  
+  // Execute the operation.
+  FileRef result = exportPdfOperation.Execute(executionContext);
+  
+  // Save the result to the specified location.
+  result.SaveAs(Directory.GetCurrentDirectory() + "/output/exportPdfOutput.docx");
 </code></pre>
         </coral-panel>
 
-        <coral-panel>
+        <coral-panel >
 <pre><code class="language-clike">// Create an ExecutionContext using 
-// credentials and create a new 
-// operation instance.
-ExecutionContext executionContext = ExecutionContext.Create(credentials);
-ExportPDFOperation exportPdfOperation = ExportPDFOperation.CreateNew(ExportPDFTargetFormat.DOCX);
-
-// Set operation input from a local PDF file
-FileRef sourceFileRef = FileRef.CreateFromLocalFile(@"exportPdfInput.pdf");
-exportPdfOperation.SetInput(sourceFileRef);
-
-// Execute the operation.
-FileRef result = exportPdfOperation.Execute(executionContext);
-
-// Save the result to the specified location.
-result.SaveAs(Directory.GetCurrentDirectory() + "/output/exportPdfOutput.docx");
+  // credentials and create a new 
+  // operation instance.
+  ExecutionContext executionContext = ExecutionContext.Create(credentials);
+  ExportPDFOperation exportPdfOperation = ExportPDFOperation.CreateNew(ExportPDFTargetFormat.DOCX);
+  
+  // Set operation input from a local PDF file
+  FileRef sourceFileRef = FileRef.CreateFromLocalFile(@"exportPdfInput.pdf");
+  exportPdfOperation.SetInput(sourceFileRef);
+  
+  // Execute the operation.
+  FileRef result = exportPdfOperation.Execute(executionContext);
+  
+  // Save the result to the specified location.
+  result.SaveAs(Directory.GetCurrentDirectory() + "/output/exportPdfOutput.docx");
 </code></pre>
         </coral-panel>
 
         <coral-panel>
 <pre><code class="language-java">// Create an ExecutionContext using 
-// credentials and create a new 
-// operation instance.
-ExecutionContext executionContext = ExecutionContext.create(credentials);
-ExportPDFOperation exportPdfOperation = ExportPDFOperation.createNew(ExportPDFTargetFormat.DOCX);
-
-// Set operation input from a local PDF file
-FileRef sourceFileRef = FileRef.createFromLocalFile("src/main/resources/exportPDFInput.pdf");
-exportPdfOperation.setInput(sourceFileRef);
-
-// Execute the operation.
-FileRef result = exportPdfOperation.execute(executionContext);
-
-// Save the result to the specified location.
-result.saveAs("output/exportPdfOutput.docx");
+  // credentials and create a new 
+  // operation instance.
+  ExecutionContext executionContext = ExecutionContext.create(credentials);
+  ExportPDFOperation exportPdfOperation = ExportPDFOperation.createNew(ExportPDFTargetFormat.DOCX);
+  
+  // Set operation input from a local PDF file
+  FileRef sourceFileRef = FileRef.createFromLocalFile("src/main/resources/exportPDFInput.pdf");
+  exportPdfOperation.setInput(sourceFileRef);
+  
+  // Execute the operation.
+  FileRef result = exportPdfOperation.execute(executionContext);
+  
+  // Save the result to the specified location.
+  result.saveAs("output/exportPdfOutput.docx");
 </code></pre>
         </coral-panel>
       </coral-panelstack>
