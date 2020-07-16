@@ -93,6 +93,13 @@
             }
 
             &.opened {
+
+                .main-nav-hamburger-inner {
+                    -webkit-transform: rotateY(180deg);
+                    transform: rotateY(180deg);
+                    background-color: transparent;
+                }
+
                 .main-nav-hamburger-inner:before {
                     -webkit-transform: translate3d(0,6px,0) rotate(45deg);
                     transform: translate3d(0,6px,0) rotate(45deg);
@@ -101,6 +108,11 @@
                     -webkit-transform: translate3d(0,-6px,0) rotate(-45deg);
                     transform: translate3d(0,-6px,0) rotate(-45deg);
                 }
+      
+                >.main-nav-items {
+                    display: block;
+                }
+                
             }
 
             .main-nav-hamburger-inner:after {
