@@ -30,6 +30,7 @@ github_username: adobe
 #theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-redirect-from
 sass:
 sass_dir: ./_sass
 style: compressed
