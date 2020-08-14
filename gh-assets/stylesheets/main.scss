@@ -11,6 +11,8 @@ $lt-grey: #e1e1e1;
 $base-font-size: 16px;
 $header-font-size: 27px;
 
+$baseurl: "{{ site.baseurl }}"; /* Allows the @import files to use $baseurl */
+
 @import "_main-top-nav";
 @import "subnav";
 @import "font-style";
