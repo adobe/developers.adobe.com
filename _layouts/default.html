@@ -43,6 +43,12 @@
     </head>
   </head>
   <body class="spectrum spectrum--light {% if page.style %}{{ page.style }} {% endif %}" >
+<pre>
+site.baseurl: {{site.baseurl}}
+site.url: {{site.url }}
+relative_url: {{relative_url}}
+absolute_url: {{absolute_url}}
+</pre>
     {% include topnav.html %}
     {% include subnav.html %}
     <div class="spectrum--large spectrum spectrum--light" id="content">
