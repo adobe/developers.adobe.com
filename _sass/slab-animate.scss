@@ -38,13 +38,13 @@
       .animate-bkg{
 
         height:inherit;
-        background: url("/gh-assets/img/slab-animate/background_circuit_2x_mobile.png");
+        background: url("{{ site.baseurl }}/gh-assets/img/slab-animate/background_circuit_2x_mobile.png");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: 415px 200px;
 
         @media screen and (min-width: 768px) {
-          background: url("/gh-assets/img/slab-animate/background_circuit_2x.png");
+          background: url("{{ site.baseurl }}/gh-assets/img/slab-animate/background_circuit_2x.png");
           background-repeat: no-repeat;
           background-position: center top;
           background-size: contain;
