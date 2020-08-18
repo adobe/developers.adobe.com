@@ -36,20 +36,20 @@
       z-index:1;
 
       .animate-bkg{
-
         height:inherit;
-        background: url("{{ site.baseurl }}/gh-assets/img/slab-animate/background_circuit_2x_mobile.png");
+        background-image: url("/gh-assets/img/slab-animate/background_circuit_2x_mobile.png");
+        
         background-repeat: no-repeat;
         background-position: center center;
         background-size: 415px 200px;
 
         @media screen and (min-width: 768px) {
-          background: url("{{ site.baseurl }}/gh-assets/img/slab-animate/background_circuit_2x.png");
+          background-image: url("/gh-assets/img/slab-animate/background_circuit_2x.png");
           background-repeat: no-repeat;
           background-position: center top;
           background-size: contain;
         }
-
+        
         //iphone 11
         @media only screen and (min-width: 414px) and (max-width: 767px) { /* Your Styles... */
          /* Mobile */
