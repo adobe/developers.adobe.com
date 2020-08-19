@@ -816,8 +816,12 @@ section.home-card {
 /* pdf extract */
 section.grey-bar-extract {
   background-color: #f7f7f7;
-  margin: 4.375rem 0;
+  margin:0;
   padding: 1.125rem 0.75rem 1.375rem;
+
+  @media screen and (min-width: 767px) {
+    margin: 4.375rem 0;
+  }
   
   //padding: 1.125rem 0.75rem 5.0625rem;
   border-radius: 10px;  
@@ -910,6 +914,7 @@ section.grey-bar-extract {
 
       @media screen and (min-width: 767px) {
         margin-top:60px; 
+        padding-bottom:40px;
       }
 
       ul{
