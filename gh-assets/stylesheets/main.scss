@@ -891,10 +891,9 @@ section.grey-bar-extract {
       background-size:cover;
 
       @media screen and (min-width: 767px) {
-       max-width:585px;
-       width:584px;
-       height:247px;
-
+        max-width:585px;
+        width:584px;
+        height:247px;
         background: url('../svg/extract-lrg.svg');
         background-repeat:no-repeat;
         background-position:center center;
