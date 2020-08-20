@@ -11,8 +11,6 @@ $lt-grey: #e1e1e1;
 $base-font-size: 16px;
 $header-font-size: 27px;
 
-$baseurl: "{{ site.baseurl }}"; /* Allows the @import files to use $baseurl */
-
 @import "_main-top-nav";
 @import "subnav";
 @import "font-style";
@@ -462,7 +460,7 @@ body {
 
           &.step2 {
             @media screen and (min-width: 1024px) {
-              //min-width:72px; 
+              //min-width:72px;
               width: 2.75rem;
             }
           }
@@ -809,8 +807,8 @@ section.home-card {
     max-width: 46.125rem;
   }
 
-  .slick-slide:focus { 
-    outline: none; 
+  .slick-slide:focus {
+    outline: none;
   }
 }
 /* home cards end */
@@ -825,14 +823,14 @@ section.grey-bar-extract {
   @media screen and (min-width: 767px) {
     margin: 4.375rem 0;
   }
-  
+
   //padding: 1.125rem 0.75rem 5.0625rem;
-  border-radius: 10px;  
+  border-radius: 10px;
 
   .extract-container{
     padding-left:35px;
     padding-right:32px;
-   
+
     @media screen and (min-width: 767px) {
       padding:0px;
       max-width:1060px;
@@ -854,10 +852,10 @@ section.grey-bar-extract {
         text-align:center;
         font-size:28px;
       }
-    } 
+    }
 
    .extract-copy{
-     
+
      margin:0 auto;
 
       p {
@@ -882,12 +880,12 @@ section.grey-bar-extract {
         }
       }
    }
-        
+
     .extract-img{
 
       width:284px;
       height:118px;
-      background: url('{{ site.baseurl }}/gh-assets/svg/extract-sm.svg');
+      background: url('../svg/extract-sm.svg');
       background-repeat:no-repeat;
       background-position:center center;
       background-size:cover;
@@ -897,7 +895,7 @@ section.grey-bar-extract {
        width:584px;
        height:247px;
 
-        background: url('{{ site.baseurl }}/gh-assets/svg/extract-lrg.svg');
+        background: url('../svg/extract-lrg.svg');
         background-repeat:no-repeat;
         background-position:center center;
         background-size:cover;
@@ -913,15 +911,15 @@ section.grey-bar-extract {
     }
 
     .extract-copy-lst{
-      margin-top:47px; 
+      margin-top:47px;
 
       @media screen and (min-width: 767px) {
-        margin-top:60px; 
+        margin-top:60px;
         padding-bottom:40px;
       }
 
       ul{
-        margin-left:-10px; 
+        margin-left:-10px;
         list-style: none;
         width:100%;
 
@@ -937,8 +935,8 @@ section.grey-bar-extract {
 
           max-width:348.6px;
 
-          >div {            
-              
+          >div {
+
               &:before{
                 content: "•";
                 font-size: 55px;
@@ -947,12 +945,12 @@ section.grey-bar-extract {
                 padding-right: 13px;
                 color: #747474;
                 vertical-align: top;
-                line-height: 8px;  
+                line-height: 8px;
                 @media screen and (min-width: 767px) {
                   content: "";
                   margin-left: -5px;
                   padding-right: 5px;
-                }                
+                }
               }
 
               font-size: 15px;
@@ -966,7 +964,7 @@ section.grey-bar-extract {
           }
 
           color: $grey;
-          font-family: 'Adobe Clean Light';          
+          font-family: 'Adobe Clean Light';
           padding-bottom: 1.25rem;
           line-height:23px;
 
@@ -978,7 +976,7 @@ section.grey-bar-extract {
               font-size: 18px;
             }
           }
-                  
+
           @media screen and (min-width: 768px) {
             margin-left:52px !important;
           }
@@ -1443,7 +1441,7 @@ section.grey-bar {
     max-width: 52.5rem;
     margin: 4.375rem auto;
     border-radius: 10px;
-    .card{        
+    .card{
       padding-left:60px;
       padding-right:60px;
     }
