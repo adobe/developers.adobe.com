@@ -23,8 +23,9 @@ email: developers@adobe.com
 description: >- # this means to ignore newlines
   The home for developers at Adobe.
 # baseurl: "" # the subpath of your site, e.g. /blog
-# url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://adobe.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: adobe
+
 
 # Build settings
 plugins:
