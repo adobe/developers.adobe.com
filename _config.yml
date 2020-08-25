@@ -20,17 +20,17 @@
 
 title: Adobe Developers
 email: developers@adobe.com
-description: >- # this means to ignore newlines until "baseurl:"
+description: >- # this means to ignore newlines
   The home for developers at Adobe.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+# baseurl: "" # the subpath of your site, e.g. /blog
+# url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: adobe
 
 # Build settings
-#theme: minima
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
+  - jekyll-github-metadata
 sass:
 sass_dir: ./_sass
 style: compressed

@@ -6,6 +6,7 @@ active: home
 redirect_from:
   - /apis/documentcloud/dcsdk.html
 ---
+{% include paths.html %}
 
 <div class="main">
 
@@ -19,14 +20,14 @@ redirect_from:
 
       <div class="slab-animated-item-wrapper">
         <div class="animated-items">
-          <img id="laptop" src="/gh-assets/img/slab-animate/laptop_2x.png" id="" class="laptop" />
-          <img id="lp-pointer" src="/gh-assets/img/slab-animate/laptop_convert.svg" id="" class="lp-pointer" />
+          <img id="laptop" src="{{ baseurl }}/gh-assets/img/slab-animate/laptop_2x.png" id="" class="laptop" />
+          <img id="lp-pointer" src="{{ baseurl }}/gh-assets/img/slab-animate/laptop_convert.svg" id="" class="lp-pointer" />
 
-          <img id="ipad" src="/gh-assets/img/slab-animate/ipad_2x.png" id="" class="ipad" />
-          <img id="ipad-pointer" src="/gh-assets/img/slab-animate/ipad_comment_action.svg" id="" class="ipad-pointer" />
+          <img id="ipad" src="{{ baseurl }}/gh-assets/img/slab-animate/ipad_2x.png" id="" class="ipad" />
+          <img id="ipad-pointer" src="{{ baseurl }}/gh-assets/img/slab-animate/ipad_comment_action.svg" id="" class="ipad-pointer" />
 
-          <img id="phone" src="/gh-assets/img/slab-animate/phone_2x.png" id="" class="phone" />
-          <img id="phone-pointer" src="/gh-assets/img/slab-animate/phone_combine_action.svg" id="" class="phone-pointer" />
+          <img id="phone" src="{{ baseurl }}/gh-assets/img/slab-animate/phone_2x.png" id="" class="phone" />
+          <img id="phone-pointer" src="{{ baseurl }}/gh-assets/img/slab-animate/phone_combine_action.svg" id="" class="phone-pointer" />
         </div>
       </div>
     </div>
@@ -43,7 +44,7 @@ redirect_from:
   <section class="home-card">
 
     <div class="card blanche">
-      <h2>PDF Embed API to insert PDFs and enable collaboration in web apps</h2>
+      <h3>Adobe PDF Embed API</h3>
       <p>Leverage the free JavaScript API to embed PDFs without the need for end users to download additional plugins.</p>
       <p>Provide a rich PDF viewing experience and easily enable digital collaboration and document analytics.</p>
       <div class="callout-item">
@@ -54,17 +55,43 @@ redirect_from:
     </div>
 
     <div class="card blanche">
-      <h2>PDF Tools API for web services to manipulate PDFs in document workflows</h2>
+      <h3>Adobe PDF Tools API</h3>
       <p>Use the PDF Tools API to quickly solve specific challenges or power multi-step document workflows, with SDKs for Node.js, Java, and .NET.</p>
       <p>Apply OCR to enable searching, easily convert files (HTML to PDF, PDF to Microsoft Word and more), or combine actions to automate workflows.</p>
       <div class="callout-item">
         <p>
-          <a href="pdf-tools.html">Learn more</a><a href="https://www.adobe.com/go/dcsdks_credentials" target="_blank">Start free trial</a>
+          <a href="https://www.adobe.com/go/pdftoolsapi_requestform">Contact Us</a><a href="https://www.adobe.com/go/dcsdks_credentials" target="_blank">Start free trial</a>
         </p>
       </div>
     </div>
   </section>
 
+
+  <!-- pdf extract -->
+  <section class='grey-bar-extract'>
+    <div class="extract-container">
+      <h3>Adobe PDF Extract API</h3>
+      <div class="extract-copy">
+        <p>A new web service that allows you to unlock content structure and table data from any PDF document with machine learning</p>
+        <p><a href="https://www.adobe.com/go/pdfextractapi_requestform" target="_blank" class="spectrum-Button spectrum-Button--cta">Request Access</a></p>
+      </div>
+
+      <div class="extract-img"></div>
+      <div class="extract-copy-lst">
+        <ul>
+          <li>
+            <div>Leverage Adobe Sensei for a rich understanding of <span>content structure</span> with higher quality input to other systems</div>
+          </li>
+          <li>
+            <div><span>Easily Extract content to JSON</span> format for further processing into other applications or databases</div>
+          </li>
+          <li>
+            <div><span>Identify more document elements</span> than OCR with extraction of headings, paragraphs, lists, and more</div>
+          </li>
+        </ul>
+      </div>
+  </section>
+  <!-- pdf extract end-->
 
   <!-- work-flow-->
   <section class="dctsdk-work-flow">
@@ -181,7 +208,7 @@ redirect_from:
       <div class="card">
 
         <p>
-          <img src="/gh-assets/img/customer-logos/social_status_2x.png">
+          <img src="{{ baseurl }}/gh-assets/img/customer-logos/social_status_2x.png">
         </p>
 
         <p>
@@ -196,7 +223,7 @@ redirect_from:
       <div class="card">
 
         <p>
-          <img src="/gh-assets/img/customer-logos/acumatica_2x.png"  alt="K2 logo">
+          <img src="{{ baseurl }}/gh-assets/img/customer-logos/acumatica_2x.png"  alt="K2 logo">
         </p>
 
         <p>
@@ -211,7 +238,7 @@ redirect_from:
       <div class="card">
 
         <p>
-          <img src="/gh-assets/img/customer-logos/k2_2x.png"  alt="K2 logo">
+          <img src="{{ baseurl }}/gh-assets/img/customer-logos/k2_2x.png"  alt="K2 logo">
         </p>
 
         <p>
@@ -232,7 +259,7 @@ redirect_from:
       <div class="card">
 
         <p>
-          <img src="/gh-assets/img/customer-logos/ninetynine_u_2x.png"  alt="K2 logo">
+          <img src="{{ baseurl }}/gh-assets/img/customer-logos/ninetynine_u_2x.png"  alt="K2 logo">
         </p>
 
         <p>
@@ -252,7 +279,7 @@ redirect_from:
       <div class="card">
 
         <p>
-          <img src="/gh-assets/img/customer-logos/infodesk_2x.png"  alt="K2 logo">
+          <img src="{{ baseurl }}/gh-assets/img/customer-logos/infodesk_2x.png"  alt="K2 logo">
         </p>
 
         <p>
@@ -280,16 +307,16 @@ redirect_from:
     <div class="customer-container card-slider-container-logos">
 
       <div class="card">
-        <img src="/gh-assets/img/logos_01.png">
+        <img src="{{ baseurl }}/gh-assets/img/logos_01.png">
       </div>
       <div class="card">
-        <img src="/gh-assets/img/logos_02.png">
+        <img src="{{ baseurl }}/gh-assets/img/logos_02.png">
       </div>
       <div class="card">
-        <img src="/gh-assets/img/logos_03.png">
+        <img src="{{ baseurl }}/gh-assets/img/logos_03.png">
       </div>
       <div class="card">
-        <img src="/gh-assets/img/logos_04.png">
+        <img src="{{ baseurl }}/gh-assets/img/logos_04.png">
       </div>
     </div>
   </section>
@@ -311,9 +338,9 @@ redirect_from:
         </p>
 
 
-        <div class="dcs-help-img"><img src="/gh-assets/img/dcsdk.png"></div>
+        <div class="dcs-help-img"><img src="{{ baseurl }}/gh-assets/img/dcsdk.png"></div>
       </div>
     </div>
   </section>
 
-  <script type="text/javascript" defer="defer" src="/gh-assets/js/slab-animate.js"></script>
+  <script type="text/javascript" defer="defer" src="{{ baseurl }}/gh-assets/js/slab-animate.js"></script>

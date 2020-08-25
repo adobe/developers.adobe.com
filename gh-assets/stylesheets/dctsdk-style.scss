@@ -1,4 +1,4 @@
-
+{% include paths.html %}
 
 $black: #000;
 $blue: #0D66D0;
@@ -400,7 +400,7 @@ section.slab {
       max-width: 1280px;
       position: relative;
       margin: 0 auto;
-      background: url("/gh-assets/img/slab-animate/background_circuit_2x.png");
+      background: url("../img/slab-animate/background_circuit_2x.png");
       background-repeat: no-repeat;
       background-position: center top;
       background-size: contain;
@@ -694,7 +694,7 @@ section.dctsdk-work-flow {
     width: 1.5rem;
     height: 1.5rem;
     background-size: 1.5rem;
-    background-image: url("/gh-assets/svg/smock_chevronright_18_n.svg");
+    background-image: url("../svg/smock_chevronright_18_n.svg");
     margin-left: -1.875rem;
     @media screen and (min-width: 768px) {
       visibility: hidden;
@@ -705,7 +705,7 @@ section.dctsdk-work-flow {
     width: 1.5rem;
     height: 1.5rem;
     background-size: 1.5rem;
-    background-image: url("/gh-assets/svg/smock_chevronright_18_n.svg");
+    background-image: url("../svg/smock_chevronright_18_n.svg");
     margin-left: -1.875rem;
     @media screen and (min-width: 768px) {
       visibility: hidden;
@@ -716,35 +716,35 @@ section.dctsdk-work-flow {
     width: 18px;
     height: 21px;
     background-size: 18px;
-    background-image: url("/gh-assets/svg/s_createpdf_color_24.svg");
+    background-image: url("../svg/s_createpdf_color_24.svg");
   }
 
   .work-flow_menu ul li .apply {
     width: 23px;
     height: 24px;
     background-size: 24px;
-    background-image: url("/gh-assets/svg/a12_enhancescanstool.svg");
+    background-image: url("../svg/a12_enhancescanstool.svg");
   }
 
   .work-flow_menu ul li .combine {
     width: 24px;
     height: 23.75px;
     background-size: 24px;
-    background-image: url("/gh-assets/svg/s_combinefiles_color_24.svg");
+    background-image: url("../svg/s_combinefiles_color_24.svg");
   }
 
   .work-flow_menu ul li .protect {
     width: 18px;
     height: 23px;
     background-size: 18px;
-    background-image: url("/gh-assets/svg/a12_protect.svg");
+    background-image: url("../svg/a12_protect.svg");
   }
 
   .work-flow_menu ul li .embed {
     width: 26px;
     height: 22px;
     background-size: 18px;
-    background-image: url("/gh-assets/svg/menu-icons/embed.svg");
+    background-image: url("../svg/menu-icons/embed.svg");
   }
 
   .work-flow_menu ul li .icon-align {

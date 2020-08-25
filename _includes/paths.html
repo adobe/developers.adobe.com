@@ -1,0 +1,5 @@
+{% if site.url contains "opensource.adobe.com" %}
+  {% assign baseurl = "" %}
+{% else %}
+  {% assign baseurl = site.baseurl %}
+{% endif %}
