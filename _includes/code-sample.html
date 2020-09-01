@@ -61,64 +61,49 @@
       <coral-panel>
 <pre><code class="language-javascript">// Create an ExecutionContext using credentials and create a new operation instance.
 const executionContext = PDFToolsSdk.ExecutionContext.create(credentials),
-  htmlToPDFOperation = PDFToolsSdk.CreatePDF.Operation.createNew();
-
+createPdfOperation = PDFToolsSdk.CreatePDF.Operation.createNew();
+  
 // Set operation input from a source file.
-const input = PDFToolsSdk.FileRef
-  .createFromLocalFile( 'resources/createPDFFromStaticHtmlInput.zip' );
-htmlToPDFOperation.setInput(input);
-
-// Provide any custom configuration options for the operation.
-setCustomOptions(htmlToPDFOperation);
-
+const input = PDFToolsSdk.FileRef.createFromLocalFile('resources/createPDFInput.docx');
+createPdfOperation.setInput(input);
+  
 // Execute the operation and Save the result to the specified location.
-htmlToPDFOperation.execute(executionContext)
-  .then(result => 
-    result.saveAsFile(
-      'output/createPdfFromStaticHtmlOutput.pdf'
-  ))
+createPdfOperation.execute(executionContext)
+.then(result => result.saveAsFile('output/createPDFFromDOCX.pdf'))
 </code></pre>
       </coral-panel>
 
       <coral-panel>
 <pre><code class="language-clike">// Create an ExecutionContext using credentials and create a new operation instance.
-ExecutionContext executionContext = ExecutionContext.create( credentials );
-CreatePDFOperation htmlToPDFOperation = CreatePDFOperation.createNew();
-
+ExecutionContext executionContext = ExecutionContext.Create(credentials);
+CreatePDFOperation createPdfOperation = CreatePDFOperation.CreateNew();
+  
 // Set operation input from a source file.
-FileRef source = FileRef
-  .createFromLocalFile( "src/main/resources/createPDFFromStaticHtmlInput.zip" );
-htmlToPDFOperation.setInput( source );
-
-// Provide any custom configuration options for the operation.
-setCustomOptions( htmlToPDFOperation );
-
+FileRef source = FileRef.CreateFromLocalFile(@"createPdfInput.docx");
+createPdfOperation.SetInput(source);
+  
 // Execute the operation.
-FileRef result = htmlToPDFOperation.execute( executionContext );
-
+FileRef result = createPdfOperation.Execute(executionContext);
+  
 // Save the result to the specified location.
-result.saveAs( "output/createPDFFromStaticHtmlOutput.pdf" );
+result.SaveAs(Directory.GetCurrentDirectory() + "/output/createPdfOutput.pdf");
 </code></pre>
       </coral-panel>
 
       <coral-panel>
 <pre><code class="language-java">// Create an ExecutionContext using credentials and create a new operation instance.
-ExecutionContext executionContext = ExecutionContext.create( credentials );
-CreatePDFOperation htmlToPDFOperation = CreatePDFOperation.createNew();
-
+ExecutionContext executionContext = ExecutionContext.create(credentials);
+CreatePDFOperation createPdfOperation = CreatePDFOperation.createNew();
+  
 // Set operation input from a source file.
-FileRef source = FileRef
-  .createFromLocalFile( "src/main/resources/createPDFFromStaticHtmlInput.zip" );
-htmlToPDFOperation.setInput(source);
-
-// Provide any custom configuration options for the operation.
-setCustomOptions( htmlToPDFOperation );
-
+FileRef source = FileRef.createFromLocalFile("src/main/resources/createPDFInput.docx");
+createPdfOperation.setInput(source);
+  
 // Execute the operation.
-FileRef result = htmlToPDFOperation.execute( executionContext );
-
+FileRef result = createPdfOperation.execute(executionContext);
+  
 // Save the result to the specified location.
-result.saveAs( "output/createPDFFromStaticHtmlOutput.pdf" );
+result.saveAs("output/createPDFFromDOCX.pdf");
 </code></pre>
       </coral-panel>
     </coral-panelstack>
@@ -141,19 +126,17 @@ result.saveAs( "output/createPDFFromStaticHtmlOutput.pdf" );
 <pre><code class="language-javascript">// Create an ExecutionContext using 
 // credentials and create a new 
 // operation instance.
-ExecutionContext executionContext = ExecutionContext.Create(credentials);
-ExportPDFOperation exportPdfOperation = ExportPDFOperation.CreateNew( ExportPDFTargetFormat.DOCX );
+const executionContext = PDFToolsSdk.ExecutionContext.create(credentials),
+exportPDF = PDFToolsSdk.ExportPDF,
+exportPdfOperation = exportPDF.Operation.createNew(exportPDF.SupportedTargetFormats.DOCX);
 
-// Set operation input from a local PDF file
-FileRef sourceFileRef = FileRef.CreateFromLocalFile(@"exportPdfInput.pdf");
-exportPdfOperation.SetInput(sourceFileRef);
+// Set operation input from a source file
+const input = PDFToolsSdk.FileRef.createFromLocalFile('resources/exportPDFInput.pdf');
+exportPdfOperation.setInput(input);
 
-// Execute the operation.
-FileRef result = exportPdfOperation.Execute(executionContext);
-
-// Save the result to the specified location.
-result.SaveAs(Directory.GetCurrentDirectory() 
-  + "/output/exportPdfOutput.docx");
+// Execute the operation and Save the result to the specified location.
+exportPdfOperation.execute(executionContext)
+.then(result => result.saveAsFile('output/exportPdfOutput.docx'))
 </code></pre>
         </coral-panel>
 
