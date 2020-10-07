@@ -1130,9 +1130,23 @@ section.dctsdk-work-flow {
     background-position: center center;
   }
 
+  .work-flow_menu ul li .split {
+    background-size: 24px 24px;
+    background-image: url("../svg/s_split-pdf_36.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
   .work-flow_menu ul li .protect {
-    background-size: 18px 23px;
-    background-image: url("../svg/a12_protect.svg");
+    background-size: 24px 23px;
+    background-image: url("../svg/s_protect_36.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .work-flow_menu ul li .unlock {
+    background-size: 24px 23px;
+    background-image: url("../svg/s_unlock-pdf_36.svg");
     background-repeat: no-repeat;
     background-position: center center;
   }
