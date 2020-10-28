@@ -17,6 +17,7 @@ $baseurl: "{{ site.baseurl }}"; /* Allows the @import files to use $baseurl */
 @import "subnav";
 @import "font-style";
 @import "slab-animate";
+@import "market-place";
 
 body {
   font-family: 'Adobe Clean';
@@ -509,7 +510,7 @@ body {
     }
   }
 
-  section .use-case {
+  section.use-case {
     margin: 4.375rem 2.75rem 3rem;
     @media screen and (min-width: 768px) {
       margin: 4.375rem auto 3rem;

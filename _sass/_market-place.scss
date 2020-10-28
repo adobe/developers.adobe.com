@@ -1,0 +1,120 @@
+/* Market Place */
+
+section.market-place {
+    //margin: 2rem 2.75rem 0;
+    margin:0px !important;
+    padding-bottom: 0.75rem;
+
+    background: rgb(21,64,113);
+    background: -moz-linear-gradient(30deg, rgba(21,64,113,1) 22%, rgba(115,69,109,1) 74%, rgba(110,45,45,1) 100%);
+    background: -webkit-linear-gradient(30deg, rgba(21,64,113,1) 22%, rgba(115,69,109,1) 74%, rgba(110,45,45,1) 100%);
+    background: linear-gradient(30deg, rgba(21,64,113,1) 22%, rgba(115,69,109,1) 74%, rgba(110,45,45,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#154071",endColorstr="#6e2d2d",GradientType=1);
+
+    .market-place-container{
+        padding-top:4.1875rem;
+        margin: 0 auto;
+
+    .market-place-wrapper{
+        max-height:331px;
+        
+        color: #FFFFFF;
+
+            .market-place-logo-wrapper{
+                font-size:3.25rem;
+                display:flex;
+                flex-direction:column;
+                justify-content: center;
+                align-items: center;
+
+                @media screen and (min-width: 768px) {
+                    flex-direction:row;
+                    align-content: center; 
+                   // max-width:42.875rem;
+                }
+               
+                margin-bottom:2.4375rem;
+
+                .mp-adobe-logo{
+                    width:186px;
+                    height:56px;
+                    
+                    img{
+                        width:100%;
+                        vertical-align: top;
+                    }
+                }
+
+                .mp-plus{
+                    font-size:2.75rem;                    
+                    padding-left:50px;
+                    padding-right:45px;
+                    margin-top: -10px;
+
+                    @media screen and (min-width: 768px) {
+                        font-size:3.25rem; 
+                    }
+                }
+
+                .mp-logo{
+                    width:287px;
+                    height:35px;
+                    margin-top:-25px;
+                    
+                    img{
+                        width:100%;
+                    }
+                    @media screen and (min-width: 768px) {
+                        width:377px;
+                        height:46px;
+                    }
+
+                }
+            }
+  
+            .mp-copy{
+                margin:0 auto;
+                width:284px;
+
+                @media screen and (min-width: 768px) {
+                    width:100%;
+                }
+                
+                h4 {
+                    font-size:1.1875rem;
+                    color: #ffffff;
+                    font-family: 'Adobe Clean Black';
+                    font-weight: 900;
+                    text-align: center;
+
+                    @media screen and (min-width: 768px) {
+                        
+                        font-size:1.375rem;
+                        padding:0;
+                        margin-bottom: 0.625rem;
+                    }
+                }
+                
+                p{
+                    font-size: 0.9375rem;
+                    margin-bottom: 2.25rem;
+                    line-height:1rem;
+                    font-family: 'Adobe Clean';
+                    text-align: center;
+
+                    @media screen and (min-width: 768px) {
+                        font-size: 1.25rem;
+                       margin-bottom: 1.875rem; 
+                    }
+                   
+                }
+
+                .button-link{
+                    color:#ffffff !important;
+                    font-weight: normal !important;
+                    width:100px !important;
+                }
+            }
+        }
+    }
+}
