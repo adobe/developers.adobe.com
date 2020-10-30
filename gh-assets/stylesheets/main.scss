@@ -30,7 +30,14 @@ body {
   a {
     text-decoration: none;
     color: $blue;
-    outline:none !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    text-decoration-style: solid;
+
+    :active{
+      outline: none !important;
+      outline-width: 0 !important;
+    }
   }
 
   h1 {
@@ -510,7 +517,7 @@ body {
     }
   }
 
-  section.use-case {
+  section.use-case, .use-case {
     margin: 4.375rem 2.75rem 3rem;
     @media screen and (min-width: 768px) {
       margin: 4.375rem auto 3rem;

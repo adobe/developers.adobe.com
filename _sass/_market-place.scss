@@ -106,14 +106,19 @@ section.market-place {
                         font-size: 1.25rem;
                        margin-bottom: 1.875rem; 
                     }
+
+                    a{
+                        text-decoration-style: solid !important;
+
+                        .button-link{
+                            color:#ffffff !important;
+                            font-weight: normal !important;
+                            width:100px !important;
+                        }
+                    }
                    
                 }
-
-                .button-link{
-                    color:#ffffff !important;
-                    font-weight: normal !important;
-                    width:100px !important;
-                }
+                
             }
         }
     }
