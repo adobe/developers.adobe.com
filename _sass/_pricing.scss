@@ -54,7 +54,7 @@ section.sdk-pricing{
 
             @media screen and (min-width: 1024px) {
                 display:flex;                
-                padding-bottom:0;
+               // padding-bottom:0;
             }
 
             &.no-flex{
@@ -82,7 +82,18 @@ section.sdk-pricing{
                 
                 &.secondary-top-marg{
                     margin-top:1.25rem;
+                    @media screen and (min-width: 1024px) {
+                        margin-top: 0;
+                    }
                 }
+                &.reset-top{
+                    @media screen and (min-width: 1024px) {
+                        // margin-top: 2.6875rem;
+                        margin-top:4.6875rem;
+                    }
+                }
+
+               
             }
 
             &.border-thin{
