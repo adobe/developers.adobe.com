@@ -19,6 +19,7 @@ $baseurl: "{{ site.baseurl }}"; /* Allows the @import files to use $baseurl */
 @import "slab-animate";
 @import "market-place";
 @import "resources";
+@import "pricing";
 
 body {
   font-family: 'Adobe Clean';

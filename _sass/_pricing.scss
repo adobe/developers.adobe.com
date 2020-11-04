@@ -1,0 +1,227 @@
+
+.pricing-section-wrapper{
+    margin: 4.375rem 2.75rem;
+
+    @media screen and (min-width: 1024px) {
+        display:flex;
+        //flex-wrap:wrap;
+        max-width: 1060px;
+        margin: 0 auto;
+
+        margin-bottom:144px;
+    }
+
+    
+    section{
+
+        &:first-of-type{    
+           // margin-top: -70px !important;
+            margin-left:0px !important;
+            margin-right:0px !important;
+        }
+        &:last-of-type{    
+           // margin-top:0px !important;
+            margin-left:0px !important;
+            margin-right:0px !important;
+         }
+    }
+
+}
+
+section.sdk-pricing{
+    &.siblg-sctn-top{
+        margin-top:3rem !important;
+
+        @media screen and (min-width: 1024px) {
+            margin-top:0px !important;
+        }
+
+    }
+    &.siblg-sctn-bottom{
+        margin-bottom:0px !important;
+    }
+
+    .pricing-container{
+
+        @media screen and (min-width: 1024px) {
+            max-width:1060px;
+            margin:0 auto;
+        }
+
+        .pricing-wrapper{
+            border-bottom:4px solid #4B4B4B;
+            padding-bottom:2rem;
+
+            @media screen and (min-width: 1024px) {
+                display:flex;                
+                padding-bottom:0;
+            }
+
+            &.no-flex{
+                @media screen and (min-width: 1024px) {
+                    display:block;
+                }
+            }
+
+            h3{
+                font-family:'Adobe Clean Black' !important; 
+                font-size: 1.75rem !important;  
+                font-weight:900 !important;    
+                line-height: 2.25rem !important;  
+                padding:0 !important; 
+            }
+
+            h4{                
+                text-align:left;
+                font-family:'Adobe Clean Light' !important; 
+                font-size:1.75rem;
+                line-height:2.25rem;
+                color:#2C2C2C;
+                margin-bottom:0px; 
+                text-transform: unset; 
+                
+                &.secondary-top-marg{
+                    margin-top:1.25rem;
+                }
+            }
+
+            &.border-thin{
+                border-bottom:2px solid #E1E1E1 !important;
+
+                @media screen and (min-width: 1024px) { 
+                    border-bottom:none !important; 
+                    border-right: 2px solid #E1E1E1 !important;
+                    padding-right:100px;
+                    margin-right:40px;
+                }
+            }
+
+            &.no-border{
+                border:none !important;
+            }
+
+            .pricing-copy-wrapper{
+                display:block;
+                margin-top:1.25rem;
+
+                @media screen and (min-width: 1024px) {                    
+                    padding-right:6.875rem;
+                }
+               
+                p{
+                    text-align:left;
+                    font-family:'Adobe Clean Light' !important; 
+                    font-size:1.125rem;
+                    line-height:1.6875rem;
+                    color:#4B4B4B;
+                    margin-bottom:0px;
+
+                    @media screen and (min-width: 1024px) {
+                        max-width:400px;
+                    }
+
+                    span{
+                        display: inline-block;
+                        padding-top:0.625rem;
+                        font-family:'Adobe Clean' !important; 
+                        color:#2C2C2C;
+                        line-height:1.5rem;
+                    }
+                }
+
+                &.padding-control{
+                    padding-right:0;
+
+                    p{
+                        @media screen and (min-width: 1024px) {
+                            max-width:450px;
+                        }
+                    }
+                }
+            }
+
+           .chk-list-wrapper{
+                margin-top:2rem;
+            
+                ul{
+                    list-style: none;
+                    
+                    padding:0px;
+                    margin:0px;
+
+                    li{
+                        font-size:1.125rem;
+                        color:#2C2C2C;
+                        margin-bottom:2rem;
+
+                        &:last-child{
+                            @media screen and (min-width: 1024px) {
+                                margin-bottom:0;
+                            }
+                        }
+
+                        .check {
+                            display: inline-block;
+                            transform: rotate(33deg);
+                            height: 0.75rem;
+                            width: 5px;
+                            border-bottom: 2px solid #2D9D78;
+                            border-right: 2px solid #2D9D78;
+                        }
+
+                        .lst-text{
+                            margin-left:1rem;
+                            text-align:left;
+                            font-family:'Adobe Clean Bold';
+                            font-size:1.125rem;
+                            line-height:1.6875rem;
+                            color:#2C2C2C;
+                        }
+                    }
+                }
+           }
+
+           .chk-lst-cta-wrapper{
+                display:flex;
+                flex-direction:row;
+                margin-top:2.5rem;
+
+                &.cta-wrap-reset{
+                    @media screen and (min-width: 1024px) {
+                        flex-direction:column-reverse;
+                        flex-wrap:wrap;
+                        align-content: flex-end;
+                        margin-left: auto;
+                    }
+                }
+
+                .cta-get-started{
+                    margin-right:1.125rem;
+
+                    &.reset{
+                        @media screen and (min-width: 1024px) {
+                            margin-right:0;
+                        }
+                    }
+                }
+
+                .cta-try-demo{
+                    font-family:'Adobe Clean Bold';
+                    font-size:0.875rem;
+                    color:#6E6E6E;
+                    margin-top:0.3125rem;
+
+                    &.reset{
+                        @media screen and (min-width: 1024px) {
+                            text-align:center;
+                            margin-top:0;
+                            margin-bottom:1.5625rem;
+                        }
+                    }
+                    
+                }
+            }
+
+        }
+    }
+}
