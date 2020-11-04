@@ -13,11 +13,12 @@ $header-font-size: 27px;
 
 $baseurl: "{{ site.baseurl }}"; /* Allows the @import files to use $baseurl */
 
-@import "_main-top-nav";
+@import "main-top-nav";
 @import "subnav";
 @import "font-style";
 @import "slab-animate";
 @import "market-place";
+@import "resources";
 
 body {
   font-family: 'Adobe Clean';

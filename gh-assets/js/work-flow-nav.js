@@ -103,3 +103,44 @@ function resetWorkFlowMenu(){
   $('div.work-flow-menu-item.active').removeClass('active');
 }
 
+
+function getRSSFeed(RSS_URL){
+  $.ajax(RSS_URL, {
+    accepts: {
+      xml: "application/rss+xml"
+    },
+  
+    dataType: "xml",
+  
+    success: function(data) {
+      $(data)
+        .find("item")
+        .each(function() {
+          const el = $(this);
+  
+          const template = `
+            <article>
+              <img src="${el.find("link").text()}/image/large.png" alt="">
+              <h2>
+                <a href="${el
+                  .find("link")
+                  .text()}" target="_blank" rel="noopener">
+                  ${el.find("title").text()}
+                </a>
+              </h2>
+            </article>
+          `;
+
+          // <div>
+          //     <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg01.jpg" alt=""> </a>
+          //     <p class="blog-title">
+          //         Adding Annotations to a PDF Using Adobe PDF Embed API
+          //     </p>  
+          //     <p class="blog-text">Have you ever wanted to markup a PDF file interactively with your team the same way you can in Microsoft Office 365 or Google Docs?</p>
+          // </div> 
+          document.body.insertAdjacentHTML("beforeend", template);
+        });
+    }
+  });
+}
+
