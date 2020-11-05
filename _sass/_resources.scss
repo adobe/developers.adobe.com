@@ -187,7 +187,9 @@ section.sdk-rsrc-featured{
                 max-height:8.1875rem;
 
                 &:not(:last-child) { 
-                    margin-right:2.5rem;
+                    @media screen and (min-width: 1024px) {
+                        margin-right:2.5rem;
+                    }
                 }                
 
                 .featured-thumb{
@@ -264,7 +266,11 @@ section.sdk-rsrc-tutorial{
 
         .tutorial-wrapper{
             display: flex;
-            flex-wrap: wrap;            
+            flex-wrap: wrap; 
+            
+            @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+                justify-content: center;
+            }
 
             .tutorial{               
                 
@@ -292,6 +298,12 @@ section.sdk-rsrc-tutorial{
                 &:nth-child(4n+4){ 
                     @media screen and (min-width: 1024px) {
                         margin:0;  
+                    }
+                }
+
+                &:nth-child(2n+2){ 
+                    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+                        margin:0; 
                     }
                 }
 
@@ -479,6 +491,10 @@ section.sdk-rsrc-stories{
                     padding-left:1.25rem;
                     margin-top:4.375rem;
                 }
+
+                @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {  
+                    padding-left:0;                    
+                }
             }
 
             .customer{
@@ -500,13 +516,22 @@ section.sdk-rsrc-stories{
                     
                     @media screen and (min-width: 1024px) {
                         padding:3.0625rem 17.25rem 3rem 17.25rem;
-                    }                                  
+                    }  
+                    
+                    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+                        padding: 1.0625rem 9.25rem 1rem 9.25rem;                        
+                    }
 
                     img{  
                         max-width:288px;              
                         margin:0 auto;
                         @media screen and (min-width: 767px) {
-                            padding:3.0625rem 0 3rem 0;
+                            padding:3.0625rem 0 3rem 0;                            
+                        }
+
+                        @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+                             max-width:185px;
                             
                         }
                     }
