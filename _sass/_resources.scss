@@ -164,7 +164,10 @@ section.sdk-rsrc-featured{
             font-size: 1.75rem;
             line-height: 2.25rem;
             font-weight:900;  
-            padding:0;          
+            padding:0;  
+            @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+               margin-left:2.75rem; 
+            }
         }
 
         .featured-wrapper{
@@ -173,6 +176,11 @@ section.sdk-rsrc-featured{
 
             @media screen and (min-width: 1024px) {
                 flex-direction:row;
+            }
+
+            @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+               margin-top: 1.875rem;
+               flex-wrap:wrap;
             }
 
             a{   
@@ -190,12 +198,29 @@ section.sdk-rsrc-featured{
                     @media screen and (min-width: 1024px) {
                         margin-right:2.5rem;
                     }
-                }                
+
+                    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+                        margin-right:0;
+                        margin-bottom:25px !important;
+                        margin:0 auto;
+                    }
+                }    
+                
+                @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+                    margin-right:0;
+                    margin:0 auto;
+                    max-width:50rem;
+                    margin-bottom:25px;
+                }
 
                 .featured-thumb{
                     width:8.125rem;
                     height:100%;
                     margin:0;
+
+                    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+                        width:16.125rem;
+                    }
 
                     &.feat1{
                         background: url('../img/resource/featured_01.png');
@@ -224,6 +249,11 @@ section.sdk-rsrc-featured{
                     padding-left:1rem;
                     max-width:16.875rem;                    
                     background:#ffffff;
+
+                    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+                        max-width:25.875rem;
+                        padding-right:1rem;
+                    }
 
                     .featured-title{
                         text-align:left !important;
