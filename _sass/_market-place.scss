@@ -5,11 +5,13 @@ section.market-place {
     margin:0px !important;
     padding-bottom: 0.75rem;
 
-    background: rgb(21,64,113);
-    background: -moz-linear-gradient(30deg, rgba(21,64,113,1) 22%, rgba(115,69,109,1) 74%, rgba(110,45,45,1) 100%);
-    background: -webkit-linear-gradient(30deg, rgba(21,64,113,1) 22%, rgba(115,69,109,1) 74%, rgba(110,45,45,1) 100%);
-    background: linear-gradient(30deg, rgba(21,64,113,1) 22%, rgba(115,69,109,1) 74%, rgba(110,45,45,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#154071",endColorstr="#6e2d2d",GradientType=1);
+    // background: rgb(21,64,113);
+    // background: -moz-linear-gradient(30deg, rgba(21,64,113,1) 22%, rgba(115,69,109,1) 74%, rgba(110,45,45,1) 100%);
+    // background: -webkit-linear-gradient(30deg, rgba(21,64,113,1) 22%, rgba(115,69,109,1) 74%, rgba(110,45,45,1) 100%);
+    // background: linear-gradient(30deg, rgba(21,64,113,1) 22%, rgba(115,69,109,1) 74%, rgba(110,45,45,1) 100%);
+    // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#154071",endColorstr="#6e2d2d",GradientType=1);
+
+    background: transparent linear-gradient(90deg, #363955 0%, #FA0F00D5 100%) 0% 0% no-repeat padding-box;
 
     .market-place-container{
         padding-top:4.1875rem;

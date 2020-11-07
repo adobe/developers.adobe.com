@@ -4,6 +4,7 @@
     display: inline-block;
     padding: 5px;
     margin-top:14px;
+    margin-left: -4px;
 }
 
 .right {
@@ -86,11 +87,12 @@ section.sdk-rsrc-release{
                 h4{
                     text-align:left !important;
                     font-family:'Adobe Clean Bold';
-                    font-size:2.25rem;
-                    text-transform:none;
+                    font-size:1.75rem;
+                    text-transform:none;                    
 
                     @media screen and (min-width: 767px) {
-                        margin-left:4.375rem; 
+                        font-size:2.25rem;
+                        //margin-left:4.375rem; 
                     }                                       
                 }
 
@@ -100,8 +102,8 @@ section.sdk-rsrc-release{
                     margin-bottom:0px;                    
 
                     @media screen and (min-width: 767px) {
-                        margin-left:4.375rem;
-                        padding-right:4.375rem;
+                        //margin-left:4.375rem;
+                        //padding-right:4.375rem;
                     }
                 }
 
@@ -109,7 +111,7 @@ section.sdk-rsrc-release{
                     margin-top:1.875rem;
                        
                     @media screen and (min-width: 767px) {
-                        margin-left:4.375rem;
+                        //margin-left:4.375rem;
                     }
                 }         
             }
@@ -165,8 +167,13 @@ section.sdk-rsrc-featured{
             line-height: 2.25rem;
             font-weight:900;  
             padding:0;  
+
             @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
                margin-left:2.75rem; 
+            }
+
+            @media screen and (min-width: 767px) {
+                margin-left:0 !important; 
             }
         }
 
@@ -266,8 +273,15 @@ section.sdk-rsrc-featured{
 
                     .featured-text{
                         text-align:left !important;
-                        font-size: .840rem;
+                        font-family:'Adobe Clean Bold';
+                        font-size: 0.875rem;
                         line-height: 1.2rem;
+
+                        @media screen and (min-width: 767px) {
+                            font-size: .840rem;                            
+                        }
+
+                        
                     }
                 }                
             }
