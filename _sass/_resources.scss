@@ -149,14 +149,14 @@ section.sdk-rsrc-featured{
     .featured-container{
         margin: 0 2.75rem;
 
-        @media screen and (min-width: 1024px) {
+        @media screen and (min-width: 1440px) {
             margin: 4.375rem 2.75rem; 
         }
         
         padding-top:3.125rem !important;
         padding-bottom:5.625rem;
 
-        @media screen and (min-width: 1024px) {
+        @media screen and (min-width: 1440px) {
             max-width:1280px;
             margin:0 auto;
         }
@@ -181,7 +181,7 @@ section.sdk-rsrc-featured{
             display: flex;
             flex-direction:column;
 
-            @media screen and (min-width: 1024px) {
+            @media screen and (min-width: 1440px) {
                 flex-direction:row;
             }
 
@@ -202,7 +202,7 @@ section.sdk-rsrc-featured{
                 max-height:8.1875rem;
 
                 &:not(:last-child) { 
-                    @media screen and (min-width: 1024px) {
+                    @media screen and (min-width: 1440px) {
                         margin-right:2.5rem;
                     }
 
@@ -280,7 +280,6 @@ section.sdk-rsrc-featured{
                         @media screen and (min-width: 767px) {
                             font-size: .840rem;                            
                         }
-
                         
                     }
                 }                
@@ -323,7 +322,7 @@ section.sdk-rsrc-tutorial{
                     margin-right:2.5rem;  
                     width:47%;
                 }
-                @media screen and (min-width: 1024px) {
+                @media screen and (min-width: 1440px) {
                     width:18.125rem; 
                 }
                 padding-top:1.875rem; 
@@ -334,13 +333,13 @@ section.sdk-rsrc-tutorial{
                         margin:0;  
                     }
 
-                    @media screen and (min-width: 1024px) {
+                    @media screen and (min-width: 1440px) {
                         margin-right:2.5rem; 
                     }
                 }
                 
                 &:nth-child(4n+4){ 
-                    @media screen and (min-width: 1024px) {
+                    @media screen and (min-width: 1440px) {
                         margin:0;  
                     }
                 }
@@ -354,7 +353,7 @@ section.sdk-rsrc-tutorial{
                 a{
                     div{
                         width:100%;
-                        @media screen and (min-width: 1024px) {
+                        @media screen and (min-width: 1440px) {
                             width:290px;  
                         }
                         height:160px;
@@ -446,13 +445,13 @@ section.sdk-rsrc-blog{
 
             > div{            
                 
-                @media screen and (min-width: 1024px) {
+                @media screen and (min-width: 1440px) {
                     max-width:25rem;
                 }
 
                 &:not(:last-child) { 
                     
-                    @media screen and (min-width: 1024px) {
+                    @media screen and (min-width: 1440px) {
                         margin-right:2.5rem;
                     }
                 }
@@ -518,7 +517,7 @@ section.sdk-rsrc-stories{
             display: flex;
             flex-wrap:wrap;
 
-            @media screen and (min-width: 1024px) {
+            @media screen and (min-width: 1440px) {
                 display: flex;
                 flex-wrap:nowrap;
                 justify-content: space-between;
@@ -531,7 +530,7 @@ section.sdk-rsrc-stories{
                 font-weight:900;                  
                 padding-right:3.5rem;
 
-                @media screen and (min-width: 1024px) {
+                @media screen and (min-width: 1440px) {
                     padding-left:1.25rem;
                     margin-top:4.375rem;
                 }
@@ -558,7 +557,7 @@ section.sdk-rsrc-stories{
                     background:#F2F3F6;
                     margin:0 auto;  
                     
-                    @media screen and (min-width: 1024px) {
+                    @media screen and (min-width: 1440px) {
                         padding:3.0625rem 17.25rem 3rem 17.25rem;
                     }  
                     
