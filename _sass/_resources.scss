@@ -66,13 +66,13 @@ section.sdk-rsrc-release{
             flex-wrap: wrap;
             margin-bottom:4.0625rem;
 
-            @media screen and (min-width: 1024px) {
+            @media screen and (min-width: 1440px) {
                 flex-direction:row;
             }
 
             > div{
                 width:100%;
-                @media screen and (min-width: 1024px) {
+                @media screen and (min-width: 1440px) {
                     width:50%;
                 }
             }   
