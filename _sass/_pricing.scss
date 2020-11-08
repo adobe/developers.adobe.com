@@ -82,6 +82,7 @@ section.sdk-pricing{
                 line-height:2.25rem;
                 color:#2C2C2C;
                 margin-bottom:0px; 
+                padding-bottom:0px;
                 text-transform: unset; 
                 
                 &.secondary-top-marg{
@@ -95,9 +96,7 @@ section.sdk-pricing{
                         // margin-top: 2.6875rem;
                         margin-top:4.6875rem;
                     }
-                }
-
-               
+                }               
             }
 
             &.border-thin{
