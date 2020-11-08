@@ -74,7 +74,7 @@ section.market-place {
                 }
             }
   
-            .mp-copy{
+            .mp-copy-wrapper{
                 margin:0 auto;
                 width:284px;
 
@@ -98,18 +98,34 @@ section.market-place {
                     }
                 }
                 
-                p{
+                .mp-copy{
+                    margin:0;
                     font-size: 0.9375rem;
-                    margin-bottom: 2.25rem;
                     line-height:1rem;
                     font-family: 'Adobe Clean';
                     text-align: center;
 
                     @media screen and (min-width: 768px) {
-                        font-size: 1.25rem;
-                        margin-bottom: 1.875rem; 
+                        font-size: 1.125rem;
+                    }
+                }
+
+                .mp-cta-wrapper{
+                    margin-top: 1.875rem; 
+                    margin-bottom:1.875rem;
+
+                    @media screen and (min-width: 767px) {
+                        font-size: 1.125rem;
+                        margin-bottom:3.125rem;
                     }
 
+
+                    @media screen and (min-width: 1440px) {
+                        font-size: 1.125rem;
+                        margin-bottom:3.25rem;
+                    }
+
+                    text-align:center;
                     .button-link{
                         text-decoration-style: solid !important;
                         color:#ffffff !important;
