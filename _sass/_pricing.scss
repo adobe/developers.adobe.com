@@ -15,12 +15,11 @@
     section{
 
         &:first-of-type{    
-           // margin-top: -70px !important;
             margin-left:0px !important;
             margin-right:0px !important;
         }
+
         &:last-of-type{    
-           // margin-top:0px !important;
             margin-left:0px !important;
             margin-right:0px !important;
          }
@@ -39,9 +38,19 @@ section.sdk-pricing{
     }
     &.siblg-sctn-bottom{
         margin-bottom:0px !important;
+        padding-bottom:0px !important;
     }
 
     .pricing-container{
+        padding:0 !important; 
+        
+        h3{
+            font-family:'Adobe Clean Black' !important; 
+            font-size: 1.75rem !important;  
+            font-weight:900 !important;    
+            line-height: 2.25rem !important;  
+            padding:0 !important;               
+        }
 
         @media screen and (min-width: 1024px) {
             max-width:1060px;
@@ -61,14 +70,6 @@ section.sdk-pricing{
                 @media screen and (min-width: 1024px) {
                     display:block;
                 }
-            }
-
-            h3{
-                font-family:'Adobe Clean Black' !important; 
-                font-size: 1.75rem !important;  
-                font-weight:900 !important;    
-                line-height: 2.25rem !important;  
-                padding:0 !important; 
             }
 
             h4{                
@@ -114,6 +115,10 @@ section.sdk-pricing{
             .pricing-copy-wrapper{
                 display:block;
                 margin-top:1.25rem;
+
+                @media screen and (min-width: 767px) {                    
+                    margin-top:2rem;
+                }
 
                 @media screen and (min-width: 1024px) {                    
                     padding-right:6.875rem;
