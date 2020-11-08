@@ -168,13 +168,13 @@ section.sdk-rsrc-featured{
             font-weight:900;  
             padding:0;  
 
-            @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-               margin-left:2.75rem; 
-            }
+            // @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+            //    margin-left:2.75rem; 
+            // }
 
-            @media screen and (min-width: 767px) {
-                margin-left:0 !important; 
-            }
+            // @media screen and (min-width: 767px) {
+            //     margin-left:0 !important; 
+            // }
         }
 
         .featured-wrapper{
@@ -198,8 +198,12 @@ section.sdk-rsrc-featured{
                 text-decoration:none !important;
                 border:1px solid #EAEAEA;
                 border-radius: 4px;
-                max-width:25rem;
+                max-width:none;
                 max-height:8.1875rem;
+
+                @media screen and (min-width: 1440px) {
+                    max-width:25rem;
+                }
 
                 &:not(:last-child) { 
                     @media screen and (min-width: 1440px) {
@@ -221,9 +225,13 @@ section.sdk-rsrc-featured{
                 }
 
                 .featured-thumb{
-                    width:8.125rem;
+                    width:25%;
                     height:100%;
                     margin:0;
+
+                    @media screen and (min-width: 1440px) {
+                        width:8.125rem;
+                    }
 
                     @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
                         width:16.125rem;
@@ -253,9 +261,12 @@ section.sdk-rsrc-featured{
                 }
         
                 .featured-copy-wrapper{
-                    padding-left:1rem;
-                    max-width:16.875rem;                    
+                    padding-left:1rem;                                      
                     background:#ffffff;
+
+                    @media screen and (min-width: 1440px) {
+                        max-width:16.875rem;  
+                    }
 
                     @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
                         max-width:25.875rem;
@@ -434,14 +445,18 @@ section.sdk-rsrc-tutorial{
 section.sdk-rsrc-blog{
     margin-top:0 !important;
     margin-bottom:0 !important;
-    .blog-container{
-        max-width:1280px;
+
+    .blog-container{        
         margin:0 auto;
 
+        @media screen and (min-width: 1440px) {
+            max-width:1280px;
+        }
+
         .blog-wrapper{
-            display: flex;
-            flex-wrap: wrap;
-            margin-top:1.875rem; 
+            //display: flex;
+            //flex-wrap: wrap;
+            
 
             > div{            
                 
@@ -459,7 +474,12 @@ section.sdk-rsrc-blog{
                 a{
                     width:100%;
                     height:auto !important;
-                    display:block;
+                    margin-top:1.875rem; 
+                    
+
+                    @media screen and (min-width: 1440px) {
+                        display:block;
+                    }
 
                     @media screen and (min-width: 767px) {
                         width:400px;
