@@ -332,34 +332,62 @@ section.sdk-rsrc-tutorial{
                 @media screen and (min-width: 767px) {
                     margin-right:2.5rem;  
                     width:47%;
+
+                    &:nth-child(2n+2){ 
+                        margin-right:0;  
+                    }
                 }
+
+                @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+                    &:nth-child(2n+2){ 
+                        margin-right:0;  
+                    }
+                }
+
+                @media screen and (min-width: 1024px) {
+                    width:18.125rem; 
+                    margin-right:2.5rem !important;
+
+                    &:nth-child(3n+3){ 
+                        margin-right:0;  
+                    }
+                }
+
                 @media screen and (min-width: 1440px) {
                     width:18.125rem; 
+                    margin-right:2.5rem !important; 
+
+                    &:nth-child(4n+4){ 
+                        margin-right:0 !important;  
+                    }
+
+
                 }
+
                 padding-top:1.875rem; 
 
-                &:nth-child(2n+2){ 
-                    margin:0;  
-                    @media screen and (min-width: 767px) {
-                        margin:0;  
-                    }
+                // &:nth-child(2n+2){ 
+                //     margin:0;  
+                //     @media screen and (min-width: 767px) {
+                //         margin:0;  
+                //     }
 
-                    @media screen and (min-width: 1440px) {
-                        margin-right:2.5rem; 
-                    }
-                }
+                //     @media screen and (min-width: 1440px) {
+                //         margin-right:2.5rem; 
+                //     }
+                // }
                 
-                &:nth-child(4n+4){ 
-                    @media screen and (min-width: 1440px) {
-                        margin:0;  
-                    }
-                }
+                // &:nth-child(4n+4){ 
+                //     @media screen and (min-width: 1440px) {
+                //         margin:0;  
+                //     }
+                // }
 
-                &:nth-child(2n+2){ 
-                    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-                        margin:0; 
-                    }
-                }
+                // &:nth-child(2n+2){ 
+                //     @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+                //         margin:0; 
+                //     }
+                // }
 
                 a{
                     div{
