@@ -69,20 +69,25 @@ section.sdk-rsrc-release{
             @media screen and (min-width: 1440px) {
                 flex-direction:row;
             }
-
-            > div{
+           
+            .release-wrapper-img{
                 width:100%;
                 @media screen and (min-width: 1440px) {
-                    width:50%;
+                    width:48.44%;
+                }    
+                
+                img{
+                    width:100%;
                 }
-            }   
-
-            img{
-                width:100%;
             }
 
             .release-copy-wrapper{
-                margin-top:1.25rem;                
+                margin-top:1.25rem;   
+                
+                @media screen and (min-width: 1440px) {
+                    margin-left:4.375rem;
+                    width:45%;
+                }
 
                 h4{
                     text-align:left !important;
@@ -103,7 +108,6 @@ section.sdk-rsrc-release{
 
                     @media screen and (min-width: 767px) {
                         //margin-left:4.375rem;
-                        //padding-right:4.375rem;
                     }
                 }
 
@@ -217,10 +221,19 @@ section.sdk-rsrc-featured{
                     }
                 }    
                 
-                @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+                // @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+                //     margin-right:0;
+                //     margin:0 auto;
+                //     max-width:50rem;
+                //     margin-bottom:25px;
+                // }
+
+                /* may nee to re work this, I don't have a desigbn to go off og*/
+                @media screen and (min-width: 767px) {
                     margin-right:0;
                     margin:0 auto;
-                    max-width:50rem;
+                    //max-width:50rem;
+                    width:100%;
                     margin-bottom:25px;
                 }
 
@@ -270,7 +283,7 @@ section.sdk-rsrc-featured{
                     }
 
                     @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-                        max-width:25.875rem;
+                        //max-width:25.875rem;
                         padding-right:1rem;
                     }
 
@@ -486,12 +499,17 @@ section.sdk-rsrc-blog{
 
         .blog-wrapper{
             display: flex;
-            flex-direction:row;            
+            flex-direction:row; 
+            flex-wrap:wrap;  
+            
+            @media screen and (min-width: 1024px) {
+                flex-wrap:nowrap;
+            }
 
             > div{            
                 margin-top: 1.875rem;
-                width:100%;
-                  
+                width:100%;               
+
                 @media screen and (min-width: 1024px) {
                     width:300px;
                 }
@@ -571,7 +589,7 @@ section.sdk-rsrc-stories{
             display: flex;
             flex-wrap:wrap;
 
-            @media screen and (min-width: 1440px) {
+            @media screen and (min-width: 767px) {
                 display: flex;
                 flex-wrap:nowrap;
                 justify-content: space-between;
@@ -582,27 +600,36 @@ section.sdk-rsrc-stories{
                 font-size: 2.25rem;
                 line-height: 2.9375rem;
                 font-weight:900;                  
-                padding-right:3.5rem;
-
-                @media screen and (min-width: 1440px) {
-                    padding-left:1.25rem;
-                    margin-top:4.375rem;
-                }
+                padding-right:3.5rem;                
 
                 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {  
                     padding-left:0;                    
                 }
+
+                @media screen and (min-width: 767px) {
+                    width:33%;
+                    padding-left:1.25rem;
+                    margin-top:4.375rem;
+                }
+
+                @media screen and (min-width: 1024px) {
+                    width:44% !important;
+                }
             }
 
             .customer{
-                max-width:52.5rem;                
+                width:52.5rem;                
                 background:#f7f7f7;                
                 border-radius: 4px 4px 0px 0px;  
                 margin-top:3.125rem !important; 
+
                 
-                @media screen and (min-width: 767px) {
-                    max-width:100%;
-                    width:100%;
+                
+                @media screen and (min-width: 1024px) {
+                   // max-width:100%;
+                    //width:100%;
+                    margin-top:0px !important;
+                    width:67%;
                 }
 
                 .logo{
