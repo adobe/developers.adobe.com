@@ -61,12 +61,12 @@ section.sdk-pricing{
         }
 
         .pricing-wrapper{
-            border-bottom:4px solid #4B4B4B;
+            //border-bottom:4px solid #4B4B4B;
+            border-bottom:2px solid #E1E1E1 !important;
             padding-bottom:2rem;
 
             @media screen and (min-width: 1024px) {
                 display:flex;                
-               // padding-bottom:0;
             }
 
             &.no-flex{
