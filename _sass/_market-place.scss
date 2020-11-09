@@ -13,6 +13,13 @@ section.market-place {
 
     background: transparent linear-gradient(90deg, #363955 0%, #FA0F00D5 100%) 0% 0% no-repeat padding-box;
 
+    &.ms-blade{
+        background: url('../img/ms_power_bkg.png');
+        background-repeat:no-repeat;
+        background-position:center center;
+        background-size:cover;    
+    }
+
     .market-place-container{
         padding-top:4.1875rem;
         margin: 0 auto;
@@ -40,7 +47,7 @@ section.market-place {
                 .mp-adobe-logo{
                     width:186px;
                     height:56px;
-                    
+
                     img{
                         width:100%;
                         vertical-align: top;
@@ -62,6 +69,13 @@ section.market-place {
                     width:287px;
                     height:35px;
                     margin-top:-25px;
+
+                    &.ms-power-logo{
+                        width:243px !important;
+                        height:52px !important;
+                        margin-top:0px;
+                        padding-left:6px;
+                    }
                     
                     img{
                         width:100%;
