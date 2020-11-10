@@ -374,8 +374,6 @@ section.sdk-rsrc-tutorial{
                     &:nth-child(4n+4){ 
                         margin-right:0 !important;  
                     }
-
-
                 }
 
                 padding-top:1.875rem; 
@@ -607,9 +605,9 @@ section.sdk-rsrc-stories{
                 }
 
                 @media screen and (min-width: 767px) {
-                    width:33%;
-                    padding-left:1.25rem;
-                    margin-top:4.375rem;
+                    width:44%;
+                    padding-left:0px;
+                    margin-top:5rem;
                 }
 
                 @media screen and (min-width: 1024px) {
@@ -621,9 +619,11 @@ section.sdk-rsrc-stories{
                 width:52.5rem;                
                 background:#f7f7f7;                
                 border-radius: 4px 4px 0px 0px;  
-                margin-top:3.125rem !important; 
-
+                margin-top:3.125rem !important;  
                 
+                @media screen and (min-width: 767px) {
+                    width:24rem;                           
+                }
                 
                 @media screen and (min-width: 1024px) {
                    // max-width:100%;
