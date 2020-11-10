@@ -336,6 +336,11 @@ section.sdk-rsrc-tutorial{
             display: flex;
             flex-wrap: wrap; 
             
+
+            @media screen and (min-width: 767px) {
+                justify-content: center;
+            }
+
             @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
                 justify-content: center;
             }
