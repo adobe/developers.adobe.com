@@ -11,10 +11,16 @@ section.market-place {
     // background: linear-gradient(30deg, rgba(21,64,113,1) 22%, rgba(115,69,109,1) 74%, rgba(110,45,45,1) 100%);
     // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#154071",endColorstr="#6e2d2d",GradientType=1);
 
-    background: transparent linear-gradient(90deg, #363955 0%, #FA0F00D5 100%) 0% 0% no-repeat padding-box;
+    //background: transparent linear-gradient(90deg, #363955 0%, #FA0F00D5 100%) 0% 0% no-repeat padding-box;
+
+   background: #1B5496 url('../img/mp_aws_bkg@2x.png');
+   background-repeat:no-repeat;
+   background-position:center center;
+   background-size:cover;  
+   
 
     &.ms-blade{
-        background: url('../img/ms_power_bkg.png');
+        background: #000 url('../img/ms_power_bkg.png');
         background-repeat:no-repeat;
         background-position:center center;
         background-size:cover;    
@@ -39,7 +45,6 @@ section.market-place {
                 @media screen and (min-width: 768px) {
                     flex-direction:row;
                     align-content: center; 
-                   // max-width:42.875rem;
                 }
                
                 margin-bottom:2.5rem;
@@ -74,7 +79,7 @@ section.market-place {
                         width:243px !important;
                         height:52px !important;
                         margin-top:0px;
-                        padding-left:6px;
+                        padding-left:6px; 
                     }
                     
                     img{
