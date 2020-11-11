@@ -90,6 +90,12 @@ section.sdk-pricing{
                     @media screen and (min-width: 1024px) {
                         margin-top: 0;
                     }
+
+                    &.pay-go{
+                        @media screen and (min-width: 1440px) {
+                            margin-top:1.625rem;
+                        }
+                    }
                 }
                 &.reset-top{
                     @media screen and (min-width: 1024px) {
