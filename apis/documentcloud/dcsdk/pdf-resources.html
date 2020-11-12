@@ -155,6 +155,49 @@ redirect_from:
     </section>
 
     <!-- blog -->
+    <script src="{{ baseurl }}/gh-assets/js/rss-parser.min.js"></script>
+    <script>
+        // Documentation for the Adobe data feeds
+        // https://wiki.corp.adobe.com/pages/viewpage.action?spaceKey=ExpLeague&title=API+Documentation
+
+        /*
+        const rss = new RSS(
+            document.querySelector(".blog-wrapper"),
+            "https://medium.com/feed/adobetech/tagged/adobe-document-cloud",
+            {
+                limit: 3,
+            }
+        );
+        rss.render();
+        */
+
+        let parser = new RSSParser();
+        parser.parseURL('https://medium.com/feed/adobetech/tagged/adobe-document-cloud/', function(err, feed) {
+        if (err) throw err;
+        for (let i = 0; i < 3; i++) {
+            const entry = feed.items[i];
+            printPost(entry);
+        }
+        });
+
+        function printPost(entry) {
+            article = document.createElement("article");
+
+            link = document.createElement("a");
+            link.setAttribute("href", entry.link);
+            link.setAttribute("target", "_blank");
+
+            h4 = document.createElement("h4");
+            h4.innerText = entry.title;
+
+            link.appendChild(h4);
+            article.appendChild(link);
+
+            blogs = document.getElementById('blog-posts');
+            blogs.appendChild(article);
+        }
+    </script>
+
     <section class="sdk-rsrc-blog">
         <div class="blog-container">
            
