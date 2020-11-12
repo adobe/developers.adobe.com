@@ -172,6 +172,12 @@
       margin: 0;
       border:none;
 
+      .mobile-900-home{
+        @media screen and (min-width: 900px){
+          display: none;
+        }
+      }
+
       .mobile-home{
 
         @media screen and (min-width: 1440px){

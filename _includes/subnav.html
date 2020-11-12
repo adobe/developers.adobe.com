@@ -1,24 +1,33 @@
 <nav class="sub-nav-menu-wrapper">
   <button class="sub-nav-trigger" aria-expanded="true" aria-haspopup="true" aria-label="Home"></button>
   <div class="sub-nav-product-item allowHover">
-    <a class="sub-nav-product-item-wrapper has-sub-nav" href="{{site.baseurl}}/apis/documentcloud/dcsdk/">
-      <image src="{{ site.baseurl }}/gh-assets/svg/adobe_trifoil.svg" alt="Adobe Icon" class="sub-nav-icon"/>
+    <a class="sub-nav-product-item-wrapper has-sub-nav" href="{{baseurl}}/apis/documentcloud/dcsdk/">
+      <image src="{{ baseurl }}/gh-assets/svg/adobe_trifoil.svg" alt="Adobe Icon" class="sub-nav-icon"/>
       <span>Adobe Document Services</span>
     </a>
   </div>
   <ul class="sub-nav">
+    <li class="sub-nav-menu-item mobile-900-home">
+      <a href="{{baseurl}}/apis/documentcloud/dcsdk/" rel="canonical" class="sub-nav-menu-label">Home</a>
+    </li>
     <li class="sub-nav-menu-item {% if page.active == 'embed-sdk' %} active{% endif %}">
-      <a href="{{site.baseurl}}/apis/documentcloud/dcsdk/pdf-embed.html" rel="canonical" class="sub-nav-menu-label">PDF Embed API</a>
+      <a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-embed.html" rel="canonical" class="sub-nav-menu-label">PDF Embed API</a>
     </li>
     <li class="sub-nav-menu-item {% if page.active == 'tools-sdk' %} active{% endif %}">
-      <a href="{{site.baseurl}}/apis/documentcloud/dcsdk/pdf-tools.html" rel="canonical" class="sub-nav-menu-label">PDF Tools API</a>
+      <a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-tools.html" rel="canonical" class="sub-nav-menu-label">PDF Tools API</a>
+    </li>
+    <li class="sub-nav-menu-item {% if page.active == 'pricing' %} active{% endif %}">
+      <a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-pricing.html" rel="canonical" class="sub-nav-menu-label">Pricing</a>
+    </li>
+    <li class="sub-nav-menu-item {% if page.active == 'resources' %} active{% endif %}">
+      <a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-resources.html" rel="canonical" class="sub-nav-menu-label">Resources</a>
     </li>
     <li class="sub-nav-menu-item {% if page.active == 'docs' %} active{% endif %}">
-      <a href="{{site.baseurl}}/apis/documentcloud/dcsdk/docs.html" class="sub-nav-menu-label">Documentation</a>
+      <a href="{{baseurl}}/apis/documentcloud/dcsdk/docs.html" class="sub-nav-menu-label">Documentation</a>
     </li>
     <li class="sub-nav-menu-item {% if page.active == 'getstarted' %} active{% endif %}">
       <div class="sub-nav-menu-label">
-      <a href="{{site.baseurl}}/apis/documentcloud/dcsdk/gettingstarted.html" class="sub-nav-get-started-button">Get Started</a>
+      <a href="{{baseurl}}/apis/documentcloud/dcsdk/gettingstarted.html" class="sub-nav-get-started-button">Get Started</a>
       </div>
     </li>
   </ul>

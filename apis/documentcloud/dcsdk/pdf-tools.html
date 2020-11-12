@@ -6,7 +6,7 @@ active: tools-sdk
 redirect_from:
   - /apis/documentcloud/dcsdk/pdf-services-sdk.html
 ---
-
+{% include paths.html %}
 <div class="main secondary-page">
 
   <div class="gradient">
@@ -17,24 +17,72 @@ redirect_from:
 
     <section class="home-card card-slider-container">
       <div class="card blanche">
-        <div class="card-icon"><img src="{{ site.baseurl }}/gh-assets/svg/create_secure_support.svg" alt="Converting a word document into a secure pdf"></div>
+        <div class="card-icon"><img src="{{ baseurl }}/gh-assets/svg/create_secure_support.svg" alt="Converting a word document into a secure pdf"></div>
         <h2>Create, secure, and export PDF documents</h2>
         <p>Create a PDF from Microsoft Office documents, protect the content, and export to other formats</p>
       </div>
 
       <div class="card blanche">
-        <div class="card-icon"><img src="{{ site.baseurl }}/gh-assets/svg/modify_pages.svg" alt="PDF APIs converting and optimizing pdfs"></div>
+        <div class="card-icon"><img src="{{ baseurl }}/gh-assets/svg/modify_pages.svg" alt="PDF APIs converting and optimizing pdfs"></div>
         <h2>Modify PDFs and optimize output</h2>
         <p>Programmatically alter a document, such as reordering, inserting, and rotating pages, as well as compressing the file</p>
       </div>
 
       <div class="card blanche">
-        <div class="card-icon"><img src="{{ site.baseurl }}/gh-assets/svg/cloud_services.svg" alt="Cloud-based API"></div>
+        <div class="card-icon"><img src="{{ baseurl }}/gh-assets/svg/cloud_services.svg" alt="Cloud-based API"></div>
         <h2>Leverage Adobe's cloud-based services</h2>
         <p>Access the same cloud-based APIs that power Adobe's end user applications to quickly deliver scalable, secure solutions</p>
       </div>
     </section>
   </div>
+
+  <!-- Markt place -->
+  <section class="market-place">
+    <div class="market-place-container">
+      <div class="market-place-wrapper">
+
+        <div class="market-place-logo-wrapper">
+            <div class="mp-adobe-logo"><img src="{{ baseurl }}/gh-assets/img/adobe_logo_partnership@2x.png" alt="Adobe logo partnership banner"></div>
+            <div class="mp-plus">+</div>
+            <div class="mp-logo"><img src="{{ baseurl }}/gh-assets/svg/awsmplogo_white.svg" alt="AWS Marketplace logo"/></div>
+        </div>
+
+        <div class="mp-copy-wrapper">
+          <h4>AWS Marketplace Partnership</h4>
+          <div class="mp-copy">We now offer all of our PDF Tools APIs for purchase as a subscription in AWS console</div>
+          <div class="mp-cta-wrapper">
+            <a href="https://www.adobe.com/go/pdftoolsapi_forum" target="_blank" class="button-link">
+              Learn more
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- Microsoft power -->
+  <section class="market-place ms-blade">
+    <div class="market-place-container">
+      <div class="market-place-wrapper">
+        <div class="market-place-logo-wrapper">
+            <div class="mp-adobe-logo"><img src="{{ baseurl }}/gh-assets/img/adobe_logo_partnership@2x.png" alt="Adobe logo partnership banner"></div>
+            <div class="mp-plus">+</div>
+            <div class="mp-logo ms-power-logo"><img src="{{ baseurl }}/gh-assets/svg/ms_power_logo.svg" alt="Microsoft Power Platform logo"/></div>
+        </div>
+
+        <div class="mp-copy-wrapper">
+          <h4>Microsoft Power Automate Integration</h4>
+          <div class="mp-copy">Quickly automate document processes without writing any code using the new Adobe PDF Tools API connector.</div>
+          <div class="mp-cta-wrapper">
+            <a href="https://www.adobe.com/go/pdftoolsapi_forum" target="_blank" class="button-link">
+              Learn more
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- work-flow-->
   <section class="dctsdk-work-flow">
@@ -283,8 +331,36 @@ redirect_from:
   </section>
   <!-- work-flow end -->
 
+  
+  
+  <!-- pdf extract -->
+  <section class='grey-bar-extract'>    
+    <div class="extract-container">
+      <h3>Adobe PDF Extract API</h3>
+      <div class="extract-copy">
+        <p>A new web service that allows you to unlock content structure and table data from any PDF document with machine learning</p>
+        <p><a href="https://www.adobe.com/go/pdfextractapi_requestform" target="_blank" class="spectrum-Button spectrum-Button--cta">Request Access</a></p>
+      </div>
+      <div class="extract-img"></div>
+      <div class="extract-copy-lst">
+        <ul>
+          <li>
+            <div>Leverage Adobe Sensei for a rich understanding of <span>content structure</span> with higher quality input to other systems</div>
+          </li>
+          <li>
+            <div><span>Easily Extract content to JSON</span> format for further processing into other applications or databases</div>
+          </li>
+          <li>
+            <div><span>Identify more document elements</span> than OCR with extraction of headings, paragraphs, lists, and more</div>
+          </li>
+        </ul>
+      </div>
+  </section>
+  <!-- pdf extract end-->
+  
+
   <!-- Get Started start -->
-  <section class="grey-bar get-started">
+  <section class="grey-bar switch-white get-started">
 
     <h3>Get Started in Minutes</h3>
 
@@ -326,33 +402,41 @@ redirect_from:
   <!-- Get Started end -->
 
   <!-- use case -->
-  <section class="use-case">
-    <h3>Use Cases for PDF Tools API</h3>
-
-    <div>
-      <h4>Document Management</h4>
-      <h5>Programmatically manage document workflows through high performance, cloud-based APIs:</h5>
-      <ul>
-        <li>Create PDF documents from dynamic or static html content, such as web forms, charts</li>
-        <li>Secure PDF documents in the embedded PDF viewer and disable printing, downloading, and document manipulation</li>
-      </ul>
-      <h5>Common use cases: Manufacturing operations, government workflows</h5>
+  <section class="grey-bar no-max-width">
+    <div class=" use-case" >
+      <h3>Use Cases for PDF Tools API</h3>
+  
+      <div>
+        <h4>Document Management</h4>
+        <h5>Programmatically manage document workflows through high performance, cloud-based APIs:</h5>
+        <ul>
+          <li>Create PDF documents from dynamic or static html content, such as web forms, charts</li>
+          <li>Secure PDF documents in the embedded PDF viewer and disable printing, downloading, and document manipulation</li>
+        </ul>
+        <h5>Common use cases: Manufacturing operations, government workflows</h5>
+      </div>
+  
+      <div>
+        <h4>Business Process Automation</h4>
+        <h5>Eliminate manual processes with automated workflows through powerful PDF APIs:</h5>
+        <ul>
+          <li>Automate document workflows through programmatic creation and manipulation of PDF files from digital assets</li>
+          <li>Streamline sharing of attachments and consumption of PDF documents for fast web viewing</li>
+        </ul>
+        <h5>Common use cases: Retail sales and invoicing, eLearning systems</h5>
+      </div>
     </div>
+  </section>
+<!-- use case end -->
 
-    <div>
-      <h4>Business Process Automation</h4>
-      <h5>Eliminate manual processes with automated workflows through powerful PDF APIs:</h5>
-      <ul>
-        <li>Automate document workflows through programmatic creation and manipulation of PDF files from digital assets</li>
-        <li>Streamline sharing of attachments and consumption of PDF documents for fast web viewing</li>
-      </ul>
-      <h5>Common use cases: Retail sales and invoicing, eLearning systems</h5>
-    </div>
+  
+  <!-- learn -->
+  <section class="grey-bar switch-white no-max-width" >
 
     <p>Learn about our <a href="pdf-embed.html" class="section-links">PDF Embed API</a> to embed high-fidelity PDFs and control appearance, enable collaboration, and see analytics</p>
 
   </section>
-  <!-- use case end -->
+  <!-- learn end -->
 
 
     <!-- help -->
@@ -370,7 +454,7 @@ redirect_from:
             </a>
           </p>
 
-          <div class="dcs-help-img"><img src="{{ site.baseurl }}/gh-assets/img/dcsdk.png"></div>
+          <div class="dcs-help-img"><img src="{{ baseurl }}/gh-assets/img/dcsdk.png"></div>
         </div>
       </div>
     </section>
