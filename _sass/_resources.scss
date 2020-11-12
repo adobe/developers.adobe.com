@@ -124,7 +124,7 @@ section.sdk-rsrc-release{
 }
 
 section.sdk-rsrc-anchor{
-    margin:2rem 0px 0.625rem 0px !important;
+    margin:2rem 0px 1.25rem 0px !important;
     .anchor-container{
         .anchor-wrapper{
             width:19.0625rem;
@@ -139,6 +139,11 @@ section.sdk-rsrc-anchor{
                     font-size:0.875rem;
                     font-family:'Adobe Clean Bold';
                     color:#6E6E6E;
+
+                    a{
+                        outline: none !important;
+                        outline-width: 0 !important;
+                    }
                 }
             }
         }
