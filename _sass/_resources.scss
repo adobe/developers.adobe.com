@@ -143,6 +143,12 @@ section.sdk-rsrc-anchor{
                     a{
                         outline: none !important;
                         outline-width: 0 !important;
+                        text-decoration:none;
+                        color:#6E6E6E;
+
+                        &:hover{
+                            text-decoration:underline;
+                        }
                     }
                 }
             }
@@ -225,13 +231,6 @@ section.sdk-rsrc-featured{
                         margin:0 auto;
                     }
                 }    
-                
-                // @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-                //     margin-right:0;
-                //     margin:0 auto;
-                //     max-width:50rem;
-                //     margin-bottom:25px;
-                // }
 
                 /* may nee to re work this, I don't have a desigbn to go off og*/
                 @media screen and (min-width: 767px) {
