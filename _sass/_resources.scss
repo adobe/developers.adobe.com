@@ -50,7 +50,6 @@
 }
 
 
-
 section.resource-header{
     margin-bottom:4.6875rem !important;
 }
@@ -58,7 +57,6 @@ section.sdk-rsrc-release{
     margin: 4.375rem 2.75rem 0 2.75rem !important;
     .release-container{
         max-width:1280px;
-       // height:21.8125rem;
         margin:0 auto;
 
         .release-wrapper{
@@ -390,29 +388,6 @@ section.sdk-rsrc-tutorial{
                 }
 
                 padding-top:1.875rem; 
-
-                // &:nth-child(2n+2){ 
-                //     margin:0;  
-                //     @media screen and (min-width: 767px) {
-                //         margin:0;  
-                //     }
-
-                //     @media screen and (min-width: 1440px) {
-                //         margin-right:2.5rem; 
-                //     }
-                // }
-                
-                // &:nth-child(4n+4){ 
-                //     @media screen and (min-width: 1440px) {
-                //         margin:0;  
-                //     }
-                // }
-
-                // &:nth-child(2n+2){ 
-                //     @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-                //         margin:0; 
-                //     }
-                // }
 
                 a{
                     div{
