@@ -92,22 +92,21 @@ section.sdk-rsrc-release{
                 h4{
                     text-align:left !important;
                     font-family:'Adobe Clean Bold';
-                    font-size:1.75rem;
-                    text-transform:none;                    
+                    font-size:2.125rem;
+                    text-transform:none;                   
 
                     @media screen and (min-width: 767px) {
                         font-size:2.25rem;
-                        //margin-left:4.375rem; 
                     }                                       
                 }
 
                 p{
                     text-align:left !important;
-                    font-size:1.125rem;                    
+                    font-size:1.1875rem;                    
                     margin-bottom:0px;                    
 
-                    @media screen and (min-width: 767px) {
-                        //margin-left:4.375rem;
+                    @media screen and (min-width: 1024px) {
+                        font-size:1.125rem; 
                     }
                 }
 
@@ -331,9 +330,13 @@ section.sdk-rsrc-tutorial{
             margin-bottom:0.625rem;
             p{
                 text-align:center;
-                font-size:2.25rem !important;
+                font-size:1.6875rem !important;                
                 font-family:'Adobe Clean Light';
                 margin:0;
+
+                @media screen and (min-width: 767px) {
+                    font-size:2.25rem !important;
+                }
             }
         }
 
@@ -480,13 +483,20 @@ section.sdk-rsrc-tutorial{
                 p{
                     text-align:left !important;
                     font-family:'Adobe Clean Bold';
-                    font-size:1rem;
+                    font-size:1.1875rem;
                     margin-top:0.625rem;
                     margin-bottom:0;
                     color:#2C2C2C;
+                    @media screen and (min-width: 1024px) {
+                        font-size:1.125rem;  
+                    }        
                 }
                 span{
-                    font-size:0.75rem;
+
+                    font-size:0.9375rem;                     
+                    @media screen and (min-width: 1024px) {
+                      font-size:0.75rem;  
+                    }  
                 }
             }        
         }
@@ -556,6 +566,7 @@ section.sdk-rsrc-blog{
 
                 p{
                     text-align:left !important;
+                    margin-top:0.625rem;
 
                     &.blog-title{                       
                         font-family:'Adobe Clean Bold';
@@ -564,9 +575,17 @@ section.sdk-rsrc-blog{
                         color:#2C2C2C;
                     }
 
+                    &:last-of-type{
+                        margin-bottom:0;
+                    }
+
                    &.blog-text{
-                        font-size:1.125rem;
+                        font-size:1.0625rem;
                         color:#505050;
+                        @media screen and (min-width: 1024px) {
+                            font-size:1rem; 
+                        }
+                        
                     }
                 }               
             }
@@ -580,17 +599,21 @@ section.sdk-rsrc-stories{
     .stories-container{
         max-width:1280px;
         margin:0 auto;
-        padding-top:3.125rem !important;
+        padding-top:3.75rem !important;
         padding-bottom:5.625rem;
         display:block;
         position:relative;
 
         h3{
             font-family:'Adobe Clean Black';
-            font-size: 1.75rem;
+            font-size:1.6875rem;
             line-height: 2.25rem;
             font-weight:900;  
             padding:0; 
+            @media screen and (min-width: 1024px) {
+               font-size: 1.75rem; 
+            }
+            
         }
 
         .stories-wrapper{
@@ -606,10 +629,10 @@ section.sdk-rsrc-stories{
 
             .story-intro-text{                
                 font-family:'Adobe Clean Light';
-                font-size: 2.25rem;
+                font-size: 1.6875rem;
                 line-height: 2.9375rem;
                 font-weight:900;                  
-                padding-right:3.5rem;                
+                               
 
                 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {  
                     padding-left:0;                    
@@ -623,6 +646,8 @@ section.sdk-rsrc-stories{
 
                 @media screen and (min-width: 1024px) {
                     width:44% !important;
+                    font-size: 2.25rem; 
+                    padding-right:3.5rem;                    
                 }
             }
 
@@ -637,8 +662,6 @@ section.sdk-rsrc-stories{
                 }
                 
                 @media screen and (min-width: 1024px) {
-                   // max-width:100%;
-                    //width:100%;
                     margin-top:0px !important;
                     width:67%;
                 }
@@ -653,8 +676,7 @@ section.sdk-rsrc-stories{
                         padding:3.0625rem 17.25rem 3rem 17.25rem;
                     }  
                     
-                    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  
+                    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {  
                         padding: 1.0625rem 9.25rem 1rem 9.25rem;                        
                     }
 
@@ -686,11 +708,15 @@ section.sdk-rsrc-stories{
                     margin-top:0.625rem;
                     margin-left: 1.25rem;
                     margin-bottom:2.5rem;
-                    font-size: 1.375rem;
+                    font-size:1.1875rem;
                     font-family:'Adobe Clean Bold';
                     color:#2C2C2C;
                     text-align:left;
                     background:#f7f7f7;
+
+                    @media screen and (min-width: 1024px) {                    
+                        font-size: 1.375rem;
+                    }
                 }
             }
         }
