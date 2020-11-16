@@ -110,6 +110,21 @@ section.sdk-rsrc-release{
 
                 .release-cta{
                     margin-top:1.875rem;
+
+                    .button-link{
+                        text-decoration-style: solid !important;
+                        
+                        // color:#ffffff !important;
+                        // font-weight: normal !important;
+                        // width:100px !important;
+                        &:hover{
+                            text-decoration:none !important;
+                            border-style:unset;
+                        }
+                        &:visited{
+                            text-decoration:none !important;
+                        }
+                    }
                        
                     @media screen and (min-width: 767px) {
                         //margin-left:4.375rem;
@@ -460,12 +475,14 @@ section.sdk-rsrc-tutorial{
                     margin-top:0.625rem;
                     margin-bottom:0;
                     color:#2C2C2C;
+                    line-height:23.5px;
                     @media screen and (min-width: 1024px) {
                         font-size:1.125rem;  
                     }        
                 }
                 span{
-
+                    display: block;
+                    margin-top: 0.625rem;
                     font-size:0.9375rem;                     
                     @media screen and (min-width: 1024px) {
                       font-size:0.75rem;  
@@ -554,6 +571,7 @@ section.sdk-rsrc-blog{
 
                    &.blog-text{
                         font-size:1.0625rem;
+                        line-height: 24px;
                         color:#505050;
                         @media screen and (min-width: 1024px) {
                             font-size:1rem; 
