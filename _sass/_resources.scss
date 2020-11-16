@@ -70,6 +70,7 @@ section.sdk-rsrc-release{
            
             .release-wrapper-img{
                 width:100%;
+                
                 @media screen and (min-width: 1440px) {
                     width:48.44%;
                 }    
@@ -159,14 +160,12 @@ section.sdk-rsrc-anchor{
                         height: auto;
                         min-width: 72px;
                         padding: 7px 14px;
-                        // padding-bottom: 8px;
-                        // padding-top: 3.5px;
                         font-size: 14px;
                         font-weight: 700;
                         color: #6E6E6E;
                         &:hover{
-                            color:#ffffff!important;
-                            background:#6e6e6e;
+                            //color:#ffffff!important;
+                            background:#eaeaea;
                             //border-color:#6e6e6e;
                           }
                       }
@@ -185,16 +184,6 @@ section.sdk-rsrc-anchor{
                         }
                       }
 
-                    // a{
-                    //     outline: none !important;
-                    //     outline-width: 0 !important;
-                    //     text-decoration:none;
-                    //     color:#6E6E6E;
-
-                    //     &:hover{
-                    //         text-decoration:none;
-                    //     }
-                    // }
                 }
             }
         }
