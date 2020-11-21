@@ -76,9 +76,11 @@ section.market-place {
 
                     &.ms-power-logo{
                         width:243px !important;
-                        height:52px !important;
-                        margin-top:0px;
+                        height:52px !important;                        
                         padding-left:6px; 
+                        @media screen and (min-width: 767px) {
+                            margin-top:-10px;
+                        }
                     }
                     
                     img{
@@ -149,6 +151,9 @@ section.market-place {
                         color:#ffffff !important;
                         font-weight: normal !important;
                         width:100px !important;
+                        &:hover{
+                            text-decoration:none !important;
+                        }
                     }
                  
                 }                
