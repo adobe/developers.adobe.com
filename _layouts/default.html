@@ -165,6 +165,14 @@ site.url: {{site.url }}
               }
             },
             {
+              breakpoint: 1023,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                dots: false
+              }
+            },
+            {
               breakpoint: 767,
               settings: {
                 slidesToShow: 1,
@@ -194,6 +202,16 @@ site.url: {{site.url }}
       $('body').addClass(strNewClass);
       console.log("You are in : "  + strNewClass)
 
+    </script>
+
+    <script>
+        Userback = window.Userback || {};
+        Userback.access_token = '9191|20428|P6bwN4BOuujmAEOpx4emqLLAbSxQFqPd1p3RqN7F7uCWuIwMOz';
+        (function(id) {
+            var s = document.createElement('script');
+            s.async = 1;s.src = 'https://static.userback.io/widget/v1.js';
+            var parent_node = document.head || document.body;parent_node.appendChild(s);
+        })('userback-sdk');
     </script>
     <script type="text/javascript" src="{{ baseurl }}/gh-assets/js/prism.js"></script>
     <script type="text/javascript" src="{{ baseurl }}/gh-assets/js/prism-toolbar.min.js"></script>
