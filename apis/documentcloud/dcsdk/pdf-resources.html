@@ -227,14 +227,47 @@ redirect_from:
                     See how our customers are building great experiences and succeeding with Adobe
                 </div>
                 <div class="customer">
-                    <a href="#" target="_blank" title="K2 High tech, Access Intelligence reduces administration with Adobe Sign"><div class="logo">
+                    <a href="javascript:openPdf('{{ baseurl }}/gh-assets/pdf/dummy.pdf')">
+                      <div class="logo">
                         <img src="{{ baseurl }}/gh-assets/img/customer-logos/k2_2x.png" alt="K2 logo"/>
-                    </div></a>
+                      </div>
+                    </a>
                     <div class="industry">High tech</div>
                     <div class="profile">Access Intelligence reduces administration with Adobe Sign</div>
                 </div>
             </div>
         </div>
+        <!-- Load the PDF embed API --> 
+        <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+        <script type="text/javascript">
+          
+          // Called from the a href on the page. Parses apart the path to instantiate the requested PDF in a lightbox.   
+          var openPdf = function(pdfUrl){
+              var pdfName = pdfUrl.split('/');
+              pdfName = pdfName[pdfName.length-1];
+              adobeDCView.previewFile({
+                  content: { 
+                      location: { 
+                          url: pdfUrl 
+                      } 
+                  },
+                  metaData: {fileName: pdfName },
+                  },
+                  { embedMode: "LIGHT_BOX" }
+              );
+          };
+          
+          // Load the PDF Embed code and pass key based on host domain.
+          var adobeDCView;
+          document.addEventListener("adobe_dc_view_sdk.ready", function(){
+              if (location.host.endsWith('github.io')) {
+                  adobeDCView = new AdobeDC.View({clientId: "ad86d0e392b14db5a9ace2af19c54b5a", divId: "adobe-dc-view"});
+              } else {
+                  adobeDCView = new AdobeDC.View({clientId: "d162da02f77f41418231193d52e4f40c", divId: "adobe-dc-view"});
+              }
+          });
+
+          </script>
     </section> 
     
     <!-- help -->
