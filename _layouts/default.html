@@ -62,6 +62,54 @@ site.url: {{site.url }}
     <script type="text/javascript">
 
       $(document).ready(function(){
+        
+        $('.market-slider-container').slick({
+          dots: true,
+          // infinite: true,
+          autoplay: true,
+          speed: 300,
+          slidesToShow: 1,
+          slidesToScroll: 1       
+        });
+        $('.card-slider-container-home').slick({
+          dots: false,
+          mobileFirst : true,
+          infinite: true,
+          autoplay: true,
+          speed: 300,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          responsive: [
+            {
+              breakpoint: 1439,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 767,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 0,
+              settings: {
+                slidesToShow: 1,
+                centerMode: true,
+                slidesToScroll: 1,
+                dots: true
+              }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+          ]
+        });
         $('.card-slider-container-logos').slick({
           dots: false,
           mobileFirst : true,
@@ -205,6 +253,7 @@ site.url: {{site.url }}
     </script>
 
     <script>
+      if (location.host.indexOf('github.io')) {
         Userback = window.Userback || {};
         Userback.access_token = '9191|20428|P6bwN4BOuujmAEOpx4emqLLAbSxQFqPd1p3RqN7F7uCWuIwMOz';
         (function(id) {
@@ -212,6 +261,7 @@ site.url: {{site.url }}
             s.async = 1;s.src = 'https://static.userback.io/widget/v1.js';
             var parent_node = document.head || document.body;parent_node.appendChild(s);
         })('userback-sdk');
+      }
     </script>
     <script type="text/javascript" src="{{ baseurl }}/gh-assets/js/prism.js"></script>
     <script type="text/javascript" src="{{ baseurl }}/gh-assets/js/prism-toolbar.min.js"></script>
