@@ -14,7 +14,8 @@ section.platform {
     }
     
     .slick-dots li.slick-active button:before {
-        color: #1473E6 !important;
+        //color: #1473E6 !important;
+        color: transparent !important;
     }
     
     .slick-dots {
@@ -105,7 +106,7 @@ section.platform {
                             height:52px !important;                        
                             padding-left:6px; 
                             @media screen and (min-width: 767px) {
-                                margin-top:-10px;
+                                margin-top:5px;
                             }
                         }
                         
