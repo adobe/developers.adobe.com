@@ -288,14 +288,14 @@ section.sdk-rsrc-featured{
                     }
 
                     &.feat1{
-                        background: url('../img/resource/featured_01.png');
+                        background: url('https://blog.adobe.com/hlx_b8ce14425fd171711e195fa4701b30f42f719cf5.jpeg');
                         background-repeat:no-repeat;
                         background-position:center center;
                         background-size:cover;                        
                     }
 
                     &.feat2{
-                        background: url('../img/resource/featured_02.png');
+                        background: url('https://miro.medium.com/max/2160/1*CtcXWnIZAzsMcvWXqqDDZg.jpeg');
                         background-repeat:no-repeat;
                         background-position:center center;
                         background-size:cover;                        
@@ -303,7 +303,7 @@ section.sdk-rsrc-featured{
 
                     &.feat3{
                        
-                        background: url('../img/resource/featured_03.png');
+                        background: url('https://blog.adobe.com/hlx_4aedb773f4daa69c0d323991a969f203c40a4d04.jpg');
                         background-repeat:no-repeat;
                         background-position:center center;
                         background-size:cover;                        
@@ -311,7 +311,8 @@ section.sdk-rsrc-featured{
                 }
         
                 .featured-copy-wrapper{
-                    padding-left:1rem;                                      
+                    padding-left:1rem;
+                    padding-right: .5rem;                                      
                     background:#ffffff;
                     width: 75%;
 
@@ -438,28 +439,28 @@ section.sdk-rsrc-tutorial{
                         height:160px;
                             
                         &.tut-thumb1{                            
-                            background: url('../img/resource/create_net@2x.png');
+                            background: url('https://experienceleague.adobe.com/docs/document-services/assets/ExportPDF_hero.jpg?lang=en');
                             background-repeat:no-repeat;
                             background-position:center center;
                             background-size:cover;                      
                         }
 
                         &.tut-thumb2{                            
-                            background: url('../img/resource/tutorial_thumb_2.svg');
+                            background: url('https://experienceleague.adobe.com/docs/document-services/assets/OCR_hero.jpg?lang=en');
                             background-repeat:no-repeat;
                             background-position:center center;
                             background-size:cover;                      
                         }
 
                         &.tut-thumb3{                            
-                            background: url('../img/resource/create_net@2x.png');
+                            background: url('https://experienceleague.adobe.com/docs/document-services/assets/GettingStartedJava_hero.jpg?lang=en');
                             background-repeat:no-repeat;
                             background-position:center center;
                             background-size:cover;                      
                         }
 
                         &.tut-thumb4{                            
-                            background: url('../img/resource/aem_pdf@2x.png');
+                            background: url('https://experienceleague.adobe.com/docs/document-services/assets/GettingStartedJava_hero.jpg?lang=en');
                             background-repeat:no-repeat;
                             background-position:center center;
                             background-size:cover;                      
@@ -727,7 +728,7 @@ section.sdk-rsrc-stories{
                     margin:0 auto;  
                     
                     @media screen and (min-width: 1440px) {
-                        padding:3.0625rem 17.25rem 3rem 17.25rem;
+                        //padding:3.0625rem 17.25rem 3rem 17.25rem;
                     }  
                     
                     @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {  
@@ -735,10 +736,10 @@ section.sdk-rsrc-stories{
                     }
 
                     img{  
-                        max-width:288px;              
+                        //max-width:288px;              
                         margin:0 auto;
                         @media screen and (min-width: 767px) {
-                            padding:3.0625rem 0 3rem 0;                            
+                            //padding:3.0625rem 0 3rem 0;                            
                         }
 
                         @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
