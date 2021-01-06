@@ -65,7 +65,7 @@ if (pres !== null ) {
   }
 }
 
-
+/*
 // create clipboard for every copy element
 const clipboardJS = new clipboardJS('.copy', {
   target: (trigger) => {
@@ -88,7 +88,7 @@ clipboardJS.on('success', (event) => {
 function isPrismClass(preTag) {
   return preTag.className.substring(0, 8) === 'language'
 }
-
+*/
 
 //window resize to properly deal with the animation on mobile TBD
 // run test on resize of the window
