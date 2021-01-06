@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).load(function(){
 
   $('.work-flow_menu ul li').on("click", function(e) {
     $('.work-flow_menu ul li.active').removeClass('active');
