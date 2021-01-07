@@ -63,7 +63,7 @@ site.url: {{site.url }}
 
       $(document).ready(function(){
         
-        $('.market-slider-container').slick({
+        $('.market-slider-container').not('.slick-initialized').slick({
           dots: true,
           // infinite: true,
           autoplay: true,
@@ -71,7 +71,7 @@ site.url: {{site.url }}
           slidesToShow: 1,
           slidesToScroll: 1       
         });
-        $('.card-slider-container-home').slick({
+        $('.card-slider-container-home').not('.slick-initialized').slick({
           dots: false,
           mobileFirst : true,
           infinite: true,
@@ -110,7 +110,7 @@ site.url: {{site.url }}
             // instead of a settings object
           ]
         });
-        $('.card-slider-container-logos').slick({
+        $('.card-slider-container-logos').not('.slick-initialized').slick({
           dots: false,
           mobileFirst : true,
           infinite: false,
@@ -154,48 +154,7 @@ site.url: {{site.url }}
             // instead of a settings object
           ]
         });
-        $('.card-slider-container-home').slick({
-          dots: false,
-          mobileFirst : true,
-          infinite: true,
-          autoplay: true,
-          speed: 300,
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          // variableWidth: true,
-          // variableHeight: true,
-          responsive: [
-            {
-              breakpoint: 1439,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                dots: true
-              }
-            },
-            {
-              breakpoint: 767,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                dots: true
-              }
-            },
-            {
-              breakpoint: 0,
-              settings: {
-                slidesToShow: 1,
-                centerMode: true,
-                slidesToScroll: 1,
-                dots: true
-              }
-            }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
-          ]
-        });
-        $('.card-slider-container').slick({
+        $('.card-slider-container').not('.slick-initialized').slick({
           dots: false,
           mobileFirst : true,
           infinite: true,
