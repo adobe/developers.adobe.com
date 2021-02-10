@@ -45,6 +45,7 @@
     </head>
   </head>
   <body class="spectrum spectrum--light {% if page.style %}{{ page.style }} {% endif %}" >
+    {% include analytics.html %}
 <!--
 site.baseurl: {{site.baseurl}}
 baseurl: {{ baseurl }}
@@ -56,7 +57,6 @@ site.url: {{site.url }}
       {{ content }}
     </div>
     {% include footer.html %}
-    {% include analytics.html %}
     <script type="text/javascript" src="{{ baseurl }}/gh-assets/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="{{ baseurl }}/gh-assets/js/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" defer="defer" src="{{ baseurl }}/gh-assets/js/slick/slick.min.js"></script>
