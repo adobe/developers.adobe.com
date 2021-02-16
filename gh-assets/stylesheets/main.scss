@@ -8,6 +8,9 @@ $grey: #4b4b4b;
 $dk-grey: #2c2c2c;
 $md-grey: #323232;
 $lt-grey: #e1e1e1;
+$skyblue:#8194CE;
+$bkg-drk-blue:#202947;
+$tab-blue:#2E3C6A;
 $base-font-size: 16px;
 $header-font-size: 27px;
 
@@ -15,10 +18,10 @@ $header-font-size: 27px;
 $baseurl: "{{ site.baseurl }}"; /* Allows the @import files to use $baseurl */
 
 @import "main-top-nav";
-
 @import "subnav";
 @import "font-style";
 @import "slab-animate";
+@import "home";
 @import "market-place";
 @import "resources";
 @import "pricing";
@@ -170,6 +173,7 @@ body {
     margin: 0 -2px !important;
   }
 }
+
 /* home specific styles */
 .home {
   .chev-arrow-down,
@@ -220,6 +224,7 @@ body {
   }
 }
 /* home specific styles end */
+
 /* secondary-page specific styles */
 .secondary-page {
   &.main {

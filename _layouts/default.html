@@ -72,7 +72,16 @@ site.url: {{site.url }}
           slidesToShow: 1,
           slidesToScroll: 1       
         });
-        $('.card-slider-container-home').not('.slick-initialized').slick({
+        $('.home-blade-slider').not('.slick-initialized').slick({
+          dots: true,
+          // infinite: true,
+          autoplay: true,
+          speed: 300,
+          slidesToShow: 1,
+          slidesToScroll: 1       
+        });
+        
+        $('.blade-slider-container').not('.slick-initialized').slick({
           dots: false,
           mobileFirst : true,
           infinite: true,
