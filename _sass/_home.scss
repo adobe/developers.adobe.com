@@ -1,93 +1,105 @@
 /* home specific styles */  
-    #home-doc-blade{
-        width:100%;
-        margin:0px !important;
-        padding:0px !important;
-        background: #1B5496 url('../img/doc-service-bkg.jpg');
-        background-repeat:no-repeat;
-        background-position:center center;
-        background-size:cover;     
+        #home-doc-blade{
+          width:100%;
+          margin:0px !important;
+          padding:0px !important;
+          background: #1B5496 url('../img/doc-service-bkg.jpg');
+          background-repeat:no-repeat;
+          background-position:center center;
+          background-size:cover;     
 
-        .doc-blade-container{
+          .doc-blade-container{
             padding-bottom:1.1875rem;
             @media screen and (min-width: 768px) {
               padding-bottom:0;
             }
 
             .doc-blade-wrapper{
-                margin:0 auto;  
-                padding-bottom:2.9375rem;
+              margin:0 auto;  
+              padding-bottom:2.9375rem;
+              display:block;
+
+              @media screen and (min-width: 1024px) {
+                display:flex;
+                max-width:1060px;
+                padding-bottom:0;
+              }
+                
+              .intro-copy-wrapper{
+                color: $white !important;  
+                margin-left:1.5rem;
+                width:100%;                    
+
+                @media screen and (min-width: 767px) {
+                  margin-left:3rem;
+                  margin-right:5.25rem;
+                }
 
                 @media screen and (min-width: 1024px) {
-                  max-width:1060px;
+                  max-width:350px;
+                  margin-left:0;
+                  margin-right:0;
+                }
+
+                h1{
+                  font-family: 'Adobe Clean Bold';                          
+                  font-size: 1.6875rem;
+                  line-height: 2.1875rem;
+                  font-weight: 900;
+                  padding-top:2.5rem !important;
+
+                  @media screen and (min-width: 767px) {
+                    padding-top: 4.375rem !important;
+                  }
+
+                  @media screen and (min-width: 1024px) {
+                    padding-top:9.625rem!important;
+                    font-size: 2.25rem;
+                    line-height: 2.25rem;
+                  }
+
+                  color: $white;
+                  text-align:left;
+                  padding:0;                          
+                }
+
+                p{
+                  margin-top:1.25rem;
+                  margin-right:6.0625rem;
+                  font-family: 'Adobe Clean';
+                  font-size: 1.0625rem;
+                  line-height: 1.5625rem;
+                  text-align:left;
+
+                  @media screen and (min-width: 767px) {
+                    margin-bottom:0;                        
+                  }
+
+                  @media screen and (min-width: 1024px) {
+                    margin-right:0;
+                    font-size: 1.125rem; 
+                    line-height: 1.6875rem;
+                  }              
+                }
+              }
+
+
+              .home-slider-wrapper{                
+                @media screen and (min-width: 767px) {
+                  display:flex;
+                }
+
+                @media screen and (min-width: 1024px) {
+                  max-width:712px;
                   max-height:530px;
-                  padding-bottom:0;
+                  margin-bottom: 0 !important;
                 }
 
                 .doc-blade-slider{                    
                   @media screen and (min-width: 767px) {
                     display:flex;                     
                     flex-wrap: wrap;
-                  }
-
-                  .intro-copy-wrapper{
-                    color: $white !important;  
-                    margin-left:1.5rem;                    
-
-                    @media screen and (min-width: 767px) {
-                      margin-left:3rem;
-                      margin-right:5.25rem;
-                    }
-
-                    @media screen and (min-width: 1024px) {
-                      max-width:350px;
-                      margin-left:0;
-                      margin-right:0;
-                    }
-
-                    h1{
-                      font-family: 'Adobe Clean Bold';                          
-                      font-size: 1.6875rem;
-                      line-height: 2.1875rem;
-                      font-weight: 900;
-                      padding-top:2.5rem !important;
-                      //margin-left:1.5rem;
-
-                      @media screen and (min-width: 767px) {
-                        padding-top: 4.375rem !important;
-                      }
-
-                      @media screen and (min-width: 1024px) {
-                        padding-top:9.625rem!important;
-                        font-size: 2.25rem;
-                        line-height: 2.25rem;
-                      }
-
-                      color: $white;
-                      text-align:left;
-                      padding:0;                          
-                    }
-
-                    p{
-                      margin-top:1.25rem;
-                      margin-right:6.0625rem;
-                      font-family: 'Adobe Clean';
-                      font-size: 1.0625rem;
-                      line-height: 1.5625rem;
-                      text-align:left;
-
-                      @media screen and (min-width: 767px) {
-                        margin-bottom:0;                        
-                      }
-
-                      @media screen and (min-width: 1024px) {
-                        margin-right:0;
-                        font-size: 1.125rem; 
-                        line-height: 1.6875rem;
-                      }              
-                    }
-                  }
-
+                  }                  
                   .img-wrapper{
                     max-width:325px;
                     margin:0 auto;
@@ -228,22 +240,24 @@
                   margin: 0;
                   list-style: none;
                   text-align: center;
+                  bottom: -3.375rem !important;
 
                   @media screen and (min-width: 767px) {
                     width:100px;
                     right:168px;
-                    bottom: 10.525rem !important;
+                    bottom: 7.625rem !important;
                   }
 
                   @media screen and (min-width: 1024px) {
                     width:100px;
                     right:108px;
-                    bottom: 1.825rem !important;
+                    bottom: 2.5rem !important;
                   }
+                }
               }
             }
+          }
         }
-    }
 
     section.dctsdk-work-flow.home{
       max-width:100%;
