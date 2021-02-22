@@ -14,9 +14,8 @@ section.platform {
     }
     
     .slick-dots li.slick-active button:before {
-        //color: #1473E6 !important;
-        color: transparent !important;
-    }
+        color: #1473E6 !important;
+        }
     
     .slick-dots {
         bottom: 0.25rem !important;
@@ -99,7 +98,7 @@ section.platform {
                     .mp-logo{
                         width:287px;
                         height:35px;
-                        margin-top:-25px;
+                        //margin-top:-25px;
 
                         &.ms-power-logo{
                             width:243px !important;

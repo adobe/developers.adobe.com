@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="{{page.meta}}"/>
     <head>
+      {% include gtag.html %}
       <meta charset="UTF-8">
 
       <meta name="viewport" content="width=device-width,initial-scale=1"/>
@@ -40,10 +41,11 @@
 
       <link rel="stylesheet" href="https://unpkg.com/@adobe/coral-spectrum@4.5.0/dist/css/coral.min.css">
       <script src="https://unpkg.com/@adobe/coral-spectrum@4.5.0/dist/js/coral.min.js" data-coral-icons-external="js"></script>
-    {% include gtag.html %}
+
     </head>
   </head>
   <body class="spectrum spectrum--light {% if page.style %}{{ page.style }} {% endif %}" >
+    {% include analytics.html %}
 <!--
 site.baseurl: {{site.baseurl}}
 baseurl: {{ baseurl }}
@@ -55,7 +57,6 @@ site.url: {{site.url }}
       {{ content }}
     </div>
     {% include footer.html %}
-    {% include analytics.html %}
     <script type="text/javascript" src="{{ baseurl }}/gh-assets/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="{{ baseurl }}/gh-assets/js/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" defer="defer" src="{{ baseurl }}/gh-assets/js/slick/slick.min.js"></script>
@@ -71,7 +72,16 @@ site.url: {{site.url }}
           slidesToShow: 1,
           slidesToScroll: 1       
         });
-        $('.card-slider-container-home').not('.slick-initialized').slick({
+        $('.home-blade-slider').not('.slick-initialized').slick({
+          dots: true,
+          // infinite: true,
+          autoplay: true,
+          speed: 300,
+          slidesToShow: 1,
+          slidesToScroll: 1       
+        });
+        
+        $('.blade-slider-container').not('.slick-initialized').slick({
           dots: false,
           mobileFirst : true,
           infinite: true,
@@ -211,17 +221,17 @@ site.url: {{site.url }}
 
     </script>
 
-    <!-- <script>
+    <script>
       if (location.host.indexOf('github.io')) {
         Userback = window.Userback || {};
-        Userback.access_token = '9191|20428|P6bwN4BOuujmAEOpx4emqLLAbSxQFqPd1p3RqN7F7uCWuIwMOz';
+        Userback.access_token = '9191|23258|P6bwN4BOuujmAEOpx4emqLLAbSxQFqPd1p3RqN7F7uCWuIwMOz';
         (function(id) {
             var s = document.createElement('script');
             s.async = 1;s.src = 'https://static.userback.io/widget/v1.js';
             var parent_node = document.head || document.body;parent_node.appendChild(s);
         })('userback-sdk');
       }
-    </script> -->
+    </script> 
     <script type="text/javascript" src="{{ baseurl }}/gh-assets/js/prism.js"></script>
     <script type="text/javascript" src="{{ baseurl }}/gh-assets/js/prism-toolbar.min.js"></script>
     <script type="text/javascript" src="{{ baseurl }}/gh-assets/js/prism-copy-to-clipboard.min.js"></script>
