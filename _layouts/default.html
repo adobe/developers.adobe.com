@@ -75,15 +75,22 @@ site.url: {{site.url }}
         slidesToScroll: 1
       });
       $('.home-blade-slider').not('.slick-initialized').slick({
-        dots: true,
-        infinite: true,
-        autoplay: true,
-        speed: 900,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        fade: true,
-        useTransform: true,
-        cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
+        // dots: true,
+        // infinite: true,
+        // autoplay: true,
+        // speed: 900,
+        // slidesToShow: 1,
+        // slidesToScroll: 1,
+        // fade: true,
+        // useTransform: true,
+        // cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
+        speed: 500,
+        autoplay: true, 
+        autoplaySpeed: 3000,
+        dots:true,
+        centerMode:true,   
+        //cssEase: 'linear',
+        centerPadding:0
       });
 
       $('.blade-slider-container').not('.slick-initialized').slick({
