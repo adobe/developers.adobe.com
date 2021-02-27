@@ -74,16 +74,26 @@ site.url: {{site.url }}
         slidesToShow: 1,
         slidesToScroll: 1
       });
+
       $('.home-blade-slider').not('.slick-initialized').slick({
         dots: true,
         infinite: true,
         autoplay: true,
-        speed: 900,
+        speed: 1500,
         slidesToShow: 1,
         slidesToScroll: 1,
         fade: true,
         useTransform: true,
         cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
+      });
+
+      $('.logo-slider-container').not('.slick-initialized').slick({
+        dots: true,
+        // infinite: true,
+        autoplay: true,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1
       });
 
       $('.blade-slider-container').not('.slick-initialized').slick({
