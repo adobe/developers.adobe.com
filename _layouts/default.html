@@ -76,34 +76,47 @@ site.url: {{site.url }}
       });
 
       $('.home-blade-slider').not('.slick-initialized').slick({
-
-        // dots: true,
-        // infinite: true,
-        // autoplay: true,
-        // speed: 900,
-        // slidesToShow: 1,
-        // slidesToScroll: 1,
-        // fade: true,
-        // useTransform: true,
-        // cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
-        speed: 500,
+        speed: 800,
         autoplay: true, 
         autoplaySpeed: 3000,
         dots:true,
         centerMode:true,   
-        cssEase: 'linear',
-        centerPadding:0
+        //cssEase: 'linear',
+        centerPadding:0,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      });
 
-        // dots: true,
-        // infinite: true,
-        // autoplay: true,
-        // speed: 1500,
-        // slidesToShow: 1,
-        // slidesToScroll: 1,
-        // fade: true,
-        // useTransform: true,
-        // cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
+      var $carousel = $('.home-blade-slider');
+      $carousel.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+        console.log("onbeforechange")
+          var 
+              direction,
+              slideCountZeroBased = slick.slideCount - 1;
 
+          if (nextSlide == currentSlide) {
+              direction = "same";
+
+          } else if (Math.abs(nextSlide - currentSlide) == 1) {
+              direction = (nextSlide - currentSlide > 0) ? "right" : "left";
+
+          } else {
+              direction = (nextSlide - currentSlide > 0) ? "left" : "right";
+          }
+
+          // Add a temp CSS class for the slide animation (.slick-current-clone-animate)
+          if (direction == 'right') {
+              $('.slick-cloned[data-slick-index="' + (nextSlide + slideCountZeroBased + 1) + '"]', $carousel).addClass('slick-current-clone-animate');
+          }
+
+          if (direction == 'left') {
+              $('.slick-cloned[data-slick-index="' + (nextSlide - slideCountZeroBased - 1) + '"]', $carousel).addClass('slick-current-clone-animate');
+          }
+      });
+
+      $carousel.on('afterChange', function (event, slick, currentSlide, nextSlide) {
+          $('.slick-current-clone-animate', $carousel).removeClass('slick-current-clone-animate');
+          $('.slick-current-clone-animate', $carousel).removeClass('slick-current-clone-animate');
       });
 
       $('.logo-slider-container').not('.slick-initialized').slick({
