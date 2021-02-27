@@ -86,14 +86,18 @@
         }
 
         .doc-blade-slider {
+          transition: all 1s cubic-bezier(0.7, 0, 0.3, 1) !important;
+          transform: translateX(100%) !important;
           @media screen and (min-width: 767px) {
             display: flex;
             flex-wrap: wrap;
+
+            &.slick-active {
+              transform: translateX(0) !important;
+            }
           }
 
           .img-wrapper {
-            transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
-            transform: translateX(100%);
             max-width: 325px;
             margin: 0 auto;
             @media screen and (min-width: 767px) {
@@ -196,10 +200,6 @@
                 }
               }
             }
-          }
-
-          &.slick-active {
-            transform: translateX(0);
           }
         }
 
