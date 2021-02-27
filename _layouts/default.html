@@ -77,20 +77,20 @@ site.url: {{site.url }}
 
       $('.home-blade-slider').not('.slick-initialized').slick({
         speed: 800,
-        autoplay: true, 
+        autoplay: true,
         autoplaySpeed: 3000,
         dots:true,
-        centerMode:true,   
-        //cssEase: 'linear',
+        centerMode:true,
         centerPadding:0,
         slidesToShow: 1,
         slidesToScroll: 1,
+        cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
       });
 
       var $carousel = $('.home-blade-slider');
       $carousel.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
         console.log("onbeforechange")
-          var 
+          var
               direction,
               slideCountZeroBased = slick.slideCount - 1;
 
