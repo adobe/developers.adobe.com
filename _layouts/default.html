@@ -74,7 +74,9 @@ site.url: {{site.url }}
         slidesToShow: 1,
         slidesToScroll: 1
       });
+
       $('.home-blade-slider').not('.slick-initialized').slick({
+<<<<<<< HEAD
         // dots: true,
         // infinite: true,
         // autoplay: true,
@@ -91,6 +93,26 @@ site.url: {{site.url }}
         centerMode:true,   
         //cssEase: 'linear',
         centerPadding:0
+=======
+        dots: true,
+        infinite: true,
+        autoplay: true,
+        speed: 1500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: true,
+        useTransform: true,
+        cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
+>>>>>>> 3d0009ab3b107a104e8d9f7a75fa5b03af3de524
+      });
+
+      $('.logo-slider-container').not('.slick-initialized').slick({
+        dots: true,
+        // infinite: true,
+        autoplay: true,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1
       });
 
       $('.blade-slider-container').not('.slick-initialized').slick({
