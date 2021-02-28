@@ -221,12 +221,32 @@
             }
             @media screen and (min-width: 1024px) {
               max-width: none;
-              max-height:125px;/*****/
-              margin: 19.1875rem 0 1.5rem;
+             // max-height:125px;/*****/
+             // margin: 19.1875rem 0 1.5rem;
+//margin: 16.1875rem 0 1.5rem;
               font-size: 1.5rem;
               line-height: 1.75rem;
-             height:125px;;
+             //height:125px;;
             }
+
+            #blrb0{
+              @media screen and (min-width: 1024px) {
+                margin: 15.5rem 0 1.5rem;
+              }
+            }
+
+            #blrb1 {
+              @media screen and (min-width: 1024px) {
+                margin-top:19rem;
+              }
+            }
+
+            #blrb2{
+              @media screen and (min-width: 1024px) {
+                margin-top:19rem;
+              }
+            }
+
 
             .blrb-hide{ 
               position:absolute;            
@@ -240,6 +260,11 @@
               max-height: 32px;
               margin-top: 1.875rem !important;
             }
+
+            @media screen and (min-width: 1024px) {
+              position:absolute;
+              margin-top:26.25rem !important;
+            }            
 
             .button-link {
               text-align: center;
@@ -482,10 +507,13 @@ section.home-doc-serv-blade {
           }
 
           &:first-child {
-            text-align: center;
+            //text-align: center;
 
             img {
               max-width: 210px;
+              width:210px;
+              text-align: center;
+              margin: 0 auto !important;
             }
           }
 
@@ -526,7 +554,11 @@ section.home-doc-serv-blade {
           &:first-of-type {
             @media screen and (min-width: 1024px) {
               img {
+                display:flex;
+                justify-self: center;
                 max-width: 210px;
+                width:210px;
+                margin: 0 auto !important;
               }
 
               h4 {
@@ -769,8 +801,8 @@ section.home-use-case-blade {
   /*Fade out */
   .fadeOutSlideTxt{
     max-width:180px;
-    animation: fadeOutSlideTxt ease-in-out 0.3s;
-    -webkit-animation: fadeOutSlideTxt  ease-in-out .3s;
+    animation: fadeOutSlideTxt ease-in-out 0.5s forwards;
+    -webkit-animation: fadeOutSlideTxt  ease-in-out .5s forwards;
     // -moz-animation: fadeItIn  ease-in-out 1s forwards;
     // -o-animation: fadeItIn  ease-in-out 1s forwards;
     // -ms-animation: fadeItIn  ease-in-out 1s forwards;

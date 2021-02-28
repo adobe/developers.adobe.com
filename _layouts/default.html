@@ -84,21 +84,33 @@ site.url: {{site.url }}
         centerPadding:0,
       });
 
-      var lastSlideIndex = 2;
+      var lastSlideIndex = 0;
       var $carousel = $('.home-blade-slider');
       $carousel.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-        console.log("onbeforechange -- " + lastSlideIndex)
+        //console.log("onbeforechange -- " + currentSlide)
+        lastSlideIndex = slick.currentSlide;
 
-          var blrbId = "#blrb" + slick.currentSlide;
           var blrbIdPrev = "#blrb" + lastSlideIndex;
-            $(blrbIdPrev).removeClass('fadeInSlideTxt');
-            $(blrbIdPrev).addClass('fadeOutSlideTxt');
-
-           console.log("onbeforechange -- " + lastSlideIndex +"  " + blrbIdPrev)
-  
+          $(blrbIdPrev).addClass('fadeOutSlideTxt');
+          $(blrbIdPrev).removeClass('fadeInSlideTxt');
           
-          $(blrbId).removeClass('fadeOutSlideTxt');
-          $(blrbId).addClass('fadeInSlideTxt');
+
+        // var tempIndex = (slick.currentSlide + 1);
+        // var blrbId = "#blrb" + tempIndex;
+
+
+          
+
+        //       var blrbIdPrev = "#blrb" + lastSlideIndex;
+        //       $(blrbIdPrev).removeClass('fadeInSlideTxt');
+        //       $(blrbIdPrev).addClass('fadeOutSlideTxt');
+
+
+        //   console.log("onbeforechange -- " + currentSlide)
+          
+        //   $(blrbId).removeClass('fadeOutSlideTxt');
+        //   $(blrbId).addClass('fadeInSlideTxt');  
+          
           
            
           var 
@@ -129,8 +141,22 @@ site.url: {{site.url }}
 
 
       $carousel.on('afterChange', function (event, slick, currentSlide, nextSlide) {
-       // console.log("afterChange -- " + slick.currentSlide)
-          var blrbId = "#blrb" + lastSlideIndex;
+        console.log("afterChange -- " + slick.currentSlide)
+
+          var blrbId = "#blrb" + slick.currentSlide;
+          
+          var blrbIdPrev = "#blrb" + lastSlideIndex;
+          $(blrbIdPrev).removeClass('fadeInSlideTxt');
+          $(blrbIdPrev).addClass('fadeOutSlideTxt');
+
+          console.log("onbeforechange -- " + currentSlide)
+          
+          $(blrbId).removeClass('fadeOutSlideTxt');
+          $(blrbId).addClass('fadeInSlideTxt');  
+
+
+
+         // lastSlideIndex = tempIndex 
           $('.slick-current-clone-animate', $carousel).removeClass('slick-current-clone-animate');
           $('.slick-current-clone-animate', $carousel).removeClass('slick-current-clone-animate');
       });
