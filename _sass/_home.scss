@@ -231,6 +231,7 @@
             list-style: none;
             text-align: center;
             bottom: -5.875rem !important;
+            z-index: 99;
 
             li {
               button:before {
@@ -961,7 +962,7 @@ section.home-use-case-blade {
 //Patallax effects slide 1***********************************************
 .slide1-move2{
   animation: slide1-move2 ease-in-out 0.3s forwards;
-  -webkit-animation: slide1-move2 ease-in-out 0.3s forwards; 
+  -webkit-animation: slide1-move2 ease-in-out 0.3s forwards;
 }
 
 @keyframes slide1-move2 {
@@ -1098,5 +1099,3 @@ section.home-use-case-blade {
   0% {opacity:0;}
   100% {opacity:1;}
 }
-
-
