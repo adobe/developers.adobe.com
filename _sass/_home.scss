@@ -1,4 +1,5 @@
 /* home specific styles */
+
 #home-doc-blade {
   width: 100%;
   margin: 0 !important;
@@ -159,6 +160,7 @@
                     //height:455px;
                     top:0px;
                     left:30px;
+                    opacity:0;
 
                     @media screen and (min-width: 767px) {
                       height:403px !important;
@@ -173,6 +175,7 @@
                     width:100% !important;
                     top:0px;
                     left: 50px;
+                    opacity:0;
                   }
                 }
               }
@@ -890,9 +893,6 @@ section.home-use-case-blade {
     max-width:180px;
     animation: fadeInSlideTxt ease-in-out 1.5s forwards;
     -webkit-animation: fadeInSlideTxt ease-in-out 1.5s forwards;
-    // -moz-animation: fadeItIn  ease-in-out 1s forwards;
-    // -o-animation: fadeItIn  ease-in-out 1s forwards;
-    // -ms-animation: fadeItIn  ease-in-out 1s forwards;
   }
 
   @keyframes fadeInSlideTxt {
@@ -925,9 +925,6 @@ section.home-use-case-blade {
     max-width:180px;
     animation: fadeOutSlideTxt ease-in-out 0.5s forwards;
     -webkit-animation: fadeOutSlideTxt  ease-in-out .5s forwards;
-    // -moz-animation: fadeItIn  ease-in-out 1s forwards;
-    // -o-animation: fadeItIn  ease-in-out 1s forwards;
-    // -ms-animation: fadeItIn  ease-in-out 1s forwards;
   }
 
 
@@ -956,4 +953,151 @@ section.home-use-case-blade {
   100% {opacity:0;}
 }
 
+
+
+
 /* home specific styles end */
+
+
+//Patallax effects slide 1***********************************************
+.slide1-move2{
+  animation: slide1-move2 ease-in-out 0.3s forwards;
+  -webkit-animation: slide1-move2 ease-in-out 0.3s forwards; 
+}
+
+@keyframes slide1-move2 {
+  from {left:30px; opacity: 0;}
+  to {left:0px; opacity: 1}
+}
+
+@-moz-keyframes slide1-move2 {
+  from {left:30px; opacity: 0;}
+  to {left:0px; opacity: 1}
+}
+
+@-webkit-keyframes slide1-move2 {
+  from {left:30px; opacity: 0;}
+  to {left:0px; opacity: 1}
+}
+
+.slide1-move3{
+  animation: slide1-move3 ease-in-out 0.4s forwards;
+  -webkit-animation: slide1-move3 ease-in-out 0.4s forwards;
+  //animation-delay: 0.1s;
+}
+@keyframes slide1-move3 {
+  from {left:30px; opacity: 0;}
+  to {left:0px; opacity: 1}}
+
+@-moz-keyframes slide1-move3 {
+  from {left:30px; opacity: 0;}
+  to {left:0px; opacity: 1}
+}
+
+@-webkit-keyframes slide1-move3 {
+  from {left:30px; opacity: 0;}
+  to {left:0px; opacity: 1}
+}
+
+/***********************************************/
+
+//Patallax effects slide 2
+.slide2-move1{
+  animation: slide2-move1 ease-in-out 0.5s forwards;
+  -webkit-animation: slide2-move1  ease-in-out .5s forwards;
+}
+@keyframes slide2-move1 {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes slide2-move1 {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes slide2-move1 {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+.slide2-move2{
+  animation: slide2-move2 ease-in-out 0.5s forwards;
+  -webkit-animation: slide2-move2  ease-in-out .5s forwards;
+}
+@keyframes slide2-move2 {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes slide2-move2 {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes slide2-move2 {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+//Patallax effects slide 3
+.slide3-move1{
+  animation: slide3-move1 ease-in-out 0.5s forwards;
+  -webkit-animation: slide3-move1  ease-in-out .5s forwards;
+}
+@keyframes slide3-move1 {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes slide3-move1 {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes slide3-move1 {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+
+.slide3-move2{
+  animation: slide3-move2 ease-in-out 0.5s forwards;
+  -webkit-animation: slide3-move2  ease-in-out .5s forwards;
+}
+@keyframes slide3-move2 {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes slide3-move2 {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes slide3-move2 {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+
+.slide3-move3{
+  animation: slide3-move3 ease-in-out 0.5s forwards;
+  -webkit-animation: slide3-move3  ease-in-out .5s forwards;
+}
+
+@keyframes slide3-move3 {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes slide3-move3 {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes slide3-move3 {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+

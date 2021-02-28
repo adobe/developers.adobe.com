@@ -88,31 +88,31 @@ site.url: {{site.url }}
       var lastSlideIndex = 0;
       var $carousel = $('.home-blade-slider');
       $carousel.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-        //console.log("onbeforechange -- " + currentSlide)
-        lastSlideIndex = slick.currentSlide;
+       // console.log("onbeforechange -- " + currentSlide)
+          lastSlideIndex = slick.currentSlide;
 
           var blrbIdPrev = "#blrb" + lastSlideIndex;
           $(blrbIdPrev).addClass('fadeOutSlideTxt');
           $(blrbIdPrev).removeClass('fadeInSlideTxt');
 
+          switch (lastSlideIndex){
+            case 0 :
+              //do somethng here
+              //console.log("Onbeforechange - index:0, removing  slide1 prllx");
+              //$('.s1-img2').removeClass('slide1-move2');
+              //$('.s1-img3').removeClass('slide1-move3');
+            break;
+            case 1 :
+              //do somethng here
+              //console.log("onbeforechange - index:1, removing  slide1 prllx");
+              //$('s1-img2').removeClass('slide1-move2');
+              //$('.s1-img3').removeClass('slide1-move3');
+            break;
+            case 2 :
+              //do somethng here
+            break;
 
-        // var tempIndex = (slick.currentSlide + 1);
-        // var blrbId = "#blrb" + tempIndex;
-
-
-
-
-        //       var blrbIdPrev = "#blrb" + lastSlideIndex;
-        //       $(blrbIdPrev).removeClass('fadeInSlideTxt');
-        //       $(blrbIdPrev).addClass('fadeOutSlideTxt');
-
-
-        //   console.log("onbeforechange -- " + currentSlide)
-
-        //   $(blrbId).removeClass('fadeOutSlideTxt');
-        //   $(blrbId).addClass('fadeInSlideTxt');
-
-
+          }
 
           var
               direction,
@@ -142,7 +142,7 @@ site.url: {{site.url }}
 
 
       $carousel.on('afterChange', function (event, slick, currentSlide, nextSlide) {
-        console.log("afterChange -- " + slick.currentSlide)
+        //console.log("afterChange -- " + slick.currentSlide)
 
           var blrbId = "#blrb" + slick.currentSlide;
 
@@ -156,8 +156,28 @@ site.url: {{site.url }}
           $(blrbId).addClass('fadeInSlideTxt');
 
 
+          $('.s1-img2').removeClass('slide1-move2');
+          $('.s1-img3').removeClass('slide1-move3');
 
-         // lastSlideIndex = tempIndex
+          switch (slick.currentSlide){
+            case 0 :
+              //do somethng here
+              //console.log("afterChange - index:0,adding  slide1 prllx");
+              $('.s1-img2').addClass('slide1-move2');
+              $('.s1-img3').addClass('slide1-move3');
+            break;
+            case 1 :
+              //do somethng here
+              console.log("afterChange - index: 1, adding  slide1 prllx");
+              $('s1-img2').addClass('slide1-move2');
+              $('.s1-img3').addClass('slide1-move3');
+            break;
+            case 2 :
+              //do somethng here
+            break;
+
+          }
+
           $('.slick-current-clone-animate', $carousel).removeClass('slick-current-clone-animate');
           $('.slick-current-clone-animate', $carousel).removeClass('slick-current-clone-animate');
       });
