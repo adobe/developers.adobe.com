@@ -1436,8 +1436,8 @@ section.dctsdk-work-flow {
 
 /* logo bar */
 section.logo-bar {
-  margin: 4.375rem 0;
-  padding: 1.125rem 0.75rem 1.5625rem;
+  margin: 0;
+  padding: 0 0.75rem;
 
   .slick-track {
     display: flex;
@@ -1465,7 +1465,7 @@ section.logo-bar {
   }
   @media screen and (min-width: 1024px) {
     max-width: 52rem;
-    margin: 4.375rem auto;
+    margin: 0 auto;
     padding: 0 1rem;
   }
 
