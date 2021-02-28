@@ -82,6 +82,7 @@ site.url: {{site.url }}
         dots:true,
         centerMode:true,
         centerPadding:0,
+        cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
       });
 
       var lastSlideIndex = 0;
@@ -93,13 +94,13 @@ site.url: {{site.url }}
           var blrbIdPrev = "#blrb" + lastSlideIndex;
           $(blrbIdPrev).addClass('fadeOutSlideTxt');
           $(blrbIdPrev).removeClass('fadeInSlideTxt');
-          
+
 
         // var tempIndex = (slick.currentSlide + 1);
         // var blrbId = "#blrb" + tempIndex;
 
 
-          
+
 
         //       var blrbIdPrev = "#blrb" + lastSlideIndex;
         //       $(blrbIdPrev).removeClass('fadeInSlideTxt');
@@ -107,13 +108,13 @@ site.url: {{site.url }}
 
 
         //   console.log("onbeforechange -- " + currentSlide)
-          
+
         //   $(blrbId).removeClass('fadeOutSlideTxt');
-        //   $(blrbId).addClass('fadeInSlideTxt');  
-          
-          
-           
-          var 
+        //   $(blrbId).addClass('fadeInSlideTxt');
+
+
+
+          var
               direction,
               slideCountZeroBased = slick.slideCount - 1;
 
@@ -144,19 +145,19 @@ site.url: {{site.url }}
         console.log("afterChange -- " + slick.currentSlide)
 
           var blrbId = "#blrb" + slick.currentSlide;
-          
+
           var blrbIdPrev = "#blrb" + lastSlideIndex;
           $(blrbIdPrev).removeClass('fadeInSlideTxt');
           $(blrbIdPrev).addClass('fadeOutSlideTxt');
 
           console.log("onbeforechange -- " + currentSlide)
-          
+
           $(blrbId).removeClass('fadeOutSlideTxt');
-          $(blrbId).addClass('fadeInSlideTxt');  
+          $(blrbId).addClass('fadeInSlideTxt');
 
 
 
-         // lastSlideIndex = tempIndex 
+         // lastSlideIndex = tempIndex
           $('.slick-current-clone-animate', $carousel).removeClass('slick-current-clone-animate');
           $('.slick-current-clone-animate', $carousel).removeClass('slick-current-clone-animate');
       });
