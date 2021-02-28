@@ -77,14 +77,11 @@ site.url: {{site.url }}
 
       $('.home-blade-slider').not('.slick-initialized').slick({
         speed: 800,
-        autoplay: true, 
+        autoplay: true,
         autoplaySpeed: 3000,
         dots:true,
-        centerMode:true,   
-        //cssEase: 'linear',
+        centerMode:true,
         centerPadding:0,
-        slidesToShow: 1,
-        slidesToScroll: 1,
       });
 
       var lastSlideIndex = 2;
@@ -93,18 +90,12 @@ site.url: {{site.url }}
         console.log("onbeforechange -- " + lastSlideIndex)
 
           var blrbId = "#blrb" + slick.currentSlide;
-          //$('.'+ blrbId).addClass('show');
-          //$('slide-blurb').addClass('fadeInSlideTxt');
-          //$('slide-blurb').removeClass('fadeOutSlideTxt');
-
-         // if(lastSlideIndex){
-            var blrbIdPrev = "#blrb" + lastSlideIndex;
+          var blrbIdPrev = "#blrb" + lastSlideIndex;
             $(blrbIdPrev).removeClass('fadeInSlideTxt');
             $(blrbIdPrev).addClass('fadeOutSlideTxt');
-           // $(blrbId).removeClass('blrb-hide');
 
            console.log("onbeforechange -- " + lastSlideIndex +"  " + blrbIdPrev)
-         // }
+  
           
           $(blrbId).removeClass('fadeOutSlideTxt');
           $(blrbId).addClass('fadeInSlideTxt');
@@ -140,17 +131,12 @@ site.url: {{site.url }}
       $carousel.on('afterChange', function (event, slick, currentSlide, nextSlide) {
        // console.log("afterChange -- " + slick.currentSlide)
           var blrbId = "#blrb" + lastSlideIndex;
-         // $(blrbId).addClass('blrb-hide');
-          //$(blrbId).removeClass('fadeInSlideTxt');
-          //$(blrbId).addClass('fadeOutSlideTxt');
-
           $('.slick-current-clone-animate', $carousel).removeClass('slick-current-clone-animate');
           $('.slick-current-clone-animate', $carousel).removeClass('slick-current-clone-animate');
       });
 
       $('.logo-slider-container').not('.slick-initialized').slick({
         dots: true,
-        // infinite: true,
         autoplay: true,
         speed: 300,
         slidesToShow: 1,

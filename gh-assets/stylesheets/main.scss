@@ -1433,16 +1433,11 @@ section.dctsdk-work-flow {
   }
 }
 /* Work flow end */
-/* grey bar */
-section.grey-bar {
-  background-color: #f7f7f7;
-  margin: 4.375rem 0;
-  padding: 1.125rem 0.75rem 1.5625rem;
-  border-radius: 10px;
 
-  &.switch-white{
-    background-color: $white;
-  }
+/* logo bar */
+section.logo-bar {
+  margin: 0;
+  padding: 0 0.75rem;
 
   .slick-track {
     display: flex;
@@ -1457,27 +1452,21 @@ section.grey-bar {
       margin: 0 auto;
       max-width: 17.75rem;
     }
-
-    .card {
-      width: 17.75rem !important;
-    }
   }
 
   p {
     padding: 0 2rem;
     @media screen and (min-width: 1024px) {
-      //padding: 0 2rem 0 0;
-      padding: 0;
+    padding: 0 1rem;
+    }
+    &:first-of-type {
+      margin-bottom: -1.5rem;
     }
   }
   @media screen and (min-width: 1024px) {
-    max-width: 52.5rem;
-    margin: 4.375rem auto;
-    border-radius: 10px;
-    .card{
-      padding-left:60px;
-      padding-right:60px;
-    }
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: 0 1rem 1rem 1rem;
   }
 
   img {
@@ -1488,13 +1477,14 @@ section.grey-bar {
   }
 
   .slick-dots {
-    bottom: -60px !important;
-    @media screen and (min-width: 768px) {
-      bottom: -90px !important;
-    }
+    padding: 0 0 1rem 0;
+    // @media screen and (min-width: 768px) {
+    // bottom: -90px !important;
+    // }
   }
 }
-/* grey bar end */
+/* logo bar end */
+
 /* customer logos */
 section.customer {
   margin: 4.375rem 0;
@@ -1515,6 +1505,7 @@ section.customer {
   }
 }
 /* customer logos end */
+
 /* dcs-help */
 section.dcs-help {
   margin: 2rem 2.75rem 0;
