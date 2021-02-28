@@ -33,7 +33,7 @@
       .intro-copy-wrapper {
         color: $white !important;
         margin-left: 1.5rem;
-        width: 100%;
+        width: calc(100% - 1.5rem);
         @media screen and (min-width: 767px) {
           margin-left: 3rem;
           margin-right: 5.25rem;
