@@ -537,21 +537,18 @@ section.home-use-case-blade {
   padding: 0 !important;
 
   .use-case-container {
-    padding-bottom: 7.5rem;
+    padding-bottom: 5rem;
 
     .use-case-wrapper {
-      padding-left: 1.5rem;
-      padding-right: 1.3125rem;
 
       h3 {
-        padding-top: 5.625rem;
-        padding-bottom: 0 !important;
+        padding: 4.125rem 0;
         text-align: center;
       }
       @media screen and (min-width: 1024px) {
         margin: 0 auto;
         padding: 0 !important;
-        max-width: 1060px;
+        max-width: 1320px;
       }
 
       .case-item-wrapper {
@@ -567,46 +564,62 @@ section.home-use-case-blade {
         }
 
         .case-item {
+          color: $white;
+          border-radius: 10px;
+          margin: 0 1.25rem;
+          padding: 2rem;
           @media screen and (min-width: 1024px) {
-            max-width: 16.5rem;
+            max-width: 18.125rem;
           }
 
-          &:first-child {
-            text-align: center;
-
-            img {
-              max-width: 210px;
-            }
+          &:nth-of-type(1) {
+            background: rgb(95,194,211);
+            background: linear-gradient(180deg, rgba(95,194,211,1) 0%, rgba(86,90,191,1) 100%);
           }
 
-          .case-icon {
-            padding-top: 4.875rem;
-            //max-width:260px;
-            max-width: 248px;
-            margin: 0 auto;
-            @media screen and (min-width: 1024px) {}
+          &:nth-of-type(2) {
+            background: rgb(177,213,120);
+            background: linear-gradient(180deg, rgba(177,213,120,1) 0%, rgba(89,140,149,1) 100%);
           }
+
+          &:nth-of-type(3) {
+            background: rgb(241,97,97);
+            background: linear-gradient(180deg, rgba(241,97,97,1) 0%, rgba(183,74,124,1) 100%);
+          }
+
+          &:nth-of-type(4) {
+            background: rgb(64,93,162);
+            background: linear-gradient(180deg, rgba(64,93,162,1) 0%, rgba(104,72,193,1) 100%);
+          }
+
+          // .case-icon {
+          //   padding-top: 4.875rem;
+          //   max-width: 248px;
+          //   margin: 0 auto;
+          //   @media screen and (min-width: 1024px) {}
+          // }
 
           h4 {
+            color: $white;
             text-align: center;
             font-family: 'Adobe Clean Bold';
-            font-size: 1.375rem;
+            font-size: 1.125rem;
             padding: 0.625rem 33px 0;
             text-transform: none;
             line-height: 1.8125rem;
             letter-spacing: 0.1px;
+            text-align: left;
             @media screen and (min-width: 1024px) {
               padding: 0.625rem 0 0;
             }
           }
 
           p {
-            text-align: center;
             margin-bottom: 0;
             padding-top: 1.25rem;
             font-size: 1rem;
-            color: $dk-grey;
             line-height: 1.5rem;
+            text-align: left;
             @media screen and (min-width: 1024px) {
               max-width: 13.8425rem;
               margin: 0 auto;

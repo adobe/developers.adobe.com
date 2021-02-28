@@ -1466,7 +1466,7 @@ section.logo-bar {
   @media screen and (min-width: 1024px) {
     max-width: 52rem;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 1rem 1rem 1rem;
   }
 
   img {
@@ -1476,12 +1476,12 @@ section.logo-bar {
     }
   }
 
-  // .slick-dots {
-  //   bottom: -60px !important;
-  //   @media screen and (min-width: 768px) {
-  //   bottom: -90px !important;
-  //   }
-  //}
+  .slick-dots {
+    padding: 0 0 1rem 0;
+    // @media screen and (min-width: 768px) {
+    // bottom: -90px !important;
+    // }
+  }
 }
 /* logo bar end */
 
