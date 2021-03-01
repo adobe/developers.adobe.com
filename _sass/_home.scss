@@ -16,13 +16,12 @@
 
     .doc-blade-wrapper {
       margin: 0 auto;
-      padding: 0 2.75rem;
       display: block;
       @media screen and (min-width: 767px) {
-        padding-bottom: 0;
         height: 633px;
       }
       @media screen and (min-width: 1024px) {
+        padding: 0 2.75rem;
         display: flex;
         max-width: 71.75rem;
         height: 530px;
@@ -93,7 +92,7 @@
         .home-slider-wrapper {
           margin-bottom: 0 !important;
           @media screen and (min-width: 767px) {
-            width: 490px !important;
+            width: 500px !important;
             height: 403px !important;
           }
           @media screen and (min-width: 1024px) {
