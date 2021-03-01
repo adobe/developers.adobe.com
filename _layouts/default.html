@@ -155,9 +155,11 @@ site.url: {{site.url }}
           $(blrbId).removeClass('fadeOutSlideTxt');
           $(blrbId).addClass('fadeInSlideTxt');
 
-
           $('.s1-img2').removeClass('slide1-move2');
           $('.s1-img3').removeClass('slide1-move3');
+          $('.s2-img2').removeClass('slide2-move2');
+          $('.s2-img3').removeClass('slide2-move3');
+          $('.s3-img2').removeClass('slide3-move2');
 
           switch (slick.currentSlide){
             case 0 :
@@ -169,11 +171,12 @@ site.url: {{site.url }}
             case 1 :
               //do somethng here
               console.log("afterChange - index: 1, adding  slide1 prllx");
-              $('s1-img2').addClass('slide1-move2');
-              $('.s1-img3').addClass('slide1-move3');
+              $('.s2-img2').addClass('slide2-move2');
+              $('.s2-img3').addClass('slide2-move3');
             break;
             case 2 :
               //do somethng here
+              $('.s3-img2').addClass('slide3-move2');
             break;
 
           }
