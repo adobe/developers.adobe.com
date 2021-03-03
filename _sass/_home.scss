@@ -141,6 +141,8 @@
                   &.img1 {
                     position: absolute;
                     width: 100% !important;
+
+                    opacity: 0;
                     @media screen and (min-width: 767px) {
                       height: 403px !important;
                     }
@@ -177,6 +179,7 @@
               .in-slide2 {
                 position: relative;
                 display: block;
+
                 @media screen and (min-width: 767px) {
                   width: 472px;
                   height: 403px !important;
@@ -192,6 +195,8 @@
                   &.img1 {
                     position: absolute;
                     width: 100% !important;
+
+                    opacity: 0;
                     @media screen and (min-width: 767px) {
                       height: 403px !important;
                     }
@@ -242,6 +247,8 @@
                   &.img1 {
                     position: absolute;
                     width: 100% !important;
+
+                    opacity: 0;
                     @media screen and (min-width: 767px) {
                       height: 403px !important;
                     }
@@ -966,7 +973,7 @@ section.home-use-case-blade {
     margin: 0 auto;
   }
 }
-/* Fade In*/
+/* Fade In Blurb*/
 .fadeInSlideTxt {
   max-width: 180px;
   animation: fadeInSlideTxt ease-in-out 1.5s forwards;
@@ -1070,9 +1077,52 @@ section.home-use-case-blade {
 }
 /* home specific styles end */
 //Patallax effects slide 1***********************************************
+
+/* Fade In Slide*/
+.fadeInSlide {
+  animation: fadeInSlide ease-in-out .5s forwards;
+  -webkit-animation: fadeInSlide ease-in-out .5s forwards;
+}
+@keyframes fadeInSlide {
+  from {
+    left: 20px;
+    opacity: 0;
+  }
+
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeInSlide {
+  from {
+    left: 30px;
+    opacity: 0;
+  }
+
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInSlide {
+  from {
+    left: 30px;
+    opacity: 0;
+  }
+
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
 .slide1-move2 {
   animation: slide1-move2 ease-in-out 0.3s forwards;
   -webkit-animation: slide1-move2 ease-in-out 0.3s forwards;
+  animation-delay: 0.5s;
 }
 @keyframes slide1-move2 {
   from {
@@ -1112,7 +1162,7 @@ section.home-use-case-blade {
 .slide1-move3 {
   animation: slide1-move3 ease-in-out 0.4s forwards;
   -webkit-animation: slide1-move3 ease-in-out 0.4s forwards;
-  //animation-delay: 0.1s;
+  animation-delay: 0.1s;
 }
 @keyframes slide1-move3 {
   from {
@@ -1148,10 +1198,12 @@ section.home-use-case-blade {
   }
 }
 /***********************************************/
+
 //Parallax effects slide 2
 .slide2-move2 {
-  animation: slide2-move2 ease-in-out 0.3s forwards;
-  -webkit-animation: slide2-move2 ease-in-out 0.3s forwards;
+  animation: slide2-move2 ease-in-out 0.4s forwards;
+  -webkit-animation: slide2-move2 ease-in-out 0.4s forwards;
+  animation-delay: 0.1s;
 }
 
 @keyframes slide2-move2 {
@@ -1178,7 +1230,7 @@ section.home-use-case-blade {
 }
 @-webkit-keyframes slide2-move2 {
   from {
-    left: 30px;
+    left: 20px;
     opacity: 0;
   }
 
@@ -1194,7 +1246,7 @@ section.home-use-case-blade {
 }
 @keyframes slide2-move3 {
   from {
-    left: 40px;
+    left: 30px;
     opacity: 0;
   }
 
@@ -1205,7 +1257,7 @@ section.home-use-case-blade {
 }
 @-moz-keyframes slide2-move3 {
   from {
-    left: 40px;
+    left: 30px;
     opacity: 0;
   }
 
@@ -1216,7 +1268,7 @@ section.home-use-case-blade {
 }
 @-webkit-keyframes slide2-move3 {
   from {
-    left: 40px;
+    left: 30px;
     opacity: 0;
   }
 

@@ -23,7 +23,7 @@ $baseurl: "{{ site.baseurl }}";
 @import "resources";
 @import "pricing";
 @import "doc-generation";
-@import "slide-parallax-effect";
+//@import "slide-parallax-effect";
 
 body {
   font-family: 'Adobe Clean';
