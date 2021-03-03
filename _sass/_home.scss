@@ -3,7 +3,7 @@
   width: 100%;
   margin: 0 !important;
   padding: 0 !important;
-  background: #1B5496 url("../img/doc-service-bkg.jpg");
+  background: #1B5496 url("../img/bg-hero.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -578,6 +578,10 @@ section.dctsdk-work-flow.home {
           @media screen and (min-width: 1024px) {
             // max-width:260px !important;
             //width:100%;
+          }
+
+          .icon-align.dctsdk {
+            margin-bottom: 8px;
           }
 
           .shadow-box.dctsdk {
