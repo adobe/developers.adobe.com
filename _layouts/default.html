@@ -95,25 +95,6 @@ site.url: {{site.url }}
           $(blrbIdPrev).addClass('fadeOutSlideTxt');
           $(blrbIdPrev).removeClass('fadeInSlideTxt');
 
-          switch (lastSlideIndex){
-            case 0 :
-              //do somethng here
-              //console.log("Onbeforechange - index:0, removing  slide1 prllx");
-              //$('.s1-img2').removeClass('slide1-move2');
-              //$('.s1-img3').removeClass('slide1-move3');
-            break;
-            case 1 :
-              //do somethng here
-              //console.log("onbeforechange - index:1, removing  slide1 prllx");
-              //$('s1-img2').removeClass('slide1-move2');
-              //$('.s1-img3').removeClass('slide1-move3');
-            break;
-            case 2 :
-              //do somethng here
-            break;
-
-          }
-
           var
               direction,
               slideCountZeroBased = slick.slideCount - 1;
@@ -150,10 +131,15 @@ site.url: {{site.url }}
           $(blrbIdPrev).removeClass('fadeInSlideTxt');
           $(blrbIdPrev).addClass('fadeOutSlideTxt');
 
-          console.log("onbeforechange -- " + currentSlide)
+          console.log("onbeforechange -- " + currentSlide , " fading out ", blrbIdPrev)
+          //return;
 
           $(blrbId).removeClass('fadeOutSlideTxt');
           $(blrbId).addClass('fadeInSlideTxt');
+
+          $('.s1-img1').removeClass('fadeInSlide');
+          $('.s2-img1').removeClass('fadeInSlide');
+          $('.s3-img1').removeClass('fadeInSlide');
 
           $('.s1-img2').removeClass('slide1-move2');
           $('.s1-img3').removeClass('slide1-move3');
@@ -165,21 +151,21 @@ site.url: {{site.url }}
 
           switch (slick.currentSlide){
             case 0 :
-
               //console.log("afterChange - index:0,adding  slide1 prllx");
+              $('.s1-img1').addClass('fadeInSlide');
               $('.s1-img2').addClass('slide1-move2');
               $('.s1-img3').addClass('slide1-move3');
             break;
             case 1 :
               //console.log("afterChange - index: 1, adding  slide1 prllx");
+              $('.s2-img1').addClass('fadeInSlide');
               $('.s2-img2').addClass('slide2-move2');
               $('.s2-img3').addClass('slide2-move3');
             break;
             case 2 :
-
+              $('.s3-img1').addClass('fadeInSlide');
               $('.s3-img2').addClass('slide3-move2');
             break;
-
           }
 
           $('.slick-current-clone-animate', $carousel).removeClass('slick-current-clone-animate');
@@ -188,7 +174,7 @@ site.url: {{site.url }}
 
       $('.logo-slider-container').not('.slick-initialized').slick({
         dots: true,
-        autoplay: true,
+        autoplay: false,
         speed: 300,
         slidesToShow: 1,
         slidesToScroll: 1
