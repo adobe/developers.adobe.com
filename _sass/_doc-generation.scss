@@ -1,3 +1,75 @@
+#doc-gen-lead-blade {
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #1B5496 url("../img/bg-hero-doc-gen.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  color: $white;
+
+  h1 {
+    color: $white;
+    font-family: 'Adobe Clean Bold';
+    font-size: 1.6875rem;
+    line-height: 2.1875rem;
+    font-weight: 900;
+    padding: 0 6rem 0 1.5rem;
+    padding-top: 2.5rem !important;
+    text-align: left;
+    @media screen and (min-width: 767px) {
+      padding: 0 6rem 0 2.625rem;
+    }
+    @media screen and (min-width: 1024px) {
+      font-size: 2.25rem;
+      line-height: 2.25rem;
+      padding: 0;
+      padding-top: 2.5rem !important;
+      text-align: center;
+    }
+  }
+
+  p {
+    text-align: left;
+    padding: 0 6rem 0 1.5rem;
+    @media screen and (min-width: 767px) {
+      padding: 0 6rem 0 2.625rem;
+    }
+    @media screen and (min-width: 1024px) {
+      padding: 0;
+      text-align: center;
+    }
+  }
+}
+
+.doc-gen-invoice {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: url("../img/doc-gen-hero-mobile@2x.png");
+  background-repeat: no-repeat;
+  background-position: bottom left -2rem;
+  background-size: cover;
+  max-width: 100%;
+  height: 21.125rem;
+  color: $white;
+  @media screen and (min-width: 767px) {
+    background: url("../img/doc-gen-hero-tablet@2x.png");
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: cover;
+    max-width: 48rem;
+    height: 21.125rem;
+  }
+  @media screen and (min-width: 1024px) {
+    margin: 0 auto !important;
+    background: url("../img/doc-gen-hero-desktop@2x.png");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    max-width: 52.625rem;
+    height: 24rem;
+  }
+}
 
 section.doc-gen-blade {
   width: 100%;
