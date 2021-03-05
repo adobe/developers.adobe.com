@@ -554,7 +554,7 @@ section.dctsdk-work-flow.home {
         }
       }
     }
-    // 
+    //
     // .sdk-embed-wrapper {
     //   @media screen and (min-width: 768px) {
     //     max-width: 380px;
@@ -563,7 +563,6 @@ section.dctsdk-work-flow.home {
     //     max-width: 730px !important;
     //   }
     // }
-
     .work-flow_menu {
       ul {
         @media screen and (min-width: 1024px) {
@@ -706,41 +705,46 @@ section.home-doc-serv-blade {
 
       .serv-item-wrapper {
         @media screen and (min-width: 767px) {
-          max-width: 496px;
           margin: 0 auto;
+          padding: 0 5rem;
         }
         @media screen and (min-width: 1024px) {
           max-width: none;
           margin: 0;
+          padding: 0;
           display: flex;
           justify-content: space-evenly;
         }
 
         .serv-item {
+          clear: both;
+          @media screen and (min-width: 767px) {
+            padding: 5rem 0 1.625rem;
+          }
           @media screen and (min-width: 1024px) {
             max-width: 16.5rem;
-          }
+            padding: 0;
+            }
 
-          &:first-child {
-            //text-align: center;
-            img {
-              max-width: 210px;
-              width: 210px;
-              text-align: center;
-              margin: 0 auto !important;
+          .serv-icon {
+            text-align: center;
+            padding-top: 4.875rem;
+            width: 248px;
+            margin: 0 auto;
+            @media screen and (min-width: 767px) {
+              float: left;
+              padding-top: 0;
+              padding-right: 3.25rem;
+            }
+            @media screen and (min-width: 1024px) {
+              float: none;
+              padding-top: 4.875rem;
+              padding-right: 0;
             }
           }
 
-          .serv-icon {
-            padding-top: 4.875rem;
-            //max-width:260px;
-            max-width: 248px;
-            margin: 0 auto;
-            @media screen and (min-width: 1024px) {}
-          }
-
           h4 {
-            text-align: center;
+            text-align: left;
             font-family: 'Adobe Clean Bold';
             font-size: 1.375rem;
             padding: 0.625rem 33px 0;
@@ -748,6 +752,7 @@ section.home-doc-serv-blade {
             line-height: 1.8125rem;
             letter-spacing: 0.1px;
             @media screen and (min-width: 1024px) {
+              text-align: center;
               padding: 0.625rem 0 0;
             }
           }
@@ -763,6 +768,10 @@ section.home-doc-serv-blade {
               max-width: 13.8425rem;
               margin: 0 auto;
             }
+          }
+
+          li {
+            font-size: 1rem;
           }
 
           &:first-of-type {
