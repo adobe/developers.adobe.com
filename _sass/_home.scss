@@ -141,7 +141,6 @@
                   &.img1 {
                     position: absolute;
                     width: 100% !important;
-
                     opacity: 0;
                     @media screen and (min-width: 767px) {
                       height: 403px !important;
@@ -179,7 +178,6 @@
               .in-slide2 {
                 position: relative;
                 display: block;
-
                 @media screen and (min-width: 767px) {
                   width: 472px;
                   height: 403px !important;
@@ -195,7 +193,6 @@
                   &.img1 {
                     position: absolute;
                     width: 100% !important;
-
                     opacity: 0;
                     @media screen and (min-width: 767px) {
                       height: 403px !important;
@@ -247,7 +244,6 @@
                   &.img1 {
                     position: absolute;
                     width: 100% !important;
-
                     opacity: 0;
                     @media screen and (min-width: 767px) {
                       height: 403px !important;
@@ -558,16 +554,15 @@ section.dctsdk-work-flow.home {
         }
       }
     }
-
-    .sdk-embed-wrapper {
-      @media screen and (min-width: 768px) {
-        max-width: 380px;
-      }
-      @media screen and (min-width: 1024px) {
-        max-width: 730px !important;
-      }
-    }
-
+    //
+    // .sdk-embed-wrapper {
+    //   @media screen and (min-width: 768px) {
+    //     max-width: 380px;
+    //   }
+    //   @media screen and (min-width: 1024px) {
+    //     max-width: 730px !important;
+    //   }
+    // }
     .work-flow_menu {
       ul {
         @media screen and (min-width: 1024px) {
@@ -588,7 +583,10 @@ section.dctsdk-work-flow.home {
           }
 
           .icon-align.dctsdk {
-            margin-bottom: 8px;
+            margin-bottom: 4px;
+            @media screen and (min-width: 767px) {
+              margin-bottom: 8px;
+            }
           }
 
           .shadow-box.dctsdk {
@@ -645,17 +643,21 @@ section.dctsdk-work-flow.home {
   .cta-wrapper {
     position: relative;
     margin-top: 1.5rem;
+
+    .button-link {
+      text-decoration: none;
+    }
   }
 
   .button-link {
-    text-align: center;
+    text-align: left;
+    text-decoration: underline;
     text-decoration-style: solid !important;
     color: #ffffff !important;
     font-weight: normal !important;
     font-size: 12px;
     max-height: 32px;
     padding: 4px 14px;
-    max-width: 100px;
     position: relative;
     @media screen and (min-width: 375px) {
       font-size: 14px;
@@ -703,41 +705,46 @@ section.home-doc-serv-blade {
 
       .serv-item-wrapper {
         @media screen and (min-width: 767px) {
-          max-width: 496px;
           margin: 0 auto;
+          padding: 0 5rem;
         }
         @media screen and (min-width: 1024px) {
           max-width: none;
           margin: 0;
+          padding: 0;
           display: flex;
           justify-content: space-evenly;
         }
 
         .serv-item {
+          clear: both;
+          @media screen and (min-width: 767px) {
+            padding: 5rem 0 1.625rem;
+          }
           @media screen and (min-width: 1024px) {
             max-width: 16.5rem;
-          }
+            padding: 0;
+            }
 
-          &:first-child {
-            //text-align: center;
-            img {
-              max-width: 210px;
-              width: 210px;
-              text-align: center;
-              margin: 0 auto !important;
+          .serv-icon {
+            text-align: center;
+            padding-top: 4.875rem;
+            width: 248px;
+            margin: 0 auto;
+            @media screen and (min-width: 767px) {
+              float: left;
+              padding-top: 0;
+              padding-right: 3.25rem;
+            }
+            @media screen and (min-width: 1024px) {
+              float: none;
+              padding-top: 4.875rem;
+              padding-right: 0;
             }
           }
 
-          .serv-icon {
-            padding-top: 4.875rem;
-            //max-width:260px;
-            max-width: 248px;
-            margin: 0 auto;
-            @media screen and (min-width: 1024px) {}
-          }
-
           h4 {
-            text-align: center;
+            text-align: left;
             font-family: 'Adobe Clean Bold';
             font-size: 1.375rem;
             padding: 0.625rem 33px 0;
@@ -745,6 +752,7 @@ section.home-doc-serv-blade {
             line-height: 1.8125rem;
             letter-spacing: 0.1px;
             @media screen and (min-width: 1024px) {
+              text-align: center;
               padding: 0.625rem 0 0;
             }
           }
@@ -760,6 +768,10 @@ section.home-doc-serv-blade {
               max-width: 13.8425rem;
               margin: 0 auto;
             }
+          }
+
+          li {
+            font-size: 1rem;
           }
 
           &:first-of-type {
@@ -826,23 +838,23 @@ section.home-use-case-blade {
           max-width: 18.125rem;
 
           &:nth-of-type(1) {
-            background: rgb(95,194,211);
-            background: linear-gradient(180deg, rgba(95,194,211,1) 0%, rgba(86,90,191,1) 100%);
-          }
-
-          &:nth-of-type(2) {
             background: rgb(177,213,120);
             background: linear-gradient(180deg, rgba(177,213,120,1) 0%, rgba(89,140,149,1) 100%);
           }
 
-          &:nth-of-type(3) {
+          &:nth-of-type(2) {
             background: rgb(241,97,97);
             background: linear-gradient(180deg, rgba(241,97,97,1) 0%, rgba(183,74,124,1) 100%);
           }
 
-          &:nth-of-type(4) {
+          &:nth-of-type(3) {
             background: rgb(64,93,162);
             background: linear-gradient(180deg, rgba(64,93,162,1) 0%, rgba(104,72,193,1) 100%);
+          }
+
+          &:nth-of-type(4) {
+            background: rgb(95,194,211);
+            background: linear-gradient(180deg, rgba(95,194,211,1) 0%, rgba(86,90,191,1) 100%);
           }
           // .case-icon {
           //   padding-top: 4.875rem;
@@ -908,42 +920,32 @@ section.home-use-case-blade {
         }
 
         .stack1 {
-          width: 50%;
+          width: 100%;
           height: 100%;
-          background-size: 500px 500px;
           background-image: url("../svg/stack-1.svg");
           background-repeat: no-repeat;
-          display: none;
+          background-position: center 150px;
+          display: block;
           @media screen and (min-width: 767px) {
-            display: block;
-            width: 50%;
-            height: 100%;
-            background-size: 500px 500px;
-            background-image: url("../svg/stack-1.svg");
-            background-repeat: no-repeat;
-            background-position: -83px 46px;
+            background-position: -75px 125px;
           }
           @media screen and (min-width: 1024px) {
-            background-position: center 61px;
+            background-position: 50px 125px;
           }
         }
 
         .stack2 {
           width: 100%;
           height: 100%;
-          background-size: 594px 593px;
-          background-image: url("../svg/stack-1.svg");
+          background-image: url("../svg/stack-2.svg");
           background-repeat: no-repeat;
-          background-position: center 90px;
+          display: none;
           @media screen and (min-width: 767px) {
-            width: 50%;
-            background-size: 500px 500px;
-            background-image: url("../svg/stack-2.svg");
-            background-position: 49px 56px;
+            display: block;
+            background-position: 100px 190px;
           }
           @media screen and (min-width: 1024px) {
-            background-size: 300px 500px;
-            background-position: 55px 81px;
+            background-position: 35px 195px;
           }
         }
       }
@@ -1077,11 +1079,10 @@ section.home-use-case-blade {
 }
 /* home specific styles end */
 //Patallax effects slide 1***********************************************
-
 /* Fade In Slide*/
 .fadeInSlide {
-  animation: fadeInSlide ease-in-out .5s forwards;
-  -webkit-animation: fadeInSlide ease-in-out .5s forwards;
+  animation: fadeInSlide ease-in-out 0.5s forwards;
+  -webkit-animation: fadeInSlide ease-in-out 0.5s forwards;
 }
 @keyframes fadeInSlide {
   from {
@@ -1094,7 +1095,6 @@ section.home-use-case-blade {
     opacity: 1;
   }
 }
-
 @-moz-keyframes fadeInSlide {
   from {
     left: 30px;
@@ -1106,7 +1106,6 @@ section.home-use-case-blade {
     opacity: 1;
   }
 }
-
 @-webkit-keyframes fadeInSlide {
   from {
     left: 30px;
@@ -1158,7 +1157,6 @@ section.home-use-case-blade {
   }
 }
 
-
 .slide1-move3 {
   animation: slide1-move3 ease-in-out 0.4s forwards;
   -webkit-animation: slide1-move3 ease-in-out 0.4s forwards;
@@ -1198,14 +1196,13 @@ section.home-use-case-blade {
   }
 }
 /***********************************************/
-
 //Parallax effects slide 2
+
 .slide2-move2 {
   animation: slide2-move2 ease-in-out 0.4s forwards;
   -webkit-animation: slide2-move2 ease-in-out 0.4s forwards;
   animation-delay: 0.1s;
 }
-
 @keyframes slide2-move2 {
   from {
     left: 30px;
@@ -1278,6 +1275,7 @@ section.home-use-case-blade {
   }
 }
 //Patallax effects slide 3
+
 .slide3-move2 {
   animation: slide3-move2 ease-in-out 0.5s forwards;
   -webkit-animation: slide3-move2 ease-in-out 0.5s forwards;

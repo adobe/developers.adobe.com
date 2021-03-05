@@ -993,7 +993,8 @@ section.dctsdk-work-flow {
   }
 
   .work-flow-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 300px calc(100% - 300px);
   }
 
   .work-flow_menu ul {
@@ -1057,7 +1058,7 @@ section.dctsdk-work-flow {
   .work-flow-menu-support {
     font-size: 1.0625rem;
     padding-bottom: 1.875rem;
-    border-bottom: 1px solid $lt-grey;
+    //border-bottom: 1px solid $lt-grey;
     @media screen and (min-width: 768px) {
       display: none;
     }
@@ -1346,7 +1347,7 @@ section.dctsdk-work-flow {
   }
 
   .work-flow-support-mode-mobile.open {
-    margin-top: 2.125rem;
+    margin: 2.125rem 0 0 3rem;
     display: block;
     @media screen and (min-width: 1024px) {
       display: none;
