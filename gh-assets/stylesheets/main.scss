@@ -1417,6 +1417,7 @@ section.logo-bar {
 
   .card-container {
     width: 100%;
+    outline-style: none;
     @media screen and (min-width: 1024px) {
       position: relative;
       left: -16px;
