@@ -408,7 +408,7 @@ section.key-features-blade {
           .button-link {
             text-align: left;
             text-decoration-style: solid !important;
-            color: #ffffff !important;
+            color: $white !important;
             font-weight: normal !important;
             font-size: 12px;
             max-height: 32px;
@@ -464,6 +464,9 @@ section.key-features-blade {
         padding-top: 1.5rem;
         .button-link {
           white-space: nowrap;
+          &:hover {
+            text-decoration: none !important;
+          }
         }
       }
     }

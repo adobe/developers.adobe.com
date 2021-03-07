@@ -472,7 +472,7 @@
               .button-link {
                 text-align: center;
                 text-decoration-style: solid !important;
-                color: #ffffff !important;
+                color: $white !important;
                 font-weight: normal !important;
                 font-size: 12px;
                 max-height: 32px;
@@ -646,6 +646,9 @@ section.dctsdk-work-flow.home {
 
     .button-link {
       text-decoration: none;
+      &:hover {
+        text-decoration: none !important;
+      }
     }
   }
 
@@ -653,7 +656,7 @@ section.dctsdk-work-flow.home {
     text-align: left;
     text-decoration: underline;
     text-decoration-style: solid !important;
-    color: #ffffff !important;
+    color: $white !important;
     font-weight: normal !important;
     font-size: 12px;
     max-height: 32px;

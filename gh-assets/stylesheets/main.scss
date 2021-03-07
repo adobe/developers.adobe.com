@@ -1,5 +1,5 @@
 ---
----
+--- 
 $black: #000;
 $blue: #0D66D0;
 $white: #fff;
@@ -22,8 +22,7 @@ $baseurl: "{{ site.baseurl }}";
 @import "market-place";
 @import "resources";
 @import "pricing";
-@import "doc-generation";
-//@import "slide-parallax-effect";
+@import "doc-generation"; //@import "slide-parallax-effect";
 
 body {
   font-family: 'Adobe Clean';
@@ -128,7 +127,7 @@ body {
 }
 
 .gradient {
-  background: transparent linear-gradient(0deg, #FFFFFF 0%, #F4F4F4 100%) 0 0 no-repeat padding-box;
+  background: transparent linear-gradient(0deg, $white 0%, #F4F4F4 100%) 0 0 no-repeat padding-box;
   padding-top: 3.125rem;
   @media screen and (min-width: 768px) {
     padding-top: 3.4375rem;
@@ -365,7 +364,8 @@ body {
         margin-bottom: 0.75rem;
 
         &:hover {
-          color: #ffffff!important;
+          color: $white!important;
+          text-decoration: none !important;
           background: #6e6e6e;
         }
       }
@@ -514,7 +514,8 @@ body {
       }
 
       &:hover {
-        color: #ffffff!important;
+        color: $white!important;
+        text-decoration: none !important;
         background: #6e6e6e;
       }
     }
@@ -709,6 +710,7 @@ section.header {
 
     &:hover {
       color: $white !important;
+      text-decoration: none !important;
       background: $grey;
     }
   }
@@ -1366,6 +1368,7 @@ section.dctsdk-work-flow {
 
       &:hover {
         color: $blue !important;
+        text-decoration: none !important;
       }
     }
   }
