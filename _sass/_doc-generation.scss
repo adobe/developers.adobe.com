@@ -164,6 +164,10 @@ section.doc-gen-blade {
       }
     }
   }
+  .cta-wrapper {
+    text-align: center;
+    padding-top: 2rem;
+  }
 }
 
 section.sample-blade {
@@ -458,6 +462,9 @@ section.key-features-blade {
       .cta-wrapper {
         text-align: left;
         padding-top: 1.5rem;
+        .button-link {
+          white-space: nowrap;
+        }
       }
     }
   }
