@@ -894,6 +894,12 @@ section.home-use-case-blade {
       .cta-wrapper {
         text-align: center;
         padding-top: 3.75rem;
+        .button-link {
+          text-decoration: none;
+          &:hover {
+            text-decoration: none !important;
+          }
+        }
       }
     }
   }

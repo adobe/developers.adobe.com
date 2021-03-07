@@ -190,6 +190,13 @@ section.sample-blade {
         text-decoration: underline;
       }
     }
+    .button-link {
+      text-decoration: none;
+      text-decoration-style: solid !important;
+      &:hover {
+        text-decoration: none !important;
+      }
+    }
   }
 
   .sample-container {
@@ -338,6 +345,13 @@ section.use-case-blade {
       .cta-wrapper {
         text-align: center;
         padding-top: 3.75rem;
+        .button-link {
+          text-decoration: none;
+          text-decoration-style: solid !important;
+          &:hover {
+            text-decoration: none !important;
+          }
+        }
       }
     }
   }
@@ -463,6 +477,8 @@ section.key-features-blade {
         text-align: left;
         padding-top: 1.5rem;
         .button-link {
+          text-decoration: none;
+          text-decoration-style: solid !important;
           white-space: nowrap;
           &:hover {
             text-decoration: none !important;

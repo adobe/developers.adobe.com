@@ -1,5 +1,5 @@
 ---
---- 
+---
 $black: #000;
 $blue: #0D66D0;
 $white: #fff;
@@ -149,8 +149,11 @@ body {
   font-weight: 700;
   font-family: 'Adobe Clean';
   color: $grey !important;
+  text-decoration: none;
+  text-decoration-style: solid !important;
 
   &:hover {
+    text-decoration: none !important;
     color: $white !important;
     background: $grey;
   }
@@ -514,7 +517,7 @@ body {
       }
 
       &:hover {
-        color: $white!important;
+        color: $white !important;
         text-decoration: none !important;
         background: #6e6e6e;
       }
