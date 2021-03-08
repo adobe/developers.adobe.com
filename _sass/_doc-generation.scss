@@ -79,8 +79,10 @@ section.doc-gen-blade {
     padding-bottom: 7.5rem;
 
     .doc-gen-wrapper {
-      padding-left: 1.5rem;
-      padding-right: 1.3125rem;
+      padding: 0 2.5rem;
+        @media screen and (min-width: 767px) {
+          padding: 0;
+        }
 
       h3 {
         padding-top: 5.625rem;
@@ -203,7 +205,7 @@ section.sample-blade {
     padding-bottom: 7.5rem;
 
     .sample-wrapper {
-      padding: 0 1.5rem;
+      padding: 0 2.5rem;
 
       h3 {
         padding-top: 5.625rem;
@@ -264,7 +266,10 @@ section.use-case-blade {
         text-align: center;
       }
       margin: 0 auto;
-      padding: 0 !important;
+      padding: 0 2.5rem;
+        @media screen and (min-width: 767px) {
+          padding: 0;
+        }
       max-width: 1320px;
 
       .case-item-wrapper {
@@ -372,7 +377,10 @@ section.key-features-blade {
         text-align: center;
       }
       margin: 0 auto;
-      padding: 0 !important;
+      padding: 0 2.5rem;
+        @media screen and (min-width: 767px) {
+          padding: 0;
+        }
       max-width: 1320px;
 
       .key-item-wrapper {
