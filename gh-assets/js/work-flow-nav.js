@@ -28,6 +28,10 @@ $(document).ready(function(){
         $($el).removeClass('code-window-opened');
         $(".code-viewer-wrapper #" + itemID + ".sdk-embed-wrapper").addClass('code-window-opened');
       }
+
+      $('.sub-nav-menu-item a.sub-nav-menu-label.dropdown').on("click", function(e) {
+          e.preventDefault();
+      });
   });
 
  
