@@ -30,6 +30,35 @@ $(document).ready(function(){
       }
   });
 
+ 
+  if ($(".use-case-menu-item").is(":visible")) {      
+    
+      $('.use-case-menu-item').on("click", function(e) {
+
+        if(!$(this).hasClass('open')){
+          var $el = $(this).siblings();  //use-case-menu-support
+
+          $('.api-use-case_menu li .use-case-menu-item').removeClass('open');
+          $('.api-use-case_menu li .use-case-menu-support').removeClass('open');
+          $('.api-use-case_menu li .use-case-menu-support .uc-sub-menu').removeClass('open');
+          $('.api-use-case_menu li .use-case-menu-support .uc-sub-menu').removeClass('active');
+  
+          $(this).toggleClass('open');
+
+          var $firsChildActive = $($el).children()[0];
+
+          $($el).toggleClass('open');  
+
+          $($firsChildActive).toggleClass('open');  
+          $($firsChildActive).addClass('active');           
+        }    
+        
+      });
+
+      UC_menuOpen();
+  }
+
+
   $('.work-flow_menu ul li').first().click();
 
 
@@ -41,10 +70,11 @@ $(document).ready(function(){
     $( this ).toggleClass( 'opened');
   });
 
-
   $('.sub-nav-menu-item').on( "click", function(e) {
     $( this ).toggleClass( 'active');
   });
+
+
 
     //window resize to properly deal with the animation on mobile TBD
     // run test on resize of the window
@@ -77,7 +107,6 @@ $(document).load(function(){
       }
     }
   }
-
 })
 
 
@@ -120,4 +149,19 @@ function getRSSFeed(RSS_URL){
         });
     }
   });
+}
+
+
+function UC_menuOpen(hasEvent){
+  //api-use-case_menu
+  var el = $('.api-use-case_menu li .use-case-menu-support .uc-sub-menu');
+
+  if($(el).hasClass('active')){
+    var activeItem = $('.api-use-case_menu li .use-case-menu-support .uc-sub-menu.active');
+    var itemParent = $(activeItem).parent();
+    var _root = $(activeItem).parent().siblings();
+    $(_root).toggleClass('open');
+    $(itemParent).toggleClass('open');
+    console.log("we found an active", _root)
+  }
 }

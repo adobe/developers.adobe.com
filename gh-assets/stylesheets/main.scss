@@ -22,7 +22,8 @@ $baseurl: "{{ site.baseurl }}";
 @import "market-place";
 @import "resources";
 @import "pricing";
-@import "doc-generation"; //@import "slide-parallax-effect";
+@import "doc-generation";
+@import "api-use-cases";
 
 body {
   font-family: 'Adobe Clean';

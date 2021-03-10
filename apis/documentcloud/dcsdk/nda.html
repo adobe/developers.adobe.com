@@ -2,7 +2,7 @@
 layout: default
 title: API Use Cases
 meta:
-active: g-api-use-cases
+active: nda
 ---
 {% include paths.html %}
 
@@ -35,10 +35,10 @@ active: g-api-use-cases
                     </div>
                    
                     <div class="use-case-menu-support">
-                        <div id="target-1-1" class="uc-sub-menu {% if page.active == 'g-api-use-cases' %} active{% endif %}"><a href="{{baseurl}}/apis/documentcloud/dcsdk/nda.html">Sales proposal</a></div>  
-                        <div id="target-1-2" class="uc-sub-menu {% if page.active == 'embed-sdk' %} active{% endif %}">Legal contracts</div> 
-                        <div id="target-1-3" class="uc-sub-menu {% if page.active == 'nda' %} active{% endif %}"><a href="{{baseurl}}/apis/documentcloud/dcsdk/nda.html">NDA</a></div> 
-                        <div id="target-1-4" class="uc-sub-menu {% if page.active == 'embed-sdk' %} active{% endif %}">Employee offer letter</div>   
+                      <div id="target-1-1" class="uc-sub-menu {% if page.active == 'g-api-use-cases' %} active{% endif %}"><a href="{{baseurl}}/apis/documentcloud/dcsdk/nda.html">Sales proposal</a></div>  
+                      <div id="target-1-2" class="uc-sub-menu {% if page.active == 'embed-sdk' %} active{% endif %}">Legal contracts</div> 
+                      <div id="target-1-3" class="uc-sub-menu {% if page.active == 'nda' %} active{% endif %}"><a href="{{baseurl}}/apis/documentcloud/dcsdk/nda.html">NDA</a></div> 
+                      <div id="target-1-4" class="uc-sub-menu {% if page.active == 'embed-sdk' %} active{% endif %}">Employee offer letter</div>   
                     </div>
                   </li>
 
@@ -50,10 +50,10 @@ active: g-api-use-cases
                     </div>
                    
                     <div class="use-case-menu-support">
-                      <div id="target-1-1" class="uc-sub-menu">Sales proposal</div>  
-                      <div id="target-1-2" class="uc-sub-menu">Legal contracts</div> 
-                      <div id="target-1-3" class="uc-sub-menu">NDA</div> 
-                      <div id="target-1-4" class="uc-sub-menu">Employee offer letter</div>   
+                      <div id="target-1-1" class="uc-sub-menu {% if page.active == 'embed-sdk' %} active{% endif %}">Sales proposal</div>  
+                      <div id="target-1-2" class="uc-sub-menu {% if page.active == 'embed-sdk' %} active{% endif %}">Legal contracts TBD</div> 
+                      <div id="target-1-3" class="uc-sub-menu {% if page.active == 'embed-sdk' %} active{% endif %}">NDA TBD</div> 
+                      <div id="target-1-4" class="uc-sub-menu {% if page.active == 'embed-sdk' %} active{% endif %}">Employee offer letter TBD</div>   
                     </div>
                   </li>
 
@@ -131,5 +131,29 @@ active: g-api-use-cases
           </div>
       </div>
   </section>
+  
+    <!-- help -->
+    <section class="dcs-help home">
+        <div class="dcs-help-container">
+          <div class="dcs-help-wrapper">
+    
+            <div class="stack">
+              <div class="stack1"></div>
+              <div class="stack2"></div>
+            </div>
+    
+            <div class="dcs-help-copy">
+              <h3>How to get started?</h3>
+              <p>Start free trial with 1,000 PDF transactions for up to 6 months</p>
+    
+              <div class="cta-get-started home">
+                <a href="https://www.adobe.com/go/pdfToolsAPI_AWS" class="spectrum-Button spectrum-Button--cta" target="_blank">
+                  Start free trial
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
  
