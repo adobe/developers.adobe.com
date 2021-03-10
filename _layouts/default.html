@@ -66,6 +66,21 @@ site.url: {{site.url }}
   <script type="text/javascript">
     $(document).ready(function() {
 
+      $('.sample-slider-container').not('.slick-initialized').slick({
+        dots: false,
+        autoplay: false,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        mobileFirst: true,
+        responsive: [
+            {
+                breakpoint: 767,
+                settings: "unslick"
+            }
+        ]
+      });
+
       $('.market-slider-container').not('.slick-initialized').slick({
         dots: true,
         // infinite: true,
