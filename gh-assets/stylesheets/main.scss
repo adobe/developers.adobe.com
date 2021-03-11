@@ -23,7 +23,7 @@ $baseurl: "{{ site.baseurl }}";
 @import "resources";
 @import "pricing";
 @import "doc-generation";
-//@import "slide-parallax-effect";
+@import "api-use-cases";
 
 body {
   font-family: 'Adobe Clean';
@@ -128,7 +128,7 @@ body {
 }
 
 .gradient {
-  background: transparent linear-gradient(0deg, #FFFFFF 0%, #F4F4F4 100%) 0 0 no-repeat padding-box;
+  background: transparent linear-gradient(0deg, $white 0%, #F4F4F4 100%) 0 0 no-repeat padding-box;
   padding-top: 3.125rem;
   @media screen and (min-width: 768px) {
     padding-top: 3.4375rem;
@@ -150,8 +150,11 @@ body {
   font-weight: 700;
   font-family: 'Adobe Clean';
   color: $grey !important;
+  text-decoration: none;
+  text-decoration-style: solid !important;
 
   &:hover {
+    text-decoration: none !important;
     color: $white !important;
     background: $grey;
   }
@@ -365,157 +368,10 @@ body {
         margin-bottom: 0.75rem;
 
         &:hover {
-          color: #ffffff!important;
+          color: $white!important;
+          text-decoration: none !important;
           background: #6e6e6e;
         }
-      }
-    }
-  }
-
-  .get-started.grey-bar {
-    margin-top: 0;
-    padding: 2rem 2.75rem 0.625rem;
-    @media screen and (min-width: 1024px) {
-      max-width: none;
-    }
-
-    h3 {
-      margin: 0 auto;
-      max-width: 59.55rem;
-    }
-
-    ol {
-      list-style: none;
-      counter-reset: get-started-counter;
-      padding: 0;
-      @media screen and (min-width: 768px) and (max-width: 1023px) {
-        margin: 0 auto;
-        max-width: 21rem;
-        padding: 0 0 0 1.75rem;
-      }
-      @media screen and (min-width: 1024px) {
-        margin: 0 auto;
-        max-width: 69rem;
-        padding-top: 45px;
-      }
-    }
-
-    ol li {
-      counter-increment: get-started-counter;
-      margin-bottom: 2rem;
-      position: relative;
-      @media screen and (min-width: 1024px) {
-        display: inline-block;
-        margin: 0;
-        width: 33%;
-        padding: 0 1rem;
-        vertical-align: top;
-      }
-    }
-
-    ol li::before {
-      content: counter(get-started-counter) "";
-      color: $white;
-      border-radius: 50%;
-      background-color: $blue;
-      font-weight: bold;
-      padding: 6px;
-      font-size: 17px;
-      line-height: 17px;
-      width: 17px;
-      text-align: center;
-      position: absolute;
-      left: 0;
-      max-width: 46px;
-      max-height: 46px;
-      @media screen and (min-width: 1024px) {
-        transform: scale(1.58625);
-        left: calc(50% - 17px);
-        top: -1rem;
-      }
-    }
-
-    div {
-      padding-left: 0.75rem;
-      @media screen and (min-width: 1024px) {
-        padding-left: 0;
-        display: inline;
-      }
-    }
-
-    p {
-      color: $grey;
-      font-family: 'Adobe Clean Light';
-      margin: 0;
-      padding-bottom: 0.5rem;
-      text-align: left;
-      @media screen and (min-width: 1024px) {
-        font-size: 1.375rem;
-        min-height: 10rem;
-        text-align: center;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-
-        &:last-of-type {
-          padding-top: 0;
-          margin-top: -30px;
-        }
-      }
-
-      &.gs-callout-item {
-        a.button-link {
-          display: inline-block;
-          margin: 0 0.35rem;
-          min-width: 0;
-
-          &:first-of-type {
-            margin: 0 0.35rem 0 0;
-          }
-
-          &.step2 {
-            @media screen and (min-width: 1024px) {
-              //min-width:72px;
-              width: 2.75rem;
-            }
-          }
-          @media screen and (min-width: 1024px) {
-            margin: 0 0 0 0.75rem;
-
-            &:first-of-type {
-              margin: 0;
-            }
-          }
-        }
-      }
-    }
-
-    .button-link {
-      border-width: 0;
-      border-style: none;
-      border-radius: 0;
-      color: $blue !important;
-      max-height: none;
-      height: auto;
-      padding: 0;
-      font-size: 1.0625rem;
-      font-weight: normal;
-      @media screen and (min-width: 1024px) {
-        color: $grey !important;
-        border-width: 2px;
-        border-style: solid;
-        border-radius: 16px;
-        max-height: 32px;
-        height: auto;
-        min-width: 72px;
-        padding: 3.5px 14px 4.5px;
-        font-size: 14px;
-        font-weight: 700;
-        color: $grey;
-      }
-
-      &:hover {
-        color: #ffffff!important;
-        background: #6e6e6e;
       }
     }
   }
@@ -709,6 +565,7 @@ section.header {
 
     &:hover {
       color: $white !important;
+      text-decoration: none !important;
       background: $grey;
     }
   }
@@ -1111,6 +968,12 @@ section.dctsdk-work-flow {
     background-position: center center;
   }
 
+  .work-flow_menu ul li .generate {
+    background-image: url("../svg/ic-dynamic-pdf-gen-40.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
   .work-flow_menu ul li .apply {
     width: 23px;
     height: 24px;
@@ -1366,6 +1229,7 @@ section.dctsdk-work-flow {
 
       &:hover {
         color: $blue !important;
+        text-decoration: none !important;
       }
     }
   }
@@ -1417,6 +1281,7 @@ section.logo-bar {
 
   .card-container {
     width: 100%;
+    outline-style: none;
     @media screen and (min-width: 1024px) {
       position: relative;
       left: -16px;

@@ -58,7 +58,7 @@ section.platform {
         .market-place-wrapper{
             max-height:331px;
             
-            color: #FFFFFF;
+            color: $white;
 
                 .market-place-logo-wrapper{
                     font-size:3.25rem;
@@ -130,7 +130,7 @@ section.platform {
                     
                     h4 {
                         font-size:1.1875rem;
-                        color: #ffffff;
+                        color: $white;
                         font-family: 'Adobe Clean Black';
                         font-weight: 900;
                         text-align: center;
@@ -174,7 +174,7 @@ section.platform {
                         text-align:center;
                         .button-link{
                             text-decoration-style: solid !important;
-                            color:#ffffff !important;
+                            color:$white !important;
                             font-weight: normal !important;
                             width:100px !important;
                             &:hover{

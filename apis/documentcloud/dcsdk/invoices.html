@@ -1,0 +1,74 @@
+---
+layout: default
+title: Invoices
+meta:
+active: invoices
+---
+{% include paths.html %}
+
+<div class="main secondary-page">
+
+  <section id="api-use-cases-blade">
+    <div class="api-use-cases-container">
+      <div class="api-use-cases-wrapper">
+
+        <div class="intro-copy-wrapper">
+          <h1>Document Services API Use Cases</h1>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="api-use-cases-body">
+      <div class="api-use-cases-content-container">
+        <div class="api-use-cases-content-wrapper">
+          <div class="api-use-cases-content-menu">
+            {% include use-case-nav.html %}                
+          </div>
+          <div class="api-cases-content-wrapper">
+            <div class="api-cases-content">
+                <h2>Invoices
+                </h2>
+                <p>Billing customers is a critical business activity, but creating invoices is tedious and time consuming. While accuracy is paramount, invoice data often comes from several systems and changes regularly, so the process can be prone to error. Finance and accounting teams at start-ups and enterprises alike need invoicing solutions that are accurate, reliable, and can scale as the business grows. 
+
+                </p>
+                <p>Adobe Document Services can help businesses create invoices. After pulling relevant data from the various systems (CRM, ERP, PIM, etc.) into a JSON file, users can:
+                </p>
+                <ul>
+                  <li>Design invoice templates in Microsoft Word and add text tags for merging JSON data
+                  </li>
+                  <li>Create invoices on demand using an automation tool, such as Microsoft Power Automate
+                  </li>
+                  <li>Add password protection to prevent the editing of PDFs
+                  </li>
+                </ul>
+                <h3>Relevant APIs</h3>
+                <ul>
+                  <li>Adobe Document Generation API
+                  </li>
+                  <li>Adobe Tools API
+                  </li>
+                </ul>
+                <h3>Scenario</h3>
+                <p>At the end of every month, a member of the accounting department at a medical supply company needs to send out customer invoices. Information is pulled from different systems and PDF invoices are generated programmatically. With differing billing periods, generating invoices, whether in batches or one at a time, must be quick and accurate.</p>
+                <h3>Building this Solution
+                </h3>
+                <ol>
+                  <li>Design an invoice template in Microsoft Word
+                  </li>
+                  <li>Import JSON file and use the Adobe Document Generation Tagger, a Microsoft Word Add-In, to auto generate text tags
+                  </li>
+                  <li>Apply any necessary logic and conditions using the Adobe Document Generation Tagger
+                  </li>
+                  <li>Use the Adobe Document Generation API to merge data from the JSON into the template to create PDF invoices
+                  </li>
+                  <li>Add password protection to prevent editing using the Adobe PDF Tools API
+                  </li>
+                </ol>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  {% include use-case-help.html %}

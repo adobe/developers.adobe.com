@@ -30,7 +30,8 @@
       .intro-copy-wrapper {
         color: $white !important;
         margin-left: 1.5rem;
-        width: calc(100% - 1.5rem);
+        margin-rigth: 1.5rem;
+        width: calc(100% - 3rem);
         @media screen and (min-width: 767px) {
           margin-left: 3rem;
           margin-right: 5.25rem;
@@ -472,7 +473,7 @@
               .button-link {
                 text-align: center;
                 text-decoration-style: solid !important;
-                color: #ffffff !important;
+                color: $white !important;
                 font-weight: normal !important;
                 font-size: 12px;
                 max-height: 32px;
@@ -646,6 +647,9 @@ section.dctsdk-work-flow.home {
 
     .button-link {
       text-decoration: none;
+      &:hover {
+        text-decoration: none !important;
+      }
     }
   }
 
@@ -653,7 +657,7 @@ section.dctsdk-work-flow.home {
     text-align: left;
     text-decoration: underline;
     text-decoration-style: solid !important;
-    color: #ffffff !important;
+    color: $white !important;
     font-weight: normal !important;
     font-size: 12px;
     max-height: 32px;
@@ -689,9 +693,8 @@ section.home-doc-serv-blade {
     padding-bottom: 7.5rem;
 
     .doc-serv-wrapper {
-      padding-left: 1.5rem;
-      padding-right: 1.3125rem;
-
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
       h3 {
         padding-top: 5.625rem;
         padding-bottom: 0 !important;
@@ -810,7 +813,10 @@ section.home-use-case-blade {
         text-align: center;
       }
       margin: 0 auto;
-      padding: 0 !important;
+      padding: 0 2.5rem;
+        @media screen and (min-width: 767px) {
+          padding: 0;
+        }
       max-width: 1320px;
 
       .case-item-wrapper {
@@ -891,6 +897,12 @@ section.home-use-case-blade {
       .cta-wrapper {
         text-align: center;
         padding-top: 3.75rem;
+        .button-link {
+          text-decoration: none;
+          &:hover {
+            text-decoration: none !important;
+          }
+        }
       }
     }
   }

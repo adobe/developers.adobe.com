@@ -2,7 +2,7 @@
   <button class="sub-nav-trigger" aria-expanded="true" aria-haspopup="true" aria-label="Home"></button>
   <div class="sub-nav-product-item allowHover">
     <a class="sub-nav-product-item-wrapper has-sub-nav" href="{{baseurl}}/apis/documentcloud/dcsdk/">
-      <image src="{{ baseurl }}/gh-assets/svg/adobe_trifoil.svg" alt="Adobe Icon" class="sub-nav-icon"/>
+      <image src="{{ baseurl }}/gh-assets/svg/adobe_trifoil.svg" alt="Adobe Icon" class="sub-nav-icon" />
       <span>Adobe Document Services</span>
     </a>
   </div>
@@ -11,7 +11,37 @@
       <a href="{{baseurl}}/apis/documentcloud/dcsdk/" rel="canonical" class="sub-nav-menu-label">Home</a>
     </li>
     <li class="sub-nav-menu-item {% if page.active == 'embed-sdk' %} active{% endif %}">
-      <a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-embed.html" rel="canonical" class="sub-nav-menu-label">PDF Embed API</a>
+      <a id="apis" href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-embed.html" rel="canonical" class="sub-nav-menu-label has-sub">PDF Embed API</a>
+      <div class="dropdown-content">
+        <div class="dropdown-content-wrapper">
+          <ul>
+            <li>
+              <a href="">
+                <div class="dpd-sub-nav-menu-header">Document Generation</div>
+                <div class="dpd-sub-nav-menu-copy">Generate PDF and Word documents from custom Word templates</div>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <div class="dpd-sub-nav-menu-header">Document Extract</div>
+                <div class="dpd-sub-nav-menu-copy">Extract structured content for process automation</div>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <div class="dpd-sub-nav-menu-header">PDF Embed</div>
+                <div class="dpd-sub-nav-menu-copy">Embed high-fidelity PDFs in web apps with analytics</div>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <div class="dpd-sub-nav-menu-header">PDF Tools</div>
+                <div class="dpd-sub-nav-menu-copy">Create, combine and export PDFs</div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </li>
     <li class="sub-nav-menu-item {% if page.active == 'tools-sdk' %} active{% endif %}">
       <a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-tools.html" rel="canonical" class="sub-nav-menu-label">PDF Tools API</a>
@@ -24,11 +54,30 @@
     </li>
     <li class="sub-nav-menu-item {% if page.active == 'docs' %} active{% endif %}">
       <a href="{{baseurl}}/apis/documentcloud/dcsdk/docs.html" class="sub-nav-menu-label">Documentation</a>
-    </li>
-    <li class="sub-nav-menu-item {% if page.active == 'getstarted' %} active{% endif %}">
-      <div class="sub-nav-menu-label">
-      <a href="{{baseurl}}/apis/documentcloud/dcsdk/gettingstarted.html" class="sub-nav-get-started-button">Get Started</a>
+      <div class="dropdown-content">
+        <div class="dropdown-content-wrapper">
+          <ul>
+            <li>
+              <a href="">
+                <div class="dpd-sub-nav-menu-header">Blog</div>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <div class="dpd-sub-nav-menu-header">Customer Stories</div>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <div class="dpd-sub-nav-menu-header">Use Cases</div>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
+    </li>
+      <li class="sub-nav-menu-item {% if page.active == 'docs' %} active{% endif %}">
+      <a href="{{baseurl}}/apis/documentcloud/dcsdk/gettingstarted.html" class="sub-nav-menu-label">Get Started</a>
     </li>
   </ul>
 </nav>
