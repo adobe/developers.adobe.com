@@ -1,8 +1,8 @@
 ---
 layout: default
-title: API Use Cases
+title: Digital Content Publishing
 meta:
-active: nda
+active: digital-content-publishing
 ---
 {% include paths.html %}
 
@@ -24,23 +24,47 @@ active: nda
       <div class="api-use-cases-content-container">
         <div class="api-use-cases-content-wrapper">
           <div class="api-use-cases-content-menu">
-            {% include use-case-nav.html %}
+            {% include use-case-nav.html %}                
           </div>
           <div class="api-cases-content-wrapper">
             <div class="api-cases-content">
-                <h2>Sales proposal</h2>
-                <h3>Overview</h3>
-                <p>As is often the case in business, there is a need to complete a non-disclosure agreement to protect the confidentiality of a party. Often, the information that needs to be submitted into an NDA such as the names of the parties involved, addresses, etc. are already known information in a database or may be provided through a web interface. The challenge developers face is that dynamically generating documents with custom data and sending them out for signatures has been a manual process. It often requires custom branded documents to be populated by end-users with data first before they can be sent out for signatures.</p>
+                <h2>Digital Content Publishing</h2>
+                <p>There are more than 2.5 trillion PDFs on the Internet, and one of the main reasons is that the format makes it extremely easy to publish well-designed content on the web. There is no need to redesign documents using HTML and CSS and lose granularity.
+ 
+                  With Adobe Document Services, it is now even easier to embed PDF documents inside of web pages, as well as understand exactly how users are consuming documents. Advanced features not found in traditional PDF desktop or web viewers let you:
+                  </p>
+                  <ul>
+                    <li>Add interactivity to PDF-based experiences
+                    </li>
+                    <li>Provide PDF content for the rest of the brand experience on a website, including navigation, headers, and more
+                    </li>
+                    <li>Support multiple user annotations (using the Adobe Annotations API)
+                    </li>
+                    <li>Enable analytics integration to see how PDFs are viewed, including how long users spend on pages
+                    </li>
+                    <li>Include security and other controls to prevent downloading, annotating, or printing
+                    </li>
+                  </ul>
                 <h3>APIs Used</h3>
                 <ul>
-                  <li>Adobe Document Generation API, a Microsoft Word add-in </li>
-                  <li>Adobe Document Generation Tagger</li>
-                  <li>Adobe Sign</li>
+                  <li>Adobe PDF Embed API
+                  </li>
+                  <li>Adobe PDF Tools API</li>
                 </ul>
-                <h3>End User Scenario</h3>
-                <p>A vendor manager has the information of the vendor he would like to do business with including the name of the contact, the address of the business, as well as the scope of the NDA. The vendor manager goes onto an online web portal to initiate the NDA process. At the click of a button, the data is collected from the database, passed to generate the NDA document, and then sent to Adobe Sign to send for signature.</p>
+                <h3>Scenario</h3>
+                <p>A company plans to offer whitepapers on its website to help customers use various apps and services. Marketing needs to understand how users interact with the content, and they want to incorporate it into the rest of the web pages. Since some of the documents may be restricted or behind a paywall, the company also wants to control who can download particular PDFs.</p>
               
-                <h3>Document Flow</h3>
+                <h3>Building this Solution</h3>
+                <ol>
+                  <li>Get an integration key
+                  </li>
+                  <li>Begin the Embed API demo
+                  </li>
+                  <li>Change flags to allow / disallow printing, downloading, and other user actions
+                  </li>
+                  <li>Enable events so that the viewer can be extended
+                  </li>
+                </ol>
                 <p>In the scenario where there needs to be negotiation between the two parties, the developer will use Document Generation API to provide a document back in Word format, which would allow for redlining in Microsoft Word. Adobe Document Generation Tagger, a Microsoft Word add-in, can be used by the developer or the vendor manager to quickly build a custom branded NDA template for the company to standardize their agreements for accuracy. Using this custom template with dynamic text tags, JSON data can be sent with the template to Document Generation API then immediately sent to Adobe Sign for signature and countersignature.</p>
                 <p>The steps for this use case include:</p>
                 <ol>

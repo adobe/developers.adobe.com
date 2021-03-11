@@ -234,6 +234,16 @@ section.sample-blade {
     }
   }
 
+  .sample-more-button {
+    cursor: pointer;
+  }
+  .sample-more {
+    display: none;
+    &.opened{
+      display: block;
+    }
+  }
+  
   .sample-container {
     padding: 0 2.5rem 3.75rem;
     outline: none;
@@ -520,8 +530,10 @@ section.key-features-blade {
 }
 
 section.get-started {
-  margin: 0 2rem !important;
-  padding: 0 0 5rem;
+  margin: 0 !important;
+  padding: 5rem 0;
+  background: #f7f7f7;
+
   @media screen and (min-width: 1024px) {
     max-width: none;
   }

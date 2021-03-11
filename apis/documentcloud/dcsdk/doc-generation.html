@@ -171,37 +171,36 @@ active:
         </div>
 
         <!-- These are three hidden items. The botton to show them is below. -->
-        <div class="sample-more">
-          <div class="sample-item card-container">
-            <div class="sample-icon"><img src="{{ baseurl }}/gh-assets/img/template-certificate@2x.png"></div>
-            <h5>Sales proposal</h5>
-            <div class="cta-wrapper">
-              <a href="https://www.adobe.com/go/dcdg_sampleproposal" target="_blank" class="button-link">
-                Download
-              </a>
-            </div>
+        <div class="sample-more sample-item card-container">
+          <div class="sample-icon"><img src="{{ baseurl }}/gh-assets/img/template-certificate@2x.png"></div>
+          <h5>Sales proposal</h5>
+          <div class="cta-wrapper">
+            <a href="https://www.adobe.com/go/dcdg_sampleproposal" target="_blank" class="button-link">
+              Download
+            </a>
           </div>
+        </div>
 
-          <div class="sample-item card-container">
-            <div class="sample-icon"><img src="{{ baseurl }}/gh-assets/img/template-cert-report@2x.png"></div>
-            <h5>Sales order</h5>
-            <div class="cta-wrapper">
-              <a href="https://www.adobe.com/go/dcdg_samplesalesorder" target="_blank" class="button-link">
-                Download
-              </a>
-            </div>
+        <div class="sample-more sample-item card-container">
+          <div class="sample-icon"><img src="{{ baseurl }}/gh-assets/img/template-cert-report@2x.png"></div>
+          <h5>Sales order</h5>
+          <div class="cta-wrapper">
+            <a href="https://www.adobe.com/go/dcdg_samplesalesorder" target="_blank" class="button-link">
+              Download
+            </a>
           </div>
+        </div>
 
-          <div class="sample-item card-container">
-            <div class="sample-icon"><img src="{{ baseurl }}/gh-assets/img/template-offer@2x.png"></div>
-            <h5>Receipt template</h5>
-            <div class="cta-wrapper">
-              <a href="https://www.adobe.com/go/dcdg_samplereceipt" target="_blank" class="button-link">
-                Download
-              </a>
-            </div>
+        <div class="sample-more sample-item card-container">
+          <div class="sample-icon"><img src="{{ baseurl }}/gh-assets/img/template-offer@2x.png"></div>
+          <h5>Receipt template</h5>
+          <div class="cta-wrapper">
+            <a href="https://www.adobe.com/go/dcdg_samplereceipt" target="_blank" class="button-link">
+              Download
+            </a>
           </div>
-        </div><!-- /.sample-more -->
+        </div>
+        <!-- /.sample-more -->
         
       </div>
 
@@ -214,7 +213,6 @@ active:
     </div>
   </section>
   <!-- Document services end -->
-
 
 
   <!-- use cases -->
@@ -260,9 +258,6 @@ active:
   <!-- use cases end -->
 
 
-
-
-
   <!-- Get Started start -->
   <section class="get-started">
     <h3>Get Started in a few minutes!</h3>
@@ -276,7 +271,7 @@ active:
             Start a free trial and download code samples for Node.js, Java, and .Net
           </p>
           <div class="cta-wrapper">
-            <a href="" target="_blank" class="button-link blue">
+            <a href="https://www.adobe.com/go/dcsdks_credentials" target="_blank" class="button-link blue">
               Start free trial
             </a>
           </div>
@@ -299,7 +294,7 @@ active:
             Add credentials to your code and run!
           </p>
           <div class="cta-wrapper">
-            <a href="" target="_blank" class="button-link">
+            <a href="docs.html" target="_self" class="button-link">
               See documentation
             </a>
           </div>
@@ -309,47 +304,3 @@ active:
   </section>
   <!-- Get Started end -->
 
-
-
-
-
-  <!-- help -->
-  <section class="dcs-help home">
-    <div class="dcs-help-container">
-      <div class="dcs-help-wrapper">
-
-        <div class="stack">
-          <div class="stack1"></div>
-          <div class="stack2"></div>
-        </div>
-
-        <div class="dcs-help-copy">
-          <h3>How to get started?</h3>
-          <p>Start free trial with 1,000 PDF transactions for up to 6 months</p>
-
-          <div class="cta-get-started home">
-            <a href="https://www.adobe.com/go/pdfToolsAPI_AWS" class="spectrum-Button spectrum-Button--cta" target="_blank">
-              Start free trial
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <style>
-    .sample-more {
-      display: none;
-    }
-    .sample-more.opened {
-      display: flex;
-    }
-  </style>
-  <script>
-    $(document).ready(function(){
-      $('.sample-more-button').on('click', function(e){
-        $(this).css('display', 'none');
-        $('.sample-more').addClass('opened');
-      })
-    });
-  </script>

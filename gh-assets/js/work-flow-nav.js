@@ -59,6 +59,12 @@ $(document).ready(function(){
       UC_menuOpen();
   }
 
+  if ($('sample-more-button').is(':visible')) {
+    $('.sample-more-button').on('click', function(e){
+      $('.show-templates').css('display', 'none');
+      $('.sample-more').addClass('opened');
+    })
+  }
 
   $('.work-flow_menu ul li').first().click();
 
