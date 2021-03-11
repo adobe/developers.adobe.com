@@ -1172,25 +1172,27 @@ try {
   // Create a new DocumentMerge options instance
   const documentMerge = PDFToolsSdk.DocumentMerge,
     documentMergeOptions = documentMerge.options,
-    options = new documentMergeOptions.DocumentMergeOptions(jsonDataForMerge, documentMergeOptions.OutputFormat.PDF);
+    options = new documentMergeOptions
+      .DocumentMergeOptions(jsonDataForMerge, documentMergeOptions.OutputFormat.PDF);
 
   // Create a new operation instance using the options instance
   const documentMergeOperation = documentMerge.Operation.createNew(options)
 
   // Set operation input document template from a source file.
-  const input = PDFToolsSdk.FileRef.createFromLocalFile('resources/salesOrderTemplate.docx');
+  const input = PDFToolsSdk
+    .FileRef.createFromLocalFile('resources/salesOrderTemplate.docx');
   documentMergeOperation.setInput(input);
 
   // Execute the operation and Save the result to the specified location.
   documentMergeOperation.execute(executionContext)
     .then(result => result.saveAsFile('output/salesOrderOutput.pdf'))
     .catch(err => {
-        if(err instanceof PDFToolsSdk.Error.ServiceApiError
-            || err instanceof PDFToolsSdk.Error.ServiceUsageError) {
-            console.log('Exception encountered while executing operation', err);
-        } else {
-            console.log('Exception encountered while executing operation', err);
-        }
+      if(err instanceof PDFToolsSdk.Error.ServiceApiError
+          || err instanceof PDFToolsSdk.Error.ServiceUsageError) {
+          console.log('Exception encountered while executing operation', err);
+      } else {
+          console.log('Exception encountered while executing operation', err);
+      }
   });
 } catch (err) {
   console.log('Exception encountered while executing operation', err);
@@ -1212,8 +1214,8 @@ namespace MergeDocumentToPDF
       {
         // Initial setup, create credentials instance.
         Credentials credentials = Credentials.ServiceAccountCredentialsBuilder()
-                        .FromFile(Directory.GetCurrentDirectory() + "/pdftools-api-credentials.json")
-                        .Build();
+          .FromFile(Directory.GetCurrentDirectory() + "/pdftools-api-credentials.json")
+          .Build();
 
         // Create an ExecutionContext using credentials.
         ExecutionContext executionContext = ExecutionContext.Create(credentials);
@@ -1223,13 +1225,16 @@ namespace MergeDocumentToPDF
         JObject jsonDataForMerge = JObject.Parse(content);
 
         // Create a new DocumentMerge Options instance
-        DocumentMergeOptions documentMergeOptions = new DocumentMergeOptions(jsonDataForMerge, OutputFormat.PDF);
+        DocumentMergeOptions documentMergeOptions = 
+          new DocumentMergeOptions(jsonDataForMerge, OutputFormat.PDF);
 
         // Create a new DocumentMerge Operation instance with the DocumentMerge Options instance
-        DocumentMergeOperation documentMergeOperation = DocumentMergeOperation.CreateNew(documentMergeOptions);
+        DocumentMergeOperation documentMergeOperation = 
+          DocumentMergeOperation.CreateNew(documentMergeOptions);
 
         // Set the operation input document template from a source file.
-        documentMergeOperation.SetInput(FileRef.CreateFromLocalFile(@"salesOrderTemplate.docx"));
+        documentMergeOperation
+          .SetInput(FileRef.CreateFromLocalFile(@"salesOrderTemplate.docx"));
 
         // Execute the operation.
         FileRef result = documentMergeOperation.Execute(executionContext);
@@ -1270,20 +1275,24 @@ public class MergeDocumentToPDF {
         .build();
 
       // Setup input data for the document merge process
-      String content = new String(Files.readAllBytes(Paths.get("src/main/resources/salesOrder.json")));
+      String content = new String(Files.readAllBytes(
+        Paths.get("src/main/resources/salesOrder.json")));
       JSONObject jsonDataForMerge=new JSONObject(content);
 
       // Create an ExecutionContext using credentials.
       ExecutionContext executionContext = ExecutionContext.create(credentials);
 
       //Create a new DocumentMergeOptions instance
-      DocumentMergeOptions documentMergeOptions = new DocumentMergeOptions(jsonDataForMerge, OutputFormat.PDF);
+      DocumentMergeOptions documentMergeOptions = 
+        new DocumentMergeOptions(jsonDataForMerge, OutputFormat.PDF);
 
       // Create a new DocumentMergeOperation instance with the DocumentMergeOptions instance
-      DocumentMergeOperation documentMergeOperation = DocumentMergeOperation.createNew(documentMergeOptions);
+      DocumentMergeOperation documentMergeOperation = 
+        DocumentMergeOperation.createNew(documentMergeOptions);
 
       // Set the operation input document template from a source file.
-      FileRef documentTemplate = FileRef.createFromLocalFile("src/main/resources/salesOrderTemplate.docx");
+      FileRef documentTemplate = 
+        FileRef.createFromLocalFile("src/main/resources/salesOrderTemplate.docx");
       documentMergeOperation.setInput(documentTemplate);
 
       // Execute the operation
