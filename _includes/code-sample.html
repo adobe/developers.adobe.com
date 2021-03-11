@@ -832,11 +832,156 @@ result.saveAs("output/reorderPagesOutput.pdf");
   <div id="combine-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
     <coral-tabview>
       <coral-tablist size="S">
-        <coral-tab class="is-selected">Node.js</coral-tab>
+        <coral-tab class="is-selected">REST API</coral-tab>
+        <coral-tab>Node.js</coral-tab>
         <coral-tab>.Net</coral-tab>
         <coral-tab>Java</coral-tab>
       </coral-tablist>
       <coral-panelstack>
+        <coral-panel>
+<pre><code>{
+	"info": {
+		"_postman_id": "e6c698de-7276-4bc4-bbca-18e6f54258dd",
+		"name": "Combine PDF",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Submit",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{Placeholder for token}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{Placeholder for client_id}}",
+						"type": "text"
+					},
+					{
+						"key": "Prefer",
+						"value": "respond-async,wait=0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "contentAnalyzerRequests",
+							"value": "{\n\t\"cpf:inputs\": {\n\t\t\"documentsIn\": [{\n\t\t\t\"pageRanges\": {\n\t\t\t\t\"cpf:inline\": [{\n\t\t\t\t\t\"start\": 1,\n\t\t\t\t\t\"end\": 4\n\t\t\t\t}]\n\t\t\t},\n\t\t\t\"documentIn\": {\n\t\t\t\t\"cpf:location\": \"InputFile0\",\n\t\t\t\t\"dc:format\": \"application/pdf\"\n\t\t\t}\n\t\t}, {\n\t\t\t\"pageRanges\": {\n\t\t\t\t\"cpf:inline\": [{\n\t\t\t\t\t\"start\": 1,\n\t\t\t\t\t\"end\": 25\n\t\t\t\t}]\n\t\t\t},\n\t\t\t\"documentIn\": {\n\t\t\t\t\"cpf:location\": \"InputFile1\",\n\t\t\t\t\"dc:format\": \"application/pdf\"\n\t\t\t}\n\t\t}, {\n\t\t\t\"pageRanges\": {\n\t\t\t\t\"cpf:inline\": [{\n\t\t\t\t\t\"start\": 1\n\t\t\t\t}, {\n\t\t\t\t\t\"end\": 25\n\t\t\t\t}, {\n\t\t\t\t\t\"start\": 1,\n\t\t\t\t\t\"end\": 25\n\t\t\t\t}]\n\t\t\t},\n\t\t\t\"documentIn\": {\n\t\t\t\t\"cpf:location\": \"InputFile2\",\n\t\t\t\t\"dc:format\": \"application/pdf\"\n\t\t\t}\n\t\t}]\n\t},\n\t\"cpf:engine\": {\n\t\t\"repo:assetId\": \"urn:aaid:cpf:Service-916ee91c156b42349a7847a7d564fb13\"\n\t},\n\t\"cpf:outputs\": {\n\t\t\"documentOut\": {\n\t\t\t\"cpf:location\": \"OutputFile\",\n\t\t\t\"dc:format\": \"application/pdf\"\n\t\t}\n\t}\n}",
+							"type": "text"
+						},
+						{
+							"key": "InputFile0",
+							"type": "file",
+							"src": "{{Placeholder for input file (absolute path)}}"
+						},
+						{
+							"key": "InputFile1",
+							"type": "file",
+							"src": "{{Placeholder for input file (absolute path)}}"
+						},
+						{
+							"key": "InputFile2",
+							"type": "file",
+							"src": "{{Placeholder for input file (absolute path)}}"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://cpf-ue1.adobe.io/ops/{{create}}?respondWith=%7B%22reltype%22%3A%20%22http%3A%2F%2Fns.adobe.com%2Frel%2Fprimary%22%7D",
+					"protocol": "https",
+					"host": [
+						"cpf-ue1",
+						"adobe",
+						"io"
+					],
+					"path": [
+						"ops",
+						"{{create}}"
+					],
+					"query": [
+						{
+							"key": "respondWith",
+							"value": "%7B%22reltype%22%3A%20%22http%3A%2F%2Fns.adobe.com%2Frel%2Fprimary%22%7D"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Poll",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{Placeholder for token}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{Placeholder for client_id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://cpf-ue1.adobe.io/ops/id/{{Placeholder for x-request-id}}",
+					"protocol": "https",
+					"host": [
+						"cpf-ue1",
+						"adobe",
+						"io"
+					],
+					"path": [
+						"ops",
+						"id",
+						"{{Placeholder for x-request-id}}"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}</code></pre>
+        </coral-panel>
         <coral-panel>
 <pre><code class="language-javascript">// Create an ExecutionContext using credentials and create a new operation instance.          
 const executionContext = PDFToolsSdk.ExecutionContext.create( credentials ),
@@ -1145,11 +1290,153 @@ result.saveAs("output/insertPagesOutput.pdf");
   <div id="generate-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
     <coral-tabview>
       <coral-tablist size="S">
-        <coral-tab class="is-selected">Node.js</coral-tab>
+        <coral-tab class="is-selected">REST API</coral-tab>
+        <coral-tab>Node.js</coral-tab>
         <coral-tab>.Net</coral-tab>
         <coral-tab>Java</coral-tab>
       </coral-tablist>
       <coral-panelstack>
+        <coral-panel>
+<pre><code>{
+	"info": {
+		"_postman_id": "4b10a61c-adc9-4d77-a74e-715916948d14",
+		"name": "Create PDF",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Submit",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{Placeholder for token}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{Placeholder for client_id}}",
+						"type": "text"
+					},
+					{
+						"key": "Prefer",
+						"value": "respond-async,wait=0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "contentAnalyzerRequests",
+							"value": "{\n\t\"cpf:inputs\": {\n\t\t\"documentIn\": {\n\t\t\t\"cpf:location\": \"InputFile0\",\n\t\t\t\"dc:format\": \"application/vnd.openxmlformats-officedocument.wordprocessingml.document\"\n\t\t}\n\t},\n\t\"cpf:engine\": {\n\t\t\"repo:assetId\": \"urn:aaid:cpf:Service-1538ece812254acaac2a07799503a430\"\n\t},\n\t\"cpf:outputs\": {\n\t\t\"documentOut\": {\n\t\t\t\"cpf:location\": \"multipartLabelOut\",\n\t\t\t\"dc:format\": \"application/pdf\"\n\t\t}\n\t}\n}",
+							"type": "text"
+						},
+						{
+							"key": "InputFile0",
+							"type": "file",
+							"src": "{{Placeholder for input file (absolute path)}}"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://cpf-ue1.adobe.io/ops/{{create}}?respondWith=%7B%22reltype%22%3A%20%22http%3A%2F%2Fns.adobe.com%2Frel%2Fprimary%22%7D",
+					"protocol": "https",
+					"host": [
+						"cpf-ue1",
+						"adobe",
+						"io"
+					],
+					"path": [
+						"ops",
+						"{{create}}"
+					],
+					"query": [
+						{
+							"key": "respondWith",
+							"value": "%7B%22reltype%22%3A%20%22http%3A%2F%2Fns.adobe.com%2Frel%2Fprimary%22%7D"
+						},
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Poll",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{Placeholder for token}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{Placeholder for client_id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://cpf-ue1.adobe.io/ops/id/{{Placeholder for x-request-id}}",
+					"protocol": "https",
+					"host": [
+						"cpf-ue1",
+						"adobe",
+						"io"
+					],
+					"path": [
+						"ops",
+						"id",
+						"{{Placeholder for x-request-id}}"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
+
+</code></pre>
+        </coral-panel>
         <coral-panel>
 <pre><code class="language-javascript">// Get the samples from http://www.adobe.com/go/pdftoolsapi_node_sample
 const PDFToolsSdk = require('@dcloud/documentservices-pdftools-node-sdk'),
