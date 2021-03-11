@@ -23,11 +23,32 @@
       <a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-resources.html" rel="canonical" class="sub-nav-menu-label">Resources</a>
     </li>
     <li class="sub-nav-menu-item {% if page.active == 'docs' %} active{% endif %}">
-      <a href="{{baseurl}}/apis/documentcloud/dcsdk/docs.html" class="sub-nav-menu-label">Documentation</a>
+      <a href="{{baseurl}}/apis/documentcloud/dcsdk/docs.html" class="sub-nav-menu-label dropdown">Documentation</a>
       <div class="dropdown-content">
-        <a href="#">Link 1</a>
+        <!-- <a href="#">Link 1</a>
         <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+        <a href="#">Link 3</a> -->
+
+        <div class="dropdown-content-wrapper">
+          <ul>
+            <li>
+                <div class="dpd-sub-nav-menu-header">Document Generation</div>
+                <div class="dpd-sub-nav-menu-copy">Generate PDF and Word documents from custom Word templates</div>
+            </li>
+            <li>
+                <div class="dpd-sub-nav-menu-header">Document Extract</div>
+                <div class="dpd-sub-nav-menu-copy">Extract structured content for process automation</div>
+            </li>
+            <li>
+                <div class="dpd-sub-nav-menu-header">PDF Embed</div>
+                <div class="dpd-sub-nav-menu-copy">Embed high-fidelity PDFs in web apps with analytics</div>
+            </li>
+            <li>
+              <div class="dpd-sub-nav-menu-header">PDF Tools</div>
+              <div class="dpd-sub-nav-menu-copy">Create, combine and export PDFs</div>
+            </li>
+          </ul>
+        </div>
       </div>
     </li>
     <li class="sub-nav-menu-item {% if page.active == 'getstarted' %} active{% endif %}">
