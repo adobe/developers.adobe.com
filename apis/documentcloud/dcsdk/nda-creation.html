@@ -1,0 +1,73 @@
+---
+layout: default
+title: API Use Cases
+meta:
+active: api-use-cases
+---
+{% include paths.html %}
+
+<div class="main secondary-page">
+
+  <section id="api-use-cases-blade">
+    <div class="api-use-cases-container">
+      <div class="api-use-cases-wrapper">
+
+        <div class="intro-copy-wrapper">
+          <h1>Document Services API Use Cases</h1>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="api-use-cases-body">
+      <div class="api-use-cases-content-container">
+        <div class="api-use-cases-content-wrapper">
+          <div class="api-use-cases-content-menu">
+            {% include use-case-nav.html %}                
+          </div>
+          <div class="api-cases-content-wrapper">
+            <div class="api-cases-content">
+                <h2>NDA Creation
+                </h2>
+                <p>In business, it is often necessary for a company to create and then have another organization sign a non-disclosure agreement (NDA). The specific information required to customize the document is most likely already in a database or might be submitted in a web app. In addition, other items, such as logos, need to be applied. For many, the current method of creating these customized NDAs and then sending them out to be signed is a manual, slow process. 
+                </p>
+                <p>With Adobe Document Services, companies can:
+                </p>
+                <ul>
+                  <li>Develop a standard, branded NDA template
+                  </li>
+                  <li>Merge data from a specific company with the template to create a customized NDA
+                  </li>
+                  <li>Send the NDA out for signatures
+                  </li>
+                </ul>
+                <h3>Relevant APIs</h3>
+                <ul>
+                  <li>Adobe Document Generation API
+                  </li>
+                  <li>Adobe Sign API
+                  </li>
+                </ul>
+                <h3>Scenario</h3>
+                <p>A vendor needs to have a new supplier sign an NDA before a meeting. A manager has already collected the information needed to customize the document, including the name of the contact, the address of the supplier, as well as the scope of the NDA. In order not to delay the meeting, the manager has to create the document and then send it out and wait for a signature.</p>
+                <h3>Building this Solution
+                </h3>
+                <ol>
+                  <li>Within the application layer, query the database to collect relevant data for a custom NDA and create a JSON data model
+                  </li>
+                  <li>Design a branded NDA in Microsoft Word
+                  </li>
+                  <li>Use Adobe Document Generation Tagger in Word to place fields into the template based on the data model
+                  </li>
+                  <li>Send the template and data to Adobe Document Generation API to output a merged PDF which can be sent using <a href="https://www.adobe.io/apis/documentcloud/sign.html" target="_blank">Adobe Sign API</a>
+                  </li>
+                  <li>Track engagement and understand learning needs by using analytics events tracked in embedded PDF documents
+                  </li>
+                </ol>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  {% include use-case-help.html %}
