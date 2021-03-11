@@ -1,0 +1,81 @@
+---
+layout: default
+title: API Use Cases
+meta:
+active: api-use-cases
+---
+{% include paths.html %}
+
+<div class="main secondary-page">
+
+  <section id="api-use-cases-blade">
+    <div class="api-use-cases-container">
+      <div class="api-use-cases-wrapper">
+
+        <div class="intro-copy-wrapper">
+          <h1>Document Services API Use Cases</h1>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="api-use-cases-body">
+      <div class="api-use-cases-content-container">
+        <div class="api-use-cases-content-wrapper">
+          <div class="api-use-cases-content-menu">
+            {% include use-case-nav.html %}                
+          </div>
+          <div class="api-cases-content-wrapper">
+            <div class="api-cases-content">
+                <h2>Legal Contracts
+                </h2>
+                <p>Most organizations today have a variety of legal contracts that need to be created, edited, approved, and signed on a regular basis. In addition, many of these contracts require customization and branding to be applied. And no matter what, accurate document generation is crucial. The challenge is to automate what is now a manual process of including custom data elements to templates.
+                </p>
+                <p>Adobe Document Services will let organizations:
+                </p>
+                <ul>
+                  <li>Create templates with dynamic fields that can be automatically merged with data
+                  </li>
+                  <li>Customize inputs and logic, for example adding clauses that only apply to specific geographies
+                  </li>
+                  <li>Build a workflow that allows for review, approval, and electronic signatures
+                  </li>
+                </ul>
+                <h3>Relevant APIs</h3>
+                <ul>
+                  <li>Adobe Document Generation API 
+                  </li>
+                  <li>Adobe PDF Embed API
+                  </li>
+                  <li>Adobe Document Generation Tagger Microsoft Word Add-in
+                  </li>
+                  <li>Adobe Sign API
+                  </li>
+                </ul>
+                <h3>Scenario</h3>
+                <p>A technology company is drafting a legal contract. To do so, it needs inputs from agents, legal resources, and business managers. The contract requires company branding and to include some standard legal copy. Data from various sources, such as the correct terms, conditions, and clauses, must also be added. Once all of the content is collected, the final contract needs to be shared for feedback and final approval. When finished, it will be sent to customers for digital signatures.</p>
+                <h3>Building this Solution
+                </h3>
+                <ol>
+                  <li>Create a basic data model in JSON that helps determine document generation, such as customer profile information from a CRM
+                  </li>
+                  <li>Design contract templates in Microsoft Word
+                  </li>
+                  <li>Use Adobe Document Generation Tagger in Word to place fields into the template based on the data model
+                  </li>
+                  <li>Set conditional sections in the contract template, repeating elements, as well as place fields for Adobe Sign
+                  </li>
+                  <li>Send both the Word template and JSON data input file to Adobe Document Generation API and receive a PDF file
+                  </li>
+                  <li>Embed the PDF file in the application for review and approval with Adobe PDF Embed API
+                  </li>
+                  <li>Once approved, send the agreement out for signature using Adobe Sign API
+                  </li>
+                </ol>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  {% include use-case-help.html %}

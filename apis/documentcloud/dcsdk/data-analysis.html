@@ -1,0 +1,75 @@
+---
+layout: default
+title: API Use Cases
+meta:
+active: api-use-cases
+---
+{% include paths.html %}
+
+<div class="main secondary-page">
+
+  <section id="api-use-cases-blade">
+    <div class="api-use-cases-container">
+      <div class="api-use-cases-wrapper">
+
+        <div class="intro-copy-wrapper">
+          <h1>Document Services API Use Cases</h1>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="api-use-cases-body">
+      <div class="api-use-cases-content-container">
+        <div class="api-use-cases-content-wrapper">
+          <div class="api-use-cases-content-menu">
+            {% include use-case-nav.html %}                
+          </div>
+          <div class="api-cases-content-wrapper">
+            <div class="api-cases-content">
+                <h2>Data Analysis
+                </h2>
+                <p>Access to data is critical to success, but unlocking historical information is difficult and time consuming. Important, older data is often inaccessible because it is still on paper, or, if it has been scanned, it is not easy to find. With digital archives virtually overflowing with thousands of documents, including PDFs, organizations want to accelerate the process of making this information readily available.
+                </p>
+                <p>Using Adobe Document Services, companies can:
+                </p>
+                <ul>
+                  <li>Export PDF documents into other formats, such as Microsoft Excel
+                  </li>
+                  <li>Perform analysis on the data in these documents 
+                  </li>
+                  <li> Use the processed data to create new reports or whitepapers
+                  </li>
+                </ul>
+                <h3>Relevant APIs</h3>
+                <ul>
+                  <li>Adobe PDF Tools API
+                  </li>
+                  <li>Adobe PDF Embed API
+                  </li>
+                </ul>
+                <h3>Scenario</h3>
+                <p>A company has several years of archived financial reports that have been saved in different formats.  Some of the files are also paper documents, so data is difficult to use without significant manual intervention. Data analysts want to be able to select any reports from a repository, no matter its original format, and analyze and perform calculations on them. After completing their analysis, they want to create new reports to share with executives in PDF format.</p>
+                <h3>Building this Solution
+                </h3>
+                <ol>
+                  <li>Scan paper documents to PDF format to create a digital repository
+                  </li>
+                  <li>Create an interface that presents select files for a data analyst to choose from
+                  </li>
+                  <li>Export selected PDF documents to XLS using Adobe PDF Tools API export operation
+                  </li>
+                  <li>Perform calculations on multiple XLS files for new insights and store in a database
+                  </li>
+                  <li>Using Adobe PDF Tools API, recreate charts and data in PDF format as a report or whitepaper
+                  </li>
+                  <li>Display new documents within the application with Adobe PDF Embed API
+                  </li>
+                </ol>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  {% include use-case-help.html %}
