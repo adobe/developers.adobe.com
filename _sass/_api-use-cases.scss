@@ -125,6 +125,7 @@
           height: 1rem;
           background-size: 1rem;
           background-image: url("../svg/smock_chevronright_18_n.svg");
+          text-decoration: none !important;
           @media screen and (min-width: 768px) {
             // visibility: hidden;
           }
@@ -136,6 +137,7 @@
           background-size: 1.5rem;
           background-image: url("../svg/smock_chevronright_18_n.svg");
           margin-left: -1.875rem;
+          text-decoration: none !important;
           @media screen and (min-width: 768px) {
             visibility: hidden;
           }
@@ -195,10 +197,12 @@
       }
 
       .use-case-menu-item {
+        text-decoration: none !important;
         position: relative;
         display: flex;
 
         .chev-arrow-right {
+          text-decoration: none !important;
           position: absolute;
           transform: initial;
           transition-duration: 150ms;
@@ -207,6 +211,7 @@
 
         &.open {
           .chev-arrow-right {
+            text-decoration: none !important;
             transform: rotate(90deg);
             transition-duration: 150ms;
           }
@@ -221,6 +226,7 @@
         font-size: 1.0625rem;
         //margin-top:.75rem;
         display: none;
+        text-decoration: none !important;
         @media screen and (min-width: 768px) {
           display: none;
         }
@@ -263,10 +269,12 @@
       }
 
       .use-case-menu-item.open {
+        text-decoration: none !important;
         position: relative;
         margin-top: 0;
 
         .chev-arrow-right {
+          text-decoration: none !important;
           transform: rotate(90deg);
           transition-duration: 150ms;
         }
