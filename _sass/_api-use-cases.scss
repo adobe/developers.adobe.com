@@ -12,7 +12,7 @@
     @media screen and (min-width: 1024px) {
         height:130px;
     }
-  
+
     h1 {
       color: $white;
       font-family: 'Adobe Clean Bold';
@@ -31,7 +31,7 @@
         text-align: center;
       }
     }
-  
+
     p {
       text-align: left;
       padding: 0 6rem 0 1.5rem;
@@ -48,7 +48,7 @@
 
 #api-use-cases-body{
     margin-left:1.5rem;
-    
+
     @media screen and (min-width: 1024px) {
         margin-left:0;
     }
@@ -60,15 +60,15 @@
 
        .api-use-cases-content-wrapper{
            margin:0 auto;
-           max-width:1060px;           
+           max-width:1060px;
 
             @media screen and (min-width: 1024px) {
                 display:flex;
-            }           
+            }
 
-           .api-use-cases-content-menu{              
+           .api-use-cases-content-menu{
 
-                @media screen and (min-width: 768px) {
+                @media screen and (min-width: 767px) {
                   max-width:42rem;
                 }
 
@@ -76,7 +76,7 @@
                     margin-left:0;
                     max-width:290px;
                 }
-             
+
                 .api-use-case_menu ul {
                   list-style: none;
                   margin: 0;
@@ -85,30 +85,30 @@
                     margin: 0 2.25rem 0 0;
                   }
                 }
-              
+
                 .api-use-case_menu ul li {
                   color: $grey;
                   cursor: pointer;
                   font-size: 1.1875rem;
                   margin-bottom: 1.875rem;
-                  width: 290px;
+                  width: 100%;
                   @media screen and (min-width: 768px) {
-                    width: 42rem;
+                    //width: 42rem;
                     margin-bottom: 2.4rem;
                   }
                   @media screen and (min-width: 1024px) {
-                    width: 290px;
+                    //width: 290px;
                     margin-bottom: 1.875rem;
                   }
                 }
-              
+
                 .api-use-case_menu ul li .use-case-menu-copy {
                 //   margin-top: -2.85rem;
                 //   margin-left: 2.875rem;
                     font-size:1rem;
                     padding-left:8px;
                 }
-              
+
                 .api-use-case_menu ul li .shadow-box.dctsdk {
                   margin: -1.375rem 0 0;
                   border:1px solid #000;
@@ -116,7 +116,7 @@
                     padding: 1.0625rem 1rem;
                   }
                 }
-              
+
                 .chev-arrow-right {
                   position:relative !important;
                   width: 1rem;
@@ -127,7 +127,7 @@
                     // visibility: hidden;
                   }
                 }
-              
+
                 .chev-arrow-down {
                   width: 1.5rem;
                   height: 1.5rem;
@@ -138,7 +138,7 @@
                     visibility: hidden;
                   }
                 }
-              
+
                 .api-use-case_menu ul li .agreement {
                     width:40px;
                     height:40px;
@@ -149,7 +149,7 @@
                     background-repeat: no-repeat;
                     background-position: center center;
                 }
-              
+
                 .api-use-case_menu ul li .publishing {
                     width:40px;
                     height:40px;
@@ -158,7 +158,7 @@
                     background-size: 40px 40px;
                   background-image: url("../img/menu-use-cases/ic-category-content-publishing.svg");
                 }
-              
+
                 .api-use-case_menu ul li .collaboration {
                     width:40px;
                     height:40px;
@@ -169,7 +169,7 @@
                   background-repeat: no-repeat;
                   background-position: center center;
                 }
-              
+
                 .api-use-case_menu ul li .financial {
                     width:40px;
                     height:40px;
@@ -180,7 +180,7 @@
                   background-repeat: no-repeat;
                   background-position: center center;
                 }
-              
+
                 .api-use-case_menu ul li .archiving {
                     width:40px;
                     height:40px;
@@ -196,18 +196,18 @@
                   //display: none;
                 }
               }
-              
+
             .use-case-menu-item {
                 position: relative;
                 display:flex;
-            
+
                 .chev-arrow-right {
                     position: absolute;
                     transform: initial;
                     transition-duration: 150ms;
                     top: 6px;
                 }
-                
+
                 &.open {
                     .chev-arrow-right {
                         transform: rotate(90deg);
@@ -219,10 +219,10 @@
                     }
                 }
             }
-                        
+
             .use-case-menu-support {
                 font-size: 1.0625rem;
-                //margin-top:.75rem; 
+                //margin-top:.75rem;
                 display: none;
 
 
@@ -244,7 +244,7 @@
                     padding:0.5rem 0.5rem 0.5rem 1rem;
                     background-color: #F4F4F4;
                     border-radius: 6px;
-                    margin-bottom: 0.5rem; 
+                    margin-bottom: 0.5rem;
                     }
 
                     &.active{
@@ -262,14 +262,14 @@
                  }
 
                 &.open{
-                    display: block; 
+                    display: block;
                 }
             }
-            
+
             .use-case-menu-item.open {
                 position: relative;
-                margin-top: 0; 
-                
+                margin-top: 0;
+
                 .chev-arrow-right {
                     transform: rotate(90deg);
                     transition-duration: 150ms;
@@ -279,7 +279,7 @@
 
             .api-cases-content{
 
-                max-width:730px;                
+                max-width:730px;
 
                 @media screen and (min-width: 768px) {
 
@@ -313,7 +313,7 @@
                 ul{
                     margin: 0 0 0 -.5rem;
                     padding-bottom: 0.125rem;
-                    
+
                     li{
                         color: #4b4b4b;
                         //font-family: 'Adobe Clean Light';
@@ -327,7 +327,7 @@
 
                 ol{
                     margin: 0 0 0 -1rem;
-                    padding-bottom: 0.125rem;  
+                    padding-bottom: 0.125rem;
 
                     li{
                         color: #4b4b4b;
@@ -336,13 +336,11 @@
                         padding-bottom: 0.5rem;
                         padding-left:0.5rem;
                         color:#4B4B4B;
-                    } 
+                    }
                 }
             }
-       } 
+       }
 
 
     }
 }
-
-
