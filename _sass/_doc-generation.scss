@@ -215,7 +215,10 @@ section.sample-blade {
 
     &.show-templates {
       padding-top: 1rem;
-      display: block !important;
+      display: none;
+      @media screen and (min-width: 767px) {
+        display: block;
+      }
 
       a {
         color: #4B4B4B;
@@ -531,8 +534,9 @@ section.key-features-blade {
 
 section.get-started {
   margin: 0 !important;
-  padding: 5rem 0;
+  padding: 5rem 2rem;
   background: #f7f7f7;
+  text-align: left;
 
   @media screen and (min-width: 1024px) {
     max-width: none;
@@ -541,7 +545,7 @@ section.get-started {
   h3 {
     margin: 0 auto;
     padding: 0;
-    text-align: center;
+    text-align: left;
   }
 
   .cta-wrapper {
@@ -603,7 +607,7 @@ section.get-started {
 
   p {
     margin: 2rem 0 2rem 2rem;
-    text-align: center;
+    text-align: left;
     @media screen and (min-width: 1024px) {
       margin: 2rem 0;
     }
