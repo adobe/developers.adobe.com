@@ -100,7 +100,7 @@
 
     .sub-nav-product-item-wrapper {
       color: #000;
-      padding-right: 18px;
+      padding: 0 14px;
       display: flex;
       text-align: center;
       font-weight: 700;
@@ -255,6 +255,9 @@
               li{
                 width:100%;
                 padding:9px 32px 8px 64px;
+                @media screen and (min-width: 900px) {
+                  padding:9px 32px 8px 32px;
+                }
 
                 a{
                   margin:0;
@@ -318,7 +321,7 @@
         display: block;
         color: #000;
         @media screen and (min-width: 900px) {
-          padding: 20px 0 0 0;
+          padding: 29px 14px 16px 14px;
         }
 
         .sub-nav-get-started-button {
