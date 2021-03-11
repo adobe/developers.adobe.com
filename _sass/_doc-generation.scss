@@ -545,10 +545,7 @@ section.get-started {
   h3 {
     margin: 0 auto;
     padding: 0;
-    text-align: left;
-    @media screen and (min-width: 1024px) {
-      text-align: center;
-    }
+    text-align: center;
   }
 
   .cta-wrapper {
@@ -580,12 +577,15 @@ section.get-started {
     counter-increment: get-started-counter;
     margin-bottom: 3rem;
     position: relative;
+    padding: 0 0 2.375rem 0;
+    border-bottom: 1px solid $lt-grey;
     @media screen and (min-width: 1024px) {
       display: inline-block;
       margin: 0;
       width: 33%;
       padding: 0 2rem;
       vertical-align: top;
+      border-bottom: 0;
     }
   }
 
@@ -621,6 +621,7 @@ section.get-started {
 
     &.title {
       margin: 0 0 2rem;
+      text-align: center;
     }
   }
 
