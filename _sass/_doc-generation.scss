@@ -546,12 +546,19 @@ section.get-started {
     margin: 0 auto;
     padding: 0;
     text-align: left;
+    @media screen and (min-width: 1024px) {
+      text-align: center;
+    }
   }
 
   .cta-wrapper {
     display: block;
-    margin: 0 auto;
-    text-align: center;
+    margin: 0 0 0 3rem;
+    text-align: left;
+    @media screen and (min-width: 1024px) {
+      margin: 0 auto;
+      text-align: center;
+    }
   }
 
   ol {
@@ -560,8 +567,7 @@ section.get-started {
     padding: 0;
     @media screen and (min-width: 768px) and (max-width: 1023px) {
       margin: 0 auto;
-      max-width: 21rem;
-      padding: 0 0 0 1.75rem;
+      padding: 0;
     }
     @media screen and (min-width: 1024px) {
       margin: 0 auto;
@@ -606,10 +612,11 @@ section.get-started {
   }
 
   p {
-    margin: 2rem 0 2rem 2rem;
+    margin: 2rem 0 1rem 3rem;
     text-align: left;
     @media screen and (min-width: 1024px) {
       margin: 2rem 0;
+      text-align: center;
     }
 
     &.title {
