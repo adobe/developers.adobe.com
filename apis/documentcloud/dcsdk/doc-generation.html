@@ -276,7 +276,7 @@ active:
             Start a free trial and download code samples for Node.js, Java, and .Net
           </p>
           <div class="cta-wrapper">
-            <a href="gettingstarted.html" target="_blank" class="button-link blue">
+            <a href="https://www.adobe.com/go/dcsdks_credentials" target="_blank" class="button-link blue">
               Start free trial
             </a>
           </div>
@@ -299,7 +299,7 @@ active:
             Add credentials to your code and run!
           </p>
           <div class="cta-wrapper">
-            <a href="docs.html" target="_blank" class="button-link">
+            <a href="docs.html" target="_self" class="button-link">
               See documentation
             </a>
           </div>
@@ -319,10 +319,12 @@ active:
     }
   </style>
   <script>
-    $(document).ready(function(){
-      $('.sample-more-button').on('click', function(e){
-        $('.show-templates').css('display', 'none');
-        $('.sample-more').addClass('opened');
-      })
-    });
+    (function(){
+      $(document).ready(function(){
+        $('.sample-more-button').on('click', function(e){
+          $('.show-templates').css('display', 'none');
+          $('.sample-more').addClass('opened');
+        })
+      });
+    })(jQuery)
   </script>
