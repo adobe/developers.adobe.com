@@ -200,6 +200,20 @@
         .dropdown:hover {
           display: block;
         }
+        .has-sub {
+          svg {
+            transform: rotate(0deg) !important;
+          }
+          @media screen and (min-width: 1024px) {
+            svg {
+              transform: rotate(180deg) !important;
+              float: none;
+              display: block;
+              margin: 0.5rem auto 0 auto;
+              width: 8px;
+            }
+          }
+        }
       }
 
       &.no-hover:hover {
@@ -350,6 +364,23 @@
             -ms-user-select: none;
             user-select: none;
             text-decoration: none;
+          }
+        }
+
+        &.has-sub {
+          svg {
+            float: right;
+            transform: rotate(180deg);
+            position: relative;
+            top: 0.25rem;
+          }
+          @media screen and (min-width: 1024px) {
+            svg {
+              float: none;
+              display: block;
+              margin: 0.5rem auto 0 auto;
+              width: 8px;
+            }
           }
         }
       }
