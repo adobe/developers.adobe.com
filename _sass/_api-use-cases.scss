@@ -201,6 +201,12 @@
         position: relative;
         display: flex;
 
+        a {
+          display: inherit;
+          text-decoration: none !important;
+          color: $grey;
+        }
+
         .chev-arrow-right {
           text-decoration: none !important;
           position: absolute;
