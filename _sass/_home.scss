@@ -721,29 +721,31 @@ section.home-doc-serv-blade {
         }
 
         .serv-item {
-          clear: both;
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr;
           @media screen and (min-width: 767px) {
             padding: 5rem 0 1.625rem;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
           }
           @media screen and (min-width: 1024px) {
+            display: block;
             max-width: 16.5rem;
             padding: 0;
             }
 
           .serv-icon {
             text-align: center;
-            padding-top: 4.875rem;
+            padding: 4.875rem 0 0 0;
             width: 248px;
             margin: 0 auto;
             @media screen and (min-width: 767px) {
-              float: left;
               padding-top: 0;
-              padding-right: 3.25rem;
             }
             @media screen and (min-width: 1024px) {
               float: none;
               padding-top: 4.875rem;
-              padding-right: 0;
             }
           }
 

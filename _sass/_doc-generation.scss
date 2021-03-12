@@ -240,9 +240,11 @@ section.sample-blade {
   .sample-more-button {
     cursor: pointer;
   }
+
   .sample-more {
     display: none;
-    &.opened{
+
+    &.opened {
       display: block;
     }
   }
@@ -273,11 +275,17 @@ section.sample-blade {
         @media screen and (min-width: 767px) {
           padding-bottom: 3rem;
         }
+
         .sample-icon {
           height: 180px;
           position: relative;
         }
       }
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .slick-list {
+      padding: 0 20%;
     }
   }
 }
@@ -323,7 +331,7 @@ section.use-case-blade {
         .case-item {
           color: $white;
           border-radius: 10px;
-          margin: 0 1.25rem 1.25rem;
+          margin: 0 1.25rem 2.5rem;
           padding: 2rem;
           max-width: 18.125rem;
 
@@ -537,7 +545,6 @@ section.get-started {
   padding: 5rem 2rem;
   background: #f7f7f7;
   text-align: left;
-
   @media screen and (min-width: 1024px) {
     max-width: none;
   }
@@ -545,10 +552,7 @@ section.get-started {
   h3 {
     margin: 0 auto;
     padding: 0;
-    text-align: left;
-    @media screen and (min-width: 1024px) {
-      text-align: center;
-    }
+    text-align: center;
   }
 
   .cta-wrapper {
@@ -580,12 +584,15 @@ section.get-started {
     counter-increment: get-started-counter;
     margin-bottom: 3rem;
     position: relative;
+    padding: 0 0 2.375rem;
+    border-bottom: 1px solid $lt-grey;
     @media screen and (min-width: 1024px) {
       display: inline-block;
       margin: 0;
       width: 33%;
       padding: 0 2rem;
       vertical-align: top;
+      border-bottom: 0;
     }
   }
 
@@ -621,6 +628,7 @@ section.get-started {
 
     &.title {
       margin: 0 0 2rem;
+      text-align: center;
     }
   }
 
