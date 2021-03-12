@@ -240,9 +240,11 @@ section.sample-blade {
   .sample-more-button {
     cursor: pointer;
   }
+
   .sample-more {
     display: none;
-    &.opened{
+
+    &.opened {
       display: block;
     }
   }
@@ -273,11 +275,17 @@ section.sample-blade {
         @media screen and (min-width: 767px) {
           padding-bottom: 3rem;
         }
+
         .sample-icon {
           height: 180px;
           position: relative;
         }
       }
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .slick-list {
+      padding: 0 20%;
     }
   }
 }
@@ -537,7 +545,6 @@ section.get-started {
   padding: 5rem 2rem;
   background: #f7f7f7;
   text-align: left;
-
   @media screen and (min-width: 1024px) {
     max-width: none;
   }
@@ -577,7 +584,7 @@ section.get-started {
     counter-increment: get-started-counter;
     margin-bottom: 3rem;
     position: relative;
-    padding: 0 0 2.375rem 0;
+    padding: 0 0 2.375rem;
     border-bottom: 1px solid $lt-grey;
     @media screen and (min-width: 1024px) {
       display: inline-block;

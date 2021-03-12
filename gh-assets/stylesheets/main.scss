@@ -1,5 +1,5 @@
 ---
----
+--- 
 $black: #000;
 $blue: #0D66D0;
 $white: #fff;
@@ -1292,14 +1292,10 @@ section.logo-bar {
     display: flex;
     align-items: center;
   }
-  @media screen and (max-width: 767px) {
-    .slick-list {
-      padding: 0 !important;
-    }
 
+  @media screen and (max-width: 767px) {
     .card-slider-container-home {
       margin: 0 auto;
-      //max-width: 17.75rem;
     }
   }
 
