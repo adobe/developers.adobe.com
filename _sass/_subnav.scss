@@ -369,6 +369,10 @@
 
         &.has-sub {
           svg {
+            display: none;    //CH Only show on hover (see below)
+            @media screen and (max-width: 767px) {
+              display: block; //CH Always show on phone
+            }
             float: right;
             transform: rotate(180deg);
             position: relative;
@@ -381,6 +385,11 @@
               margin: 0.5rem auto 0 auto;
               width: 8px;
             }
+          }
+        }
+        &.has-sub:hover {
+          svg {
+            display: block;
           }
         }
       }
