@@ -31,6 +31,7 @@ $(document).ready(function(){
 
   });
 
+  // Use case tiles on HOME and DOCGEN
   if ($(".case-item").is(":visible")) {
     $('.case-item').on('click', function(e){
       window.location = $(this).data('href');

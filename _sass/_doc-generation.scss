@@ -283,9 +283,20 @@ section.sample-blade {
       }
     }
   }
+
+  .sample-header {
+    display: none;
+  }
+  .sample-header-desktop {
+    display: block;
+  }
+
   @media screen and (max-width: 767px) {
     .slick-list {
       padding: 0 20%;
+    }
+    .sample-header-touch {
+      display: block;
     }
   }
 }
