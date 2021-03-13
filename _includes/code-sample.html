@@ -52,12 +52,39 @@
 <div id="create-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest code-window-opened">
   <coral-tabview>
     <coral-tablist size="S">
-      <coral-tab class="is-selected">Node.js</coral-tab>
+      <coral-tab class="is-selected">REST API</coral-tab>
+      <coral-tab>Node.js</coral-tab>
       <coral-tab>.Net</coral-tab>
       <coral-tab>Java</coral-tab>
       <!-- <div class="tab-item-copy copy">Copy</div> -->
     </coral-tablist>
     <coral-panelstack>
+      <coral-panel>
+<pre><code class="language-shell">curl --location --request POST 'https://cpf-ue1.adobe.io/ops/:create?respondWith=%7B%22reltype%22%3A%20%22http%3A%2F%2Fns.adobe.com%2Frel%2Fprimary%22%7D' \
+  --header 'Authorization: Bearer {{Placeholder for token}}' \
+  --header 'Accept: application/json, text/plain, */*' \
+  --header 'x-api-key: {{Placeholder for client_id}}' \
+  --header 'Prefer: respond-async,wait=0' \
+  --form 'contentAnalyzerRequests="{
+    \"cpf:inputs\": {
+      \"documentIn\": {
+        \"cpf:location\": \"InputFile0\",
+        \"dc:format\": \"application/vnd.openxmlformats-officedocument.wordprocessingml.document\"
+      }
+    },
+    \"cpf:engine\": {
+      \"repo:assetId\": \"urn:aaid:cpf:Service-1538ece812254acaac2a07799503a430\"
+    },
+    \"cpf:outputs\": {
+      \"documentOut\": {
+        \"cpf:location\": \"multipartLabelOut\",
+        \"dc:format\": \"application/pdf\"
+      }
+    }
+  }"' \
+  --form 'InputFile0=@"{{Placeholder for input file (absolute path)}}"'
+</code></pre>
+      </coral-panel>
       <coral-panel>
 <pre><code class="language-javascript">// Create an ExecutionContext using credentials and create a new operation instance.
 const executionContext = PDFToolsSdk.ExecutionContext.create(credentials),
@@ -839,148 +866,66 @@ result.saveAs("output/reorderPagesOutput.pdf");
       </coral-tablist>
       <coral-panelstack>
         <coral-panel>
-<pre><code class="language-json">{
-	"info": {
-		"_postman_id": "e6c698de-7276-4bc4-bbca-18e6f54258dd",
-		"name": "Combine PDF",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "Submit",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{Placeholder for token}}",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json, text/plain, */*",
-						"type": "text"
-					},
-					{
-						"key": "x-api-key",
-						"value": "{{Placeholder for client_id}}",
-						"type": "text"
-					},
-					{
-						"key": "Prefer",
-						"value": "respond-async,wait=0",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "contentAnalyzerRequests",
-							"value": "{\n\t\"cpf:inputs\": {\n\t\t\"documentsIn\": [{\n\t\t\t\"pageRanges\": {\n\t\t\t\t\"cpf:inline\": [{\n\t\t\t\t\t\"start\": 1,\n\t\t\t\t\t\"end\": 4\n\t\t\t\t}]\n\t\t\t},\n\t\t\t\"documentIn\": {\n\t\t\t\t\"cpf:location\": \"InputFile0\",\n\t\t\t\t\"dc:format\": \"application/pdf\"\n\t\t\t}\n\t\t}, {\n\t\t\t\"pageRanges\": {\n\t\t\t\t\"cpf:inline\": [{\n\t\t\t\t\t\"start\": 1,\n\t\t\t\t\t\"end\": 25\n\t\t\t\t}]\n\t\t\t},\n\t\t\t\"documentIn\": {\n\t\t\t\t\"cpf:location\": \"InputFile1\",\n\t\t\t\t\"dc:format\": \"application/pdf\"\n\t\t\t}\n\t\t}, {\n\t\t\t\"pageRanges\": {\n\t\t\t\t\"cpf:inline\": [{\n\t\t\t\t\t\"start\": 1\n\t\t\t\t}, {\n\t\t\t\t\t\"end\": 25\n\t\t\t\t}, {\n\t\t\t\t\t\"start\": 1,\n\t\t\t\t\t\"end\": 25\n\t\t\t\t}]\n\t\t\t},\n\t\t\t\"documentIn\": {\n\t\t\t\t\"cpf:location\": \"InputFile2\",\n\t\t\t\t\"dc:format\": \"application/pdf\"\n\t\t\t}\n\t\t}]\n\t},\n\t\"cpf:engine\": {\n\t\t\"repo:assetId\": \"urn:aaid:cpf:Service-916ee91c156b42349a7847a7d564fb13\"\n\t},\n\t\"cpf:outputs\": {\n\t\t\"documentOut\": {\n\t\t\t\"cpf:location\": \"OutputFile\",\n\t\t\t\"dc:format\": \"application/pdf\"\n\t\t}\n\t}\n}",
-							"type": "text"
-						},
-						{
-							"key": "InputFile0",
-							"type": "file",
-							"src": "{{Placeholder for input file (absolute path)}}"
-						},
-						{
-							"key": "InputFile1",
-							"type": "file",
-							"src": "{{Placeholder for input file (absolute path)}}"
-						},
-						{
-							"key": "InputFile2",
-							"type": "file",
-							"src": "{{Placeholder for input file (absolute path)}}"
-						}
-					]
-				},
-				"url": {
-					"raw": "https://cpf-ue1.adobe.io/ops/{{create}}?respondWith=%7B%22reltype%22%3A%20%22http%3A%2F%2Fns.adobe.com%2Frel%2Fprimary%22%7D",
-					"protocol": "https",
-					"host": [
-						"cpf-ue1",
-						"adobe",
-						"io"
-					],
-					"path": [
-						"ops",
-						"{{create}}"
-					],
-					"query": [
-						{
-							"key": "respondWith",
-							"value": "%7B%22reltype%22%3A%20%22http%3A%2F%2Fns.adobe.com%2Frel%2Fprimary%22%7D"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Poll",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{Placeholder for token}}",
-						"type": "text"
-					},
-					{
-						"key": "x-api-key",
-						"value": "{{Placeholder for client_id}}",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "https://cpf-ue1.adobe.io/ops/id/{{Placeholder for x-request-id}}",
-					"protocol": "https",
-					"host": [
-						"cpf-ue1",
-						"adobe",
-						"io"
-					],
-					"path": [
-						"ops",
-						"id",
-						"{{Placeholder for x-request-id}}"
-					],
-					"query": [
-						{
-							"key": "",
-							"value": "",
-							"disabled": true
-						}
-					]
-				}
-			},
-			"response": []
-		}
-	],
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		}
-	]
-}</code></pre>
+<pre><code class="language-shell">curl --location --request POST 'https://cpf-ue1.adobe.io/ops/:create?respondWith=%7B%22reltype%22%3A%20%22http%3A%2F%2Fns.adobe.com%2Frel%2Fprimary%22%7D' \
+  --header 'Authorization: Bearer {{Placeholder for token}}' \
+  --header 'Accept: application/json, text/plain, */*' \
+  --header 'x-api-key: {{Placeholder for client_id}}' \
+  --header 'Prefer: respond-async,wait=0' \
+  --form 'contentAnalyzerRequests="{
+    \"cpf:inputs\": {
+      \"documentsIn\": [{
+        \"pageRanges\": {
+          \"cpf:inline\": [{
+            \"start\": 1,
+            \"end\": 4
+          }]
+        },
+        \"documentIn\": {
+          \"cpf:location\": \"InputFile0\",
+          \"dc:format\": \"application/pdf\"
+        }
+      }, {
+        \"pageRanges\": {
+          \"cpf:inline\": [{
+            \"start\": 1,
+            \"end\": 25
+          }]
+        },
+        \"documentIn\": {
+          \"cpf:location\": \"InputFile1\",
+          \"dc:format\": \"application/pdf\"
+        }
+      }, {
+        \"pageRanges\": {
+          \"cpf:inline\": [{
+            \"start\": 1
+          }, {
+            \"end\": 25
+          }, {
+            \"start\": 1,
+            \"end\": 25
+          }]
+        },
+        \"documentIn\": {
+          \"cpf:location\": \"InputFile2\",
+          \"dc:format\": \"application/pdf\"
+        }
+      }]
+    },
+    \"cpf:engine\": {
+      \"repo:assetId\": \"urn:aaid:cpf:Service-916ee91c156b42349a7847a7d564fb13\"
+    },
+    \"cpf:outputs\": {
+      \"documentOut\": {
+        \"cpf:location\": \"OutputFile\",
+        \"dc:format\": \"application/pdf\"
+      }
+    }
+  }"' \
+  --form 'InputFile0=@"{{Placeholder for input file (absolute path)}}"' \
+  --form 'InputFile1=@"{{Placeholder for input file (absolute path)}}"' \
+  --form 'InputFile2=@"{{Placeholder for input file (absolute path)}}"'
+  </code></pre>
         </coral-panel>
         <coral-panel>
 <pre><code class="language-javascript">// Create an ExecutionContext using credentials and create a new operation instance.          
@@ -1297,144 +1242,54 @@ result.saveAs("output/insertPagesOutput.pdf");
       </coral-tablist>
       <coral-panelstack>
         <coral-panel>
-<pre><code class="language-json">{
-	"info": {
-		"_postman_id": "4b10a61c-adc9-4d77-a74e-715916948d14",
-		"name": "Create PDF",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "Submit",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{Placeholder for token}}",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json, text/plain, */*",
-						"type": "text"
-					},
-					{
-						"key": "x-api-key",
-						"value": "{{Placeholder for client_id}}",
-						"type": "text"
-					},
-					{
-						"key": "Prefer",
-						"value": "respond-async,wait=0",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "contentAnalyzerRequests",
-							"value": "{\n\t\"cpf:inputs\": {\n\t\t\"documentIn\": {\n\t\t\t\"cpf:location\": \"InputFile0\",\n\t\t\t\"dc:format\": \"application/vnd.openxmlformats-officedocument.wordprocessingml.document\"\n\t\t}\n\t},\n\t\"cpf:engine\": {\n\t\t\"repo:assetId\": \"urn:aaid:cpf:Service-1538ece812254acaac2a07799503a430\"\n\t},\n\t\"cpf:outputs\": {\n\t\t\"documentOut\": {\n\t\t\t\"cpf:location\": \"multipartLabelOut\",\n\t\t\t\"dc:format\": \"application/pdf\"\n\t\t}\n\t}\n}",
-							"type": "text"
-						},
-						{
-							"key": "InputFile0",
-							"type": "file",
-							"src": "{{Placeholder for input file (absolute path)}}"
-						}
-					]
-				},
-				"url": {
-					"raw": "https://cpf-ue1.adobe.io/ops/{{create}}?respondWith=%7B%22reltype%22%3A%20%22http%3A%2F%2Fns.adobe.com%2Frel%2Fprimary%22%7D",
-					"protocol": "https",
-					"host": [
-						"cpf-ue1",
-						"adobe",
-						"io"
-					],
-					"path": [
-						"ops",
-						"{{create}}"
-					],
-					"query": [
-						{
-							"key": "respondWith",
-							"value": "%7B%22reltype%22%3A%20%22http%3A%2F%2Fns.adobe.com%2Frel%2Fprimary%22%7D"
-						},
-						{
-							"key": "",
-							"value": null,
-							"disabled": true
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Poll",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{Placeholder for token}}",
-						"type": "text"
-					},
-					{
-						"key": "x-api-key",
-						"value": "{{Placeholder for client_id}}",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "https://cpf-ue1.adobe.io/ops/id/{{Placeholder for x-request-id}}",
-					"protocol": "https",
-					"host": [
-						"cpf-ue1",
-						"adobe",
-						"io"
-					],
-					"path": [
-						"ops",
-						"id",
-						"{{Placeholder for x-request-id}}"
-					],
-					"query": [
-						{
-							"key": "",
-							"value": "",
-							"disabled": true
-						}
-					]
-				}
-			},
-			"response": []
-		}
-	],
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		}
-	]
-}
-
+<pre><code class="language-shell">curl --location --request POST 'https://cpf-ue1.adobe.io/ops/:create?respondWith=%7B%22reltype%22%3A%20%22http%3A%2F%2Fns.adobe.com%2Frel%2Fprimary%22%7D' \
+  --header 'Authorization: Bearer {{Placeholder for token}}' \
+  --header 'Accept: application/json, text/plain, */*' \
+  --header 'x-api-key: {{Placeholder for client_id}}' \
+  --header 'Prefer: respond-async,wait=0' \
+  --form 'contentAnalyzerRequests="{
+     \"cpf:engine\":{
+        \"repo:assetId\":\"urn:aaid:cpf:Service-52d5db6097ed436ebb96f13a4c7bf8fb\"
+     },
+     \"cpf:inputs\":{
+        \"documentIn\":{
+           \"cpf:location\":\"InputFile0\",
+           \"dc:format\":\"application/vnd.openxmlformats-officedocument.wordprocessingml.document\"
+        },
+        \"params\":{
+           \"cpf:inline\":{
+              \"outputFormat\": \"pdf\",
+              \"jsonDataForMerge\": {
+                \"customerName\": \"Kane Miller\",
+                \"customerVisits\": 100,
+                \"itemsBought\": [
+                  {
+                    \"name\": \"Sprays\",
+                    \"quantity\": 50,
+                    \"amount\": 100
+                  },
+                  {
+                    \"name\": \"Chemicals\",
+                    \"quantity\": 100,
+                    \"amount\": 200
+                  }
+                ],
+                \"totalAmount\": 300,
+                \"previousBalance\": 50,
+                \"lastThreeBillings\": [100, 200, 300],
+                \"photograph\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP88h8AAu0B9XNPCQQAAAAASUVORK5CYII=\"
+              }
+           }
+        }
+     },
+     \"cpf:outputs\":{
+        \"documentOut\":{
+           \"cpf:location\":\"OutputFile\",
+           \"dc:format\":\"application/pdf\"
+        }
+     }
+  }"' \
+  --form 'InputFile0=@"{{Placeholder for the input document template (absolute path of the file)}}"'
 </code></pre>
         </coral-panel>
         <coral-panel>

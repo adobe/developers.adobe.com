@@ -31,6 +31,11 @@ $(document).ready(function(){
 
   });
 
+  if ($(".case-item").is(":visible")) {
+    $('.case-item').on('click', function(e){
+      window.location = $(this).data('href');
+    });
+  }
  
   if ($(".use-case-menu-item").is(":visible")) {      
     
