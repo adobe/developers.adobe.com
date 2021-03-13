@@ -281,6 +281,9 @@
                 .dpd-sub-nav-menu-header {
                   font-size: 14px;
                   font-family: 'Adobe Clean Bold';
+                  @media screen and (min-width: 900px) {
+                    font-family: 'Adobe Clean';
+                  }
                   white-space: nowrap;
                 }
 
@@ -388,7 +391,7 @@
         }
         &.has-sub:hover {
           svg {
-            display: block;
+            display: block; //CH Show on hover
           }
         }
       }
