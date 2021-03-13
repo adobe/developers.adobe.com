@@ -1,3 +1,10 @@
+#api-use-cases-body {
+    margin-top: 2.75rem;
+    @media screen and (min-width: 1024px) {
+      margin-top: 4.375rem;
+    }
+}
+
 #api-use-cases-blade {
   width: 100%;
   margin: 0 !important;
@@ -19,7 +26,7 @@
     font-weight: 900;
     padding: 2.1875rem 1.3125rem 2.125rem 1.5rem !important;
     text-align: left;
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 767px) {
       padding-left: 3rem !important;
     }
     @media screen and (min-width: 1024px) {
@@ -70,7 +77,7 @@
           list-style: none;
           margin: 0;
           padding: 0;
-          @media screen and (min-width: 768px) {
+          @media screen and (min-width: 767px) {
             margin: 0 2.25rem 0 0;
           }
         }
@@ -79,14 +86,9 @@
           color: $grey;
           cursor: pointer;
           font-size: 1.1875rem;
-          margin-bottom: 1.875rem;
+          margin-bottom: 1rem;
           width: 100%;
-          @media screen and (min-width: 768px) {
-            //width: 42rem;
-            margin-bottom: 2.4rem;
-          }
           @media screen and (min-width: 1024px) {
-            //width: 290px;
             margin-bottom: 1.875rem;
           }
         }
@@ -114,7 +116,7 @@
         .api-use-case_menu ul li .shadow-box.dctsdk {
           margin: -1.375rem 0 0;
           border: 1px solid #000;
-          @media screen and (min-width: 768px) {
+          @media screen and (min-width: 767px) {
             padding: 1.0625rem 1rem;
           }
         }
@@ -126,7 +128,7 @@
           background-size: 1rem;
           background-image: url("../svg/smock_chevronright_18_n.svg");
           text-decoration: none !important;
-          @media screen and (min-width: 768px) {
+          @media screen and (min-width: 767px) {
             // visibility: hidden;
           }
         }
@@ -138,7 +140,7 @@
           background-image: url("../svg/smock_chevronright_18_n.svg");
           margin-left: -1.875rem;
           text-decoration: none !important;
-          @media screen and (min-width: 768px) {
+          @media screen and (min-width: 767px) {
             visibility: hidden;
           }
         }
@@ -233,7 +235,7 @@
         //margin-top:.75rem;
         display: none;
         text-decoration: none !important;
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: 767px) {
           display: none;
         }
         @media screen and (min-width: 1024px) {
@@ -242,22 +244,14 @@
 
         .uc-sub-menu {
           padding: 0.5rem 0.5rem 0.5rem 1rem;
-          // background-color: #F4F4F4;
-          // border-radius: 6px;
-          margin-bottom: 0.5rem;
-          //padding-left:1rem;
+          border-radius: 6px;
+          margin-bottom: 0.25rem;
           &:hover {
-            padding: 0.5rem 0.5rem 0.5rem 1rem;
             background-color: #F4F4F4;
-            border-radius: 6px;
-            margin-bottom: 0.5rem;
           }
 
           &.active {
-            padding: 0.5rem 0.5rem 0.5rem 1rem;
             background-color: #F4F4F4;
-            border-radius: 6px;
-            margin-bottom: 0.5rem;
           }
 
           :hover,
@@ -288,7 +282,7 @@
 
       .api-cases-content {
         max-width: 730px;
-        @media screen and (min-width: 768px) {}
+        @media screen and (min-width: 767px) {}
         @media screen and (min-width: 1024px) {
           margin-left: 2.5rem;
         }
