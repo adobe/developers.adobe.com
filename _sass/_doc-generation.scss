@@ -287,8 +287,11 @@ section.sample-blade {
   .sample-header {
     display: none;
   }
-  .sample-header-desktop {
-    display: block;
+  
+  @media screen and (max-width: 767px) {
+    .sample-header-desktop {
+      display: block;
+    }
   }
 
   @media screen and (max-width: 767px) {
