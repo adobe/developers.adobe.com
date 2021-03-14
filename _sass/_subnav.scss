@@ -280,9 +280,9 @@
 
                 .dpd-sub-nav-menu-header {
                   font-size: 14px;
-                  font-family: 'Adobe Clean Light';
-                  @media screen and (min-width: 900px) {
-                    font-family: 'Adobe Clean Bold';
+                  font-family: 'Adobe Clean Bold';
+                  @media screen and (max-width: 900px) {
+                    font-family: 'Adobe Clean Light';
                   }
                   white-space: nowrap;
                 }
