@@ -242,7 +242,7 @@
         }
 
         .uc-sub-menu {
-          padding: 0.5rem 0.5rem 0.5rem 1rem;
+          padding: 0 2rem 0 0;
           border-radius: 6px;
           margin-bottom: 0.25rem;
           &:hover {
@@ -258,6 +258,9 @@
           a {
             text-decoration: none !important;
             color: #4B4B4B;
+            display: block;
+            width: 100%;
+            padding: 0.5rem 0.5rem 0.5rem 1rem;
           }
         }
 
