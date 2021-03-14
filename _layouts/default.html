@@ -1,231 +1,355 @@
 <!DOCTYPE html>
 <html class="spectrum--medium">
-  {% include paths.html %}
+{% include paths.html %}
+
+<head>
+  <title>Adobe Developers - {{ page.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{page.meta}}" />
+
   <head>
-    <title>Adobe Developers - {{ page.title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="{{page.meta}}"/>
-    <head>
-      {% include gtag.html %}
-      <meta charset="UTF-8">
+    {% include gtag.html %}
+    <meta charset="UTF-8">
 
-      <meta name="viewport" content="width=device-width,initial-scale=1"/>
-      <meta name="robots" content="noodp"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noodp" />
 
-      <link rel="icon" href="https://www.adobe.com/favicon.ico" type="image/x-icon"/>
-      <link rel="shortcut icon" href="https://www.adobe.com/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="https://www.adobe.com/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="https://www.adobe.com/favicon.ico" type="image/x-icon" />
 
-      <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-global.css">
-      <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-medium.css">
-      <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-light.css">
-      <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-dark.css">
-      <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-darkest.css">
-      <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.18.0/dist/components/tabs/index.css">
-      <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.18.0/dist/components/tabs/colorStops/dark.css">
-      <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.18.0/dist/components/tabs/colorStops/darkest.css">
-      <link rel="stylesheet" href="https://unpkg.com/spectrum-css@1.1.5/static/latest/spectrum-full.min.css">
-      <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/components/typography/index-vars.css">
-      <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css-grid@0.x/dist/spectrum-css-grid.css">
-      <link rel="stylesheet" href="{{ baseurl }}/gh-assets/stylesheets/style.css">
-      <link rel="stylesheet" href="{{ baseurl }}/gh-assets/stylesheets/topnav.css">
-      <link rel="stylesheet" href="{{ baseurl }}/gh-assets/stylesheets/prism-adobe.css">
+    <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-global.css">
+    <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-medium.css">
+    <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-light.css">
+    <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-dark.css">
+    <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-darkest.css">
+    <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.18.0/dist/components/tabs/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.18.0/dist/components/tabs/colorStops/dark.css">
+    <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.18.0/dist/components/tabs/colorStops/darkest.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectrum-css@1.1.5/static/latest/spectrum-full.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/components/typography/index-vars.css">
+    <link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css-grid@0.x/dist/spectrum-css-grid.css">
+    <link rel="stylesheet" href="{{ baseurl }}/gh-assets/stylesheets/style.css">
+    <link rel="stylesheet" href="{{ baseurl }}/gh-assets/stylesheets/topnav.css">
+    <link rel="stylesheet" href="{{ baseurl }}/gh-assets/stylesheets/prism-adobe.css">
 
-      <!-- Top main nav support -->
-      <link rel="stylesheet" href="https://www.adobe.io/etc.clientlibs/dexter/clientlibs/base/theme.css" type="text/css">
-      <link rel="stylesheet" href="https://www.adobe.io/etc.clientlibs/udp/clientlibs/base/theme.css" type="text/css">
+    <!-- Top main nav support -->
+    <link rel="stylesheet" href="https://www.adobe.io/etc.clientlibs/dexter/clientlibs/base/theme.css" type="text/css">
+    <link rel="stylesheet" href="https://www.adobe.io/etc.clientlibs/udp/clientlibs/base/theme.css" type="text/css">
 
-      <link rel="stylesheet" type="text/css" href="{{ baseurl }}/gh-assets/stylesheets/main.css">
-      <link rel="stylesheet" type="text/css" href="{{ baseurl }}/gh-assets/stylesheets/slick/slick.css"/>
-      <link rel="stylesheet" type="text/css" href="{{ baseurl }}/gh-assets/stylesheets/slick/slick-theme.css"/>
-      <link rel="stylesheet" type="text/css" href="{{ baseurl }}/gh-assets/stylesheets/animation-lib.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ baseurl }}/gh-assets/stylesheets/main.css">
+    <link rel="stylesheet" type="text/css" href="{{ baseurl }}/gh-assets/stylesheets/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="{{ baseurl }}/gh-assets/stylesheets/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="{{ baseurl }}/gh-assets/stylesheets/animation-lib.css" />
 
-      <link rel="stylesheet" href="https://unpkg.com/@adobe/coral-spectrum@4.5.0/dist/css/coral.min.css">
-      <script src="https://unpkg.com/@adobe/coral-spectrum@4.5.0/dist/js/coral.min.js" data-coral-icons-external="js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@adobe/coral-spectrum@4.5.0/dist/css/coral.min.css">
+    <script src="https://unpkg.com/@adobe/coral-spectrum@4.5.0/dist/js/coral.min.js" data-coral-icons-external="js"></script>
 
-    </head>
   </head>
-  <body class="spectrum spectrum--light {% if page.style %}{{ page.style }} {% endif %}" >
-    {% include analytics.html %}
-<!--
+</head>
+
+<body class="spectrum spectrum--light {% if page.style %}{{ page.style }} {% endif %}">
+  {% include analytics.html %}
+  <!--
 site.baseurl: {{site.baseurl}}
 baseurl: {{ baseurl }}
 site.url: {{site.url }}
 -->
-    {% include topnav.html %}
-    {% include subnav.html %}
-    <div class="spectrum--large spectrum spectrum--light" id="content">
-      {{ content }}
-    </div>
-    {% include footer.html %}
-    <script type="text/javascript" src="{{ baseurl }}/gh-assets/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="{{ baseurl }}/gh-assets/js/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" defer="defer" src="{{ baseurl }}/gh-assets/js/slick/slick.min.js"></script>
-    <script type="text/javascript">
+  {% include topnav.html %}
+  {% include subnav.html %}
+  <div class="spectrum--large spectrum spectrum--light" id="content">
+    {{ content }}
+  </div>
+  {% include footer.html %}
+  <script type="text/javascript" src="{{ baseurl }}/gh-assets/js/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="{{ baseurl }}/gh-assets/js/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" defer="defer" src="{{ baseurl }}/gh-assets/js/slick/slick.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
 
-      $(document).ready(function(){
-        
-        $('.market-slider-container').not('.slick-initialized').slick({
-          dots: true,
-          // infinite: true,
-          autoplay: true,
-          speed: 300,
-          slidesToShow: 1,
-          slidesToScroll: 1       
-        });
-        $('.card-slider-container-home').not('.slick-initialized').slick({
-          dots: false,
-          mobileFirst : true,
-          infinite: true,
-          autoplay: true,
-          speed: 300,
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          responsive: [
+      $('.sample-slider-container').not('.slick-initialized').slick({
+        dots: false,
+        autoplay: false,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        mobileFirst: true,
+        responsive: [
             {
-              breakpoint: 1439,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                dots: true
-              }
-            },
-            {
-              breakpoint: 767,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                dots: true
-              }
-            },
-            {
-              breakpoint: 0,
-              settings: {
-                slidesToShow: 1,
-                centerMode: true,
-                slidesToScroll: 1,
-                dots: true
-              }
+                breakpoint: 767,
+                settings: "unslick"
             }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
-          ]
-        });
-        $('.card-slider-container-logos').not('.slick-initialized').slick({
-          dots: false,
-          mobileFirst : true,
-          infinite: false,
-          speed: 300,
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          // variableWidth: true,
-          // variableHeight: true,
-          responsive: [
-            {
-              breakpoint: 1439,
-              settings: {
-                slidesToShow: 4,
-                slidesToScroll: 1,
-                dots: false
-              }
-            },
-            {
-              breakpoint: 767,
-              settings: {
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                dots: false,
-                autoplay: true,
-                infinite: true
-              }
-            },
-            {
-              breakpoint: 0,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                dots: false,
-                autoplay: true,
-                fade: true,
-                infinite: true
-              }
-            }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
-          ]
-        });
-        $('.card-slider-container').not('.slick-initialized').slick({
-          dots: false,
-          mobileFirst : true,
-          infinite: true,
-          autoplay: true,
-          speed: 300,
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          responsive: [
-            {
-              breakpoint: 1439,
-              settings: {
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                dots: false
-              }
-            },
-            {
-              breakpoint: 1023,
-              settings: {
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                dots: false
-              }
-            },
-            {
-              breakpoint: 767,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                dots: true
-              }
-            },
-            {
-              breakpoint: 0,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                dots: true
-              }
-            }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
-          ]
-        });
+        ]
       });
 
-      var nPage = window.location.pathname;
-      nPage = nPage.substring(nPage.lastIndexOf('/') + 1);
-      var strNewClass = nPage.split('.')[0];
-      if(strNewClass == ""){strNewClass = "home"}
-      $('body').addClass(strNewClass);
-      console.log("You are in : "  + strNewClass)
+      $('.market-slider-container').not('.slick-initialized').slick({
+        dots: true,
+        // infinite: true,
+        autoplay: true,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      });
 
-    </script>
+      $('.home-blade-slider').not('.slick-initialized').slick({
+        speed: 800,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        dots:true,
+        centerMode:true,
+        centerPadding:0,
+        cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
+      });
 
-    <!-- <script>
-      if (location.host.indexOf('github.io')) {
-        Userback = window.Userback || {};
-        Userback.access_token = '9191|20428|P6bwN4BOuujmAEOpx4emqLLAbSxQFqPd1p3RqN7F7uCWuIwMOz';
-        (function(id) {
-            var s = document.createElement('script');
-            s.async = 1;s.src = 'https://static.userback.io/widget/v1.js';
-            var parent_node = document.head || document.body;parent_node.appendChild(s);
-        })('userback-sdk');
-      }
-    </script> -->
-    <script type="text/javascript" src="{{ baseurl }}/gh-assets/js/prism.js"></script>
-    <script type="text/javascript" src="{{ baseurl }}/gh-assets/js/prism-toolbar.min.js"></script>
-    <script type="text/javascript" src="{{ baseurl }}/gh-assets/js/prism-copy-to-clipboard.min.js"></script>
-    <script type="text/javascript" src="{{ baseurl }}/gh-assets/js/work-flow-nav.js" defer="defer"></script>
-  </body>
+      var lastSlideIndex = 0;
+      var $carousel = $('.home-blade-slider');
+      $carousel.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+       // console.log("onbeforechange -- " + currentSlide)
+          lastSlideIndex = slick.currentSlide;
+
+          var blrbIdPrev = "#blrb" + lastSlideIndex;
+          $(blrbIdPrev).addClass('fadeOutSlideTxt');
+          $(blrbIdPrev).removeClass('fadeInSlideTxt');
+
+          var
+              direction,
+              slideCountZeroBased = slick.slideCount - 1;
+
+          if (nextSlide == currentSlide) {
+              direction = "same";
+
+          } else if (Math.abs(nextSlide - currentSlide) == 1) {
+              direction = (nextSlide - currentSlide > 0) ? "right" : "left";
+
+          } else {
+              direction = (nextSlide - currentSlide > 0) ? "left" : "right";
+          }
+
+          // Add a temp CSS class for the slide animation (.slick-current-clone-animate)
+          if (direction == 'right') {
+              $('.slick-cloned[data-slick-index="' + (nextSlide + slideCountZeroBased + 1) + '"]', $carousel).addClass('slick-current-clone-animate');
+          }
+
+          if (direction == 'left') {
+              $('.slick-cloned[data-slick-index="' + (nextSlide - slideCountZeroBased - 1) + '"]', $carousel).addClass('slick-current-clone-animate');
+          }
+
+          lastSlideIndex = slick.currentSlide;
+      });
+
+
+      $carousel.on('afterChange', function (event, slick, currentSlide, nextSlide) {
+        //console.log("afterChange -- " + slick.currentSlide)
+
+          var blrbId = "#blrb" + slick.currentSlide;
+
+          var blrbIdPrev = "#blrb" + lastSlideIndex;
+          $(blrbIdPrev).removeClass('fadeInSlideTxt');
+          $(blrbIdPrev).addClass('fadeOutSlideTxt');
+
+          console.log("onbeforechange -- " + currentSlide , " fading out ", blrbIdPrev)
+          //return;
+
+          $(blrbId).removeClass('fadeOutSlideTxt');
+          $(blrbId).addClass('fadeInSlideTxt');
+
+          $('.s1-img1').removeClass('fadeInSlide');
+          $('.s2-img1').removeClass('fadeInSlide');
+          $('.s3-img1').removeClass('fadeInSlide');
+
+          $('.s1-img2').removeClass('slide1-move2');
+          $('.s1-img3').removeClass('slide1-move3');
+
+          $('.s2-img2').removeClass('slide2-move2');
+          $('.s2-img3').removeClass('slide2-move3');
+
+          $('.s3-img2').removeClass('slide3-move2');
+
+          switch (slick.currentSlide){
+            case 0 :
+              //console.log("afterChange - index:0,adding  slide1 prllx");
+              $('.s1-img1').addClass('fadeInSlide');
+              $('.s1-img2').addClass('slide1-move2');
+              $('.s1-img3').addClass('slide1-move3');
+            break;
+            case 1 :
+              //console.log("afterChange - index: 1, adding  slide1 prllx");
+              $('.s2-img1').addClass('fadeInSlide');
+              $('.s2-img2').addClass('slide2-move2');
+              $('.s2-img3').addClass('slide2-move3');
+            break;
+            case 2 :
+              $('.s3-img1').addClass('fadeInSlide');
+              $('.s3-img2').addClass('slide3-move2');
+            break;
+          }
+
+          $('.slick-current-clone-animate', $carousel).removeClass('slick-current-clone-animate');
+          $('.slick-current-clone-animate', $carousel).removeClass('slick-current-clone-animate');
+      });
+
+      $('.logo-slider-container').not('.slick-initialized').slick({
+        dots: true,
+        autoplay: false,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      });
+
+      $('.blade-slider-container').not('.slick-initialized').slick({
+        dots: false,
+        mobileFirst: true,
+        infinite: true,
+        autoplay: true,
+        speed: 300,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        responsive: [{
+            breakpoint: 1439,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 0,
+            settings: {
+              slidesToShow: 1,
+              centerMode: true,
+              slidesToScroll: 1,
+              dots: true
+            }
+          }
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ]
+      });
+      $('.card-slider-container-logos').not('.slick-initialized').slick({
+        dots: false,
+        mobileFirst: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        // variableWidth: true,
+        // variableHeight: true,
+        responsive: [{
+            breakpoint: 1439,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 1,
+              dots: false
+            }
+          },
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              dots: false,
+              autoplay: true,
+              infinite: true
+            }
+          },
+          {
+            breakpoint: 0,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              dots: false,
+              autoplay: true,
+              fade: true,
+              infinite: true
+            }
+          }
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ]
+      });
+      $('.card-slider-container').not('.slick-initialized').slick({
+        dots: false,
+        mobileFirst: true,
+        infinite: true,
+        autoplay: true,
+        speed: 300,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        responsive: [{
+            breakpoint: 1439,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              dots: false
+            }
+          },
+          {
+            breakpoint: 1023,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              dots: false
+            }
+          },
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 0,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              dots: true
+            }
+          }
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ]
+      });
+    });
+
+    var nPage = window.location.pathname;
+    nPage = nPage.substring(nPage.lastIndexOf('/') + 1);
+    var strNewClass = nPage.split('.')[0];
+    if (strNewClass == "") {
+      strNewClass = "home"
+    }
+    $('body').addClass(strNewClass);
+    console.log("You are in : " + strNewClass)
+  </script>
+
+  <script>
+    if (location.host.indexOf('github.io')) {
+      Userback = window.Userback || {};
+      Userback.access_token = '9191|23258|P6bwN4BOuujmAEOpx4emqLLAbSxQFqPd1p3RqN7F7uCWuIwMOz';
+      (function(id) {
+        var s = document.createElement('script');
+        s.async = 1;
+        s.src = 'https://static.userback.io/widget/v1.js';
+        var parent_node = document.head || document.body;
+        parent_node.appendChild(s);
+      })('userback-sdk');
+    }
+  </script>
+  <script type="text/javascript" src="{{ baseurl }}/gh-assets/js/prism.js"></script>
+  <script type="text/javascript" src="{{ baseurl }}/gh-assets/js/prism-toolbar.min.js"></script>
+  <script type="text/javascript" src="{{ baseurl }}/gh-assets/js/prism-copy-to-clipboard.min.js"></script>
+  <script type="text/javascript" src="{{ baseurl }}/gh-assets/js/work-flow-nav.js" defer="defer"></script>
+</body>
+
 </html>

@@ -52,12 +52,39 @@
 <div id="create-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest code-window-opened">
   <coral-tabview>
     <coral-tablist size="S">
-      <coral-tab class="is-selected">Node.js</coral-tab>
+      <coral-tab class="is-selected">REST API</coral-tab>
+      <coral-tab>Node.js</coral-tab>
       <coral-tab>.Net</coral-tab>
       <coral-tab>Java</coral-tab>
       <!-- <div class="tab-item-copy copy">Copy</div> -->
     </coral-tablist>
     <coral-panelstack>
+      <coral-panel>
+<pre><code class="language-shell">curl --location --request POST 'https://cpf-ue1.adobe.io/ops/:create?respondWith=%7B%22reltype%22%3A%20%22http%3A%2F%2Fns.adobe.com%2Frel%2Fprimary%22%7D' \
+  --header 'Authorization: Bearer {{Placeholder for token}}' \
+  --header 'Accept: application/json, text/plain, */*' \
+  --header 'x-api-key: {{Placeholder for client_id}}' \
+  --header 'Prefer: respond-async,wait=0' \
+  --form 'contentAnalyzerRequests="{
+    \"cpf:inputs\": {
+      \"documentIn\": {
+        \"cpf:location\": \"InputFile0\",
+        \"dc:format\": \"application/vnd.openxmlformats-officedocument.wordprocessingml.document\"
+      }
+    },
+    \"cpf:engine\": {
+      \"repo:assetId\": \"urn:aaid:cpf:Service-1538ece812254acaac2a07799503a430\"
+    },
+    \"cpf:outputs\": {
+      \"documentOut\": {
+        \"cpf:location\": \"multipartLabelOut\",
+        \"dc:format\": \"application/pdf\"
+      }
+    }
+  }"' \
+  --form 'InputFile0=@"{{Placeholder for input file (absolute path)}}"'
+</code></pre>
+      </coral-panel>
       <coral-panel>
 <pre><code class="language-javascript">// Create an ExecutionContext using credentials and create a new operation instance.
 const executionContext = PDFToolsSdk.ExecutionContext.create(credentials),
@@ -832,11 +859,74 @@ result.saveAs("output/reorderPagesOutput.pdf");
   <div id="combine-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
     <coral-tabview>
       <coral-tablist size="S">
-        <coral-tab class="is-selected">Node.js</coral-tab>
+        <coral-tab class="is-selected">REST API</coral-tab>
+        <coral-tab>Node.js</coral-tab>
         <coral-tab>.Net</coral-tab>
         <coral-tab>Java</coral-tab>
       </coral-tablist>
       <coral-panelstack>
+        <coral-panel>
+<pre><code class="language-shell">curl --location --request POST 'https://cpf-ue1.adobe.io/ops/:create?respondWith=%7B%22reltype%22%3A%20%22http%3A%2F%2Fns.adobe.com%2Frel%2Fprimary%22%7D' \
+  --header 'Authorization: Bearer {{Placeholder for token}}' \
+  --header 'Accept: application/json, text/plain, */*' \
+  --header 'x-api-key: {{Placeholder for client_id}}' \
+  --header 'Prefer: respond-async,wait=0' \
+  --form 'contentAnalyzerRequests="{
+    \"cpf:inputs\": {
+      \"documentsIn\": [{
+        \"pageRanges\": {
+          \"cpf:inline\": [{
+            \"start\": 1,
+            \"end\": 4
+          }]
+        },
+        \"documentIn\": {
+          \"cpf:location\": \"InputFile0\",
+          \"dc:format\": \"application/pdf\"
+        }
+      }, {
+        \"pageRanges\": {
+          \"cpf:inline\": [{
+            \"start\": 1,
+            \"end\": 25
+          }]
+        },
+        \"documentIn\": {
+          \"cpf:location\": \"InputFile1\",
+          \"dc:format\": \"application/pdf\"
+        }
+      }, {
+        \"pageRanges\": {
+          \"cpf:inline\": [{
+            \"start\": 1
+          }, {
+            \"end\": 25
+          }, {
+            \"start\": 1,
+            \"end\": 25
+          }]
+        },
+        \"documentIn\": {
+          \"cpf:location\": \"InputFile2\",
+          \"dc:format\": \"application/pdf\"
+        }
+      }]
+    },
+    \"cpf:engine\": {
+      \"repo:assetId\": \"urn:aaid:cpf:Service-916ee91c156b42349a7847a7d564fb13\"
+    },
+    \"cpf:outputs\": {
+      \"documentOut\": {
+        \"cpf:location\": \"OutputFile\",
+        \"dc:format\": \"application/pdf\"
+      }
+    }
+  }"' \
+  --form 'InputFile0=@"{{Placeholder for input file (absolute path)}}"' \
+  --form 'InputFile1=@"{{Placeholder for input file (absolute path)}}"' \
+  --form 'InputFile2=@"{{Placeholder for input file (absolute path)}}"'
+  </code></pre>
+        </coral-panel>
         <coral-panel>
 <pre><code class="language-javascript">// Create an ExecutionContext using credentials and create a new operation instance.          
 const executionContext = PDFToolsSdk.ExecutionContext.create( credentials ),
@@ -1139,6 +1229,231 @@ result.saveAs("output/insertPagesOutput.pdf");
   </div>
 </p>
 <!-- /Insert -->
+
+<!-- Generate -->
+<p>
+  <div id="generate-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
+    <coral-tabview>
+      <coral-tablist size="S">
+        <coral-tab class="is-selected">REST API</coral-tab>
+        <coral-tab>Node.js</coral-tab>
+        <coral-tab>.Net</coral-tab>
+        <coral-tab>Java</coral-tab>
+      </coral-tablist>
+      <coral-panelstack>
+        <coral-panel>
+<pre><code class="language-shell">curl --location --request POST 'https://cpf-ue1.adobe.io/ops/:create?respondWith=%7B%22reltype%22%3A%20%22http%3A%2F%2Fns.adobe.com%2Frel%2Fprimary%22%7D' \
+  --header 'Authorization: Bearer {{Placeholder for token}}' \
+  --header 'Accept: application/json, text/plain, */*' \
+  --header 'x-api-key: {{Placeholder for client_id}}' \
+  --header 'Prefer: respond-async,wait=0' \
+  --form 'contentAnalyzerRequests="{
+     \"cpf:engine\":{
+        \"repo:assetId\":\"urn:aaid:cpf:Service-52d5db6097ed436ebb96f13a4c7bf8fb\"
+     },
+     \"cpf:inputs\":{
+        \"documentIn\":{
+           \"cpf:location\":\"InputFile0\",
+           \"dc:format\":\"application/vnd.openxmlformats-officedocument.wordprocessingml.document\"
+        },
+        \"params\":{
+           \"cpf:inline\":{
+              \"outputFormat\": \"pdf\",
+              \"jsonDataForMerge\": {
+                \"customerName\": \"Kane Miller\",
+                \"customerVisits\": 100,
+                \"itemsBought\": [
+                  {
+                    \"name\": \"Sprays\",
+                    \"quantity\": 50,
+                    \"amount\": 100
+                  },
+                  {
+                    \"name\": \"Chemicals\",
+                    \"quantity\": 100,
+                    \"amount\": 200
+                  }
+                ],
+                \"totalAmount\": 300,
+                \"previousBalance\": 50,
+                \"lastThreeBillings\": [100, 200, 300],
+                \"photograph\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP88h8AAu0B9XNPCQQAAAAASUVORK5CYII=\"
+              }
+           }
+        }
+     },
+     \"cpf:outputs\":{
+        \"documentOut\":{
+           \"cpf:location\":\"OutputFile\",
+           \"dc:format\":\"application/pdf\"
+        }
+     }
+  }"' \
+  --form 'InputFile0=@"{{Placeholder for the input document template (absolute path of the file)}}"'
+</code></pre>
+        </coral-panel>
+        <coral-panel>
+<pre><code class="language-javascript">// Get the samples from http://www.adobe.com/go/pdftoolsapi_node_sample
+const PDFToolsSdk = require('@dcloud/documentservices-pdftools-node-sdk'),
+  fs = require('fs');
+
+try {
+  // Initial setup, create credentials instance.
+  const credentials =  PDFToolsSdk.Credentials
+    .serviceAccountCredentialsBuilder()
+    .fromFile("pdftools-api-credentials.json")
+    .build();
+
+  // Setup input data for the document merge process
+  const jsonString = fs.readFileSync('resources/salesOrder.json'),
+    jsonDataForMerge = JSON.parse(jsonString);
+
+  // Create an ExecutionContext using credentials
+  const executionContext = PDFToolsSdk.ExecutionContext.create(credentials);
+
+  // Create a new DocumentMerge options instance
+  const documentMerge = PDFToolsSdk.DocumentMerge,
+    documentMergeOptions = documentMerge.options,
+    options = new documentMergeOptions
+      .DocumentMergeOptions(jsonDataForMerge, documentMergeOptions.OutputFormat.PDF);
+
+  // Create a new operation instance using the options instance
+  const documentMergeOperation = documentMerge.Operation.createNew(options)
+
+  // Set operation input document template from a source file.
+  const input = PDFToolsSdk
+    .FileRef.createFromLocalFile('resources/salesOrderTemplate.docx');
+  documentMergeOperation.setInput(input);
+
+  // Execute the operation and Save the result to the specified location.
+  documentMergeOperation.execute(executionContext)
+    .then(result => result.saveAsFile('output/salesOrderOutput.pdf'))
+    .catch(err => {
+      if(err instanceof PDFToolsSdk.Error.ServiceApiError
+          || err instanceof PDFToolsSdk.Error.ServiceUsageError) {
+          console.log('Exception encountered while executing operation', err);
+      } else {
+          console.log('Exception encountered while executing operation', err);
+      }
+  });
+} catch (err) {
+  console.log('Exception encountered while executing operation', err);
+} 
+</code></pre>
+        </coral-panel>
+        <coral-panel>
+<pre><code class="language-clike">// Get the samples from https://www.adobe.com/go/pdftoolsapi_net_samples
+namespace MergeDocumentToPDF
+{
+  class Program
+  {
+    private static readonly ILog log = LogManager.GetLogger(typeof(Program));
+    static void Main()
+    {
+      //Configure the logging
+      ConfigureLogging();
+      try
+      {
+        // Initial setup, create credentials instance.
+        Credentials credentials = Credentials.ServiceAccountCredentialsBuilder()
+          .FromFile(Directory.GetCurrentDirectory() + "/pdftools-api-credentials.json")
+          .Build();
+
+        // Create an ExecutionContext using credentials.
+        ExecutionContext executionContext = ExecutionContext.Create(credentials);
+
+        // Setup input data for the document merge process
+        var content = File.ReadAllText(@"salesOrder.json");
+        JObject jsonDataForMerge = JObject.Parse(content);
+
+        // Create a new DocumentMerge Options instance
+        DocumentMergeOptions documentMergeOptions = 
+          new DocumentMergeOptions(jsonDataForMerge, OutputFormat.PDF);
+
+        // Create a new DocumentMerge Operation instance with the DocumentMerge Options instance
+        DocumentMergeOperation documentMergeOperation = 
+          DocumentMergeOperation.CreateNew(documentMergeOptions);
+
+        // Set the operation input document template from a source file.
+        documentMergeOperation
+          .SetInput(FileRef.CreateFromLocalFile(@"salesOrderTemplate.docx"));
+
+        // Execute the operation.
+        FileRef result = documentMergeOperation.Execute(executionContext);
+
+        // Save the result to the specified location
+        result.SaveAs(Directory.GetCurrentDirectory() + "/output/salesOrderOutput.pdf");
+      }
+      catch (ServiceUsageException ex)
+      {
+        log.Error("Exception encountered while executing operation", ex);
+      }
+      // Catch more errors here. . .
+    }
+
+    static void ConfigureLogging()
+    {
+      ILoggerRepository logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
+      XmlConfigurator.Configure(logRepository, new FileInfo("log4net.config"));
+    }
+  }
+} 
+</code></pre>
+        </coral-panel>
+
+        <coral-panel>
+<pre><code class="language-java">// Get the samples from https://www.adobe.com/go/pdftoolsapi_java_samples
+public class MergeDocumentToPDF {
+
+  // Initialize the logger.
+  private static final Logger LOGGER = LoggerFactory.getLogger(MergeDocumentToPDF.class);
+
+  public static void main(String[] args) {
+
+    try {
+      // Initial setup, create credentials instance.
+      Credentials credentials = Credentials.serviceAccountCredentialsBuilder()
+        .fromFile("pdftools-api-credentials.json")
+        .build();
+
+      // Setup input data for the document merge process
+      String content = new String(Files.readAllBytes(
+        Paths.get("src/main/resources/salesOrder.json")));
+      JSONObject jsonDataForMerge=new JSONObject(content);
+
+      // Create an ExecutionContext using credentials.
+      ExecutionContext executionContext = ExecutionContext.create(credentials);
+
+      //Create a new DocumentMergeOptions instance
+      DocumentMergeOptions documentMergeOptions = 
+        new DocumentMergeOptions(jsonDataForMerge, OutputFormat.PDF);
+
+      // Create a new DocumentMergeOperation instance with the DocumentMergeOptions instance
+      DocumentMergeOperation documentMergeOperation = 
+        DocumentMergeOperation.createNew(documentMergeOptions);
+
+      // Set the operation input document template from a source file.
+      FileRef documentTemplate = 
+        FileRef.createFromLocalFile("src/main/resources/salesOrderTemplate.docx");
+      documentMergeOperation.setInput(documentTemplate);
+
+      // Execute the operation
+      FileRef result = documentMergeOperation.execute(executionContext);
+
+      // Save the result to the specified location.
+      result.saveAs("output/salesOrderOutput.pdf");
+    } catch (ServiceApiException | IOException | ServiceUsageException e) {
+      System.out.println(e);
+    }
+  }
+} 
+</code></pre>
+        </coral-panel>
+      </coral-panelstack>
+    </coral-tabview>
+  </div>
+</p>
+<!-- /Generate -->
 
 <!-- Protect -->
 <p>

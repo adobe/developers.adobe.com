@@ -1,0 +1,72 @@
+---
+layout: default
+title: Job Posting
+meta:
+active: job-posting
+---
+{% include paths.html %}
+
+<div class="main secondary-page">
+
+  <section id="api-use-cases-blade">
+    <div class="api-use-cases-container">
+      <div class="api-use-cases-wrapper">
+
+        <div class="intro-copy-wrapper">
+          <h1>Document Services API Use Cases</h1>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="api-use-cases-body">
+      <div class="api-use-cases-content-container">
+        <div class="api-use-cases-content-wrapper">
+          <div class="api-use-cases-content-menu">
+            {% include use-case-nav.html %}                
+          </div>
+          <div class="api-cases-content-wrapper">
+            <div class="api-cases-content">
+                <h2>Job Posting</h2>
+                <p>Job postings are usually limited to text-based content, but often additional supporting documents, such as PDF brochures, can better communicate the opportunity or the company.
+                </p>
+                <p>Adobe Document Services allows job sites to:
+                </p>
+                <ul>
+                  <li>Show and render high-resolution supporting documents
+                  </li>
+                  <li>Access analytics to understand what documents candidates are most interested in
+                  </li>
+                </ul>
+                <p>In addition, Adobe Document Services allows for documents uploaded in different formats, such as Microsoft Word, to be normalized into the PDF format.</p>
+                <h3>Relevant APIs</h3>
+                <ul>
+                  <li>Adobe PDF Embed API
+
+                  </li>
+                  <li>Adobe PDF Tools API
+                  </li>
+                </ul>
+              
+                <h3>Scenario</h3>
+                <p>An HR manager logs into a job posting site. After entering information about an available position, the manager uploads supporting documents, such as documents about the department, the company, and the solutions involved. The website then renders the job posting and the documents inline.</p>
+                <h3>Building this Solution
+                </h3>
+                <ol>
+                  <li>Create a PDF document from multiple file types using Adobe PDF Tools API Create PDF operation 
+                  </li>
+                  <li>Process the document with PDF Tools API OCR and Compress operations to streamline and normalize
+                  </li>
+                  <li>Pass the document to Extract API to extract data and send on through the system
+                  </li>
+                  <li>Use Adobe PDF Embed API to render the PDF on the submission page, inline
+
+                  </li>
+                </ol>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  {% include use-case-help.html %}

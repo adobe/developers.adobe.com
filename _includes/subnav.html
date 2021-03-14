@@ -2,7 +2,7 @@
   <button class="sub-nav-trigger" aria-expanded="true" aria-haspopup="true" aria-label="Home"></button>
   <div class="sub-nav-product-item allowHover">
     <a class="sub-nav-product-item-wrapper has-sub-nav" href="{{baseurl}}/apis/documentcloud/dcsdk/">
-      <image src="{{ baseurl }}/gh-assets/svg/adobe_trifoil.svg" alt="Adobe Icon" class="sub-nav-icon"/>
+      <image src="{{ baseurl }}/gh-assets/svg/adobe_trifoil.svg" alt="Adobe Icon" class="sub-nav-icon" />
       <span>Adobe Document Services</span>
     </a>
   </div>
@@ -10,25 +10,89 @@
     <li class="sub-nav-menu-item mobile-900-home">
       <a href="{{baseurl}}/apis/documentcloud/dcsdk/" rel="canonical" class="sub-nav-menu-label">Home</a>
     </li>
+    <!-- APIs-->
     <li class="sub-nav-menu-item {% if page.active == 'embed-sdk' %} active{% endif %}">
-      <a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-embed.html" rel="canonical" class="sub-nav-menu-label">PDF Embed API</a>
+      <a id="apis" href="{{baseurl}}/apis/documentcloud/dcsdk/doc-generation.html" rel="canonical" class="sub-nav-menu-label has-sub">APIs
+      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><defs><style>.a{fill:rgba(255,255,255,0);}.b{fill:#b2b2b2;}</style></defs><g transform="translate(8 8) rotate(180)"><rect class="a" width="8" height="8"/><path class="b" d="M3,0,6,3H0Z" transform="translate(7 6) rotate(180)"/></g></svg>
+    </a>
+      <div class="dropdown-content">
+        <div class="dropdown-content-wrapper">
+          <ul>
+            <li>
+              <a href="{{baseurl}}/apis/documentcloud/dcsdk/doc-generation.html">
+                <div class="dpd-sub-nav-menu-header">Document Generation</div>
+                <div class="dpd-sub-nav-menu-copy">Generate PDF and Word documents from custom Word templates</div>
+              </a>
+            </li>
+            <!-- Future 2021 Release
+            <li>
+              <a href="#whereto">
+                <div class="dpd-sub-nav-menu-header">Document Extract</div>
+                <div class="dpd-sub-nav-menu-copy">Extract structured content for process automation</div>
+              </a>
+            </li>
+            -->
+            <li>
+              <a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-embed.html">
+                <div class="dpd-sub-nav-menu-header">PDF Embed</div>
+                <div class="dpd-sub-nav-menu-copy">Embed high-fidelity PDFs in web apps with analytics</div>
+              </a>
+            </li>
+            <li>
+              <a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-tools.html">
+                <div class="dpd-sub-nav-menu-header">PDF Tools</div>
+                <div class="dpd-sub-nav-menu-copy">Create, combine and export PDFs</div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </li>
-    <li class="sub-nav-menu-item {% if page.active == 'tools-sdk' %} active{% endif %}">
-      <a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-tools.html" rel="canonical" class="sub-nav-menu-label">PDF Tools API</a>
-    </li>
+    <!-- Pricing -->
     <li class="sub-nav-menu-item {% if page.active == 'pricing' %} active{% endif %}">
       <a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-pricing.html" rel="canonical" class="sub-nav-menu-label">Pricing</a>
     </li>
+    <!-- Resources -->
     <li class="sub-nav-menu-item {% if page.active == 'resources' %} active{% endif %}">
-      <a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-resources.html" rel="canonical" class="sub-nav-menu-label">Resources</a>
+      <a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-resources.html" rel="canonical" class="sub-nav-menu-label has-sub">Resources
+      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><defs><style>.a{fill:rgba(255,255,255,0);}.b{fill:#b2b2b2;}</style></defs><g transform="translate(8 8) rotate(180)"><rect class="a" width="8" height="8"/><path class="b" d="M3,0,6,3H0Z" transform="translate(7 6) rotate(180)"/></g></svg>
+      </a>
+      <div class="dropdown-content">
+        <div class="dropdown-content-wrapper">
+          <ul>
+            <li>
+              <a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-resources.html">
+                <div class="dpd-sub-nav-menu-header">Developer Resources</div>
+              </a>
+            </li>
+            <!-- Future 2021 Releases
+            <li>
+              <a href="https://www.adobe.io/blog.html">
+                <div class="dpd-sub-nav-menu-header">Blog</div>
+              </a>
+            </li>
+            <li>
+              <a href="#whereto">
+                <div class="dpd-sub-nav-menu-header">Customer Stories</div>
+              </a>
+            </li>
+            -->
+            <li>
+              <a href="{{baseurl}}/apis/documentcloud/dcsdk/sales-proposals-and-contracts.html">
+                <div class="dpd-sub-nav-menu-header">Use Cases</div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </li>
+    <!-- Documentation -->
     <li class="sub-nav-menu-item {% if page.active == 'docs' %} active{% endif %}">
       <a href="{{baseurl}}/apis/documentcloud/dcsdk/docs.html" class="sub-nav-menu-label">Documentation</a>
     </li>
-    <li class="sub-nav-menu-item {% if page.active == 'getstarted' %} active{% endif %}">
-      <div class="sub-nav-menu-label">
-      <a href="{{baseurl}}/apis/documentcloud/dcsdk/gettingstarted.html" class="sub-nav-get-started-button">Get Started</a>
-      </div>
+    <!-- Get Started -->
+    <li class="sub-nav-menu-item {% if page.active == 'gettingstarted' %} active{% endif %}">
+      <a href="{{baseurl}}/apis/documentcloud/dcsdk/gettingstarted.html" class="sub-nav-menu-label">Get Started</a>
     </li>
   </ul>
 </nav>
