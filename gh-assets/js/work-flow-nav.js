@@ -28,7 +28,59 @@ $(document).ready(function(){
         $($el).removeClass('code-window-opened');
         $(".code-viewer-wrapper #" + itemID + ".sdk-embed-wrapper").addClass('code-window-opened');
       }
+
   });
+
+  // Use case tiles on HOME and DOCGEN
+  if ($(".case-item").is(":visible")) {
+    $('.case-item').on('click', function(e){
+      window.location = $(this).data('href');
+    });
+  }
+ 
+  // The CTA buttons on the home page hero carousel
+  if ($("#slider-blurb").is(":visible")) {
+    $('#slider-blurb .button-link').on('click', function(e){
+      let activeLink = $('.fadeInSlideTxt .button-link').attr('href');
+      e.preventDefault();
+      window.location = activeLink;
+    });
+  }
+
+  if ($(".use-case-menu-item").is(":visible")) {      
+    
+      $('.use-case-menu-item').on("click", function(e) {
+
+        if(!$(this).hasClass('open')){
+          var $el = $(this).siblings();  //use-case-menu-support
+
+          $('.api-use-case_menu li .use-case-menu-item').removeClass('open');
+          $('.api-use-case_menu li .use-case-menu-support').removeClass('open');
+          $('.api-use-case_menu li .use-case-menu-support .uc-sub-menu').removeClass('open');
+          $('.api-use-case_menu li .use-case-menu-support .uc-sub-menu').removeClass('active');
+  
+          $(this).toggleClass('open');
+
+          var $firsChildActive = $($el).children()[0];
+
+          $($el).toggleClass('open');  
+
+          $($firsChildActive).toggleClass('open');  
+          $($firsChildActive).addClass('active');           
+        }    
+        
+      });
+
+      UC_menuOpen();
+  }
+
+  //CH This is on the DocGen page
+  if ($('.sample-more-button').is(':visible')) {
+    $('.sample-more-button').on('click', function(e){
+      $('.show-templates').css('display', 'none');
+      $('.sample-more').addClass('opened');
+    })
+  }
 
   $('.work-flow_menu ul li').first().click();
 
@@ -41,10 +93,14 @@ $(document).ready(function(){
     $( this ).toggleClass( 'opened');
   });
 
-
   $('.sub-nav-menu-item').on( "click", function(e) {
     $( this ).toggleClass( 'active');
   });
+
+  
+
+
+
 
     //window resize to properly deal with the animation on mobile TBD
     // run test on resize of the window
@@ -77,7 +133,6 @@ $(document).load(function(){
       }
     }
   }
-
 })
 
 
@@ -120,4 +175,26 @@ function getRSSFeed(RSS_URL){
         });
     }
   });
+}
+
+$('.has-sub').click(function(e) {
+  e.preventDefault();
+  var $el = $(this).siblings();
+  $($el).addClass('sub-dropdown');
+  return false;
+  
+});
+  
+function UC_menuOpen(hasEvent){
+  //api-use-case_menu
+  var el = $('.api-use-case_menu li .use-case-menu-support .uc-sub-menu');
+
+  if($(el).hasClass('active')){
+    var activeItem = $('.api-use-case_menu li .use-case-menu-support .uc-sub-menu.active');
+    var itemParent = $(activeItem).parent();
+    var _root = $(activeItem).parent().siblings();
+    $(_root).toggleClass('open');
+    $(itemParent).toggleClass('open');
+    console.log("we found an active", _root)
+  }
 }

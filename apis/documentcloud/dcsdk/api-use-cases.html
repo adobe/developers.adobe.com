@@ -1,0 +1,56 @@
+---
+layout: default
+title: API Use Cases
+meta:
+active: api-use-cases
+---
+{% include paths.html %}
+
+<div class="main secondary-page">
+
+  <section id="api-use-cases-blade">
+    <div class="api-use-cases-container">
+      <div class="api-use-cases-wrapper">
+
+        <div class="intro-copy-wrapper">
+          <h1>Document Services API Use Cases</h1>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="api-use-cases-body">
+      <div class="api-use-cases-content-container">
+        <div class="api-use-cases-content-wrapper">
+          <div class="api-use-cases-content-menu">
+            {% include use-case-nav.html %}                
+          </div>
+          <div class="api-cases-content-wrapper">
+            <div class="api-cases-content">
+                <h2>Sales proposal</h2>
+                <h3>Overview</h3>
+                <p>As is often the case in business, there is a need to complete a non-disclosure agreement to protect the confidentiality of a party. Often, the information that needs to be submitted into an NDA such as the names of the parties involved, addresses, etc. are already known information in a database or may be provided through a web interface. The challenge developers face is that dynamically generating documents with custom data and sending them out for signatures has been a manual process. It often requires custom branded documents to be populated by end-users with data first before they can be sent out for signatures.</p>
+                <h3>APIs Used</h3>
+                <ul>
+                  <li>Adobe Document Generation API, a Microsoft Word add-in </li>
+                  <li>Adobe Document Generation Tagger</li>
+                  <li>Adobe Sign</li>
+                </ul>
+                <h3>End User Scenario</h3>
+                <p>A vendor manager has the information of the vendor he would like to do business with including the name of the contact, the address of the business, as well as the scope of the NDA. The vendor manager goes onto an online web portal to initiate the NDA process. At the click of a button, the data is collected from the database, passed to generate the NDA document, and then sent to Adobe Sign to send for signature.</p>
+              
+                <h3>Document Flow</h3>
+                <p>In the scenario where there needs to be negotiation between the two parties, the developer will use Document Generation API to provide a document back in Word format, which would allow for redlining in Microsoft Word. Adobe Document Generation Tagger, a Microsoft Word add-in, can be used by the developer or the vendor manager to quickly build a custom branded NDA template for the company to standardize their agreements for accuracy. Using this custom template with dynamic text tags, JSON data can be sent with the template to Document Generation API then immediately sent to Adobe Sign for signature and countersignature.</p>
+                <p>The steps for this use case include:</p>
+                <ol>
+                  <li>Within the application layer, the developer would query the database to collect relevant data for a custom NDA such as vendor details and contact information and create a JSON data model</li>
+                  <li>Within the application layer, the developer would query the database to collect relevant data for a custom NDA such as vendor details and contact information and create a JSON data model The developer would use a custom branded Word document from the vendor manager to create a template with dynamic text tags  using Adobe Document Generation Tagger, a Microsoft Word add-in. The JSON data model can be uploaded to the Tagger to automatically generate text tags</li>
+                  <li>Data is passed to Adobe Document Generation API about the vendor that the NDA is being conducted with. For example:</li>
+                </ol>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  {% include use-case-help.html %}
