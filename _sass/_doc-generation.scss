@@ -601,6 +601,9 @@ section.get-started {
     position: relative;
     padding: 0 0 2.375rem;
     border-bottom: 1px solid $lt-grey;
+    &:last-child {
+      border-bottom: none;
+    }
     @media screen and (min-width: 1024px) {
       display: inline-block;
       margin: 0;
