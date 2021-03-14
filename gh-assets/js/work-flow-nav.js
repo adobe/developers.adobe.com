@@ -38,6 +38,15 @@ $(document).ready(function(){
     });
   }
  
+  // The CTA buttons on the home page hero carousel
+  if ($("#slider-blurb").is(":visible")) {
+    $('#slider-blurb .button-link').on('click', function(e){
+      let activeLink = $('.fadeInSlideTxt .button-link').attr('href');
+      e.preventDefault();
+      window.location = activeLink;
+    });
+  }
+
   if ($(".use-case-menu-item").is(":visible")) {      
     
       $('.use-case-menu-item').on("click", function(e) {
@@ -65,7 +74,8 @@ $(document).ready(function(){
       UC_menuOpen();
   }
 
-  if ($('sample-more-button').is(':visible')) {
+  //CH This is on the DocGen page
+  if ($('.sample-more-button').is(':visible')) {
     $('.sample-more-button').on('click', function(e){
       $('.show-templates').css('display', 'none');
       $('.sample-more').addClass('opened');
