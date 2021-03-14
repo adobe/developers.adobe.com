@@ -609,6 +609,9 @@ section.get-started {
       vertical-align: top;
       border-bottom: 0;
     }
+    &:last-of-type {
+      border-bottom: 0;
+    }
   }
 
   ol li::before {
