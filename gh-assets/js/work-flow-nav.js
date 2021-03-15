@@ -95,25 +95,44 @@ $(document).ready(function(){
   });
 
   $('.sub-nav-menu-item').on( "click", function(e) {
-    $( this ).toggleClass( 'active');
+
+    //$( this ).toggleClass( 'active');
 
     var $ddl = $('.sub-nav-menu-item');
-
-    $($ddl).each(function(){
-      var $tempDdlSibs = $(this).children()[1];
-      $($tempDdlSibs).removeClass('sub-dropdown');  
-      $(this).removeClass('active');
-    });
- 
     var ddlSibs = $(this).children()[0];
-    if($(ddlSibs).hasClass('has-sub')){
+
+    if($( this ).hasClass('active')){
+      
+      if($(ddlSibs).hasClass('has-sub')){
         e.preventDefault();
 
         var $el = $(this).children()[1];
+          $( $el ).toggleClass( 'sub-dropdown');
+          console.log("has class active")
+        return false;
+      }
+    }else{
+      
+      $( this ).addClass('active');
+      if($(ddlSibs).hasClass('has-sub')){
+        e.preventDefault();
+
+        console.log("has no class active")
+
+        $($ddl).each(function(){
+          var $tempDdlSibs = $(this).children()[1];
+          $($tempDdlSibs).removeClass('sub-dropdown');  
+          $(this).removeClass('active');
+        });
+
+        var $el = $(this).children()[1];
+
         $($el).addClass('sub-dropdown');
+        $( this ).addClass('active');
 
         return false;
       }
+    }
   });
 
 
