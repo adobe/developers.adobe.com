@@ -91,22 +91,37 @@ $(document).ready(function(){
 
   $('.sub-nav-menu-wrapper').on( "click", function(e) {
     $( this ).toggleClass( 'opened');
+
   });
 
   $('.sub-nav-menu-item').on( "click", function(e) {
     $( this ).toggleClass( 'active');
+
+    var $ddl = $('.sub-nav-menu-item');
+
+    $($ddl).each(function(){
+      var $tempDdlSibs = $(this).children()[1];
+      $($tempDdlSibs).removeClass('sub-dropdown');  
+      $(this).removeClass('active');
+    });
+ 
+    var ddlSibs = $(this).children()[0];
+    if($(ddlSibs).hasClass('has-sub')){
+        e.preventDefault();
+
+        var $el = $(this).children()[1];
+        $($el).addClass('sub-dropdown');
+
+        return false;
+      }
   });
-
-  
-
-
 
 
     //window resize to properly deal with the animation on mobile TBD
     // run test on resize of the window
     $(window).resize(resetWorkFlowMenu);
 
-  });
+});
 
 //Function to the css rule
 function resetWorkFlowMenu(){
@@ -177,14 +192,7 @@ function getRSSFeed(RSS_URL){
   });
 }
 
-$('.has-sub').click(function(e) {
-  e.preventDefault();
-  var $el = $(this).siblings();
-  $($el).addClass('sub-dropdown');
-  return false;
-  
-});
-  
+ 
 function UC_menuOpen(hasEvent){
   //api-use-case_menu
   var el = $('.api-use-case_menu li .use-case-menu-support .uc-sub-menu');
@@ -195,6 +203,7 @@ function UC_menuOpen(hasEvent){
     var _root = $(activeItem).parent().siblings();
     $(_root).toggleClass('open');
     $(itemParent).toggleClass('open');
-    console.log("we found an active", _root)
   }
 }
+
+
