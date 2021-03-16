@@ -309,12 +309,6 @@
             outline: none;
           }
 
-          @media screen and (max-width: 767px) {
-            .slick-next.slick-arrow {
-              display: none !important;
-            }
-          }
-
           // .slick-dots li button:before {
           //   font-size: 0.5rem !important;
           //   color: $white !important;
@@ -1002,6 +996,14 @@ section.home-use-case-blade {
     margin: 0 auto;
   }
 }
+
+/* Fix for horizontal scrolling caused by right arrow on both sliders */
+@media screen and (max-width: 767px) {
+  .slick-next.slick-arrow {
+    display: none !important;
+  }
+}
+
 /* Fade In Blurb*/
 .fadeInSlideTxt {
   max-width: 180px;
