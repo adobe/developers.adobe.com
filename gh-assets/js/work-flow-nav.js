@@ -41,9 +41,9 @@ $(document).ready(function(){
   // The CTA buttons on the home page hero carousel
   if ($("#slider-blurb").is(":visible")) {
     $('#slider-blurb .button-link').on('click', function(e){
-      let activeLink = $('.fadeInSlideTxt .button-link').attr('href');
       e.preventDefault();
-      window.location = activeLink;
+      let activeLink = $('.fadeInSlideTxt .button-link').attr('href');
+      window.open(activeLink, '_blank');  
     });
   }
 
