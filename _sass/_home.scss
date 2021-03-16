@@ -998,7 +998,7 @@ section.home-use-case-blade {
 }
 
 /* Fix for horizontal scrolling caused by right arrow on both sliders */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1023px) {
   .slick-next.slick-arrow {
     display: none !important;
   }
