@@ -41,9 +41,9 @@ $(document).ready(function(){
   // The CTA buttons on the home page hero carousel
   if ($("#slider-blurb").is(":visible")) {
     $('#slider-blurb .button-link').on('click', function(e){
-      let activeLink = $('.fadeInSlideTxt .button-link').attr('href');
       e.preventDefault();
-      window.location = activeLink;
+      let activeLink = $('.fadeInSlideTxt .button-link').attr('href');
+      window.open(activeLink, '_blank');  
     });
   }
 
@@ -91,22 +91,90 @@ $(document).ready(function(){
 
   $('.sub-nav-menu-wrapper').on( "click", function(e) {
     $( this ).toggleClass( 'opened');
+
   });
 
   $('.sub-nav-menu-item').on( "click", function(e) {
-    $( this ).toggleClass( 'active');
-  });
 
+    //$( this ).toggleClass( 'active');
   
 
+    var $ddl = $('.sub-nav-menu-item');
+    var ddlSibs = $(this).children()[0];
 
+    if($( this ).hasClass('active')){
+      console.log("is class active");    
+      if($(ddlSibs).hasClass('has-sub')){
+        e.preventDefault();
+
+        var $el = $(this).children()[1];
+          $( $el ).toggleClass( 'sub-dropdown');
+          console.log("has class active")
+        return false;
+      }
+    }else{
+      
+
+      $($ddl).each(function(){
+        $(this).removeClass('active');
+        var $tempDdlSibs = $(this).children()[1];
+        $($tempDdlSibs).removeClass('sub-dropdown');  
+        
+      });
+
+      //$( this ).addClass('active');
+      if($(ddlSibs).hasClass('has-sub')){
+        e.preventDefault();
+
+        //console.log("has no class active")
+
+        $($ddl).each(function(){
+          $(this).removeClass('active');
+          var $tempDdlSibs = $(this).children()[1];
+          $($tempDdlSibs).removeClass('sub-dropdown');  
+          
+        });
+
+        var $el = $(this).children()[1];
+
+        $($el).addClass('sub-dropdown');
+        $( this ).addClass('active');
+
+        return false;
+      }
+    }
+  });
+
+  $('.sub-nav-menu-item').on( "mouseout", function(e) {
+    var $ddl = $('.sub-nav-menu-item');
+    var ddlSibs = $(this).children()[0];
+    var ddlSibsCopy = $('.dpd-sub-nav-menu-copy');
+
+    if($( ddlSibsCopy).length <= 0){
+      console.log("does not have copy")
+      return;
+    }
+
+    if($( this ).hasClass('active')){
+
+      if($(ddlSibs).hasClass('has-sub')){
+        e.preventDefault();
+        $($ddl).each(function(){
+          var $tempDdlSibs = $(this).children()[1];
+          $($tempDdlSibs).removeClass('sub-dropdown');  
+          //$(this).removeClass('active');
+        });
+        return false;
+      }
+    }
+  });
 
 
     //window resize to properly deal with the animation on mobile TBD
     // run test on resize of the window
     $(window).resize(resetWorkFlowMenu);
 
-  });
+});
 
 //Function to the css rule
 function resetWorkFlowMenu(){
@@ -177,14 +245,7 @@ function getRSSFeed(RSS_URL){
   });
 }
 
-$('.has-sub').click(function(e) {
-  e.preventDefault();
-  var $el = $(this).siblings();
-  $($el).addClass('sub-dropdown');
-  return false;
-  
-});
-  
+ 
 function UC_menuOpen(hasEvent){
   //api-use-case_menu
   var el = $('.api-use-case_menu li .use-case-menu-support .uc-sub-menu');
@@ -195,6 +256,7 @@ function UC_menuOpen(hasEvent){
     var _root = $(activeItem).parent().siblings();
     $(_root).toggleClass('open');
     $(itemParent).toggleClass('open');
-    console.log("we found an active", _root)
   }
 }
+
+
