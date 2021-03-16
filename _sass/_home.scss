@@ -308,6 +308,13 @@
           .slick-slide:focus {
             outline: none;
           }
+
+          @media screen and (max-width: 767px) {
+            .slick-next.slick-arrow {
+              display: none !important;
+            }
+          }
+
           // .slick-dots li button:before {
           //   font-size: 0.5rem !important;
           //   color: $white !important;
