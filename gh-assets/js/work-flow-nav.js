@@ -91,7 +91,6 @@ $(document).ready(function(){
 
   $('.sub-nav-menu-wrapper').on( "click", function(e) {
     $( this ).toggleClass( 'opened');
-
   });
 
   $('.sub-nav-menu-item').on( "click", function(e) {
@@ -103,13 +102,13 @@ $(document).ready(function(){
     var ddlSibs = $(this).children()[0];
 
     if($( this ).hasClass('active')){
-      console.log("is class active");    
+      //console.log("is class active");    
       if($(ddlSibs).hasClass('has-sub')){
         e.preventDefault();
 
         var $el = $(this).children()[1];
           $( $el ).toggleClass( 'sub-dropdown');
-          console.log("has class active")
+          //console.log("has class active")
         return false;
       }
     }else{
@@ -144,6 +143,13 @@ $(document).ready(function(){
       }
     }
   });
+
+  // The above eats the clicks on it's children, the menu items. 
+  // This get's the event on the link and stops propagation but allows
+  // the default action.
+  $('.dropdown-content-wrapper a').on('click', function(e){
+    e.stopPropagation()
+  })
 
   $('.sub-nav-menu-item').on( "mouseout", function(e) {
     var $ddl = $('.sub-nav-menu-item');
