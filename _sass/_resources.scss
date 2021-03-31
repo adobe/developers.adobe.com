@@ -116,6 +116,10 @@ section.sdk-rsrc-release {
               text-decoration: none !important;
               border-style: unset;
             }
+            &:active {
+              text-decoration: none !important;
+              border-style: unset;
+            }
 
             &:visited {
               text-decoration: none !important;
@@ -179,6 +183,10 @@ section.sdk-rsrc-anchor {
             &:hover {
               text-decoration: none;
             }
+            &:active {
+              text-decoration: none;
+            }
+
           }
         }
       }

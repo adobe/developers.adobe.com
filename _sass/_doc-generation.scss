@@ -234,6 +234,9 @@ section.sample-blade {
       &:hover {
         text-decoration: none !important;
       }
+      &:active {
+        text-decoration: none !important;
+      }
     }
   }
 
@@ -411,6 +414,9 @@ section.use-case-blade {
           &:hover {
             text-decoration: none !important;
           }
+          &:active {
+            text-decoration: none !important;
+          }
         }
       }
     }
@@ -503,6 +509,9 @@ section.key-features-blade {
             &:hover {
               text-decoration: none !important;
             }
+            &:active {
+              text-decoration: none !important;
+            }
           }
           // .case-icon {
           //   padding-top: 4.875rem;
@@ -546,6 +555,9 @@ section.key-features-blade {
           white-space: nowrap;
 
           &:hover {
+            text-decoration: none !important;
+          }
+          &:active {
             text-decoration: none !important;
           }
           &.blue {

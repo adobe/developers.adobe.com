@@ -37,18 +37,18 @@ $(document).ready(function(){
       window.location = $(this).data('href');
     });
   }
- 
+
   // The CTA buttons on the home page hero carousel
   if ($("#slider-blurb").is(":visible")) {
     $('#slider-blurb .button-link').on('click', function(e){
       e.preventDefault();
       let activeLink = $('.fadeInSlideTxt .button-link').attr('href');
-      window.open(activeLink, '_blank');  
+      window.location.href = activeLink;  
     });
   }
 
-  if ($(".use-case-menu-item").is(":visible")) {      
-    
+  if ($(".use-case-menu-item").is(":visible")) {
+
       $('.use-case-menu-item').on("click", function(e) {
 
         if(!$(this).hasClass('open')){
@@ -58,17 +58,17 @@ $(document).ready(function(){
           $('.api-use-case_menu li .use-case-menu-support').removeClass('open');
           $('.api-use-case_menu li .use-case-menu-support .uc-sub-menu').removeClass('open');
           $('.api-use-case_menu li .use-case-menu-support .uc-sub-menu').removeClass('active');
-  
+
           $(this).toggleClass('open');
 
           var $firsChildActive = $($el).children()[0];
 
-          $($el).toggleClass('open');  
+          $($el).toggleClass('open');
 
-          $($firsChildActive).toggleClass('open');  
-          $($firsChildActive).addClass('active');           
-        }    
-        
+          $($firsChildActive).toggleClass('open');
+          $($firsChildActive).addClass('active');
+        }
+
       });
 
       UC_menuOpen();
@@ -96,13 +96,13 @@ $(document).ready(function(){
   $('.sub-nav-menu-item').on( "click", function(e) {
 
     //$( this ).toggleClass( 'active');
-  
+
 
     var $ddl = $('.sub-nav-menu-item');
     var ddlSibs = $(this).children()[0];
 
     if($( this ).hasClass('active')){
-      //console.log("is class active");    
+      //console.log("is class active");
       if($(ddlSibs).hasClass('has-sub')){
         e.preventDefault();
 
@@ -112,13 +112,13 @@ $(document).ready(function(){
         return false;
       }
     }else{
-      
+
 
       $($ddl).each(function(){
         $(this).removeClass('active');
         var $tempDdlSibs = $(this).children()[1];
-        $($tempDdlSibs).removeClass('sub-dropdown');  
-        
+        $($tempDdlSibs).removeClass('sub-dropdown');
+
       });
 
       //$( this ).addClass('active');
@@ -130,8 +130,8 @@ $(document).ready(function(){
         $($ddl).each(function(){
           $(this).removeClass('active');
           var $tempDdlSibs = $(this).children()[1];
-          $($tempDdlSibs).removeClass('sub-dropdown');  
-          
+          $($tempDdlSibs).removeClass('sub-dropdown');
+
         });
 
         var $el = $(this).children()[1];
@@ -144,7 +144,7 @@ $(document).ready(function(){
     }
   });
 
-  // The above eats the clicks on it's children, the menu items. 
+  // The above eats the clicks on it's children, the menu items.
   // This get's the event on the link and stops propagation but allows
   // the default action.
   $('.dropdown-content-wrapper a').on('click', function(e){
@@ -167,7 +167,7 @@ $(document).ready(function(){
         e.preventDefault();
         $($ddl).each(function(){
           var $tempDdlSibs = $(this).children()[1];
-          $($tempDdlSibs).removeClass('sub-dropdown');  
+          $($tempDdlSibs).removeClass('sub-dropdown');
           //$(this).removeClass('active');
         });
         return false;
@@ -216,15 +216,15 @@ function getRSSFeed(RSS_URL){
     accepts: {
       xml: "application/rss+xml"
     },
-  
+
     dataType: "xml",
-  
+
     success: function(data) {
       $(data)
         .find("item")
         .each(function() {
           const el = $(this);
-  
+
           const template = `
             <article>
               <img src="${el.find("link").text()}/image/large.png" alt="">
@@ -242,16 +242,16 @@ function getRSSFeed(RSS_URL){
           //     <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg01.jpg" alt=""> </a>
           //     <p class="blog-title">
           //         Adding Annotations to a PDF Using Adobe PDF Embed API
-          //     </p>  
+          //     </p>
           //     <p class="blog-text">Have you ever wanted to markup a PDF file interactively with your team the same way you can in Microsoft Office 365 or Google Docs?</p>
-          // </div> 
+          // </div>
           document.body.insertAdjacentHTML("beforeend", template);
         });
     }
   });
 }
 
- 
+
 function UC_menuOpen(hasEvent){
   //api-use-case_menu
   var el = $('.api-use-case_menu li .use-case-menu-support .uc-sub-menu');
@@ -264,5 +264,3 @@ function UC_menuOpen(hasEvent){
     $(itemParent).toggleClass('open');
   }
 }
-
-
