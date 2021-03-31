@@ -287,17 +287,16 @@ section.sample-blade {
   .sample-header {
     display: none;
   }
-
   @media screen and (min-width: 768px) {
     .sample-header-desktop {
       display: block;
     }
   }
-
   @media screen and (max-width: 767px) {
     .slick-list {
       padding: 0 20%;
     }
+
     .sample-header-touch {
       display: block;
     }
@@ -538,7 +537,7 @@ section.key-features-blade {
       }
 
       .cta-wrapper {
-        text-align: left;
+        text-align: center;
         padding-top: 1.5rem;
 
         .button-link {
@@ -548,6 +547,40 @@ section.key-features-blade {
 
           &:hover {
             text-decoration: none !important;
+          }
+          &.blue {
+            background-color: #0e6de0;
+            border-color: #0e6de0;
+            color: $white !important;
+
+            &:hover {
+              background-color: #0d66d0;
+              border-color: #0d66d0;
+              color: $white !important;
+            }
+          }
+        }
+      }
+
+      .key-item {
+        .cta-wrapper {
+          text-align: left;
+          padding-top: 1.5rem;
+
+          .button-link {
+            font-weight: 700 !important;
+            text-decoration: none;
+            text-decoration-style: solid !important;
+            white-space: nowrap;
+            background-color: $white;
+            border-color: $white;
+            color: $grey !important;
+
+            &:hover {
+              text-decoration: none !important;
+              background-color: $grey;
+              color: $white !important;
+            }
           }
         }
       }
@@ -609,6 +642,7 @@ section.get-started {
       vertical-align: top;
       border-bottom: 0;
     }
+
     &:last-of-type {
       border-bottom: 0;
     }
