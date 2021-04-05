@@ -43,7 +43,9 @@ $(document).ready(function(){
     $('#slider-blurb .button-link').on('click', function(e){
       e.preventDefault();
       let activeLink = $('.fadeInSlideTxt .button-link').attr('href');
-      window.location.href = activeLink;  
+      let target = $('.fadeInSlideTxt .button-link').attr('target');
+      window.open(activeLink, target);
+      //window.location.href = activeLink;  
     });
   }
 
