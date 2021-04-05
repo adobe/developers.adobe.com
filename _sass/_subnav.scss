@@ -371,8 +371,8 @@
         &.has-sub {
           svg {
             display: none;    //CH Only show on hover (see below)
-            @media screen and (max-width: 767px) {
-              display: block; //CH Always show on phone
+            @media screen and (max-width: 900px) {
+              display: block; //CH Always show on phone and tablet tall
             }
             float: right;
             transform: rotate(180deg);
