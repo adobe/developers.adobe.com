@@ -1,0 +1,202 @@
+---
+layout: default
+title: Doc Gen API Template
+meta:
+active: doc-den-api-template
+---
+{% include paths.html %}
+
+
+<div class="main secondary-page">
+    <section id="doc-gen-lead-blade">
+      <div class="doc-gen-lead-container">
+        <div class="doc-gen-lead-wrapper">  
+          <div class="intro-copy-wrapper">
+            <div class="gen-api-tplt">
+             <h1>Adobe Document Generation API Templates</h1>
+             </div>
+          </div>
+  
+        </div>
+      </div>
+    </section>
+    <section class="sample-blade gen-api-tplt-body">
+        <div class="template-content-container">
+
+         <!--    <div class="doc-gen-date-stamp">
+
+                <div class="doc-gen-last-update">            
+                    <div class="ddl-control">
+                        <p>Last Update</p>
+                        <span class="chev-arrow-down"></span>
+                    </div>
+                </div>
+            </div> -->
+
+
+            <div class="template-content-wrapper">
+                <div class="api-tplt-content">
+                    <div class="api-tplt-content-menu">
+                        <p>Filter by</p>
+                        <ul>
+                            <li>
+                                <div>
+                                    <input type="checkbox" id="agreement" name="agreement" value="agreement-contract" onclick="onCheckedSort(this);">
+                                    <label for="vehicle1">Agreements and Contracts</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <input type="checkbox" id="c-publishing" name="c-publishing" value="c-publishing" onclick="onCheckedSort(this);">
+                                    <label for="vehicle1">Content Publishing</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <input type="checkbox" id="collaboration" name="collaboration" value="collaboration" onclick="onCheckedSort(this);">
+                                    <label for="vehicle1">Collaboration</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <input type="checkbox" id="financial" name="financial" value="financial" onclick="onCheckedSort(this);">
+                                    <label for="vehicle1">Financial</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <input type="checkbox" id="archive-retrieval" name="archive-retrieval" value="archive-retrieval" onclick="onCheckedSort(this);">
+                                    <label for="vehicle1">Archiving and Retrieval</label>
+                                </div>
+                            </li>
+                        </ul>               
+                    </div>
+                </div>
+
+                <div class="sample-container">
+
+        
+
+            <div class="doc-gen-date-stamp">
+
+                <div class="doc-gen-last-update">            
+                    <div class="ddl-control">
+                        <p>Last Update</p>
+                        <span class="chev-arrow-down"></span>
+                    </div>
+                </div>
+            </div>
+
+
+                    <div class="sample-wrapper sample-slider-container">
+
+                        <div class="sample-item card-container" data-item-id="agreement">
+                            <div class="sample-icon"><img src="{{ baseurl }}/gh-assets/img/template-icons/agreement.png"></div>
+                            <h5>Agreement</h5>
+                            <div class="cta-wrapper">
+                                <a href="https://www.adobe.com/go/dcdg_sampleagreement" target="_blank" class="button-link">
+                                Download
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="sample-item card-container" data-item-id="financial">
+                            <div class="sample-icon"><img src="{{ baseurl }}/gh-assets/img/template-icons/grant_funding.png"></div>
+                            <h5>Grant application</h5>
+                            <div class="cta-wrapper">
+                                <a href="https://www.adobe.com/go/dcdg_samplegrant" target="_blank" class="button-link">
+                                Download
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="sample-item card-container" data-item-id="financial">
+                            <div class="sample-icon"><img src="{{ baseurl }}/gh-assets/img/template-icons/sales_invoice.png"></div>
+                            <h5>Invoice</h5>
+                            <div class="cta-wrapper">
+                                <a href="https://www.adobe.com/go/dcdg_sampleinvoice" target="_blank" class="button-link">
+                                Download
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="sample-item card-container" data-item-id="financial">
+                            <div class="sample-icon"><img src="{{ baseurl }}/gh-assets/img/template-icons/project_proposal.png"></div>
+                            <h5>Sales proposal</h5>
+                            <div class="cta-wrapper">
+                                <a href="https://www.adobe.com/go/dcdg_sampleproposal" target="_blank" class="button-link">
+                                Download
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="sample-item card-container" data-item-id="c-publishing">
+                            <div class="sample-icon"><img src="{{ baseurl }}/gh-assets/img/template-icons/lms_report.png"></div>
+                            <h5>Certification report</h5>
+                            <div class="cta-wrapper">
+                                <a href="https://www.adobe.com/go/dcdg_samplereport" target="_blank" class="button-link">
+                                Download
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="sample-item card-container" data-item-id="c-publishing">
+                            <div class="sample-icon"><img src="{{ baseurl }}/gh-assets/img/template-icons/offer_letter.png"></div>
+                            <h5>Offer Letter</h5>
+                            <div class="cta-wrapper">
+                                <a href="https://www.adobe.com/go/dcdg_sampleofferletter" target="_blank" class="button-link">
+                                Download
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="sample-item card-container" data-item-id="c-publishing">
+                            <div class="sample-icon"><img src="{{ baseurl }}/gh-assets/img/template-icons/offer_letter.png"></div>
+                            <h5>Receit Template</h5>
+                            <div class="cta-wrapper">
+                                <a href="https://www.adobe.com/go/dcdg_sampleofferletter" target="_blank" class="button-link">
+                                Download
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="sample-item card-container" data-item-id="financial">
+                            <div class="sample-icon"><img src="{{ baseurl }}/gh-assets/img/template-icons/offer_letter.png"></div>
+                            <h5>Sales Order</h5>
+                            <div class="cta-wrapper">
+                                <a href="https://www.adobe.com/go/dcdg_sampleofferletter" target="_blank" class="button-link">
+                                Download
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="sample-item card-container" data-item-id="c-publishing">
+                            <div class="sample-icon"><img src="{{ baseurl }}/gh-assets/img/template-icons/offer_letter.png"></div>
+                            <h5>Offer Letter</h5>
+                            <div class="cta-wrapper">
+                                <a href="https://www.adobe.com/go/dcdg_sampleofferletter" target="_blank" class="button-link">
+                                Download
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="sample-item card-container" data-item-id="invoice">
+                            <div class="sample-icon"><img src="{{ baseurl }}/gh-assets/img/template-icons/offer_letter.png"></div>
+                            <h5>Invoice</h5>
+                            <div class="cta-wrapper">
+                                <a href="https://www.adobe.com/go/dcdg_sampleofferletter" target="_blank" class="button-link">
+                                Download
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section> 
+
+</div>
+
+  {% include use-case-help.html %}

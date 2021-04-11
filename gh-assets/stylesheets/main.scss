@@ -24,6 +24,7 @@ $baseurl: "{{ site.baseurl }}";
 @import "pricing";
 @import "doc-generation";
 @import "api-use-cases";
+@import "gen-api-template";
 
 body {
   font-family: 'Adobe Clean';

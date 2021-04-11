@@ -1,0 +1,198 @@
+
+   
+   
+    .intro-copy-wrapper{
+        .gen-api-tplt{
+            padding-bottom: 2.75rem !important
+        }
+    }
+   .gen-api-tplt-body{
+        width: 100%;        
+        .template-content-container{
+            max-width:1060px;
+            margin:0 auto;
+
+            // .doc-gen-date-stamp{
+            //     position:relative;
+            //     margin:0 !important;
+            //     padding:0 !important;
+        
+            //     .doc-gen-last-update{
+            //         max-width:100%;
+            //         margin:0 auto;
+            //         position:relative;
+            //         padding-top:1.8125rem;
+        
+            //         .ddl-control{
+            //             position:absolute;
+            //             right:30px;
+        
+            //             p{
+            //                 text-align:left !important;
+            //                 padding:0;
+            //                 margin:0; 
+            //                 font-size:0.75rem;
+            //                 display:inline-block;               
+            //             }
+                
+            //             .chev-arrow-down {
+            //                 width: 1rem;
+            //                 height: 1rem;
+            //                 background-image: url(../svg/smock_chevronright_18_n.svg);
+            //                 margin-left: .5rem;
+            //                 text-decoration: none !important;
+            //                 //max-width: 1.5rem;
+            //                 position: absolute;
+            //                 bottom: 0rem;
+            //                 transform: rotate(90deg);
+            //             }
+            //         }
+            //     }
+            // }
+        
+            .template-content-wrapper{
+                
+                padding-top: 1.8125rem;
+
+                @media screen and (min-width: 768px) {
+                }
+
+                @media screen and (min-width: 1024px) {
+                    display:flex;
+                }
+
+                .api-tplt-content{
+                    max-width:220px !important;
+                    width: 100%;
+                    margin-left: 1.5625rem;
+
+                    @media screen and (min-width: 767px) {
+                        margin-left:3rem;
+                    }    
+                    @media screen and (min-width: 1024px) {
+                        margin-left:0;
+                    }                   
+                    
+                    .api-tplt-content-menu{
+
+                        @media screen and (min-width: 1024px) {
+                            margin-top:1.875rem;
+                        } 
+                        
+                        p{
+                            text-align:left !important;
+                            font-family:'Adobe Clean Bold';
+                            font-size:1rem;
+                            margin:0;
+
+                            @media screen and (min-width: 767px) {
+                                text-align:left !important;
+                            }
+                        }
+
+                        ul{
+                            margin: 0; 
+                            padding: 0;
+                            padding-top:1.375rem;
+                            list-style-type: none;
+
+                            li{
+                                label{ margin-left:15px;}
+                                font-size:0.875rem;
+                            }
+                        }
+                    }
+                }
+
+                .sample-container{
+                   // max-width:850px !important;
+                    width:100%;
+
+                    @media screen and (min-width: 768px) {
+                        max-width:768px !important;
+                    }
+
+                    @media screen and (min-width: 1024px) {
+                        max-width:850px !important;
+                    }
+
+                    .doc-gen-date-stamp{
+                        position:relative;
+                        margin:0 !important;
+                        padding:0 !important;
+                
+                        .doc-gen-last-update{
+                            max-width:100%;
+                            margin:0 auto;
+                            position:relative;
+                            padding-top:1.8125rem;
+                
+                            .ddl-control{
+                                position:absolute;
+                                right:30px;
+                                top:1px;
+                                p{
+                                    text-align:left !important;
+                                    padding:0;
+                                    margin:0; 
+                                    font-size:0.75rem;
+                                    display:inline-block;               
+                                }
+                        
+                                .chev-arrow-down {
+                                    width: 1rem;
+                                    height: 1rem;
+                                    background-image: url(../svg/smock_chevronright_18_n.svg);
+                                    margin-left: .5rem;
+                                    text-decoration: none !important;
+                                    //max-width: 1.5rem;
+                                    position: absolute;
+                                    bottom: 0rem;
+                                    transform: rotate(90deg);
+                                }
+                            }
+                        }
+                    }
+                
+                    
+                    .sample-wrapper {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+
+                        @media screen and (min-width: 768px) {
+                            margin-top:1.8125rem;
+                            grid-template-columns: 1fr 1fr 1fr;
+                        }                    
+
+                        @media screen and (min-width: 1024px) {
+                            margin-top:2.4375rem;
+                            grid-template-columns: 1fr 1fr 1fr 1fr;
+                        }
+
+                        .sample-item{
+                            .sample-icon{
+                                max-width:140px;
+                                max-height:194px;
+                                height: 100% !important;
+                                margin: 0 auto;
+
+                                img{
+                                    position: relative;
+                                    top:unset;
+                                    left:unset;
+                                    transform:unset;
+                                    border-radius: 6px;
+                                    border: 1px solid #B3B3B3;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    
+
+

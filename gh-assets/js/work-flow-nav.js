@@ -266,3 +266,40 @@ function UC_menuOpen(hasEvent){
     $(itemParent).toggleClass('open');
   }
 }
+
+
+var tempSorts = [];
+function onCheckedSort(checkBoxItem) {
+ 
+  var isBoxChecked = checkBoxItem.checked ? true : false; 
+  var $wrap = $('.sample-wrapper');
+  var sortOnID = $(checkBoxItem).attr('id');  //get item ID
+
+  if(isBoxChecked){
+    sortOnID = $(checkBoxItem).attr('id');
+
+    //we hide all items at first
+    if(tempSorts.length <=0){
+      $wrap.find('.sample-item').css({'display': 'none'});
+    }
+
+    //we then look for the ones having our id reference
+    $wrap.find("[data-item-id='" + sortOnID + "']").css({'display': 'block'});
+
+    tempSorts.push(sortOnID);
+  }else{
+    if(tempSorts.includes(sortOnID)){
+      for( var i = 0; i < tempSorts.length; i++){     
+        if ( tempSorts[i] === sortOnID) {     
+          tempSorts.splice(i, 1); 
+        }
+      } 
+      $wrap.find("[data-item-id='" + sortOnID + "']").css({'display': 'none'});   
+    }
+
+    //If nothing is checked, we need to display all of them
+    if(tempSorts.length <=0){
+      $wrap.find('.sample-item').css({'display': 'block'});
+    }
+  }
+}
