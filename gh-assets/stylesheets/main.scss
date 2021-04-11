@@ -23,6 +23,7 @@ $baseurl: "{{ site.baseurl }}";
 @import "resources";
 @import "pricing";
 @import "doc-generation";
+@import "doc-extract";
 @import "api-use-cases";
 @import "gen-api-template";
 
