@@ -238,8 +238,19 @@ section.works-blade {
       }
     }
 
-    &:last-of-type {
+    &.works-chart-mobile {
+      display: block;
       max-width: 100%;
+      @media screen and (min-width: 768px) {
+        display: none;
+      }
+    }
+    &.works-chart-desktop {
+      display: none;
+      @media screen and (min-width: 768px) {
+        display: block;
+        max-width: 100%;
+      }
     }
   }
 
