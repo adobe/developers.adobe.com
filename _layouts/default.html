@@ -155,6 +155,7 @@ site.url: {{site.url }}
           $('.s1-img1').removeClass('fadeInSlide');
           $('.s2-img1').removeClass('fadeInSlide');
           $('.s3-img1').removeClass('fadeInSlide');
+          $('.s4-img1').removeClass('fadeInSlide');
 
           $('.s1-img2').removeClass('slide1-move2');
           $('.s1-img3').removeClass('slide1-move3');
@@ -163,6 +164,9 @@ site.url: {{site.url }}
           $('.s2-img3').removeClass('slide2-move3');
 
           $('.s3-img2').removeClass('slide3-move2');
+
+          $('.s4-img2').removeClass('slide4-move2');
+          $('.s4-img3').removeClass('slide4-move3');
 
           switch (slick.currentSlide){
             case 0 :
@@ -180,6 +184,11 @@ site.url: {{site.url }}
             case 2 :
               $('.s3-img1').addClass('fadeInSlide');
               $('.s3-img2').addClass('slide3-move2');
+            break;
+            case 3 :
+              $('.s4-img1').addClass('fadeInSlide');
+              $('.s4-img2').addClass('slide4-move2');
+              $('.s4-img3').addClass('slide4-move3');
             break;
           }
 
