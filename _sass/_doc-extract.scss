@@ -37,34 +37,42 @@
       padding: 0;
       text-align: center;
     }
+    &:first-of-type {
+      @media screen and (min-width: 1024px) {
+        padding: 0;
+        text-align: center;
+        max-width: 35rem;
+        margin: 1rem auto 2.5rem auto;
+      }
+    }
   }
 }
 
 .doc-ext-invoice {
   margin: 0 !important;
   padding: 0 !important;
-  //background: url("../img/doc-ext-hero-mobile@2x.png");
+  background: url("../img/extract-hero-mobile@2x.png");
   background-repeat: no-repeat;
-  background-position: bottom left -2rem;
+  background-position: bottom left -14rem;
   background-size: cover;
   max-width: 100%;
   height: 21.125rem;
   color: $white;
   @media screen and (min-width: 767px) {
-    //background: url("../img/doc-ext-hero-tablet@2x.png");
+    background: url("../img/extract-hero-tablet@2x.png");
     background-repeat: no-repeat;
     background-position: bottom left;
     background-size: cover;
-    max-width: 48rem;
+    max-width: 49rem;
     height: 21.125rem;
   }
   @media screen and (min-width: 1024px) {
     margin: 0 auto !important;
-    //background: url("../img/doc-ext-hero-desktop@2x.png");
+    //background: url("../img/extract-hero-desktop@2x.png");
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size: cover;
-    max-width: 52.625rem;
+    max-width: 57rem;
     height: 24rem;
   }
 }
