@@ -14,7 +14,7 @@
     font-size: 1.6875rem;
     line-height: 2.1875rem;
     font-weight: 900;
-    padding: 2.5rem 6rem 0 1.5rem !important;
+    padding: 2.5rem 5rem 0 1.5rem !important;
     text-align: left;
     @media screen and (min-width: 767px) {
       padding: 2.5rem 6rem 0 2.625rem !important;
@@ -61,7 +61,7 @@
   @media screen and (min-width: 767px) {
     background: url("../img/extract-hero-tablet@2x.png");
     background-repeat: no-repeat;
-    background-position: bottom left;
+    background-position: bottom right;
     background-size: cover;
     max-width: 49rem;
     height: 21.125rem;
@@ -358,6 +358,7 @@ section.key-ext-features-blade {
 
         .key-ext-item {
           color: $white;
+          cursor: pointer;
           border-radius: 10px;
           margin: 0 1.25rem 2.5rem;
           padding: 2rem;
@@ -495,6 +496,9 @@ section.get-started {
   @media screen and (min-width: 1024px) {
     max-width: none;
   }
+  @media screen and (min-width: 767px) and (max-width: 1023px) {
+    padding: 5rem 10.5rem;
+  }
 
   h3 {
     margin: 0 auto;
@@ -588,7 +592,7 @@ section.get-started {
     }
 
     &.title {
-      margin: 0 0 2rem;
+      margin: 0 0 2.5rem;
       text-align: center;
     }
   }
