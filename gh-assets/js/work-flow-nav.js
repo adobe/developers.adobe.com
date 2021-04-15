@@ -31,13 +31,13 @@ $(document).ready(function(){
 
   });
 
-  // Use case tiles on HOME and DOCGEN
-  if ($(".case-item").is(":visible")) {
-    $('.case-item').on('click', function(e){
+  // Use case tiles on HOME, DOCGEN, DOC EXTRACT
+  if ($(".case-item, .key-ext-item").is(":visible")) {
+    $('.case-item, .key-ext-item').on('click', function(e){
       window.location = $(this).data('href');
     });
   }
-
+  
   // The CTA buttons on the home page hero carousel
   if ($("#slider-blurb").is(":visible")) {
     $('#slider-blurb .button-link').on('click', function(e){
