@@ -249,15 +249,25 @@ section.works-blade {
     &.works-chart-mobile {
       display: block;
       max-width: 100%;
+      text-align: center;
       @media screen and (min-width: 768px) {
         display: none;
       }
     }
-    &.works-chart-desktop {
+    &.works-chart-tablet {
       display: none;
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
         display: block;
         max-width: 100%;
+        text-align: center;
+      }
+    }
+    &.works-chart-desktop {
+      display: none;
+      @media screen and (min-width: 1024px) {
+        display: block;
+        max-width: 100%;
+        text-align: center;
       }
     }
   }
@@ -346,11 +356,12 @@ section.key-ext-features-blade {
         grid-template-rows: 1fr 1fr 1fr;
         max-width: 330px;
         @media screen and (min-width: 767px) {
-          grid-template-columns: 1fr 1fr;
-          grid-template-rows: 1fr 1fr;
-          max-width: 660px;
+          display: block;
+          max-width: 665px;
+          text-align: center;
         }
         @media screen and (min-width: 1024px) {
+          display: grid;
           grid-template-columns: 1fr 1fr 1fr;
           grid-template-rows: 1fr;
           max-width: 990px;
@@ -428,6 +439,15 @@ section.key-ext-features-blade {
               max-width: 13.8425rem;
               margin: 0 auto;
             }
+          }
+
+          display: grid;
+          @media screen and (min-width: 767px) {
+            display: inline-grid;
+            height: 330px;
+          }
+          @media screen and (min-width: 1024px) {
+            display: grid;
           }
         }
       }
