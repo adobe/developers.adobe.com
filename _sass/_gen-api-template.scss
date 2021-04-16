@@ -7,49 +7,12 @@
         }
     }
    .gen-api-tplt-body{
-        width: 100%;        
+        width: 100%; 
+        background-color:#ffffff !important;       
         .template-content-container{
             max-width:1060px;
             margin:0 auto;
 
-            // .doc-gen-date-stamp{
-            //     position:relative;
-            //     margin:0 !important;
-            //     padding:0 !important;
-        
-            //     .doc-gen-last-update{
-            //         max-width:100%;
-            //         margin:0 auto;
-            //         position:relative;
-            //         padding-top:1.8125rem;
-        
-            //         .ddl-control{
-            //             position:absolute;
-            //             right:30px;
-        
-            //             p{
-            //                 text-align:left !important;
-            //                 padding:0;
-            //                 margin:0; 
-            //                 font-size:0.75rem;
-            //                 display:inline-block;               
-            //             }
-                
-            //             .chev-arrow-down {
-            //                 width: 1rem;
-            //                 height: 1rem;
-            //                 background-image: url(../svg/smock_chevronright_18_n.svg);
-            //                 margin-left: .5rem;
-            //                 text-decoration: none !important;
-            //                 //max-width: 1.5rem;
-            //                 position: absolute;
-            //                 bottom: 0rem;
-            //                 transform: rotate(90deg);
-            //             }
-            //         }
-            //     }
-            // }
-        
             .template-content-wrapper{
                 
                 padding-top: 1.8125rem;
@@ -70,7 +33,7 @@
                         margin-left:3rem;
                     }    
                     @media screen and (min-width: 1024px) {
-                        margin-left:0;
+                        //margin-left:0;
                     }                   
                     
                     .api-tplt-content-menu{
@@ -99,21 +62,27 @@
                             li{
                                 label{ margin-left:15px;}
                                 font-size:0.875rem;
+                                @media screen and (min-width: 767px) {
+                                   margin-bottom: 0.75rem;
+                                }
+                                
                             }
                         }
                     }
                 }
 
                 .sample-container{
-                   // max-width:850px !important;
                     width:100%;
+                    padding:0;
 
                     @media screen and (min-width: 768px) {
                         max-width:768px !important;
                     }
 
                     @media screen and (min-width: 1024px) {
-                        max-width:850px !important;
+                        max-width:840px !important;
+                        padding: 0 0 3.75rem 0;
+                        outline: none;
                     }
 
                     .doc-gen-date-stamp{
@@ -145,15 +114,13 @@
                                     background-image: url(../svg/smock_chevronright_18_n.svg);
                                     margin-left: .5rem;
                                     text-decoration: none !important;
-                                    //max-width: 1.5rem;
                                     position: absolute;
                                     bottom: 0rem;
                                     transform: rotate(90deg);
                                 }
                             }
                         }
-                    }
-                
+                    }                
                     
                     .sample-wrapper {
                         display: grid;
@@ -171,8 +138,8 @@
 
                         .sample-item{
                             .sample-icon{
-                                max-width:140px;
-                                max-height:194px;
+                                max-width:8.75rem;
+                                max-height:12.125rem;
                                 height: 100% !important;
                                 margin: 0 auto;
 
@@ -181,7 +148,7 @@
                                     top:unset;
                                     left:unset;
                                     transform:unset;
-                                    border-radius: 6px;
+                                    border-radius: 0.375rem;
                                     border: 1px solid #B3B3B3;
                                 }
                             }
@@ -190,7 +157,6 @@
                 }
             }
         }
-
     }
 
     
