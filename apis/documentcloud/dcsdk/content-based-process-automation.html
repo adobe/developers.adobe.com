@@ -1,0 +1,64 @@
+---
+layout: default
+title: API Use Cases
+meta:
+active: api-use-cases
+---
+{% include paths.html %}
+
+<div class="main secondary-page">
+
+  <section id="api-use-cases-blade">
+    <div class="api-use-cases-container">
+      <div class="api-use-cases-wrapper">
+
+        <div class="intro-copy-wrapper">
+          <h1>Document Services API Use Cases</h1>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="api-use-cases-body">
+      <div class="api-use-cases-content-container">
+        <div class="api-use-cases-content-wrapper">
+          <div class="api-use-cases-content-menu">
+            {% include use-case-nav.html %}                
+          </div>
+          <div class="api-cases-content-wrapper">
+            <div class="api-cases-content">
+                <h2>Content Based Process Automation
+                </h2>
+                <h3>Overview</h3>
+                <p>Analysis of the content contained in PDF documents is often required to enable business-critical work processes and decision-making. However, manual analysis of documents by humans is expensive, time consuming, and error prone. Accurate extraction of content and context from PDF documents so it can be analyzed by intelligent bots or Robotic Process Automation technology allows processes to be automated, creating new efficiencies, enabling deeper insights, and empowering better decision-making. For example, analysis of long form documents such as sales contracts can be automated to identify which contain non-standard clauses or to ensure the contracts are adhering to certain regulatory or compliance standards. 
+                </p>     
+                <h3>APIs Used</h3>
+                <ul>
+                  <li>Adobe PDF Extract API
+                  </li>
+                  <li>Adobe PDF Embed API
+                  </li>
+                </ul>
+                <h3>Scenario</h3>
+                <p>A large software company wants to extract content from its marketing literature to enable an automated chat bot on its web site to help prospective customers learn about its offerings. In this scenario, it’s important to capture the richness of the marketing material so the chatbot experience can deliver maximum impact.
+                </p>
+                <h3>Building this solution</h3>
+                <ol>
+                  <li>Pass a PDF to Adobe PDF Extract API to retrieve text content
+                  </li>
+                  <li>Extract headings and paragraph text from the JSON parsed content 
+                  </li>
+                  <li>Take user input as a search to return response candidates 
+                  </li>
+                  <li>Rank results to select top response(s)</a>
+                  </li>
+                  <li>Display PDF using PDF Embed API with integrated chatbot using callback functions
+                  </li>
+                </ol>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  {% include use-case-help.html %}
