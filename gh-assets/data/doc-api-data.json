@@ -1,0 +1,78 @@
+{
+   "doc": [
+	
+      {
+         "id":"01",
+         "type":"agreement",
+         "title": "Agreement",
+         "image": "template-icons/agreement.png",
+         "link": "https://www.adobe.com/go/dcdg_sampleagreement",
+         "date": "2021/04/01"
+      },
+      {
+         "id":"02",
+         "type":"financial",
+         "title": "Grant application",
+         "image": "template-icons/grant_funding.png",
+         "link": "https://www.adobe.com/go/dcdg_samplegrant",
+         "date": "2021/04/18"      
+      },
+      {
+         "id":"03",
+         "type":"financial",
+         "title": "Invoice",
+         "image": "template-icons/sales_invoice.png",
+         "link": "https://www.adobe.com/go/dcdg_sampleinvoice",
+         "date": "2021/04/19"      
+      },
+      {
+         "id":"04",
+         "type":"financial",
+         "title": "Sales proposal",
+         "image": "template-icons/project_proposal.png",
+         "link": "https://www.adobe.com/go/dcdg_sampleproposal",
+         "date": "2021/04/19"      
+      },
+      {
+         "id":"05",
+         "type":"c-publishing",
+         "title": "Certification report",
+         "image": "template-icons/lms_report.png",
+         "link": "https://www.adobe.com/go/dcdg_samplereport",
+         "date": "2021/04/09"      
+      },
+      {
+         "id":"06",
+         "type":"c-publishing",
+         "title": "Offer Letter",
+         "image": "template-icons/offer_letter.png",
+         "link": "https://www.adobe.com/go/dcdg_sampleofferletter",
+         "date": "2021/04/09"      
+      },
+      {
+         "id":"07",
+         "type":"c-publishing",
+         "title": "Receipt Template",
+         "image": "template-icons/service_receipt.png",
+         "link": "https://www.adobe.com/go/dcdg_sampleofferletter",
+         "date": "2021/04/09"      
+      },
+      {
+         "id":"08",
+         "type":"financial",
+         "title": "Sales Order",
+         "image": "template-icons/lms_certificate.png",
+         "link": "https://www.adobe.com/go/dcdg_sampleofferletter",
+         "date": "2021/04/09"      
+      },
+      {
+         "id":"09",
+         "type":"c-publishing",
+         "title": "Offer Letter",
+         "image": "template-icons/sales_invoice.png",
+         "link": "go/dcdg_sampleofferletter",
+         "date": "2021/04/09"      
+      }	
+
+   ]
+}

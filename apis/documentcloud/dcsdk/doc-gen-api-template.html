@@ -83,7 +83,7 @@ active: doc-den-api-template
                     <div class="ddl-control">
                         <!-- <p>Last updated</p> -->
                         <!-- <span class="chev-arrow-down"></span> -->
-                        <select name="lstUpdate" id="lstUpdate">
+                        <select name="lstUpdate" id="lstUpdate" onchange="onDocSort(this.selectedIndex)">
                             <option selected value="Last Update">Last updated</option>
                             <option selected value="Alphabetical">Alphabetical</option>
                         </select>
@@ -94,7 +94,7 @@ active: doc-den-api-template
 
                     <div class="sample-wrapper">
 
-                        <div class="sample-item card-container" data-item-id="agreement">
+                        <!-- <div class="sample-item card-container" data-item-id="agreement">
                             <div class="sample-icon"><img src="{{ baseurl }}/gh-assets/img/template-icons/agreement.png"></div>
                             <h5>Agreement</h5>
                             <div class="cta-wrapper">
@@ -182,7 +182,7 @@ active: doc-den-api-template
                                 Download
                                 </a>
                             </div>
-                        </div>
+                        </div> -->
 
 
 

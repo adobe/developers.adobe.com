@@ -303,3 +303,82 @@ function onCheckedSort(checkBoxItem) {
     }
   }
 }
+
+
+/***** Doc-  Gen - API - Template Functions **********/
+
+var items = [];
+function drawDocApiItems(){
+
+  $.getJSON( "/gh-assets/data/doc-api-data.json", function( data ) {
+    $.each( data, function( key, val ) {
+
+        $.each( val, function( key, item ) {
+         items.push(item);
+         drawTemplate(item);
+        });
+
+    });
+
+  })
+  
+}
+
+function onDocSort(index){
+  console.log(index);
+  if(index <= 0){
+    onDateSort();
+  }else{
+    onAlphaSort();
+  }
+}
+
+function onDateSort(){
+  var arrClone = [...items];
+  arrClone.sort(function (a, b) {
+    return new Date(a.date) - new Date(b.date);
+  });
+
+  $('.sample-wrapper').html("");
+
+  $.each( arrClone, function( key, item ) {   
+    drawTemplate(item);
+  }); 
+}
+
+function onAlphaSort(){
+  var arrClone = [...items];
+  arrClone.sort(function (a, b) {
+    
+      if(a['title'] > b['title'])  
+         return 1;  
+      else if(a['title'] < b['title'])  
+         return -1;  
+  
+      return 0;  
+  });
+
+  $('.sample-wrapper').html("");
+
+  $.each( arrClone, function( key, item ) {   
+    drawTemplate(item);
+  });
+}
+
+function drawTemplate(templateData){
+  var template = `
+    <div class="sample-item card-container" data-item-id="${templateData.type}" data-date="${templateData.date}">
+      <div class="sample-icon"><img src="../../../gh-assets/img/${templateData.image}"></div>
+      <h5>${templateData.title}</h5>
+      <div class="cta-wrapper">
+          <a href="${templateData.link}" target="_blank" class="button-link">
+          Download
+          </a>
+      </div>
+    </div>
+  `;
+
+  $('.sample-wrapper').append(template);
+}
+
+drawDocApiItems();
