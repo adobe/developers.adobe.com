@@ -322,7 +322,7 @@ function onCheckedSort(checkBoxItem) {
 //var items = [];
 function drawDocApiItems(){
 
-  $.getJSON( "/gh-assets/data/doc-api-data.json", function( data ) {
+  $.getJSON( "../../../gh-assets/data/doc-api-data.json", function( data ) {
     $.each( data, function( key, val ) {
 
         $.each( val, function( key, item ) {
