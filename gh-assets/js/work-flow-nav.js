@@ -267,13 +267,14 @@ function UC_menuOpen(hasEvent){
   }
 }
 
-
+var items = [];
 var tempSorts = [];
+var currSort = "";//No sort yet
 function onCheckedSort(checkBoxItem) {
  
   var isBoxChecked = checkBoxItem.checked ? true : false; 
   var $wrap = $('.sample-wrapper');
-  var sortOnID = $(checkBoxItem).attr('id');  //get item ID
+  var sortOnID = $(checkBoxItem).attr('id'); 
 
   if(isBoxChecked){
     sortOnID = $(checkBoxItem).attr('id');
@@ -299,7 +300,18 @@ function onCheckedSort(checkBoxItem) {
 
     //If nothing is checked, we need to display all of them
     if(tempSorts.length <=0){
-      $wrap.find('.sample-item').css({'display': 'block'});
+      //$wrap.find('.sample-item').css({'display': 'block'});
+      switch(currSort){
+        case "date":
+          onDocSort(0);
+          break;
+        case "alpha":
+          onDocSort(1);
+          break;
+        default:
+          $wrap.find('.sample-item').css({'display': 'block'});
+      }        
+      
     }
   }
 }
@@ -307,25 +319,23 @@ function onCheckedSort(checkBoxItem) {
 
 /***** Doc-  Gen - API - Template Functions **********/
 
-var items = [];
+//var items = [];
 function drawDocApiItems(){
 
   $.getJSON( "/gh-assets/data/doc-api-data.json", function( data ) {
     $.each( data, function( key, val ) {
 
         $.each( val, function( key, item ) {
-         items.push(item);
-         drawTemplate(item);
+          items.push(item);
+          drawTemplate(item);
         });
-
     });
 
-  })
-  
+  });  
 }
 
 function onDocSort(index){
-  console.log(index);
+ // console.log(index);
   if(index <= 0){
     onDateSort();
   }else{
@@ -335,20 +345,60 @@ function onDocSort(index){
 
 function onDateSort(){
   var arrClone = [...items];
-  arrClone.sort(function (a, b) {
+  var filterToSort = [];
+  var arrToSort = [];
+
+  for( var i = 0; i < arrClone.length; i++){     
+    if(tempSorts.length >0){ //if we have filtered items
+      for( var n = 0; n < tempSorts.length; n++){
+        if(arrClone[i].type == tempSorts[n] ){
+          filterToSort.push(arrClone[i]);
+        }
+      }
+    }
+  } 
+
+  //which bucket we need to sort on
+  arrToSort = arrClone;
+  if(filterToSort.length > 0){
+    arrToSort = filterToSort;
+  }
+
+  arrToSort.sort(function (a, b) {
     return new Date(a.date) - new Date(b.date);
   });
 
   $('.sample-wrapper').html("");
 
-  $.each( arrClone, function( key, item ) {   
+  $.each( arrToSort, function( key, item ) {   
     drawTemplate(item);
-  }); 
+  });
+  
+  currSort = "date";
 }
 
 function onAlphaSort(){
   var arrClone = [...items];
-  arrClone.sort(function (a, b) {
+  var filterToSort = [];
+  var arrToSort = [];
+
+  for( var i = 0; i < arrClone.length; i++){     
+    if(tempSorts.length >0){ //if we have filtered items
+      for( var n = 0; n < tempSorts.length; n++){
+        if(arrClone[i].type == tempSorts[n] ){
+          filterToSort.push(arrClone[i]);
+        }
+      }
+    }
+  } 
+
+  //which bucket we need to sort on
+  arrToSort = arrClone;
+  if(filterToSort.length > 0){
+    arrToSort = filterToSort;
+  }
+
+  arrToSort.sort(function (a, b) {
     
       if(a['title'] > b['title'])  
          return 1;  
@@ -360,9 +410,11 @@ function onAlphaSort(){
 
   $('.sample-wrapper').html("");
 
-  $.each( arrClone, function( key, item ) {   
+  $.each( arrToSort, function( key, item ) {   
     drawTemplate(item);
   });
+
+  currSort = "alpha";
 }
 
 function drawTemplate(templateData){
