@@ -298,9 +298,9 @@ function onCheckedSort(checkBoxItem) {
       $wrap.find("[data-item-id='" + sortOnID + "']").css({'display': 'none'});   
     }
 
+
     //If nothing is checked, we need to display all of them
     if(tempSorts.length <=0){
-      //$wrap.find('.sample-item').css({'display': 'block'});
       switch(currSort){
         case "date":
           onDocSort(0);
@@ -310,16 +310,13 @@ function onCheckedSort(checkBoxItem) {
           break;
         default:
           $wrap.find('.sample-item').css({'display': 'block'});
-      }        
-      
+      }     
     }
   }
 }
 
 
 /***** Doc-  Gen - API - Template Functions **********/
-
-//var items = [];
 function drawDocApiItems(){
 
   $.getJSON( "../../../gh-assets/data/doc-api-data.json", function( data ) {
@@ -329,13 +326,17 @@ function drawDocApiItems(){
           items.push(item);
           drawTemplate(item);
         });
+
+        //default sort to last update
+        onDocSort(0);
     });
 
   });  
 }
 
 function onDocSort(index){
- // console.log(index);
+
+  console.log("On DOc sort")
   if(index <= 0){
     onDateSort();
   }else{
