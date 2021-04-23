@@ -178,6 +178,92 @@ redirect_from:
         </div>
     </section>
 
+    <!-- Loads the content for the hero, Featured and Tutorials section -->
+    <script>
+        (function($){
+
+            let renderData = function( configObj ) {
+                fetch(configObj.source)
+                .then(response => response.json())
+                .then(function(result){
+                    console.log(result);
+                    let data = result.data;
+                    let output = '';
+                    
+                    for (var i=0; i<data.length; i++){
+                        let datum = data[i];
+                        let img = 'https://cdn.experienceleague.adobe.com/' + datum.Thumbnail.replace('/www/img/', '');
+                        
+                        configObj.data.title = datum.Title;
+                        configObj.data.description = datum.Description;
+                        configObj.data.url = datum.URL;
+                        configObj.data.img = img;
+
+                        output += configObj.markup();
+                    }
+                    //console.log(`result = ${output}`);
+                    document.querySelector(configObj.target).innerHTML = output;
+                });
+            }
+            
+            let dataStruct = {url: '', title: '', description: '', img: ''};
+
+            let heroData = {
+                source: 'https://experienceleague.adobe.com/api/articles?Solution=Document%20Services&Tags=Hero&page_size=1',
+                data: dataStruct,
+                target: '.release-wrapper',
+                markup() { return `
+                    <div class="release-wrapper"> 
+                        <div class="release-wrapper-img">
+                            <a href="${this.data.url}" target="_blank"><img src="${this.data.img}" alt="Illustration"></a>
+                        </div>
+                        <div class="release-copy-wrapper">
+                            <h3>${this.data.title}</h3>
+                            <p>${this.data.description}</p>
+                            <div class="release-cta">
+                                <a href="${this.data.url}" target="_blank" class="button-link">Read more</a>
+                            </div>
+                        </div>
+                    </div>`
+                }
+            };
+            renderData( heroData );
+
+            let featuredData = {
+                source: 'https://experienceleague.adobe.com/api/articles?Solution=Document%20Services&Tags=Featured&page_size=3',
+                data: dataStruct,
+                target: '.featured-wrapper',
+                markup() { return `
+                    <a href="${this.data.url}" target="_blank">
+                        <div class="featured-thumb feat1" style="background: url(${this.data.img})"></div>
+                        <div class="featured-copy-wrapper">
+                            <div class="featured-title">Tutorial</div>
+                            <div class="featured-text">${this.data.title}</div>
+                        </div>
+                    </a>`
+                }
+            };
+            renderData( featuredData );
+
+            let tutorialData = {
+                source: 'https://experienceleague.adobe.com/api/articles?Solution=Document%20Services&Tags=Tutorial&page_size=4',
+                data: dataStruct,
+                target: '.tutorial-wrapper',
+                markup() { return `
+                    <div class="tutorial">
+                    <a href="${this.data.url}" target="_blank">
+                        <div class="tut-thumb1" style="background: url(${this.data.img})"></div>
+                        <p>${this.data.title}</p>  
+                    </a> 
+                    </div>`
+                }
+            };
+            renderData( tutorialData );
+
+        })()
+
+    </script>
+
     <!-- blog -->
     <section class="sdk-rsrc-blog" id="blog">
         <div class="blog-container">
@@ -192,6 +278,7 @@ redirect_from:
                 </a>
             </div>
 
+<<<<<<< HEAD
 
             <div class="blog-wrapper">
                 <!--
@@ -217,6 +304,10 @@ redirect_from:
                     <p class="blog-text">Back in March, we announced the release of our PDF Services SDK, a set of tools that allow you to create PDFs, export them into different formats, OCR documents, and more.</p>
                 </div> -->
             </div>
+=======
+            <!-- Populated via JavaScript below -->
+            <div class="blog-wrapper"></div>
+>>>>>>> #985051 Automate ingest of hero, featured, tutorials sections
         </div>
       
         <script src="{{ baseurl }}/gh-assets/js/rss.global.min.js"></script>
