@@ -29,43 +29,34 @@ active: data-analysis
           <div class="api-cases-content-wrapper">
             <div class="api-cases-content">
                 <h2>Data Analysis</h2>
-                <p>Access to data is critical to success, but unlocking historical information is difficult and time consuming. Important, older data is often inaccessible because it is still on paper, or, if it has been scanned, it is not easy to find. With digital archives virtually overflowing with thousands of documents, including PDFs, organizations want to accelerate the process of making this information readily available.
-                </p>
-                <p>Using Adobe Document Services, companies can:
-                </p>
+                <p>Many PDF documents contain reports, such as government reports, financial securities reports, or SEC filings. These reports are often made up of an array of pertinent, actionable information presented in many forms – including text blocks, tables, figures, and charts. Packaged in their native PDF form, individual reports are optimized for human consumption. However, organizations want to accelerate the process of making this information readily available. The Adobe PDF Tools API can be used to export PDF documents into other formats, such as Microsoft Excel to facilitate analysis.</p>
+                <p>Additionally, there are cases where hundreds or thousands of reports need to be analyzed in aggregate making it impractical for humans to do manually. The Adobe PDF Extract API enables the content published in reports, as well as other rich document types, to be extracted in context and efficiently analyzed by machine learning algorithms to expose new, deeper insights.</p>
+                <h3>APIs Used</h3>
                 <ul>
-                  <li>Export PDF documents into other formats, such as Microsoft Excel
-                  </li>
-                  <li>Perform analysis on the data in these documents 
-                  </li>
-                  <li> Use the processed data to create new reports or whitepapers
-                  </li>
+                  <li>Adobe PDF Tools API</li>
+                  <li>Adobe PDF Embed API</li>
+                  <li>Adobe PDF Extract API</li>
                 </ul>
-                <h3>Relevant APIs</h3>
-                <ul>
-                  <li>Adobe PDF Services API
-                  </li>
-                  <li>Adobe PDF Embed API
-                  </li>
-                </ul>
-                <h3>Scenario</h3>
-                <p>A company has several years of archived financial reports that have been saved in different formats.  Some of the files are also paper documents, so data is difficult to use without significant manual intervention. Data analysts want to be able to select any reports from a repository, no matter its original format, and analyze and perform calculations on them. After completing their analysis, they want to create new reports to share with executives in PDF format.</p>
-                <h3>Building this Solution
-                </h3>
+                <h3>Scenario 1</h3>
+                <p>A company has several years of archived financial reports that have been saved in different formats. Some of the files are also paper documents, so data is difficult to use without significant manual intervention. Data analysts want to be able to select reports from a repository, no matter its original format, and analyze and perform calculations on them. After completing their analysis, they want to create new reports to share with executives in PDF format.</p>
+                <h3>Building this Solution</h3>
                 <ol>
-                  <li>Scan paper documents to PDF format to create a digital repository
-                  </li>
-                  <li>Create an interface that presents select files for a data analyst to choose from
-                  </li>
-                  <li>Export selected PDF documents to XLS using Adobe PDF Services API export operation
-                  </li>
-                  <li>Perform calculations on multiple XLS files for new insights and store in a database
-                  </li>
-                  <li>Using Adobe PDF Services API, recreate charts and data in PDF format as a report or whitepaper
-                  </li>
+                  <li>Scan paper documents to PDF format to create a digital repository</li>
+                  <li>Create an interface that presents select files for a data analyst to choose from</li>
+                  <li>Export selected PDF documents to XLS using Adobe PDF Tools API export operation</li>
+                  <li>Perform calculations on multiple XLS files for new insights and store in a database</li>
+                  <li>Using Adobe PDF Tools API, recreate charts and data in PDF format as a report or whitepaper</li>
                   <li>Display new documents within the application with Adobe PDF Embed API
                   </li>
                 </ol>
+                <h3>Scenario 2</h3>
+                <p>A company wants to extract information from large numbers of financial reports and filings in order to create a database that can be used by venture capitalists, private equity firms, and M&A teams to more effectively identify and assess investment opportunities in targeted markets and industries.</p>
+                <h3>Building this Solution</h3>
+                <ol>
+                  <li>Pass a PDF to the Adobe PDF Extract API to retrieve tabular information</li>
+                  <li>Loop over the tabular data and insert them into a database table</li>
+                </ol>
+
               </div>
           </div>
       </div>
