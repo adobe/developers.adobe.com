@@ -172,7 +172,11 @@ redirect_from:
                         output += configObj.markup();
                     }
                     //console.log(`result = ${output}`);
-                    document.querySelector(configObj.target).innerHTML = output;
+                    jQuery(configObj.target).fadeOut(300, function(){
+                        document.querySelector(configObj.target).innerHTML = output;
+                        jQuery(this).fadeIn(300);
+                    })
+                    
                 });
             }
             
