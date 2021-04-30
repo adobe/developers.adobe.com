@@ -268,32 +268,15 @@ section.sdk-rsrc-featured {
           width: 25%;
           height: 100%;
           margin: 0;
+          background: url("../img/placeholder-tutorials.jpg");
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: cover;
           @media screen and (min-width: 1440px) {
             width: 8.125rem;
           }
           @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
             width: 16.125rem;
-          }
-
-          &.feat1 {
-            background: url("https://blog.adobe.com/hlx_9ff6f7baa1e6c965bd818670fc89a60e3bf17b64.jpeg?auto=webp&format=pjpg&optimize=medium&width=1000");
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-          }
-
-          &.feat2 {
-            background: url("https://miro.medium.com/max/2160/1*CtcXWnIZAzsMcvWXqqDDZg.jpeg");
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-          }
-
-          &.feat3 {
-            background: url("https://miro.medium.com/max/2160/1*JylTWjeElaupecFd3Ry2Ag.jpeg");
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
           }
         }
 
@@ -412,61 +395,13 @@ section.sdk-rsrc-tutorial {
             }
             height: 160px;
 
-            &.tut-thumb1 {
-              background: url("https://experienceleague.adobe.com/docs/document-services/assets/ExportPDF_hero.jpg?lang=en");
+            &.tut-thumb {
+              background: url("../img/placeholder-tutorials.jpg");
               background-repeat: no-repeat;
               background-position: center center;
               background-size: cover;
             }
 
-            &.tut-thumb2 {
-              background: url("https://experienceleague.adobe.com/docs/document-services/assets/OCR_hero.jpg?lang=en");
-              background-repeat: no-repeat;
-              background-position: center center;
-              background-size: cover;
-            }
-
-            &.tut-thumb3 {
-              background: url("https://experienceleague.adobe.com/docs/document-services/assets/GettingStartedJava_hero.jpg?lang=en");
-              background-repeat: no-repeat;
-              background-position: center center;
-              background-size: cover;
-            }
-
-            &.tut-thumb4 {
-              background: url("../img/resource/create_net@2x.png");
-              background-repeat: no-repeat;
-              background-position: center center;
-              background-size: cover;
-            }
-
-            &.tut-thumb5 {
-              background: url("../img/resource/sign_tuts@2x.png");
-              background-repeat: no-repeat;
-              background-position: center center;
-              background-size: cover;
-            }
-
-            &.tut-thumb6 {
-              background: url("../img/resource/add_pdf@2x.png");
-              background-repeat: no-repeat;
-              background-position: center center;
-              background-size: cover;
-            }
-
-            &.tut-thumb7 {
-              background: url("../img/resource/analitics_boss@2x.png");
-              background-repeat: no-repeat;
-              background-position: center center;
-              background-size: cover;
-            }
-
-            &.tut-thumb8 {
-              background: url("../img/resource/embed_pdf_view@2x.png");
-              background-repeat: no-repeat;
-              background-position: center center;
-              background-size: cover;
-            }
           }
 
           p {
