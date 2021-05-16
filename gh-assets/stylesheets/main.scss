@@ -26,6 +26,7 @@ $baseurl: "{{ site.baseurl }}";
 @import "doc-extract";
 @import "api-use-cases";
 @import "gen-api-template";
+@import "_dcsdk.scss"
 
 body {
   font-family: adobe-clean-ux,adobe-clean,Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,'Adobe Clean',sans-serif;;
@@ -251,6 +252,7 @@ body {
       font-size: 2.8125rem;
       line-height: 3.625rem;
     }
+
   }
 
   .card-slider-container {
