@@ -26,7 +26,7 @@ $baseurl: "{{ site.baseurl }}";
 @import "doc-extract";
 @import "api-use-cases";
 @import "gen-api-template";
-@import "_dcsdk.scss"
+@import "dcsdk.scss";
 
 body {
   font-family: adobe-clean-ux,adobe-clean,Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,'Adobe Clean',sans-serif;;
