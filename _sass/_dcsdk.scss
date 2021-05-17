@@ -44,3 +44,14 @@ section.dctsdk-work-flow .title-with-cta h3 {
 		text-align: center;
 	}
 }
+
+
+section.doc-gen-blade .cta-wrapper a {
+  display: inline-block;
+}
+section.doc-gen-blade .cta-wrapper a + a {
+  margin-left: 1em;
+}
+section.doc-gen-blade .cta-wrapper .button-link {
+  font-size: 1em;
+}
