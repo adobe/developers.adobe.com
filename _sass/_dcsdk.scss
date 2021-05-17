@@ -1,5 +1,10 @@
 
 
+/* this file is so i can ad changes that are needed immediately.
+   when i have the ability to run this content locally, i can
+   refactor these rules */
+
+
 
 .dcsdk .cta-wrapper {
 
@@ -10,4 +15,11 @@
 
 .dcsdk .cta-wrapper .spectrum-Button.spectrum-Button--cta {
   font-size: 1.065em;
+}
+
+
+// pdf-extract.html
+
+section.key-ext-features-blade .key-ext-item-wrapper .key-ext-item {
+  text-align: left;
 }
