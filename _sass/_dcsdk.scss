@@ -1,25 +1,46 @@
 
 
-/* this file is so i can ad changes that are needed immediately.
-   when i have the ability to run this content locally, i can
-   refactor these rules */
+/*
+	this file is so i can ad changes that are needed immediately.
+	when i have the ability to run this content locally, i can
+	refactor these rules
+*/
 
 
 
 .dcsdk .cta-wrapper {
-
-    text-align: center;
-    margin-bottom: 3em;
-
+	text-align: center;
+	margin-bottom: 3em;
 }
 
 .dcsdk .cta-wrapper .spectrum-Button.spectrum-Button--cta {
-  font-size: 1.065em;
+	font-size: 1.065em;
 }
 
 
-// pdf-extract.html
+.title-with-cta {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	margin-bottom: 4em;
+}
 
-section.key-ext-features-blade .key-ext-item-wrapper .key-ext-item {
-  text-align: left;
+.title-with-cta .spectrum-Button.spectrum-Button--cta {
+	margin-top: .5em;
+	margin-left: 2em;
+}
+
+section.dctsdk-work-flow .title-with-cta h3 {
+	padding-bottom: 0;
+}
+
+@media screen and (max-width: 525px) {
+	.title-with-cta {
+		display: block;
+	}
+	.title-with-cta h3 {
+		margin-bottom: .5em;
+	}
+	.title-with-cta div {
+		text-align: center;
+	}
 }
