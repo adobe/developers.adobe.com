@@ -182,6 +182,9 @@ body {
     margin: 0 -2px !important;
   }
 }
+
+
+
 /* home specific styles */
 .home {
   .chev-arrow-down,
@@ -231,6 +234,9 @@ body {
     }
   }
 }
+
+
+
 /* home specific styles end */
 /* secondary-page specific styles */
 .secondary-page {
@@ -256,17 +262,15 @@ body {
   }
 
   .card-slider-container {
-    margin: 0 auto;
+    margin: 0 auto 1em auto;
     max-width: 20.25rem;
     @media screen and (min-width: 768px) {
-      margin: 0 auto;
       max-width: 24.5rem;
+      margin-bottom: 1.5em;
     }
     @media screen and (min-width: 1024px) {
-      margin: 0 auto 4.5rem;
-      max-width: 63.5rem;
-
-      h2 {
+       max-width: 63.5rem;
+        h2 {
         font-size: 1.375rem;
         line-height: 1.8125rem;
       }
@@ -380,13 +384,16 @@ body {
           text-decoration: none !important;
           background: #6e6e6e;
         }
+
         &:active {
           color: $white !important;
           text-decoration: none !important;
           background: #6e6e6e;
         }
+
       }
     }
+
   }
 
   .use-case,
@@ -617,6 +624,9 @@ section.slab {
     color: $white;
   }
 }
+
+
+
 /* slab container top end */
 /* home cards */
 section.home-card {
@@ -701,6 +711,9 @@ section.home-card {
     outline: none;
   }
 }
+
+
+
 /* home cards end */
 /* pdf extract */
 section.grey-bar-extract {
@@ -854,6 +867,9 @@ section.grey-bar-extract {
     }
   }
 }
+
+
+
 /* pdf extract end */
 /* Work flow */
 section.dctsdk-work-flow {
@@ -1305,6 +1321,9 @@ section.dctsdk-work-flow {
     transition-duration: 150ms;
   }
 }
+
+
+
 /* Work flow end */
 /* logo bar */
 section.logo-bar {
@@ -1363,6 +1382,9 @@ section.logo-bar {
     // }
   }
 }
+
+
+
 /* logo bar end */
 /* customer logos */
 section.customer {
@@ -1383,6 +1405,9 @@ section.customer {
     }
   }
 }
+
+
+
 /* customer logos end */
 /* dcs-help */
 section.dcs-help {
