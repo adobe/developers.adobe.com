@@ -3,7 +3,8 @@
 {% include gtag.html %}
 
 {% capture this_page_title %}{{site:site_title}} — {{ page.title }}{% endcapture %}
-{% capture this_page_image %}{{baseurl}}/gh-assets/image/page-thumbnails/dcsdk-main.jpg{% endcapture %}
+{% assign this_page_image = 'dcsdk-main.jpg' %}
+
 
 <html class="spectrum--medium">
 	{% include paths.html %}
@@ -21,8 +22,8 @@
 		<meta property="og:type" content="website">
 		<meta property="og:title" content="{{ this_page_title }}">
 		<meta property="og:description" content="{{ page.meta }}">
-		<meta property="og:url" content="{{ page.url }}">
-		<meta property="og:image" content="{{ this_page_image }}">
+		<meta property="og:url" content="{{ baseurl }}{{ page.url }}">
+		<meta property="og:image" content="{{ baseurl }}/gh-assets/img/page-thumbnails/{{ this_page_image }}">
 		<!-- twitter -->
 		<meta name="twitter:card" content="{{ page.meta }}">
 		<meta name="twitter:title" content="{{ this_page_title }}">
