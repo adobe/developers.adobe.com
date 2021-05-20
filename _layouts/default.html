@@ -2,7 +2,6 @@
 <html class="spectrum--medium">
 	{% include paths.html %}
 	<head>
-		<title>Adobe Developers - {{ page.title }}</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content="{{page.meta}}" />
@@ -13,6 +12,27 @@
 
 		<link rel="icon" href="https://www.adobe.com/favicon.ico" type="image/x-icon" />
 		<link rel="shortcut icon" href="https://www.adobe.com/favicon.ico" type="image/x-icon" />
+
+		<title>Adobe Developers - {{ page.title }}</title>
+
+		<!-- Google Search Engine Tags -->
+		$markup .= '<meta itemprop="name"            content="'.$title.'">';
+		$markup .= '<meta itemprop="description"     content="'.$description.'">';
+		$markup .= '<meta itemprop="image"           content="'.$image.'">';
+
+		<!-- Facebook Meta Tags -->
+		$markup .= '<meta property="og:url"          content="'.$site_url.'">';
+		$markup .= '<meta property="og:type"         content="website">';
+		$markup .= '<meta property="og:title"        content="'.$title.'">';
+		$markup .= '<meta property="og:description"  content="'.$description.'">';
+		$markup .= '<meta property="og:image"        content="'.$image.'">';
+
+		<!-- Twitter Meta Tags -->
+		$markup .= '<meta name="twitter:card"        content="summary">';
+		$markup .= '<meta name="twitter:site-js-less"        content="'.$twitter_account.'">';
+		$markup .= '<meta name="twitter:title"       content="'.$title.'">';
+		$markup .= '<meta name="twitter:description" content="'.$description.'">';
+		$markup .= '<meta name="twitter:image"       content="'.$image.'">';
 
 		<link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-global.css">
 		<link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-medium.css">
@@ -51,6 +71,7 @@ site.url: {{site.url }}
 -->
   {% include topnav.html %}
   {% include subnav.html %}
+
   <div class="spectrum--large spectrum spectrum--light" id="content">
     {{ content }}
   </div>
