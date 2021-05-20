@@ -1,38 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
+
+{% include gtag.html %}
+
+{% capture this_page_title %} '{{ site:site_title }} — {{ page.title }}' {% endcapture %}
+{% capture this_page_image %} '{{ baseurl }}/gh-assets/image/page-thumbnails/dcsdk-main.jpg' {% endcapture %}
+
 <html class="spectrum--medium">
 	{% include paths.html %}
 	<head>
+		<title>{{ this_page_title }}</title>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content="{{page.meta}}" />
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<meta name="robots" content="noodp" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="robots" content="noodp">
+		<!-- standard -->
+		<meta name="description" content="{{ page.meta }}" />
+		<meta itemprop="name" content="{{ this_page_title }}">
+		<meta itemprop="description" content="{{ page.meta }}">
+		<meta itemprop="image" content="{{ this_page_image }}">
+		<!-- open graph -->
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="{{ this_page_title }}">
+		<meta property="og:description" content="{{ page.meta }}">
+		<meta property="og:url" content="{{ page.url }}">
+		<meta property="og:image" content="{{ this_page_image }}">
+		<!-- twitter -->
+		<meta name="twitter:card" content="{{ page.meta }}">
+		<meta name="twitter:title" content="{{ this_page_title }}">
+		<meta name="twitter:description" content="{{ page.meta }}">
+		<meta name="twitter:image" content="{{ this_page_image }}">
 
-		{% include gtag.html %}
-
-		<link rel="icon" href="https://www.adobe.com/favicon.ico" type="image/x-icon" />
-		<link rel="shortcut icon" href="https://www.adobe.com/favicon.ico" type="image/x-icon" />
-
-		<title>Adobe Developers - {{ page.title }}</title>
-
-		<!-- Google Search Engine Tags -->
-		$markup .= '<meta itemprop="name"            content="'.$title.'">';
-		$markup .= '<meta itemprop="description"     content="'.$description.'">';
-		$markup .= '<meta itemprop="image"           content="'.$image.'">';
-
-		<!-- Facebook Meta Tags -->
-		$markup .= '<meta property="og:url"          content="'.$site_url.'">';
-		$markup .= '<meta property="og:type"         content="website">';
-		$markup .= '<meta property="og:title"        content="'.$title.'">';
-		$markup .= '<meta property="og:description"  content="'.$description.'">';
-		$markup .= '<meta property="og:image"        content="'.$image.'">';
-
-		<!-- Twitter Meta Tags -->
-		$markup .= '<meta name="twitter:card"        content="summary">';
-		$markup .= '<meta name="twitter:site-js-less"        content="'.$twitter_account.'">';
-		$markup .= '<meta name="twitter:title"       content="'.$title.'">';
-		$markup .= '<meta name="twitter:description" content="'.$description.'">';
-		$markup .= '<meta name="twitter:image"       content="'.$image.'">';
+		<link rel="icon" href="https://www.adobe.com/favicon.ico" type="image/x-icon">
 
 		<link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-global.css">
 		<link rel="stylesheet" href="https://unpkg.com/@adobe/spectrum-css@2.x/dist/vars/spectrum-medium.css">
