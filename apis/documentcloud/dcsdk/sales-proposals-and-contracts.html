@@ -26,6 +26,7 @@ active: sales-proposals-and-contracts
 				</div>
 				<div class="api-cases-content-wrapper">
 					<div class="api-cases-content">
+
 						<h2>Sales Proposals and Contracts</h2>
 						<p>Sales proposals set the tone for customer relationships. As they are often one of the first touchpoints a company has with a prospect, information included must be accurate, complete, and presented in a polished, brand-consistent manner. However, creating a sales proposal is a tedious and cumbersome process of mixing standard and deal-specific custom content, all of which takes valuable time away from actually selling.</p>
 						<p>Using Adobe Document Services, sales teams can:</p>
@@ -34,12 +35,14 @@ active: sales-proposals-and-contracts
 							<li>Create custom, on-brand PDF proposals and contracts</li>
 							<li>Include the ability for customers to electronically sign documents</li>
 						</ul>
+
 						<h3>Relevant APIs</h3>
 						<ul>
 							<li>Adobe Document Generation API</li>
 							<li>Adobe Sign API</li>
 							<li>Adobe PDF Services API</li>
 						</ul>
+
 						<h3>Scenario</h3>
 						<p>A business development team meets frequently with prospects. Shortly after, they follow up with sales proposals. While much proposal content is reusable—firm capabilities, team profiles, SOW terms, etc.—important deal specifics, such as customer information, project scope, and pricing needs to be added. Manually finding and replacing content, as well as highlighting signature fields, is time consuming and monotonous. Automation is needed to ensure accuracy and to deliver proposals quickly.</p>
 						<h3>Building this Solution</h3>
@@ -50,8 +53,16 @@ active: sales-proposals-and-contracts
 							<li>Run the Adobe Document Generation API to merge data from the form into the template, creating a final proposal and contract in PDF</li>
 							<li>Send to Adobe Sign if signatures are required, and if not, to email directly</li>
 						</ol>
+
 						<h3>Enhancements</h3>
 						<p>The Adobe PDF Services API can programmatically compress and add password protection to a PDF before sending.</p>
+
+						<h3>Building in Power Automate</h3>
+						<ul>
+							<li>Adobe PDF Services Connector (includes Document Generation)</li>
+							<li>Adobe Sign Connector</li>
+						</ul>
+
 					</div>
 				</div>
 			</div>
