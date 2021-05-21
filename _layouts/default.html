@@ -1,14 +1,12 @@
 <!doctype html>
 
-{% include gtag.html %}
-
 {% capture this_page_title %}{{site.title}} — {{ page.title }}{% endcapture %}
 {% assign this_page_image = 'dcsdk-main.jpg' %}
-
 
 <html class="spectrum--medium">
 	{% include paths.html %}
 	<head>
+		{% include gtag.html %}
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="robots" content="noodp">
