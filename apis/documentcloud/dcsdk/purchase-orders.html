@@ -1,0 +1,67 @@
+---
+layout: default
+title: Job Posting
+meta:
+active: purchase-orders
+---
+{% include paths.html %}
+
+<div class="main secondary-page">
+
+	<section id="api-use-cases-blade">
+		<div class="api-use-cases-container">
+			<div class="api-use-cases-wrapper">
+				<div class="intro-copy-wrapper">
+					<h1>Document Services API Use Cases</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="api-use-cases-body">
+		<div class="api-use-cases-content-container">
+			<div class="api-use-cases-content-wrapper">
+				<div class="api-use-cases-content-menu">
+					{% include use-case-nav.html %}
+				</div>
+				<div class="api-cases-content-wrapper">
+					<div class="api-cases-content">
+
+						<h2>Purchase Orders</h2>
+
+						<p>Many businesses need to generate a high volume of purchase orders (POs) in PDF format for services and source products. The data required for compliant POs is often tracked in several systems, and it becomes tedious for teams to manually include the correct details for different suppliers, products, regions, etc. Automating the generation of these documents saves time and boosts efficiency for these teams.</p>
+						<p>Adobe Document Services allows organizations to:</p>
+						<ul>
+							<li>Create standard branded templates for purchase orders</li>
+							<li>Merge purchase order data automatically into template documents</li>
+							<li>Gather comments and feedback on documents</li>
+							<li>Protect documents from editing with a password</li>
+						</ul>
+
+						<h3>Relevant APIs</h3>
+						<ul>
+							<li>Adobe Document Generation API</li>
+							<li>Adobe PDF Services API</li>
+						</ul>
+
+						<h3>Scenario</h3>
+						<p>The procurement team in a large manufacturing company is looking to efficiently generate customized purchase orders. Their procurement system has most of the information they need. In addition, they want to include specific terms and conditions, notes, and disclaimers in the document depending on the products, vendors, and regions used — all without creating a more time-consuming process.</p>
+
+						<h3>Building this Solution</h3>
+						<ol>
+							<li>Create a simple data capture form using Microsoft Form (or another form builder)</li>
+							<li>Design the purchase order template using Microsoft Word</li>
+							<li>Use Adobe Document Generation Tagger in Word to place fields into the template based on the data model from the form</li>
+							<li>Run the Adobe Document Generation API to merge data from the form into the template, creating a final sales quote in PDF</li>
+							<li>Use Adobe PDF Services API to protect the document from editing</li>
+						</ol>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{% include use-case-help.html %}
+
+</div>
