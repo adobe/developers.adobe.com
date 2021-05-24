@@ -1,0 +1,67 @@
+---
+layout: default
+title: Job Posting
+meta:
+active: sales-quote
+---
+{% include paths.html %}
+
+<div class="main secondary-page">
+
+	<section id="api-use-cases-blade">
+		<div class="api-use-cases-container">
+			<div class="api-use-cases-wrapper">
+				<div class="intro-copy-wrapper">
+					<h1>Document Services API Use Cases</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="api-use-cases-body">
+		<div class="api-use-cases-content-container">
+			<div class="api-use-cases-content-wrapper">
+				<div class="api-use-cases-content-menu">
+					{% include use-case-nav.html %}
+				</div>
+				<div class="api-cases-content-wrapper">
+					<div class="api-cases-content">
+
+						<h2>Sales Quote</h2>
+
+						<p>Sales teams create many sales quotes for customers, and quotes need to be polished and accurate. Quotes include complex product pricing configurations and payment conditions, and they usually include information from the team’s CPQ software system. For many teams, this manual process takes away valuable time. Automating the process ensures information is accurate and delivered quickly.</p>
+						<p>Adobe Document Services allows sales teams to:</p>
+						<ul>
+							<li>Create standard branded templates for sales quotes</li>
+							<li>Merge complex quote data automatically into templates</li>
+							<li>Add or exclude any standard document sections based on quote data</li>
+						</ul>
+
+						<h3>Relevant APIs</h3>
+						<ul>
+							<li>Adobe PDF Services API</li>
+							<li>Adobe Document Generation API</li>
+							<li>Adobe Sign API</li>
+						</ul>
+
+						<h3>Scenario</h3>
+						<p>A B2B sales team needs to generate polished quotes for their consulting services from the data in their CPQ system. In addition, they want to include terms and conditions if certain products are included in the quote. Automating this process means the sales team will create the appropriate quote in just a few clicks.</p>
+
+						<h3>Building this Solution</h3>
+						<ol>
+							<li>Create a simple data capture form using Microsoft Form (or another form builder)</li>
+							<li>Design the sales quote template using Microsoft Word</li>
+							<li>Use Adobe Document Generation Tagger in Word to place fields into the template based on the data model from the form</li>
+							<li>Run the Adobe Document Generation API to merge data from the form into the template, creating a final sales quote in PDF</li>
+							<li>Send to Adobe Sign if signatures are required, and if not, email directly</li>
+						</ol>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{% include use-case-help.html %}
+
+</div>

@@ -9,41 +9,66 @@ redirect_from:
 ---
 {% include paths.html %}
 
-<div class="main secondary-page">
+<div class="main secondary-page dcsdk">
 
-  <div class="gradient">
-    <section class="header">
-      <h1>Adobe PDF Embed API</h1>
-      <h2>Free JavaScript API to embed high-fidelity PDFs, enable collaboration, and see analytics<span class="xl-only"><a title="Try the demo" alt="Try the demo" id="try_demo" href="https://www.adobe.com/go/pdfEmbedAPI_demo" target="_blank" class="button-link">Try the demo</a></span></h2>
-      <span class="mobile-only"><a title="Try the demo" alt="Try the demo" id="try_demo" href="https://www.adobe.com/go/pdfEmbedAPI_demo" class="button-link">Try the demo</a></span>
-    </section>
+	<div class="gradient">
+
+		<section class="header">
+			<h1>Adobe PDF Embed API</h1>
+			<h2>Free JavaScript API to embed high-fidelity PDFs, enable collaboration, and see analytics
+				<span class="xl-only">
+					<a title="Try the demo" alt="Try the demo" id="try_demo" href="https://www.adobe.com/go/pdfEmbedAPI_demo" target="_blank" class="button-link">Try the demo</a>
+				</span>
+			</h2>
+			<span class="mobile-only">
+				<a title="Try the demo" alt="Try the demo" id="try_demo" href="https://www.adobe.com/go/pdfEmbedAPI_demo" class="button-link">Try the demo</a>
+			</span>
+		</section>
 
 
-    <section class="home-card card-slider-container">
-      <div class="card blanche">
-        <div class="card-icon  push-down"><img src="{{ baseurl }}/gh-assets/svg/accurate_rendering.svg" class="embed-icon-1" alt="Embed PDF in a website"></div>
-        <h2>Accurate, consistent PDF rendering</h2>
-        <p>Whether on dynamic or static pages, deliver the highest quality PDF rendering available</p>
-      </div>
 
-      <div class="card blanche ">
-        <div class="card-icon push-down"><img src="{{ baseurl }}/gh-assets/svg/customizable_experience.svg" class="embed-icon-2" alt="Free PDF Viewer API"></div>
-        <h2>Customizable user experience</h2>
-        <p>Choose exactly how to display a PDF and use the callbacks and annotations APIs to provide programmatic control and enable digital collaboration</p>
-      </div>
+		<section class="home-card card-slider-container">
 
-      <div class="card blanche">
-        <div class="card-icon push-down"><img src="{{ baseurl }}/gh-assets/svg/analytics.svg" class="embed-icon-3" alt="PDF analytics with Adobe PDF Embed API"></div>
-        <h2>Analytics on PDF usage</h2>
-        <p>Use analytics to understand how users interact with PDFs, including time spent on a page and searches</p>
-      </div>
-    </section>
-  </div>
+			<div class="card blanche">
+				<div class="card-icon  push-down">
+					<img src="{{ baseurl }}/gh-assets/svg/accurate_rendering.svg" class="embed-icon-1" alt="Embed PDF in a website">
+				</div>
+				<h2>Accurate, consistent PDF rendering</h2>
+				<p>Whether on dynamic or static pages, deliver the highest quality PDF rendering available</p>
+			</div>
 
-  <!-- work-flow-->
-  <section class="dctsdk-work-flow">
+			<div class="card blanche ">
+				<div class="card-icon push-down">
+					<img src="{{ baseurl }}/gh-assets/svg/customizable_experience.svg" class="embed-icon-2" alt="Free PDF Viewer API">
+				</div>
+				<h2>Customizable user experience</h2>
+				<p>Choose exactly how to display a PDF and use the callbacks and annotations APIs to provide programmatic control and enable digital collaboration</p>
+			</div>
 
-    <h3>Key Features of Our free PDF Embed API</h3>
+			<div class="card blanche">
+				<div class="card-icon push-down">
+					<img src="{{ baseurl }}/gh-assets/svg/analytics.svg" class="embed-icon-3" alt="PDF analytics with Adobe PDF Embed API">
+				</div>
+				<h2>Analytics on PDF usage</h2>
+				<p>Use analytics to understand how users interact with PDFs, including time spent on a page and searches</p>
+			</div>
+
+		</section>
+
+	</div>
+
+	<div class="cta-wrapper">
+		<a href="https://www.adobe.com/go/dcsdks_credentials" target="_blank" class="spectrum-Button spectrum-Button--cta">
+			Get Free Credentials
+		</a>
+	</div>
+
+
+
+	<!-- work-flow-->
+	<section class="dctsdk-work-flow">
+
+	<h3>Key Features of Our free PDF Embed API</h3>
 
     <div class="work-flow-container">
       <div class="work-flow_menu">
@@ -147,11 +172,13 @@ redirect_from:
               <h4>Menu &amp; Tool Options</h4>
               <p class="work-flow-menu-support-copy">Programmatically enable or disable the left-hand panel, comments pane, toolbars, print, and download options</p>
               <a href="https://www.adobe.com/go/pdfembedapi_docs" class="button-link">See Documentation</a>
-
            </div>
           </li>
         </ul>
       </div>
+
+
+
       <!-- This is not in the v3 reference document -->
         <div class="work-flow_code">
          <div id="sdk-support" class="menu-item-info-content">
@@ -171,6 +198,13 @@ redirect_from:
         </div>
     </div>
   </section>
+
+		<div class="cta-wrapper">
+			<a href="https://www.adobe.com/go/dcsdks_credentials" target="_blank" class="spectrum-Button spectrum-Button--cta">
+				Get Free Credentials
+			</a>
+		</div>
+
   <!-- work-flow end -->
 
   <!-- Get Started start -->
@@ -214,23 +248,34 @@ redirect_from:
   </section>
   <!-- Get Started end -->
 
-  <!-- Integrations start -->
-  <section class="integrations">
-    <h3>Integrations</h3>
-    <div>
-      <span class="card-icon"><img src="{{ baseurl }}/gh-assets/img/adobe_exerience_manager_logo@2x.png" alt="Embed PDFs in a web page with AEM"></span>
-      <h4>Adobe Experience Manager</h4>
-      <p>Adobe Experience Manager customers can easily drag and drop a high-fidelity PDF viewer directly into web applications without the need for additional code or customizations. Includes pre-configurable settings for comments, printing, downloading, and integrated Adobe Analytics.</p>
-      <p class="callout-item"><a href="https://www.aemcomponents.dev/content/core-components-examples/library/page-authoring/pdf-viewer.html" target="_blank">Learn more</a></p>
-    </div>
-    <div>
-      <span class="card-icon"><img src="{{ baseurl }}/gh-assets/img/adobe-analytics@2x.png" alt="Adobe PDF Embed API analytics integration for PDF insights"></span>
-      <h4>Adobe Analytics</h4>
-      <p>Out of the box Adobe Analytics integration allows customers to seamlessly enable rich analytics and gain insights on end user experience. Extend functionality with chatbots or calls to action based on user interactions.</p>
-      <p class="callout-item"><a href="https://medium.com/adobetech/pdf-analytics-get-insights-onembedded-pdfs-on-your-website-44e6a314fb1f" target="_blank">Learn more</a></p>
-    </div>
-  </section>
-  <!-- Integrations end -->
+
+
+	<!-- Integrations start -->
+	<section class="integrations">
+		<h3>Integrations</h3>
+		<div>
+			<span class="card-icon"><img src="{{ baseurl }}/gh-assets/img/adobe_exerience_manager_logo@2x.png" alt="Embed PDFs in a web page with AEM"></span>
+			<h4>Adobe Experience Manager</h4>
+			<p>Adobe Experience Manager customers can easily drag and drop a high-fidelity PDF viewer directly into web applications without the need for additional code or customizations. Includes pre-configurable settings for comments, printing, downloading, and integrated Adobe Analytics.</p>
+			<p class="callout-item"><a href="https://www.aemcomponents.dev/content/core-components-examples/library/page-authoring/pdf-viewer.html" target="_blank">Learn more</a></p>
+		</div>
+		<div>
+			<span class="card-icon"><img src="{{ baseurl }}/gh-assets/img/adobe-analytics@2x.png" alt="Adobe PDF Embed API analytics integration for PDF insights"></span>
+			<h4>Adobe Analytics</h4>
+			<p>Out of the box Adobe Analytics integration allows customers to seamlessly enable rich analytics and gain insights on end user experience. Extend functionality with chatbots or calls to action based on user interactions.</p>
+			<p class="callout-item"><a href="https://medium.com/adobetech/pdf-analytics-get-insights-onembedded-pdfs-on-your-website-44e6a314fb1f" target="_blank">Learn more</a></p>
+		</div>
+		<div>
+			<span class="card-icon">
+			<img src="https://www.adobe.io/gh-assets/svg/rapid-results.svg" alt="Adobe PDF Embed API analytics integration for PDF insights">
+			</span>
+			<h4>Document Generation API</h4>
+			<p>Generate PDF and Word documents from Word templates and JSON data</p>
+			<p class="callout-item"><a href="https://www.adobe.io/apis/documentcloud/dcsdk/doc-generation.html" target="_blank">Learn more</a></p>
+		</div>
+	</section>
+	<!-- Integrations end -->
+
 
 
   <!-- Use Cases  -->
