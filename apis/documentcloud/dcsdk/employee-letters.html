@@ -1,0 +1,65 @@
+---
+layout: default
+title: Job Posting
+meta:
+active: employee-letters
+---
+{% include paths.html %}
+
+<div class="main secondary-page">
+
+	<section id="api-use-cases-blade">
+		<div class="api-use-cases-container">
+			<div class="api-use-cases-wrapper">
+				<div class="intro-copy-wrapper">
+					<h1>Document Services API Use Cases</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="api-use-cases-body">
+		<div class="api-use-cases-content-container">
+			<div class="api-use-cases-content-wrapper">
+				<div class="api-use-cases-content-menu">
+					{% include use-case-nav.html %}
+				</div>
+				<div class="api-cases-content-wrapper">
+					<div class="api-cases-content">
+
+						<h2>Employee Letters</h2>
+
+						<p>Businesses generate employee letters for various formal communications, like compensation changes, awards letters, and performance reviews. Many of these letters need to include data stored in the HR system. For large organizations, creating custom letters manually for every employee becomes a time-consuming task.</p>
+						<p>Adobe Document Services allows organizations to:</p>
+						<ul>
+							<li>Create standard branded templates for employee letters</li>
+							<li>Merge employee data automatically into templates</li>
+							<li>Protect documents from editing with a password</li>
+						</ul>
+
+						<h3>Relevant APIs</h3>
+						<ul>
+							<li>Adobe Document Generation API</li>
+						</ul>
+
+						<h3>Scenario</h3>
+						<p>The HR team in charge of employee compensation needs to send letters formally communicating changes to the employee awards policy. Each letter should outline the individual impact for each employee. Data on each employee’s awards is stored in their HR system, and over one thousand letters need to be generated for employees before the next pay period.</p>
+
+						<h3>Building this Solution</h3>
+						<ol>
+							<li>Create a simple data capture form using Microsoft Form (or another form builder)</li>
+							<li>Design the letter template using Microsoft Word</li>
+							<li>Use Adobe Document Generation Tagger in Word to place fields into the template based on the data model from the form</li>
+							<li>Run the Adobe Document Generation API to merge data from the form into the template, creating a final letter in PDF</li>
+							<li>Use Adobe PDF Services API to protect the document from editing</li>
+						</ol>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{% include use-case-help.html %}
+
+</div>

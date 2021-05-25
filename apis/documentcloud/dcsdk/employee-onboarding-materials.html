@@ -1,0 +1,66 @@
+---
+layout: default
+title: Job Posting
+meta:
+active: employee-onboarding-materials
+---
+{% include paths.html %}
+
+<div class="main secondary-page">
+
+	<section id="api-use-cases-blade">
+		<div class="api-use-cases-container">
+			<div class="api-use-cases-wrapper">
+				<div class="intro-copy-wrapper">
+					<h1>Document Services API Use Cases</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="api-use-cases-body">
+		<div class="api-use-cases-content-container">
+			<div class="api-use-cases-content-wrapper">
+				<div class="api-use-cases-content-menu">
+					{% include use-case-nav.html %}
+				</div>
+				<div class="api-cases-content-wrapper">
+					<div class="api-cases-content">
+
+						<h2>Employee Onboarding Materials (Handbook, Welcome Packets &amp; Guides)</h2>
+
+						<p>Onboarding new customers into a company or new role takes time and resources. Human Resources often needs to share items like welcome packets, employee handbooks, and resource guides. Customizing onboarding documents for specific employees, roles, seniority levels, and regions improves the employee experience but can be very time consuming for HR teams when done manually.</p>
+						<p>Adobe Document Services allows organizations to:</p>
+						<ul>
+							<li>Create standard templates for employee onboarding documents</li>
+							<li>Merge specific employee data automatically (start date, onboarding task deadlines, etc.)</li>
+							<li>Include or exclude document sections automatically based on employee data</li>
+						</ul>
+
+						<h3>Relevant APIs</h3>
+						<ul>
+							<li>Adobe PDF Services API</li>
+							<li>Adobe Document Generation API</li>
+						</ul>
+
+						<h3>Scenario</h3>
+						<p>An HR team in a growing company is struggling to generate onboarding materials for its many new hires. The team currently assembles and customizes welcome packets in Microsoft Word, while manually referencing data in their HR system. The new hires have various responsibilities and seniority levels. Automating templates would make welcome packet creation quick and smooth, and would give HR time back.</p>
+
+						<h3>Building this Solution</h3>
+						<ol>
+							<li>Create a simple data capture form using Microsoft Form (or another form builder)</li>
+							<li>Design onboarding templates using Microsoft Word</li>
+							<li>Use Adobe Document Generation Tagger in Word to place fields into the templates based on the data model from the form</li>
+							<li>Run the Adobe Document Generation API to merge data from the form into the appropriate templates, creating a final legal letter in PDF</li>
+							<li>Send PDFs to the employee</li>
+						</ol>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{% include use-case-help.html %}
+
+</div>

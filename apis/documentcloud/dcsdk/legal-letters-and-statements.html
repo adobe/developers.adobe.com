@@ -1,0 +1,69 @@
+---
+layout: default
+title: Legal Contracts
+meta:
+active: legal-letters-and-statements
+---
+
+{% include paths.html %}
+
+<div class="main secondary-page">
+
+	<section id="api-use-cases-blade">
+		<div class="api-use-cases-container">
+			<div class="api-use-cases-wrapper">
+				<div class="intro-copy-wrapper">
+					<h1>Document Services API Use Cases</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="api-use-cases-body">
+		<div class="api-use-cases-content-container">
+			<div class="api-use-cases-content-wrapper">
+				<div class="api-use-cases-content-menu">
+					{% include use-case-nav.html %}
+				</div>
+				<div class="api-cases-content-wrapper">
+					<div class="api-cases-content">
+
+						<h2>Legal Letters and Statements</h2>
+
+						<p>Legal firms and teams produce countless legal letters and statements for their clients. Drafting, client review, and signing take time — especially when done manually. The current process requires personally customizing templates with specific client information and then sending for review and signature. It’s repetitive and time consuming, and automation frees up valuable time.
+							Adobe Document Services allows legal firms to:</p>
+						<p>Adobe Document Services will let organizations:</p>
+						<ul>
+							<li>Create standard legal letter templates readily</li>
+							<li>Merge specific client data from any business system in a few clicks</li>
+							<li>Automatically send letters for client review and signature</li>
+						</ul>
+
+						<h3>Relevant APIs</h3>
+						<ul>
+							<li>Adobe PDF Services API</li>
+							<li>Adobe Document Generation API</li>
+							<li>Adobe Sign API</li>
+						</ul>
+
+						<h3>Scenario</h3>
+						<p>A legal team creates affidavits of identity frequently for clients, often on tight deadlines. The team needs to quickly generate letters based on the client's personal data stored in their system, and automation ensures accuracy, helps the team meet deadlines, and gives the team back valuable time.</p>
+
+						<h3>Building this Solution</h3>
+						<ol>
+							<li>Create a simple data capture form using Microsoft Form (or another form builder)</li>
+							<li>Design the legal letter template using Microsoft Word</li>
+							<li>Use Adobe Document Generation Tagger in Word to place fields into the template based on the data model from the form</li>
+							<li>Run the Adobe Document Generation API to merge data from the form into the template, creating a final legal letter in PDF</li>
+							<li>Send to Adobe Sign if signatures are required, and if not, email directly</li>
+						</ol>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{% include use-case-help.html %}
+
+</div>

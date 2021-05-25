@@ -1,0 +1,69 @@
+---
+layout: default
+title: Job Posting
+meta:
+active: course-degree-certificate
+---
+{% include paths.html %}
+
+<div class="main secondary-page">
+
+	<section id="api-use-cases-blade">
+		<div class="api-use-cases-container">
+			<div class="api-use-cases-wrapper">
+				<div class="intro-copy-wrapper">
+					<h1>Document Services API Use Cases</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="api-use-cases-body">
+		<div class="api-use-cases-content-container">
+			<div class="api-use-cases-content-wrapper">
+				<div class="api-use-cases-content-menu">
+					{% include use-case-nav.html %}
+				</div>
+				<div class="api-cases-content-wrapper">
+					<div class="api-cases-content">
+
+						<h2>Course and Degree Certificate</h2>
+
+						<p>Institutions offering degrees and certifications need to create many certificates of completion for their students. These certificates often include details about the student's performance and specific completed courses, which is tedious to create manually. Automation helps institutions create complex and personalized certificates quickly.</p>
+						<p>Adobe Document Services allows institutions to:</p>
+						<ul>
+							<li>Create standard branded templates for certificates</li>
+							<li>Merge student-specific data and course information automatically into templates</li>
+							<li>Protect documents from editing and sending</li>
+							<li>Sign certificates automatically before sharing with students</li>
+						</ul>
+
+						<h3>Relevant APIs</h3>
+						<ul>
+							<li>Adobe PDF Services API</li>
+							<li>Adobe Document Generation API</li>
+							<li>Adobe Sign API</li>
+						</ul>
+
+						<h3>Scenario</h3>
+						<p>An executive education institution needs to create, sign, and send certificates to students upon completion of a program. Certificates include student information and course details that exist in their learning management system (LMS). Automating this process ensures accurate information is sent to the correct students quickly.</p>
+
+						<h3>Building this Solution</h3>
+						<ol>
+							<li>Create a simple data capture form using Microsoft Form (or another form builder)</li>
+							<li>Design the course certificate template using Microsoft Word</li>
+							<li>Use Adobe Document Generation Tagger in Word to place fields into the template based on the data model from the form</li>
+							<li>Run the Adobe Document Generation API to merge data from the form into the template, creating a certificate in PDF</li>
+							<li>Send to Adobe Sign for the instructors’ signatures</li>
+							<li>Send the final signed PDF to the student</li>
+						</ol>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{% include use-case-help.html %}
+
+</div>
