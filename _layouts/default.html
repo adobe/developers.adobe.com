@@ -2,6 +2,7 @@
 
 {% capture this_page_title %}{{site.title}} — {{ page.title }}{% endcapture %}
 {% assign this_page_image = 'dcsdk-main.jpg' %}
+{% assign this_date = "now" | date: "%Y-%m-%d" %}
 
 
 <html class="spectrum--medium">
@@ -60,6 +61,19 @@
 
 		<link rel="stylesheet" href="https://unpkg.com/@adobe/coral-spectrum@4.5.0/dist/css/coral.min.css">
 		<script src="https://unpkg.com/@adobe/coral-spectrum@4.5.0/dist/js/coral.min.js" data-coral-icons-external="js"></script>
+		<script type="application/ld+json">
+			{
+				"@context" : "http://schema.org",
+				"@type" : "Website",
+				"name" : "{{ this_page_title }}",
+				"author" : {
+					"@type" : "Adobe, Inc.",
+					"name" : "{{ site.title }}"
+				},
+				"datePublished" : "{{ this_date }}",
+				"articleBody" : "{{ page.meta }}"
+			}
+		</script>
 	</head>
 
 <body class="spectrum spectrum--light {% if page.style %}{{ page.style }} {% endif %}">
