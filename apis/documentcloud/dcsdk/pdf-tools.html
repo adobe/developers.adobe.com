@@ -7,7 +7,9 @@ redirect_from:
   - /apis/documentcloud/dcsdk/pdf-services-sdk.html
   - /apis/documentcloud/Services.html
 ---
+
 {% include paths.html %}
+
 <div class="main secondary-page dcsdk">
 
 	<div class="gradient">
@@ -115,8 +117,26 @@ redirect_from:
     <div class="work-flow-container">
       <div class="work-flow_menu">
         <ul>
+
+			<!-- Extract -->
+			<li id="extract" class="dctsdk active">
+				<div class="work-flow-menu-item open">
+					<div class="chev-arrow-right"></div>
+					<div class="shadow-box dctsdk">
+						<div class="work-flow-icon icon-align dctsdk create" title="Create PDF from Word doc"></div>
+						<div class="work-flow-menu-copy">Extract PDF Content</div>
+					</div>
+				</div>
+				<!-- Shared with code area -->
+				<div class="work-flow-menu-support work-flow-support-mode-mobile open">
+					<h4>PDF Content Extraction</h4>
+					<p class="work-flow-menu-support-copy">Extract text, images, tables, and more from native and scanned PDFs into a structured JSON file. PDF Extract API leverages AI technology to accurately identify text objects and understand the natural reading order of different elements such as headings, lists, and paragraphs spanning multiple columns or pages. Extract font styles with identification of metadata such as bold and italic text and their position within your PDF. Extracted content is output in a structured JSON file format with tables in CSV or XLSX and images saved as PNG.</p>
+					<a href="https://www.adobe.com/go/pdftoolsapi_doc" target="_blank" class="button-link">See Documentation</a>
+				</div>
+			</li>
+
           <!-- Create -->
-          <li  id="create" class="dctsdk active">
+          <li id="create" class="dctsdk">
             <div class="work-flow-menu-item open">
               <div class="chev-arrow-right"></div>
               <div class="shadow-box dctsdk">
@@ -124,6 +144,7 @@ redirect_from:
                 <div class="work-flow-menu-copy">Create PDF</div>
               </div>
             </div>
+
             <!-- Shared with code area -->
             <div class="work-flow-menu-support work-flow-support-mode-mobile open">
               <h4>Create a PDF File</h4>
@@ -142,6 +163,7 @@ redirect_from:
                 <div class="work-flow-menu-copy">Document Generation</div>
               </div>
             </div>
+
             <!-- Shared with code area -->
             <div class="work-flow-menu-support work-flow-support-mode-mobile open">
               <h4>PDF and Word Document Generation with dynamic data</h4>
@@ -164,6 +186,7 @@ redirect_from:
                 <div class="work-flow-menu-copy">Convert PDF</div>
               </div>
             </div>
+
             <!-- Shared with code area -->
             <div class="work-flow-menu-support work-flow-support-mode-mobile">
               <h4>Convert a PDF file to other formats</h4>
@@ -437,7 +460,7 @@ redirect_from:
       <h3>Adobe PDF Extract API</h3>
       <div class="extract-copy">
         <p>A new web service that allows you to unlock content structure and table data from any PDF document with machine learning</p>
-        <p><a href="https://www.adobe.com/go/pdfextractapi_requestform" target="_blank" class="spectrum-Button spectrum-Button--cta">Request Access</a></p>
+        <p><a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-extract.html" target="_blank" class="spectrum-Button spectrum-Button--cta">Learn more</a></p>
       </div>
       <div class="extract-img"></div>
       <div class="extract-copy-lst">
