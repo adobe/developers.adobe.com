@@ -56,6 +56,7 @@
 			<coral-tab>Node.js</coral-tab>
 			<coral-tab>.Net</coral-tab>
 			<coral-tab>Java</coral-tab>
+			<coral-tab>Python</coral-tab>
 			<!-- <div class="tab-item-copy copy">Copy</div> -->
 		</coral-tablist>
 		<coral-panelstack>
@@ -74,7 +75,52 @@
 			</coral-panel>
 
 			<coral-panel>
-<pre><code class="language-java">// Java code here for Extract
+<pre><code class="language-java">// Create an ExecutionContext using credentials and create a new operation instance
+ExecutionContext executionContext = ExecutionContext.create(credentials);
+ExtractPDFOperation extractPDFOperation = ExtractPDFOperation.createNew();
+
+// Set operation input from a source file
+FileRef source = FileRef.createFromLocalFile("src/test/resources/extractPdfInput.pdf");
+extractPDFOperation.setInputFile(source);
+
+// Build ExtractPDF options and set them into the operation
+ExtractPDFOptions extractPDFOptions = ExtractPDFOptions.extractPdfOptionsBuilder()
+    .addElementsToExtract(Arrays.asList(PDFElementType.TEXT, PDFElementType.TABLES))
+    .addElementsToExtractRenditions(Arrays.asList(PDFElementType.TABLES, PDFElementType.FIGURES))
+    .addCharInfo(Boolean.TRUE)
+    .build();
+extractPDFOperation.setOptions(extractPDFOptions);
+
+// Execute the operation
+FileRef result = extractPDFOperation.execute(executionContext);
+
+// Save the result at the specified location
+result.saveAs("output/extractPdf.zip");
+</code></pre>
+			</coral-panel>
+
+			<coral-panel>
+<pre><code class="language-py">#Create an ExecutionContext using credentials and create a new operation instance.
+execution_context = ExecutionContext.create(credentials)
+extract_pdf_operation = ExtractPDFOperation.create_new()
+
+#Set operation input from a source file.
+source = FileRef.create_from_local_file(base_path + "/resources/extractPdfInput.pdf")
+extract_pdf_operation.set_input(source)
+
+# Build ExtractPDF options and set them into the operation
+extract_pdf_options: ExtractPDFOptions = ExtractPDFOptions.builder() \
+    .with_elements_to_extract([PDFElementType.TEXT, PDFElementType.TABLES]) \
+    .with_elements_to_extract_renditions([PDFElementType.TABLES, PDFElementType.FIGURES]) \
+    .with_get_char_info(True) \
+    .build()
+extract_pdf_operation.set_options(extract_pdf_options)
+
+#Execute the operation.
+result: FileRef = extract_pdf_operation.execute(execution_context)
+
+# Save the result to the specified location.
+result.save_as(base_path + "/output/extractPdf.zip")
 </code></pre>
 			</coral-panel>
 		</coral-panelstack>
