@@ -167,6 +167,7 @@ result.save_as(base_path + "/output/extractPdf.zip")
   --form 'InputFile0=@"{{Placeholder for input file (absolute path)}}"'
 </code></pre>
       </coral-panel>
+
       <coral-panel>
 <pre><code class="language-javascript">// Create an ExecutionContext using credentials and create a new operation instance.
 const executionContext = PDFToolsSdk.ExecutionContext.create(credentials),
@@ -184,18 +185,16 @@ createPdfOperation.execute(executionContext)
 
       <coral-panel>
 <pre><code class="language-clike">// Create an ExecutionContext using credentials and create a new operation instance.
-ExecutionContext executionContext = ExecutionContext.Create(credentials);
-CreatePDFOperation createPdfOperation = CreatePDFOperation.CreateNew();
-  
+const executionContext = PDFServicesSdk.ExecutionContext.create( credentials ),
+createPdfOperation = PDFServicesSdk.CreatePDF.Operation.createNew();
+
 // Set operation input from a source file.
-FileRef source = FileRef.CreateFromLocalFile(@"createPdfInput.docx");
-createPdfOperation.SetInput(source);
-  
-// Execute the operation.
-FileRef result = createPdfOperation.Execute(executionContext);
-  
-// Save the result to the specified location.
-result.SaveAs(Directory.GetCurrentDirectory() + "/output/createPdfOutput.pdf");
+const input = PDFServicesSdk.FileRef.createFromLocalFile('resources/createPDFInput.docx');
+createPdfOperation.setInput(input);
+
+// Execute the operation and Save the result to the specified location.
+createPdfOperation.execute(executionContext)
+.then(result => result.saveAsFile('output/createPDFFromDOCX.pdf'))
 </code></pre>
       </coral-panel>
 
@@ -235,12 +234,12 @@ result.saveAs("output/createPDFFromDOCX.pdf");
 <pre><code class="language-javascript">// Create an ExecutionContext using 
 // credentials and create a new 
 // operation instance.
-const executionContext = PDFToolsSdk.ExecutionContext.create(credentials),
-exportPDF = PDFToolsSdk.ExportPDF,
+const executionContext = PDFServicesSdk.ExecutionContext.create(credentials),
+exportPDF = PDFServicesSdk.ExportPDF,
 exportPdfOperation = exportPDF.Operation.createNew(exportPDF.SupportedTargetFormats.DOCX);
 
 // Set operation input from a source file
-const input = PDFToolsSdk.FileRef.createFromLocalFile('resources/exportPDFInput.pdf');
+const input = PDFServicesSdk.FileRef.createFromLocalFile('resources/exportPDFInput.pdf');
 exportPdfOperation.setInput(input);
 
 // Execute the operation and Save the result to the specified location.
@@ -309,15 +308,16 @@ result.saveAs("output/exportPdfOutput.docx");
       <coral-panelstack>
         <coral-panel id="panel1">
 <pre><code class="language-javascript">// Create an ExecutionContext using credentials and create a new operation instance.            
-const executionContext = PDFToolsSdk.ExecutionContext.create(credentials),
-  ocrOperation = PDFToolsSdk.OCR.Operation.createNew();
+const executionContext = PDFServicesSdk.ExecutionContext.create(credentials),
+  ocrOperation = PDFServicesSdk.OCR.Operation.createNew();
 
 // Set operation input from a source file.
-const input = PDFToolsSdk.FileRef.createFromLocalFile( 'resources/ocrInput.pdf', PDFToolsSdk.OCR.SupportedMediaTypes.pdf );
+const input = PDFServicesSdk.FileRef.createFromLocalFile( 'resources/ocrInput.pdf', PDFServicesSdk.OCR.SupportedMediaTypes.pdf );
 ocrOperation.setInput(input);
 
 // Execute the operation and Save the result to the specified location.
-ocrOperation.execute(executionContext).then(result => result.saveAsFile('output/ocrOutput.pdf'));
+ocrOperation.execute(executionContext)
+  .then(result => result.saveAsFile('output/ocrOutput.pdf'));
 </code></pre>
         </coral-panel>
 
@@ -373,35 +373,24 @@ result.saveAs("output/ocrOutput.pdf");
       <coral-panelstack>
         <coral-panel>
 <pre><code class="language-javascript">// Create an ExecutionContext using credentials and create a new operation instance.
-const executionContext = PDFToolsSdk.ExecutionContext.create(credentials),
-  rotatePagesOperation = PDFToolsSdk.RotatePages.Operation.createNew();
+const executionContext = PDFServicesSdk.ExecutionContext.create(credentials),
+  rotatePagesOperation = PDFServicesSdk.RotatePages.Operation.createNew();
 
 // Set operation input from a source file.
-const input = PDFToolsSdk.FileRef
-  .createFromLocalFile(
-    'resources/rotatePagesInput.pdf'
-  );
+const input = PDFServicesSdk.FileRef.createFromLocalFile('resources/rotatePagesInput.pdf');
 rotatePagesOperation.setInput(input);
 
 // Sets angle by 90 degrees (in clockwise direction) for rotating the specified pages of the input PDF file.
 const firstPageRange = getFirstPageRangeForRotation();
-rotatePagesOperation.setAngleToRotatePagesBy(
-    PDFToolsSdk.RotatePages.Angle._90, firstPageRange
-  );
+rotatePagesOperation.setAngleToRotatePagesBy(PDFServicesSdk.RotatePages.Angle._90, firstPageRange);
 
 // Sets angle by 180 degrees (in clockwise direction) for rotating the specified pages of the input PDF file.
 const secondPageRange = getSecondPageRangeForRotation();
-rotatePagesOperation
-  .setAngleToRotatePagesBy(
-    PDFToolsSdk.RotatePages.Angle._180,secondPageRange
-  );
+rotatePagesOperation.setAngleToRotatePagesBy(PDFServicesSdk.RotatePages.Angle._180,secondPageRange);
 
 // Execute the operation and Save the result to the specified location.
 rotatePagesOperation.execute(executionContext)
-  .then(result =>
-    result.saveAsFile(
-      'output/rotatePagesOutput.pdf'
-  ));
+  .then(result => result.saveAsFile('output/rotatePagesOutput.pdf'));
 </code></pre>
         </coral-panel>
 
@@ -487,27 +476,20 @@ result.saveAs("output/rotatePagesOutput.pdf");
       <coral-panelstack>
         <coral-panel>
 <pre><code class="language-javascript">// Create an ExecutionContext using credentials and create a new operation instance.                              
-const executionContext = PDFToolsSdk.ExecutionContext.create(credentials),
-  deletePagesOperation = PDFToolsSdk.DeletePages.Operation.createNew();
+const executionContext = PDFServicesSdk.ExecutionContext.create(credentials),
+  deletePagesOperation = PDFServicesSdk.DeletePages.Operation.createNew();
 
 // Set operation input from a source file.
-const input = PDFToolsSdk.FileRef
-  .createFromLocalFile(
-    'resources/deletePagesInput.pdf'
-  );
+const input = PDFServicesSdk.FileRef.createFromLocalFile('resources/deletePagesInput.pdf');
 deletePagesOperation.setInput(input);
 
 // Delete pages of the document (as specified by PageRanges).
 const pageRangesForDeletion = getPageRangesForDeletion();
-deletePagesOperation
-  .setPageRanges(pageRangesForDeletion);
+deletePagesOperation.setPageRanges(pageRangesForDeletion);
 
 // Execute the operation and Save the result to the specified location.
 deletePagesOperation.execute(executionContext)
-  .then(result =>
-    result.saveAsFile(
-      'output/deletePagesOutput.pdf'
-  ))
+  .then(result => result.saveAsFile('output/deletePagesOutput.pdf'))
 </code></pre>
         </coral-panel>
 
@@ -580,31 +562,22 @@ result.saveAs("output/deletePagesOutput.pdf");
       <coral-panelstack>
         <coral-panel>
 <pre><code class="language-javascript">// Create an ExecutionContext using credentials and create a new operation instance.          
-const executionContext = PDFToolsSdk.ExecutionContext.create(credentials),
-replacePagesOperation = PDFToolsSdk.ReplacePages.Operation.createNew();
+const executionContext = PDFServicesSdk.ExecutionContext.create(credentials),
+replacePagesOperation = PDFServicesSdk.ReplacePages.Operation.createNew();
 
 // Set operation base input from a source file.
-const baseInputFile = PDFToolsSdk.FileRef
-  .createFromLocalFile('resources/baseInput.pdf');
+const baseInputFile = PDFServicesSdk.FileRef.createFromLocalFile('resources/baseInput.pdf');
 replacePagesOperation.setBaseInput(baseInputFile);
 
 // Create a FileRef instance using a local file.
-const firstInputFile = PDFToolsSdk.FileRef
-  .createFromLocalFile(
-    'resources/replacePagesInput1.pdf'
-    ),
+const firstInputFile = PDFServicesSdk.FileRef.createFromLocalFile('resources/replacePagesInput1.pdf'),
 pageRanges = getPageRangesForFirstFile();
 
 // Adds the pages (specified by the page ranges) of the input PDF file for replacing the page of the base PDF file.
-replacePagesOperation.addPagesForReplace(
-    1, firstInputFile, pageRanges
-  );
+replacePagesOperation.addPagesForReplace(1, firstInputFile, pageRanges);
 
 // Create a FileRef instance using a local file.
-const secondInputFile = PDFToolsSdk.FileRef
-  .createFromLocalFile(
-    'resources/replacePagesInput2.pdf'
-  );
+const secondInputFile = PDFServicesSdk.FileRef.createFromLocalFile('resources/replacePagesInput2.pdf');
 
 // Adds all the pages of the input PDF file for replacing the page of the base PDF file.
 replacePagesOperation.addPagesForReplace(3, secondInputFile);
@@ -709,13 +682,12 @@ result.saveAs("output/replacePagesOutput.pdf");
       <coral-panelstack>
         <coral-panel>
 <pre><code class="language-javascript">// Create an ExecutionContext using credentials and create a new operation instance.          
-const executionContext = PDFToolsSdk.ExecutionContext.create(credentials),
-  linearizePDF = PDFToolsSdk.LinearizePDF,
+const executionContext = PDFServicesSdk.ExecutionContext.create(credentials),
+  linearizePDF = PDFServicesSdk.LinearizePDF,
   linearizePDFOperation = linearizePDF.Operation.createNew();
 
 // Set operation input from a source file.
-const input = PDFToolsSdk.FileRef
-  .createFromLocalFile('resources/linearizePDFInput.pdf');
+const input = PDFServicesSdk.FileRef.createFromLocalFile('resources/linearizePDFInput.pdf');
 linearizePDFOperation.setInput(input);
 
 // Execute the operation and Save the result to the specified location.
@@ -777,30 +749,17 @@ result.saveAs("output/linearizePDFOutput.pdf");
       <coral-panelstack>
         <coral-panel>
 <pre><code class="language-javascript">// Create an ExecutionContext using credentials and create a new operation instance.          
-const executionContext =
-  PDFToolsSdk
-  .ExecutionContext
-  .create(credentials),
-    compressPDF =
-      PDFToolsSdk.CompressPDF,
-    compressPDFOperation =
-    compressPDF.Operation.createNew();
+const executionContext = PDFServicesSdk.ExecutionContext.create(credentials),
+    compressPDF = PDFServicesSdk.CompressPDF,
+    compressPDFOperation = compressPDF.Operation.createNew();
 
 // Set operation input from a source file.
-const input = PDFToolsSdk
-  .FileRef
-  .createFromLocalFile(
-    'resources/compressPDFInput.pdf');
+const input = PDFServicesSdk.FileRef.createFromLocalFile('resources/compressPDFInput.pdf');
 compressPDFOperation.setInput(input);
 
 // Execute the operation and Save the result to the specified location.
-compressPDFOperation
-.execute(executionContext)
-  .then(result =>
-    result
-    .saveAsFile(
-      'output/compressPDFOutput.pdf'
-      ))
+compressPDFOperation.execute(executionContext)
+  .then(result => result.saveAsFile('output/compressPDFOutput.pdf'))
 </code></pre>
         </coral-panel>
         <coral-panel>
@@ -865,28 +824,18 @@ result.saveAs("output/compressPDFOutput.pdf");
       <coral-panelstack>
         <coral-panel>
 <pre><code class="language-javascript">// Create an ExecutionContext using credentials and create a new operation instance.
-const executionContext = PDFToolsSdk.ExecutionContext.create(credentials),
-  reorderPagesOperation = PDFToolsSdk
-    .ReorderPages
-    .Operation
-    .createNew();
+const executionContext = PDFServicesSdk.ExecutionContext.create(credentials),
+  reorderPagesOperation = PDFServicesSdk.ReorderPages.Operation.createNew();
 
 // Set operation input from a source file, along with specifying the order of the pages for rearranging the pages in a PDF file.
-const input = PDFToolsSdk.FileRef
-  .createFromLocalFile(
-    'resources/reorderPagesInput.pdf'
-  );
+const input = PDFServicesSdk.FileRef.createFromLocalFile('resources/reorderPagesInput.pdf');
 const pageRanges = getPageRangeForReorder();
 reorderPagesOperation.setInput(input);
 reorderPagesOperation.setPagesOrder(pageRanges);
 
 // Execute the operation and Save the result to the specified location.
-reorderPagesOperation
-  .execute(executionContext)
-  .then(result =>
-    result.saveAsFile(
-      'output/reorderPagesOutput.pdf'
-    ));
+reorderPagesOperation.execute(executionContext)
+  .then(result => result.saveAsFile('output/reorderPagesOutput.pdf'));
 </code></pre>
         </coral-panel>
         <coral-panel>
@@ -1037,20 +986,17 @@ result.saveAs("output/reorderPagesOutput.pdf");
         </coral-panel>
         <coral-panel>
 <pre><code class="language-javascript">// Create an ExecutionContext using credentials and create a new operation instance.          
-const executionContext = PDFToolsSdk.ExecutionContext.create( credentials ),
-  combineFilesOperation = PDFToolsSdk.CombineFiles.Operation.createNew();
+const executionContext = PDFServicesSdk.ExecutionContext.create( credentials ),
+  combineFilesOperation = PDFServicesSdk.CombineFiles.Operation.createNew();
 
 // Set operation input from a source file.
-const combineSource1 = PDFToolsSdk.FileRef
-    .createFromLocalFile( 'resources/combineFilesInput1.pdf' ),
-  combineSource2 = PDFToolsSdk.FileRef
-    .createFromLocalFile( 'resources/combineFilesInput2.pdf' );
+const combineSource1 = PDFServicesSdk.FileRef.createFromLocalFile( 'resources/combineFilesInput1.pdf' ),
+  combineSource2 = PDFServicesSdk.FileRef.createFromLocalFile( 'resources/combineFilesInput2.pdf' );
 combineFilesOperation.addInput( combineSource1 );
 combineFilesOperation.addInput( combineSource2 );
 
 // Execute the operation and Save the result to the specified location.
-combineFilesOperation
-  .execute( executionContext )
+combineFilesOperation.execute( executionContext )
   .then(result => result.saveAsFile( 'output/combineFilesOutput.pdf' ));
 </code></pre>
         </coral-panel>
@@ -1115,13 +1061,12 @@ result.saveAs( "output/combineFilesOutput.pdf" );
       <coral-panelstack>
         <coral-panel>
 <pre><code class="language-javascript">// Create an ExecutionContext using credentials
-const executionContext = PDFToolsSdk.ExecutionContext.create(credentials);
-   
+const executionContext = PDFServicesSdk.ExecutionContext.create(credentials);
+
 // Create a new operation instance.
-const splitPDFOperation = PDFToolsSdk.SplitPDF.Operation.createNew(),
-input = PDFToolsSdk.FileRef.createFromLocalFile('resources/splitPDFInput.pdf',
-PDFToolsSdk.SplitPDF.SupportedSourceFormat.pdf
-);
+const splitPDFOperation = PDFServicesSdk.SplitPDF.Operation.createNew(),
+input = PDFServicesSdk.FileRef.createFromLocalFile('resources/splitPDFInput.pdf',
+PDFServicesSdk.SplitPDF.SupportedSourceFormat.pdf);
    
 // Set operation input from a source file.
 splitPDFOperation.setInput(input);
@@ -1210,44 +1155,34 @@ for (FileRef fileRef : result) {
       <coral-panelstack>
         <coral-panel>
 <pre><code class="language-javascript">// Create an ExecutionContext using credentials and create a new operation instance.          
-const executionContext = PDFToolsSdk.ExecutionContext.create(credentials),
-  insertPagesOperation = PDFToolsSdk.InsertPages.Operation.createNew();
+const executionContext = PDFServicesSdk.ExecutionContext.create(credentials),
+  insertPagesOperation = PDFServicesSdk.InsertPages.Operation.createNew();
 
 // Set operation base input from a source file.
-const baseInputFile = PDFToolsSdk.FileRef
-  .createFromLocalFile('resources/baseInput.pdf');
+const baseInputFile = PDFServicesSdk.FileRef.createFromLocalFile('resources/baseInput.pdf');
 insertPagesOperation.setBaseInput(baseInputFile);
 
 // Create a FileRef instance using a local file.
-const firstFileToInsert = PDFToolsSdk.FileRef
-  .createFromLocalFile(
-    'resources/firstFileToInsertInput.pdf'
-  ),
+const firstFileToInsert = PDFServicesSdk.FileRef.createFromLocalFile('resources/firstFileToInsertInput.pdf'),
   pageRanges = getPageRangesForFirstFile();
 
 // Adds the pages (specified by the page ranges)
 // of the input PDF file to be
 // inserted at the specified page of the base PDF file.
-insertPagesOperation.addPagesToInsertAt(
-  2, firstFileToInsert, pageRanges);
+insertPagesOperation.addPagesToInsertAt(2, firstFileToInsert, pageRanges);
 
 // Create a FileRef instance using a local file.
-const secondFileToInsert = PDFToolsSdk
-  .FileRef.createFromLocalFile(
-    'resources/secondFileToInsertInput.pdf'
-  );
+const secondFileToInsert = PDFServicesSdk.FileRef.createFromLocalFile('resources/secondFileToInsertInput.pdf');
 
 // Adds all the pages of the input PDF file
 // to be inserted at the specified
 // page of the base PDF file.
 insertPagesOperation.addPagesToInsertAt(3, secondFileToInsert);
 
-// Execute the operation and Save the 
+// Execute the operation and Save the
 // result to the specified location.
 insertPagesOperation.execute(executionContext)
-  .then(result => result.saveAsFile(
-    'output/insertPagesOutput.pdf'
-  ))
+  .then(result => result.saveAsFile('output/insertPagesOutput.pdf'))
 </code></pre>
         </coral-panel>
 
@@ -1575,17 +1510,16 @@ public class MergeDocumentToPDF {
       <coral-panelstack>
         <coral-panel>
 <pre><code class="language-javascript">// Create an ExecutionContext using credentials
-const executionContext = PDFToolsSdk.ExecutionContext.create(credentials);
-   
+const executionContext = PDFServicesSdk.ExecutionContext.create(credentials);
+
 // Create new permissions instance and add the required permissions
-const protectPDF = PDFToolsSdk.ProtectPDF,
+const protectPDF = PDFServicesSdk.ProtectPDF,
   protectPDFOptions = protectPDF.options,
   permissions = protectPDFOptions.Permissions.createNew();
     permissions.addPermission(protectPDFOptions.Permission.PRINT_LOW_QUALITY);
-    permissions.addPermission
-      (protectPDFOptions.Permission.EDIT_DOCUMENT_ASSEMBLY);
+    permissions.addPermission(protectPDFOptions.Permission.EDIT_DOCUMENT_ASSEMBLY);
     permissions.addPermission(protectPDFOptions.Permission.COPY_CONTENT);
-   
+
 // Build ProtectPDF options by setting a User as well as an Owner/Permissions Password, Permissions,
 // Encryption Algorithm (used for encrypting the PDF file) and specifying the type of content to encrypt.
 const options = new protectPDFOptions.PasswordProtectOptions.Builder()
@@ -1593,15 +1527,14 @@ const options = new protectPDFOptions.PasswordProtectOptions.Builder()
   .setOwnerPassword("permissionspassword")
   .setPermissions(permissions)
   .setEncryptionAlgorithm(protectPDFOptions.EncryptionAlgorithm.AES_256)
-  .setContentEncryption
-    (protectPDFOptions.ContentEncryption.ALL_CONTENT_EXCEPT_METADATA)
+  .setContentEncryption(protectPDFOptions.ContentEncryption.ALL_CONTENT_EXCEPT_METADATA)
   .build();
-   
+
 // Create a new operation instance.
 const protectPDFOperation = protectPDF.Operation.createNew(options);
-   
+
 // Set operation input from a source file.
-const input = PDFToolsSdk.FileRef.createFromLocalFile('resources/protectPDFInput.pdf');
+const input = PDFServicesSdk.FileRef.createFromLocalFile('resources/protectPDFInput.pdf');
   protectPDFOperation.setInput(input);
    
 // Execute the operation and Save the result to the specified location.
@@ -1684,7 +1617,7 @@ result.saveAs("output/protectPDFOutput.pdf");
 </p>
 <!-- /Protect -->
 
-<!-- Unlock -->
+<!-- Unlock (Remove PDF Password) -->
 <p>
   <div id="unlock-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
     <coral-tabview>
@@ -1696,14 +1629,13 @@ result.saveAs("output/protectPDFOutput.pdf");
       <coral-panelstack>
         <coral-panel>
 <pre><code class="language-javascript">// Create an ExecutionContext using credentials
-const executionContext = PDFToolsSdk.ExecutionContext.create(credentials);
-   
+const executionContext = PDFServicesSdk.ExecutionContext.create(credentials);
+
 // Create a new operation instance.
-const removeProtectionOperation = PDFToolsSdk.RemoveProtection.Operation.createNew(),
-  input = PDFToolsSdk.FileRef.createFromLocalFile(
+const removeProtectionOperation = PDFServicesSdk.RemoveProtection.Operation.createNew(),
+  input = PDFServicesSdk.FileRef.createFromLocalFile(
     'resources/removeProtectionInput.pdf',
-    PDFToolsSdk.RemoveProtection.SupportedSourceFormat.pdf
-  );
+    PDFServicesSdk.RemoveProtection.SupportedSourceFormat.pdf);
    
 // Set operation input from a source file.
 removeProtectionOperation.setInput(input);
