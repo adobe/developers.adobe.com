@@ -552,6 +552,13 @@ section.sdk-rsrc-stories {
     display: block;
     position: relative;
 
+	.headliner {
+	  font-size: 2.25em;
+      font-family: 'Adobe Clean Light', sans-serif;
+	  text-align: center;
+	  margin-top: 1.5em;
+	}
+
     h3 {
       font-family: 'Adobe Clean Black';
       font-size: 1.6875rem;
