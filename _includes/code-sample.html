@@ -224,11 +224,11 @@ result.save_as(base_path + "/output/extractPdf.zip")
 
       <coral-panel>
 <pre><code class="language-javascript">// Create an ExecutionContext using credentials and create a new operation instance.
-const executionContext = PDFToolsSdk.ExecutionContext.create(credentials),
-createPdfOperation = PDFToolsSdk.CreatePDF.Operation.createNew();
-  
+const executionContext = PDFServicesSdk.ExecutionContext.create( credentials ),
+createPdfOperation = PDFServicesSdk.CreatePDF.Operation.createNew();
+
 // Set operation input from a source file.
-const input = PDFToolsSdk.FileRef.createFromLocalFile('resources/createPDFInput.docx');
+const input = PDFServicesSdk.FileRef.createFromLocalFile('resources/createPDFInput.docx');
 createPdfOperation.setInput(input);
   
 // Execute the operation and Save the result to the specified location.
@@ -1390,15 +1390,15 @@ result.saveAs("output/insertPagesOutput.pdf");
 </code></pre>
         </coral-panel>
         <coral-panel>
-<pre><code class="language-javascript">// Get the samples from http://www.adobe.com/go/pdftoolsapi_node_sample
-const PDFToolsSdk = require('@dcloud/documentservices-pdftools-node-sdk'),
+<pre><code class="language-javascript">// Get the samples from https://www.adobe.com/go/pdftoolsapi_node_sample
+const PDFServicesSdk = require('@adobe/pdfservices-node-sdk'),
   fs = require('fs');
 
 try {
   // Initial setup, create credentials instance.
-  const credentials =  PDFToolsSdk.Credentials
+  const credentials =  PDFServicesSdk.Credentials
     .serviceAccountCredentialsBuilder()
-    .fromFile("pdftools-api-credentials.json")
+    .fromFile("pdfservices-api-credentials.json")
     .build();
 
   // Setup input data for the document merge process
@@ -1406,10 +1406,10 @@ try {
     jsonDataForMerge = JSON.parse(jsonString);
 
   // Create an ExecutionContext using credentials
-  const executionContext = PDFToolsSdk.ExecutionContext.create(credentials);
+  const executionContext = PDFServicesSdk.ExecutionContext.create(credentials);
 
   // Create a new DocumentMerge options instance
-  const documentMerge = PDFToolsSdk.DocumentMerge,
+  const documentMerge = PDFServicesSdk.DocumentMerge,
     documentMergeOptions = documentMerge.options,
     options = new documentMergeOptions
       .DocumentMergeOptions(jsonDataForMerge, documentMergeOptions.OutputFormat.PDF);
@@ -1418,7 +1418,7 @@ try {
   const documentMergeOperation = documentMerge.Operation.createNew(options)
 
   // Set operation input document template from a source file.
-  const input = PDFToolsSdk
+  const input = PDFServicesSdk
     .FileRef.createFromLocalFile('resources/salesOrderTemplate.docx');
   documentMergeOperation.setInput(input);
 
@@ -1426,8 +1426,8 @@ try {
   documentMergeOperation.execute(executionContext)
     .then(result => result.saveAsFile('output/salesOrderOutput.pdf'))
     .catch(err => {
-      if(err instanceof PDFToolsSdk.Error.ServiceApiError
-          || err instanceof PDFToolsSdk.Error.ServiceUsageError) {
+      if(err instanceof PDFServicesSdk.Error.ServiceApiError
+          || err instanceof PDFServicesSdk.Error.ServiceUsageError) {
           console.log('Exception encountered while executing operation', err);
       } else {
           console.log('Exception encountered while executing operation', err);
@@ -1435,7 +1435,7 @@ try {
   });
 } catch (err) {
   console.log('Exception encountered while executing operation', err);
-} 
+}
 </code></pre>
         </coral-panel>
         <coral-panel>
