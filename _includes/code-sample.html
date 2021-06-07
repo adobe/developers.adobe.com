@@ -54,26 +54,80 @@
 		<coral-tablist size="S">
 			<coral-tab class="is-selected">REST API</coral-tab>
 			<coral-tab>Node.js</coral-tab>
-			<coral-tab>.Net</coral-tab>
 			<coral-tab>Java</coral-tab>
 			<coral-tab>Python</coral-tab>
 			<!-- <div class="tab-item-copy copy">Copy</div> -->
 		</coral-tablist>
 		<coral-panelstack>
 			<coral-panel>
-<pre><code class="language-shell">** REST API code here for Extract **
+<pre><code class="language-shell">curl --location --request POST 'https://cpf-stage-ue1.adobe.io/ops/:create' \
+--header 'Accept: application/json, text/plain, /' \
+--header 'Authorization: Bearer {{Placeholder for token}}' \
+--header 'x-api-key: {{Placeholder for client_id}}' \
+--form 'contentAnalyzerRequests={
+    \"cpf:engine\": {
+        \"repo:assetId\": \"urn:aaid:cpf:58af6e2c-1f0c-400d-9188-078000185695\"
+    },
+    \"cpf:inputs\": {
+        \"documentIn\": {
+            \"cpf:location\": \"fileInput1\",
+            \"dc:format\": \"application/pdf\"
+        },
+        \"params\": {
+            \"cpf:inline\": {
+                \"elementsToExtract\": [
+                    \"text\", \"tables\"
+                ],
+                \"renditionsToExtract\": [ \"tables\", \"figures\"]
+            }
+        }
+    },
+    \"cpf:outputs\": {
+        \"elementsInfo\": {
+            \"cpf:location\": \"jsonoutput\",
+            \"dc:format\": \"application/json\"
+        },
+        \"elementsRenditions\": {
+            \"cpf:location\": \"fileoutpart\",
+            \"dc:format\": \"text/directory\"
+        }
+    }
+}' \
+--form 'fileInput1=@"{{Placeholder for the input document template (absolute path)}}"'
+
 </code></pre>
 			</coral-panel>
 			<coral-panel>
-<pre><code class="language-javascript">// Node.js code here for Extract
+<pre><code class="language-javascript">// Create an ExecutionContext using credentials
+const executionContext = PDFServicesSdk.ExecutionContext.create(credentials);
+
+// Create a new operation instance.
+const extractPDFOperation = PDFServicesSdk.ExtractPDF.Operation.createNew(),
+    input = PDFServicesSdk.FileRef.createFromLocalFile(
+        'resources/extractPDFInput.pdf',
+        PDFServicesSdk.ExtractPDF.SupportedSourceFormat.pdf
+    );
+
+// Set operation input from a source file.
+extractPDFOperation.setInput(input);
+
+// Build and set extractPDF options
+const options = new PDFServicesSdk.ExtractPDF.options.ExtractPdfOptions.Builder()
+    .addElementsToExtract(
+      PDFServicesSdk.ExtractPDF.options.ExtractElementType.TEXT)
+    .addElementsToExtractRenditions(
+      PDFServicesSdk.ExtractPDF.options.ExtractRenditionsElementType.FIGURES)
+    .addCharInfo(true)
+    .build()
+extractPDFOperation.setOptions(options);
+
+// Execute the operation and Save the result to the specified location.
+extractPDFOperation.execute(executionContext)
+    .then(result => result.saveAsFile('output/extractPdf.zip'))
+
+
 </code></pre>
 			</coral-panel>
-
-			<coral-panel>
-<pre><code class="language-clike">// .NET code here for Extract
-</code></pre>
-			</coral-panel>
-
 			<coral-panel>
 <pre><code class="language-java">// Create an ExecutionContext using credentials and create a new operation instance
 ExecutionContext executionContext = ExecutionContext.create(credentials);
