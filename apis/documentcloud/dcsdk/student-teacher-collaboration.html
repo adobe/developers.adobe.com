@@ -1,71 +1,67 @@
 ---
 layout: default
-title: Student-Teacher Collaboration
+title: Document Services API Use Cases — Student-Teacher Collaboration
 meta:
 active: student-teacher-collaboration
 ---
+
 {% include paths.html %}
 
 <div class="main secondary-page">
 
-  <section id="api-use-cases-blade">
-    <div class="api-use-cases-container">
-      <div class="api-use-cases-wrapper">
+	<section id="api-use-cases-blade">
+		<div class="api-use-cases-container">
+			<div class="api-use-cases-wrapper">
+				<div class="intro-copy-wrapper">
+					<h1>Document Services API Use Cases</h1>
+				</div>
+			</div>
+		</div>
+	</section>
 
-        <div class="intro-copy-wrapper">
-          <h1>Document Services API Use Cases</h1>
-        </div>
+	<section id="api-use-cases-body">
+		<div class="api-use-cases-content-container">
+			<div class="api-use-cases-content-wrapper">
+				<div class="api-use-cases-content-menu">
+					{% include use-case-nav.html %}
+				</div>
+				<div class="api-cases-content-wrapper">
+					<div class="api-cases-content">
 
-      </div>
-    </div>
-  </section>
+						<h2>Student-Teacher Collaboration</h2>
 
-  <section id="api-use-cases-body">
-      <div class="api-use-cases-content-container">
-        <div class="api-use-cases-content-wrapper">
-          <div class="api-use-cases-content-menu">
-            {% include use-case-nav.html %}                
-          </div>
-          <div class="api-cases-content-wrapper">
-            <div class="api-cases-content">
-                <h2>Student-Teacher Collaboration
-                </h2>
-                <p>The most effective and rewarding learning environments allow for seamless collaboration between teachers and students. The sudden rise in virtual learning environments has made this goal difficult to achieve, as different file formats, user platforms, and diverse learning levels make it much harder for students to maximize their learning.
-                </p>
-                <p>Adobe Document Services enables students to:
-                </p>
-                <ul>
-                  <li>View learning materials in a seamless web experience despite multiple document formats
-                  </li>
-                  <li>Collaborate easily with teachers and peers to benefit from the full classroom environment 
-                  </li>
-                </ul>
-                <h3>Relevant APIs</h3>
-                <ul>
-                  <li>Adobe PDF Services API
-                  </li>
-                  <li>Adobe PDF Embed API
-                  </li>
-                </ul>
-                <h3>Scenario</h3>
-                <p>A teacher needs to share classroom material, but it is in a variety of formats, and not all students have the same apps and devices. Documents in Microsoft Word, Excel, PowerPoint, and HTML are converted to PDFs and embedded in course websites. Students annotate the documents, collaborate virtually with each other, and teachers see which students are engaged with certain material.</p>
-                <h3>Building this Solution
-                </h3>
-                <ol>
-                  <li>Create learning material in PDF programmatically by converting and combining documents in multiple formats using Adobe PDF Services API
-                  </li>
-                  <li>Provide the learning material in a high-fidelity PDF viewing experience
-                  </li>
-                  <li>Enable annotations for multiple students on embedded PDF documents
-                  </li>
-                  <li>Create supplemental learning material by archiving annotations on embedded PDF documents
-                  </li>
-                  <li>Track engagement and understand learning needs by using analytics events tracked in embedded PDF documents
-                  </li>
-                </ol>
-              </div>
-          </div>
-      </div>
-  </section>
+						<h3>Overview</h3>
+						<p>The most effective and rewarding learning environments allow for seamless collaboration between teachers and students. The sudden rise in virtual learning environments has made this goal difficult to achieve, as different file formats, user platforms, and diverse learning levels make it much harder for students to maximize their learning.</p>
+						<p>Adobe Document Services enables students to:</p>
+						<ul>
+							<li>View learning materials in a seamless web experience despite multiple document formats</li>
+							<li>Collaborate easily with teachers and peers to benefit from the full classroom environment</li>
+						</ul>
 
-  {% include use-case-help.html %}
+						<h3>Relevant APIs</h3>
+						<ul>
+							<li><a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-tools.html">Adobe PDF Services API</a></li>
+							<li><a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-embed.html">Adobe PDF Embed API</a></li>
+						</ul>
+
+						<h3>Scenario</h3>
+						<p>A teacher needs to share classroom material, but it is in a variety of formats, and not all students have the same apps and devices. Documents in Microsoft Word, Excel, PowerPoint, and HTML are converted to PDFs and embedded in course websites. Students annotate the documents, collaborate virtually with each other, and teachers see which students are engaged with certain material.</p>
+
+						<h3>Building this Solution</h3>
+						<ol>
+							<li>Create learning material in PDF programmatically by converting and combining documents in multiple formats using Adobe PDF Services API</li>
+							<li>Provide the learning material in a high-fidelity PDF viewing experience</li>
+							<li>Enable annotations for multiple students on embedded PDF documents</li>
+							<li>Create supplemental learning material by archiving annotations on embedded PDF documents</li>
+							<li>Track engagement and understand learning needs by using analytics events tracked in embedded PDF documents</li>
+						</ol>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{% include use-case-help.html %}
+
+</div>

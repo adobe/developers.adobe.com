@@ -8,62 +8,58 @@ active: search-and-indexing
 
 <div class="main secondary-page">
 
-  <section id="api-use-cases-blade">
-    <div class="api-use-cases-container">
-      <div class="api-use-cases-wrapper">
+	<section id="api-use-cases-blade">
+		<div class="api-use-cases-container">
+			<div class="api-use-cases-wrapper">
+				<div class="intro-copy-wrapper">
+					<h1>Document Services API Use Cases</h1>
+				</div>
+			</div>
+		</div>
+	</section>
 
-        <div class="intro-copy-wrapper">
-          <h1>Document Services API Use Cases</h1>
-        </div>
+	<section id="api-use-cases-body">
+		<div class="api-use-cases-content-container">
+			<div class="api-use-cases-content-wrapper">
+				<div class="api-use-cases-content-menu">
+					{% include use-case-nav.html %}
+				</div>
+				<div class="api-cases-content-wrapper">
+					<div class="api-cases-content">
 
-      </div>
-    </div>
-  </section>
+						<h2>Search and Indexing</h2>
 
-  <section id="api-use-cases-body">
-      <div class="api-use-cases-content-container">
-        <div class="api-use-cases-content-wrapper">
-          <div class="api-use-cases-content-menu">
-            {% include use-case-nav.html %}                
-          </div>
-          <div class="api-cases-content-wrapper">
-            <div class="api-cases-content">
-                <h2>Search and Indexing
-                </h2>
-                <p>With document digitization comes the problem of not only archiving accumulated files, but also the issue of unlocking the data in those documents. Many companies have a wealth of archived information stored in paper or scanned document archives—in a variety of formats—and they cannot be searched or indexed properly. Since the process of manually indexing and searching is incredibly labor intensive and not always accurate, the challenge is creating digital archives that are immediately accessible and available for editing or downstream processing.
-                </p>
-                <p>With Adobe Document Services, a workflow can:
-                </p>
-                <ul>
-                  <li>Convert a variety of files to PDF format for standardization
-                  </li>
-                  <li>Run OCR (optical character recognition) on scanned images to convert to machine-readable text
-                  </li>
-                  <li>Enable easy and fast searching of converted documents
-                  </li>
-                </ul>
-                <h3>Relevant APIs</h3>
-                <ul>
-                  <li>Adobe PDF Services API
-                  </li>
-                </ul>
-                <h3>Scenario</h3>
-                <p>A firm has thousands of legal contracts that have been scanned and stored as digital files. For compliance purposes, documents with a particular clause or special addendum must be found and then updated. To be successful, the staff must inventory all digital documents, unlock the text, and create a searchable index that can be used to locate critical content.</p>
-                <h3>Building this Solution
-                </h3>
-                <ol>
-                  <li>Identify a file system for digital document storage on a shared drive or database system
-                  </li>
-                  <li>Convert files not in PDF, such as scanned images, using Adobe PDF Services API Create PDF operation
-                  </li>
-                  <li>Send PDF documents to Adobe PDF Services API OCR operation to create fully searchable documents
-                  </li>
-                  <li>Index and store the searchable documents using a search engine and database
-                  </li>
-                </ol>
-              </div>
-          </div>
-      </div>
-  </section>
+						<h3>Overview</h3>
+						<p>With document digitization comes the problem of not only archiving accumulated files, but also the issue of unlocking the data in those documents. Many companies have a wealth of archived information stored in paper or scanned document archives—in a variety of formats—and they cannot be searched or indexed properly. Since the process of manually indexing and searching is incredibly labor intensive and not always accurate, the challenge is creating digital archives that are immediately accessible and available for editing or downstream processing.</p>
+						<p>With Adobe Document Services, a workflow can:</p>
+						<ul>
+							<li>Convert a variety of files to PDF format for standardization</li>
+							<li>Run OCR (optical character recognition) on scanned images to convert to machine-readable text</li>
+							<li>Enable easy and fast searching of converted documents</li>
+						</ul>
 
-  {% include use-case-help.html %}
+						<h3>Relevant APIs</h3>
+						<ul>
+							<li><a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-tools.html">Adobe PDF Services API</a></li>
+						</ul>
+
+						<h3>Scenario</h3>
+						<p>A firm has thousands of legal contracts that have been scanned and stored as digital files. For compliance purposes, documents with a particular clause or special addendum must be found and then updated. To be successful, the staff must inventory all digital documents, unlock the text, and create a searchable index that can be used to locate critical content.</p>
+
+						<h3>Building this Solution</h3>
+						<ol>
+							<li>Identify a file system for digital document storage on a shared drive or database system</li>
+							<li>Convert files not in PDF, such as scanned images, using Adobe PDF Services API Create PDF operation</li>
+							<li>Send PDF documents to Adobe PDF Services API OCR operation to create fully searchable documents</li>
+							<li>Index and store the searchable documents using a search engine and database</li>
+						</ol>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{% include use-case-help.html %}
+
+</div>

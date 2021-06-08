@@ -1,0 +1,67 @@
+---
+layout: default
+title: Document Services API Use Cases — Report Creation and Editing
+meta:
+active: report-creation-and-editing
+---
+
+{% include paths.html %}
+
+<div class="main secondary-page">
+
+	<section id="api-use-cases-blade">
+		<div class="api-use-cases-container">
+			<div class="api-use-cases-wrapper">
+				<div class="intro-copy-wrapper">
+					<h1>Document Services API Use Cases</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="api-use-cases-body">
+		<div class="api-use-cases-content-container">
+			<div class="api-use-cases-content-wrapper">
+				<div class="api-use-cases-content-menu">
+					{% include use-case-nav.html %}
+				</div>
+				<div class="api-cases-content-wrapper">
+					<div class="api-cases-content">
+
+						<h2>On-Demand Report Creation</h2>
+
+						<h3>Overview</h3>
+						<p>Creating reports is a common requirement for many applications and web experiences. Often, the displayed data and content is generated in HTML. However, many users want to download, share, review offline, or modify these reports, but the native format makes this difficult.</p>
+						<p>Adobe Document Services allows developers to:</p>
+						<ul>
+							<li>Download an HTML report in a PDF format to share or review offline</li>
+						</ul>
+
+						<h3>Relevant APIs</h3>
+						<ul>
+							<li><a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-tools.html">Adobe PDF Services API</a></li>
+							<li><a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-embed.html">Adobe PDF Embed API</a></li>
+						</ul>
+
+						<h3>Scenario</h3>
+						<p>A social media marketing agency has a web application that customers access to see results of different campaigns they are running.  Results are formatted and displayed on a password protected part of the site. Clients want to download single reports in PDF format, as well as select multiple reports and combine them into a more comprehensive PDF document that they can share with their management team.  </p>
+						<h3>Building this Solution</h3>
+						<ol>
+							<li>Campaign results are made available in a variety of formats, such as Excel tables, HTML pages, and PDF documents</li>
+							<li>Clients review the web page and select desired datasets for their report</li>
+							<li>The application uses PDF Create and PDF Combine operations to assemble the report</li>
+							<li>Clients select "Download Report"</li>
+						</ol>
+
+						<h3>Enhancements</h3>
+						<p>Users may want to add comments to a report, with insights and action steps. To do this, the application would provide a menu option ("View Report") and use Adobe PDF Embed API to display the report directly within the web page. In addition, annotations, including comments and markup, can also be enabled.</p>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{% include use-case-help.html %}
+
+</div>

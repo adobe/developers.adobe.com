@@ -434,4 +434,4 @@ function drawTemplate(templateData){
   $('.sample-wrapper').append(template);
 }
 
-drawDocApiItems();
+//drawDocApiItems();

@@ -55,4 +55,4 @@ style: compressed
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-
+#   - .idea
