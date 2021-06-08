@@ -99,82 +99,77 @@
 			</coral-panel>
 			<coral-panel>
 <pre><code class="language-javascript">// Create an ExecutionContext using credentials
-const executionContext = PDFServicesSdk.ExecutionContext.create(credentials);
-
+  const executionContext = PDFServicesSdk.ExecutionContext.create(credentials);
+  
+// Build extractPDF options
+  const options = new PDFServicesSdk.ExtractPDF.options.ExtractPdfOptions.Builder()
+      .addElementsToExtract(PDFServicesSdk.ExtractPDF.options.ExtractElementType.TEXT, PDFServicesSdk.ExtractPDF.options.ExtractElementType.TABLES)
+      .addElementsToExtractRenditions(PDFServicesSdk.ExtractPDF.options.ExtractRenditionsElementType.FIGURES, PDFServicesSdk.ExtractPDF.options.ExtractRenditionsElementType.TABLES)
+      .build()
+  
 // Create a new operation instance.
-const extractPDFOperation = PDFServicesSdk.ExtractPDF.Operation.createNew(),
-    input = PDFServicesSdk.FileRef.createFromLocalFile(
-        'resources/extractPDFInput.pdf',
-        PDFServicesSdk.ExtractPDF.SupportedSourceFormat.pdf
-    );
-
+  const extractPDFOperation = PDFServicesSdk.ExtractPDF.Operation.createNew(),
+      input = PDFServicesSdk.FileRef.createFromLocalFile(
+          'resources/extractPDFInput.pdf',
+          PDFServicesSdk.ExtractPDF.SupportedSourceFormat.pdf
+      );
+  
 // Set operation input from a source file.
-extractPDFOperation.setInput(input);
-
-// Build and set extractPDF options
-const options = new PDFServicesSdk.ExtractPDF.options.ExtractPdfOptions.Builder()
-    .addElementsToExtract(
-      PDFServicesSdk.ExtractPDF.options.ExtractElementType.TEXT)
-    .addElementsToExtractRenditions(
-      PDFServicesSdk.ExtractPDF.options.ExtractRenditionsElementType.FIGURES)
-    .addCharInfo(true)
-    .build()
-extractPDFOperation.setOptions(options);
-
-// Execute the operation and Save the result to the specified location.
-extractPDFOperation.execute(executionContext)
-    .then(result => result.saveAsFile('output/extractPdf.zip'))
-
-
+  extractPDFOperation.setInput(input);
+  
+// Set options
+  extractPDFOperation.setOptions(options);
+  
+  extractPDFOperation.execute(executionContext)
+      .then(result => result.saveAsFile('output/extractOutput.zip'))
 </code></pre>
 			</coral-panel>
 			<coral-panel>
-<pre><code class="language-java">// Create an ExecutionContext using credentials and create a new operation instance
-ExecutionContext executionContext = ExecutionContext.create(credentials);
-ExtractPDFOperation extractPDFOperation = ExtractPDFOperation.createNew();
-
+<pre><code class="language-java">// Create an ExecutionContext using credentials.
+  ExecutionContext executionContext = ExecutionContext.create(credentials);
+  
+  ExtractPDFOperation extractPDFOperation = ExtractPDFOperation.createNew();
+  
 // Set operation input from a source file
-FileRef source = FileRef.createFromLocalFile("src/test/resources/extractPdfInput.pdf");
-extractPDFOperation.setInputFile(source);
-
+  FileRef source = FileRef.createFromLocalFile("src/main/resources/extractPdfInput.pdf");
+  extractPDFOperation.setInputFile(source);
+  
 // Build ExtractPDF options and set them into the operation
-ExtractPDFOptions extractPDFOptions = ExtractPDFOptions.extractPdfOptionsBuilder()
-    .addElementsToExtract(Arrays.asList(PDFElementType.TEXT, PDFElementType.TABLES))
-    .addElementsToExtractRenditions(Arrays.asList(PDFElementType.TABLES, PDFElementType.FIGURES))
-    .addCharInfo(Boolean.TRUE)
-    .build();
-extractPDFOperation.setOptions(extractPDFOptions);
-
+  ExtractPDFOptions extractPDFOptions = ExtractPDFOptions.extractPdfOptionsBuilder()
+          .addElementsToExtract(Arrays.asList(ExtractElementType.TEXT, ExtractElementType.TABLES))
+          .addElementsToExtractRenditions(Arrays.asList(ExtractRenditionsElementType.TABLES, ExtractRenditionsElementType.FIGURES))
+          .build();
+  extractPDFOperation.setOptions(extractPDFOptions);
+  
 // Execute the operation
-FileRef result = extractPDFOperation.execute(executionContext);
-
+  FileRef result = extractPDFOperation.execute(executionContext);
+  
 // Save the result at the specified location
-result.saveAs("output/extractPdf.zip");
+  result.saveAs("output/extractOutput.zip");
 </code></pre>
 			</coral-panel>
 
 			<coral-panel>
-<pre><code class="language-py">#Create an ExecutionContext using credentials and create a new operation instance.
-execution_context = ExecutionContext.create(credentials)
-extract_pdf_operation = ExtractPDFOperation.create_new()
-
-#Set operation input from a source file.
-source = FileRef.create_from_local_file(base_path + "/resources/extractPdfInput.pdf")
-extract_pdf_operation.set_input(source)
-
+<pre><code class="language-py"># Create an ExecutionContext using credentials and create a new operation instance.
+  execution_context = ExecutionContext.create(credentials)
+  extract_pdf_operation = ExtractPDFOperation.create_new()
+  
+# Set operation input from a source file.
+  source = FileRef.create_from_local_file(base_path + "/resources/extractPdfInput.pdf")
+  extract_pdf_operation.set_input(source)
+  
 # Build ExtractPDF options and set them into the operation
-extract_pdf_options: ExtractPDFOptions = ExtractPDFOptions.builder() \
-    .with_elements_to_extract([PDFElementType.TEXT, PDFElementType.TABLES]) \
-    .with_elements_to_extract_renditions([PDFElementType.TABLES, PDFElementType.FIGURES]) \
-    .with_get_char_info(True) \
-    .build()
-extract_pdf_operation.set_options(extract_pdf_options)
-
-#Execute the operation.
-result: FileRef = extract_pdf_operation.execute(execution_context)
-
+  extract_pdf_options: ExtractPDFOptions = ExtractPDFOptions.builder() \
+      .with_elements_to_extract([ExtractElementType.TEXT, ExtractElementType.TABLES]) \
+      .with_elements_to_extract_renditions([ExtractRenditionsElementType.TABLES, ExtractRenditionsElementType.FIGURES]) \
+      .build()
+  extract_pdf_operation.set_options(extract_pdf_options)
+  
+# Execute the operation.
+  result: FileRef = extract_pdf_operation.execute(execution_context)
+  
 # Save the result to the specified location.
-result.save_as(base_path + "/output/extractPdf.zip")
+  result.save_as(base_path + "/output/extractOutput.zip")
 </code></pre>
 			</coral-panel>
 		</coral-panelstack>
@@ -1390,7 +1385,7 @@ result.saveAs("output/insertPagesOutput.pdf");
 </code></pre>
         </coral-panel>
         <coral-panel>
-<pre><code class="language-javascript">// Get the samples from https://www.adobe.com/go/pdftoolsapi_node_sample
+<pre><code class="language-javascript">// Get the samples from https://www.adobe.com/go/pdfservicesapi_node_sample
 const PDFServicesSdk = require('@adobe/pdfservices-node-sdk'),
   fs = require('fs');
 
@@ -1439,7 +1434,7 @@ try {
 </code></pre>
         </coral-panel>
         <coral-panel>
-<pre><code class="language-clike">// Get the samples from https://www.adobe.com/go/pdftoolsapi_net_samples
+<pre><code class="language-clike">// Get the samples from https://www.adobe.com/go/pdfservicesapi_net_samples
 namespace MergeDocumentToPDF
 {
   class Program
@@ -1453,7 +1448,7 @@ namespace MergeDocumentToPDF
       {
         // Initial setup, create credentials instance.
         Credentials credentials = Credentials.ServiceAccountCredentialsBuilder()
-          .FromFile(Directory.GetCurrentDirectory() + "/pdftools-api-credentials.json")
+          .FromFile(Directory.GetCurrentDirectory() + "/pdfservices-api-credentials.json")
           .Build();
 
         // Create an ExecutionContext using credentials.
@@ -1499,7 +1494,7 @@ namespace MergeDocumentToPDF
         </coral-panel>
 
         <coral-panel>
-<pre><code class="language-java">// Get the samples from https://www.adobe.com/go/pdftoolsapi_java_samples
+<pre><code class="language-java">// Get the samples from https://www.adobe.com/go/pdfservicesapi_java_samples
 public class MergeDocumentToPDF {
 
   // Initialize the logger.
@@ -1510,7 +1505,7 @@ public class MergeDocumentToPDF {
     try {
       // Initial setup, create credentials instance.
       Credentials credentials = Credentials.serviceAccountCredentialsBuilder()
-        .fromFile("pdftools-api-credentials.json")
+        .fromFile("pdfservices-api-credentials.json")
         .build();
 
       // Setup input data for the document merge process
