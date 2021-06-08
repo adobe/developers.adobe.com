@@ -1,0 +1,583 @@
+---
+layout: default
+title: PDF SDK Toolkit | APIs for PDF | Adobe Document Services
+meta: Make life easier with our PDF Toolkit. Simplify workflows and improve UX. Our PDF Services API helps you create, convert, OCR PDFs and more. Learn more today.
+active: tools-sdk
+redirect_from:
+  - /apis/documentcloud/dcsdk/pdf-services-sdk.html
+  - /apis/documentcloud/Services.html
+---
+
+{% include paths.html %}
+
+<div class="main secondary-page dcsdk">
+
+	<div class="gradient">
+		<section class="header">
+			<h1>Adobe PDF Services API</h1>
+			<h2>PDF APIs with SDKs for Node.js, .Net, and Java to create, convert, OCR PDFs, and more.
+				<span class="xl-only"><a title="Contact Us" alt="Adobe PDF Services API Contact Us" id="contact_us" href="https://www.adobe.com/go/pdftoolsapi_requestform" target="_blank" class="button-link">Contact Us</a></span>
+			</h2>
+			<span class="mobile-only"><a title="Contact Us" alt="Adobe PDF Services API Contact Us" id="contact_us" href="https://www.adobe.com/go/pdftoolsapi_requestform" class="button-link">Contact Us</a></span>
+		</section>
+
+		<section class="home-card card-slider-container">
+			<div class="card blanche">
+				<div class="card-icon"><img src="{{ baseurl }}/gh-assets/svg/create_secure_support.svg" alt="Converting a word document into a secure pdf"></div>
+				<h2>Create, secure, and export PDF documents</h2>
+				<p>Create a PDF from Microsoft Office documents, protect the content, and export to other formats</p>
+			</div>
+
+			<div class="card blanche">
+				<div class="card-icon"><img src="{{ baseurl }}/gh-assets/svg/modify_pages.svg" alt="PDF APIs converting and optimizing pdfs"></div>
+				<h2>Modify PDFs and optimize output</h2>
+				<p>Programmatically alter a document, such as reordering, inserting, and rotating pages, as well as compressing the file</p>
+			</div>
+
+			<div class="card blanche">
+				<div class="card-icon"><img src="{{ baseurl }}/gh-assets/svg/cloud_services.svg" alt="Cloud-based PDF API"></div>
+				<h2>Leverage Adobe's cloud-based services</h2>
+				<p>Access the same cloud-based APIs that power Adobe's end user applications to quickly deliver scalable,
+				<a href="https://www.adobe.com/content/dam/cc/en/security/pdfs/AdobeDocumentServices_SecurityOverview.pdf" target="_blank" class="section-links">secure</a> solutions</p>
+			</div>
+		</section>
+	</div>
+
+	<div class="cta-wrapper">
+		<a href="https://www.adobe.com/go/dcsdks_credentials" target="_blank" class="spectrum-Button spectrum-Button--cta">
+			Start free trial
+		</a>
+	</div>
+
+
+
+	<section class="platform market-slider-container">
+
+		<!-- AWS Marketplace (Jan 2021) -->
+		<section class="market-place">
+			<div class="market-place-container">
+				<div class="market-place-wrapper">
+					<div class="market-place-logo-wrapper">
+						<div class="mp-adobe-logo"><img src="{{ baseurl }}/gh-assets/img/adobe_logo_partnership@2x.png" alt="Adobe logo partnership banner"></div>
+						<div class="mp-plus">+</div>
+						<div class="mp-logo"><img src="{{ baseurl }}/gh-assets/svg/awsmplogo_white.svg" alt="AWS Marketplace logo"/></div>
+				  </div>
+				  <div class="mp-copy-wrapper">
+					<h4>AWS Marketplace Partnership</h4>
+					<div class="mp-copy">We now offer all of our PDF Services APIs for purchase as a subscription in AWS console</div>
+						<div class="mp-cta-wrapper">
+							<a href="https://www.adobe.com/go/pdfToolsAPI_Pricing#AWS" target="_blank" class="button-link">
+								Learn more
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Microsoft power (Dec 2020) -->
+		<section class="market-place ms-blade">
+			<div class="market-place-container">
+				<div class="market-place-wrapper">
+					<div class="market-place-logo-wrapper">
+						<div class="mp-adobe-logo"><img src="{{ baseurl }}/gh-assets/img/adobe_logo_partnership@2x.png" alt="Adobe logo partnership banner"></div>
+						<div class="mp-plus">+</div>
+						<div class="mp-logo ms-power-logo"><img src="{{ baseurl }}/gh-assets/svg/ms_power_logo.svg" alt="Microsoft Power Platform logo"/></div>
+					</div>
+					<div class="mp-copy-wrapper">
+						<h4>Microsoft Power Automate Integration</h4>
+						<div class="mp-copy">Quickly automate document processes without writing any code using the new Adobe PDF Services Connector.</div>
+						<div class="mp-cta-wrapper">
+							<a href="http://www.adobe.com/go/powerautomate_help" target="_blank" class="button-link">
+								Learn more
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</section>
+
+
+
+	<!-- work-flow-->
+	<section class="dctsdk-work-flow">
+
+		<div class="title-with-cta">
+			<h3>Key Features of <span style="white-space: nowrap;">Adobe PDF Services API</span></h3>
+			<div>
+				<a href="https://www.adobe.com/go/dcsdks_credentials" target="_blank" class="spectrum-Button spectrum-Button--cta">
+					Start free trial
+				</a>
+			</div>
+		</div>
+
+		<div class="work-flow-container">
+			<div class="work-flow_menu">
+				<ul>
+					<!-- Extract -->
+					<li id="extract" class="dctsdk active">
+						<div class="work-flow-menu-item open">
+							<div class="chev-arrow-right"></div>
+							<div class="shadow-box dctsdk">
+								<div class="work-flow-icon icon-align dctsdk create" title="Create PDF from Word doc"></div>
+								<div class="work-flow-menu-copy">Extract PDF Content</div>
+							</div>
+						</div>
+						<!-- Shared with code area -->
+						<div class="work-flow-menu-support work-flow-support-mode-mobile open">
+							<h4>PDF Content Extraction</h4>
+							<p class="work-flow-menu-support-copy">Extract text, images, tables, and more from native and scanned PDFs into a structured JSON file. PDF Extract API leverages AI technology to accurately identify text objects and understand the natural reading order of different elements such as headings, lists, and paragraphs spanning multiple columns or pages. Extract font styles with identification of metadata such as bold and italic text and their position within your PDF. Extracted content is output in a structured JSON file format with tables in CSV or XLSX and images saved as PNG.</p>
+							<a href="https://www.adobe.com/go/pdftoolsapi_doc" target="_blank" class="button-link">See Documentation</a>
+						</div>
+					</li>
+
+					<!-- Create -->
+					<li id="create" class="dctsdk">
+						<div class="work-flow-menu-item open">
+							<div class="chev-arrow-right"></div>
+							<div class="shadow-box dctsdk">
+								<div class="work-flow-icon icon-align dctsdk create" title="Create PDF from Word doc"></div>
+								<div class="work-flow-menu-copy">Create PDF</div>
+							</div>
+						</div>
+						<!-- Shared with code area -->
+						<div class="work-flow-menu-support work-flow-support-mode-mobile open">
+							<h4>Create a PDF File</h4>
+							<p class="work-flow-menu-support-copy">Create PDFs from a variety of formats, including static and dynamic HTML; Microsoft Word, PowerPoint, and Excel; as well as text, image, and, Zip<br>Support for HTML to PDF, DOC to PDF, DOCX to PDF, PPT to PDF, PPTX to PDF, XLS to PDF, XLSX to PDF, TXT to PDF, RTF to PDF, BMP to PDF, JPEG to PDF, GIF to PDF, TIFF to PDF, PNG to PDF</p>
+							<p>See our public <a href="https://www.adobe.com/go/dcsdk_APIdocs#post-createPDF" target="_blank">API Reference</a> and quickly try our APIs using the Postman collections</p>
+							<a href="https://www.adobe.com/go/pdftoolsapi_doc" target="_blank" class="button-link">See Documentation</a>
+						</div>
+					</li>
+
+					<!-- Doc Generation -->
+					<li  id="generate" class="dctsdk">
+						<div class="work-flow-menu-item open">
+							<div class="chev-arrow-right"></div>
+							<div class="shadow-box dctsdk">
+								<div class="work-flow-icon icon-align dctsdk generate" title="Document Generation"></div>
+								<div class="work-flow-menu-copy">Document Generation</div>
+							</div>
+						</div>
+						<!-- Shared with code area -->
+						<div class="work-flow-menu-support work-flow-support-mode-mobile open">
+							<h4>PDF and Word Document Generation with dynamic data</h4>
+							<p class="work-flow-menu-support-copy">Generate PDF or Word documents from Microsoft Word templates and your data. Merge dynamic data with your custom templates to generate on brand contracts, proposals, invoices, NDAs, and more.	</p>
+						<p>Use our Word add-in to quickly create templates and add signatures with out of the box Adobe Sign integration.</p>
+						<a href="{{baseurl}}/apis/documentcloud/dcsdk/doc-generation.html" target="_blank" class="button-link">Learn more</a>
+						</div>
+					</li>
+
+					<!-- Export -->
+					<li id="export" class="dctsdk">
+						<div class="work-flow-menu-item">
+							<div class="chev-arrow-right"></div>
+							<div class="shadow-box dctsdk">
+								<div class="work-flow-icon icon-align dctsdk export" title="Export"></div>
+								<div class="work-flow-menu-copy">Convert PDF</div>
+							</div>
+						</div>
+						<!-- Shared with code area -->
+						<div class="work-flow-menu-support work-flow-support-mode-mobile">
+							<h4>Convert a PDF file to other formats</h4>
+							<p class="work-flow-menu-support-copy">Convert existing PDFs to popular formats, such as Microsoft Word, Excel, and PowerPoint, as well as text and image<br>Support for PDF to DOC, PDF to DOCX, PDF to JPEG, PDF to PNG, PDF to PPTX, PDF to RTF, PDF to XLSX</p>
+							<p>See our public <a href="https://www.adobe.com/go/dcsdk_APIdocs#post-exportPDF" target="_blank">API Reference</a> and quickly try our APIs using the Postman collections</p>
+							<a href="https://www.adobe.com/go/pdftoolsapi_doc" target="_blank" class="button-link">See Documentation</a>
+						</div>
+					</li>
+
+					<!-- OCR / Recognize -->
+					<li id="ocr" class="dctsdk">
+						<div class="work-flow-menu-item">
+							<div class="chev-arrow-right"></div>
+							<div class="shadow-box dctsdk">
+								<div class="work-flow-icon icon-align dctsdk recognize" title="Recognize Text"></div>
+								<div class="work-flow-menu-copy">OCR PDF</div>
+							</div>
+						</div>
+						<!-- Shared with code area -->
+						<div class="work-flow-menu-support work-flow-support-mode-mobile">
+							<h4>OCR a PDF File</h4>
+							<p class="work-flow-menu-support-copy">
+								Use built-in optical character recognition (OCR) to convert images to text and enable fully text searchable documents for archiving and creation of searchable indexes.</p>
+							<p>See our public <a href="https://www.adobe.com/go/dcsdk_APIdocs#post-ocr" target="_blank">API Reference</a> and quickly try our APIs using the Postman collections</p>
+							<a href="https://www.adobe.com/go/pdftoolsapi_doc" target="_blank" class="button-link">See Documentation</a>
+						</div>
+					</li>
+
+					<!-- Protect -->
+					<li id="protect" class="dctsdk">
+						<div class="work-flow-menu-item">
+							<div class="chev-arrow-right"></div>
+							<div class="shadow-box dctsdk">
+								<div class="work-flow-icon icon-align dctsdk protect" title="Protect PDF"></div>
+								<div class="work-flow-menu-copy">Secure PDF</div>
+							</div>
+						</div>
+						<!-- Shared with code area -->
+						<div class="work-flow-menu-support work-flow-support-mode-mobile">
+							<h4>Secure a PDF file and set restrictions</h4>
+							<p class="work-flow-menu-support-copy">Secure a PDF file with a password encrypt the document. Set an owner password and restrictions on certain features like printing, editing and copying in the PDF document to prevent end users from modifying it.<br>Support for AES-128 and AES-256 encryption on PDF files, with granular permissions for high and low quality printing and fill and sign form field restrictions.</p>
+							<p>See our public <a href="https://www.adobe.com/go/dcsdk_APIdocs#post-protectPDF" target="_blank">API Reference</a> and quickly try our APIs using the Postman collections</p>
+							<a href="https://www.adobe.com/go/pdftoolsapi_doc" target="_blank" class="button-link">See Documentation</a>
+						</div>
+					</li>
+
+					<!-- Unlock *new Q420 * -->
+					<li id="unlock" class="dctsdk">
+						<div class="work-flow-menu-item">
+							<div class="chev-arrow-right"></div>
+							<div class="shadow-box dctsdk">
+								<div class="work-flow-icon icon-align dctsdk unlock" title="Unlock PDF"></div>
+								<div class="work-flow-menu-copy">Remove PDF Password</div>
+							</div>
+						</div>
+
+						<!-- Shared with code area -->
+						<div class="work-flow-menu-support work-flow-support-mode-mobile">
+							<h4>Remove the Password from a PDF file</h4>
+							<p class="work-flow-menu-support-copy">Remove password security from a PDF document. This can only be accomplished with the owner password of the document which must be passed in the operation.</p>
+							<p>See our public <a href="https://www.adobe.com/go/dcsdk_APIdocs#post-removeProtection" target="_blank">API Reference</a> and quickly try our APIs using the Postman collections</p>
+							<a href="https://www.adobe.com/go/pdftoolsapi_doc" target="_blank" class="button-link">See Documentation</a>
+						</div>
+					</li>
+
+					<!-- Split *new Q420* -->
+					<li id="split" class="dctsdk">
+						<div class="work-flow-menu-item">
+							<div class="chev-arrow-right"></div>
+							<div class="shadow-box dctsdk">
+								<div class="work-flow-icon icon-align dctsdk split" title="Split"></div>
+								<div class="work-flow-menu-copy">Split PDF</div>
+							</div>
+						</div>
+
+						<!-- Shared with code area -->
+						<div class="work-flow-menu-support work-flow-support-mode-mobile">
+							<h4>Split a PDF into multiple files</h4>
+							<p class="work-flow-menu-support-copy">Split a PDF document into multiple smaller documents by simply specifying either the number of files, pages per file, or page ranges.</p>
+							<p>See our public <a href="https://www.adobe.com/go/dcsdk_APIdocs#post-splitPDF" target="_blank">API Reference</a> and quickly try our APIs using the Postman collections</p>
+							<a href="https://www.adobe.com/go/pdftoolsapi_doc" target="_blank" class="button-link">See Documentation</a>
+						</div>
+					</li>
+
+					<!-- Combine *new Q320 -->
+					<li id="combine" class="dctsdk">
+						<div class="work-flow-menu-item">
+							<div class="chev-arrow-right"></div>
+							<div class="shadow-box dctsdk">
+								<div class="work-flow-icon icon-align dctsdk combine" title="Combine"></div>
+								<div class="work-flow-menu-copy">Combine PDF</div>
+							</div>
+						</div>
+
+						<!-- Shared with code area -->
+						<div class="work-flow-menu-support work-flow-support-mode-mobile">
+							<h4>Combine multiple documents into a PDF file</h4>
+							<p class="work-flow-menu-support-copy">Combine two or more documents into a single PDF file</p>
+							<p>See our public <a href="https://www.adobe.com/go/dcsdk_APIdocs#post-combinePDF" target="_blank">API Reference</a> and quickly try our APIs using the Postman collections</p>
+							<a href="https://www.adobe.com/go/pdftoolsapi_doc" target="_blank" class="button-link">See Documentation</a>
+
+						</div>
+					</li>
+
+					<!-- Compress *new* -->
+					<li id="compress" class="dctsdk">
+						<div class="work-flow-menu-item">
+							<div class="chev-arrow-right"></div>
+							<div class="shadow-box dctsdk">
+								<div class="work-flow-icon icon-align dctsdk compress" title="Compress"></div>
+								<div class="work-flow-menu-copy">Compress PDF</div>
+							</div>
+						</div>
+
+						<!-- Shared with code area -->
+						<div class="work-flow-menu-support work-flow-support-mode-mobile">
+							<h4>Compress a PDF file</h4>
+							<p class="work-flow-menu-support-copy">Reduce the size of PDF files by compressing to smaller sizes for lower bandwidth viewing, downloading, and sharing.<br>Support for multiple compression levels to retain the quality of images and graphics</p>
+							<p>See our public <a href="https://www.adobe.com/go/dcsdk_APIdocs#post-compressPDF" target="_blank">API Reference</a> and quickly try our APIs using the Postman collections</p>
+							<a href="https://www.adobe.com/go/pdftoolsapi_doc" target="_blank" class="button-link">See Documentation</a>
+						</div>
+					</li>
+
+					<!-- Reorder -->
+					<li id="reorder" class="dctsdk">
+						<div class="work-flow-menu-item">
+							<div class="chev-arrow-right"></div>
+							<div class="shadow-box dctsdk">
+								<div class="work-flow-icon icon-align dctsdk reorder" title="Reorder Pages"></div>
+								<div class="work-flow-menu-copy">Reorder PDF Pages</div>
+							</div>
+						</div>
+
+						<!-- Shared with code area -->
+						<div class="work-flow-menu-support work-flow-support-mode-mobile">
+							<h4>Reorder Pages within PDF files</h4>
+							<p class="work-flow-menu-support-copy">Reorder the pages of a PDF file to reorganize.</p>
+							<p>See our public <a href="https://www.adobe.com/go/dcsdk_APIdocs#post-combinePDF" target="_blank">API Reference</a> and quickly try our APIs using the Postman collections</p>
+							<a href="https://www.adobe.com/go/pdftoolsapi_doc" target="_blank"  class="button-link">See Documentation</a>
+						</div>
+					</li>
+
+					<!-- Linearize -->
+					<li id="linearize" class="dctsdk">
+						<div class="work-flow-menu-item">
+							<div class="chev-arrow-right"></div>
+							<div class="shadow-box dctsdk">
+								<div class="work-flow-icon icon-align dctsdk linearize" title="Linearize PDF"></div>
+								<div class="work-flow-menu-copy">Linearize PDF</div>
+							</div>
+						</div>
+
+						<!-- Shared with code area -->
+						<div class="work-flow-menu-support work-flow-support-mode-mobile">
+							<h4>Linearize a PDF File for Fast Web View</h4>
+							<p class="work-flow-menu-support-copy">Optimize PDFs for quick viewing on the web, especially for mobile clients. Linearization allows your end users to view large PDF documents incrementally so that they can view pages much faster in lower bandwidth conditions.</p>
+							<p>See our public <a href="https://www.adobe.com/go/dcsdk_APIdocs#post-linearizePDF" target="_blank">API Reference</a> and quickly try our APIs using the Postman collections</p>
+							<a href="https://www.adobe.com/go/pdftoolsapi_doc" target="_blank"  class="button-link">See Documentation</a>
+						</div>
+					</li>
+
+					<!-- Insert -->
+					<li id="insert" class="dctsdk">
+						<div class="work-flow-menu-item">
+							<div class="chev-arrow-right"></div>
+							<div class="shadow-box dctsdk">
+								<div class="work-flow-icon icon-align dctsdk insert" title="Insert"></div>
+								<div class="work-flow-menu-copy">Insert PDF Pages</div>
+							</div>
+						</div>
+
+						<!-- Shared with code area -->
+						<div class="work-flow-menu-support work-flow-support-mode-mobile">
+							<h4>Insert a page into a PDF document</h4>
+							<p class="work-flow-menu-support-copy">Insert one or more pages into an existing document</p>
+							<p>See our public <a href="https://www.adobe.com/go/dcsdk_APIdocs#post-combinePDF" target="_blank">API Reference</a> and quickly try our APIs using the Postman collections</p>
+							<a href="https://www.adobe.com/go/pdftoolsapi_doc" target="_blank"  class="button-link">See Documentation</a>
+						</div>
+					</li>
+
+					<!-- Replace -->
+					<li id="replace" class="dctsdk">
+						<div class="work-flow-menu-item">
+							<div class="chev-arrow-right"></div>
+							<div class="shadow-box dctsdk">
+								<div class="work-flow-icon icon-align dctsdk replace" title="Replace"></div>
+								<div class="work-flow-menu-copy">Replace PDF Pages</div>
+							</div>
+						</div>
+
+						<!-- Shared with code area -->
+						<div class="work-flow-menu-support work-flow-support-mode-mobile">
+							<h4>Replace a page within a PDF file</h4>
+							<p class="work-flow-menu-support-copy">Replace one or more pages with another page in an existing document</p>
+							<p>See our public <a href="https://www.adobe.com/go/dcsdk_APIdocs#post-combinePDF" target="_blank">API Reference</a> and quickly try our APIs using the Postman collections</p>
+							<a href="https://www.adobe.com/go/pdftoolsapi_doc" target="_blank"  class="button-link">See Documentation</a>
+						</div>
+					</li>
+
+					<!-- Delete -->
+					<li id="delete" class="dctsdk">
+						<div class="work-flow-menu-item">
+							<div class="chev-arrow-right"></div>
+							<div class="shadow-box dctsdk">
+								<div class="work-flow-icon icon-align dctsdk delete" title="Delete"></div>
+								<div class="work-flow-menu-copy">Delete PDF Pages</div>
+							</div>
+						</div>
+
+						<!-- Shared with code area -->
+						<div class="work-flow-menu-support work-flow-support-mode-mobile">
+							<h4>Delete a page from a PDF file</h4>
+							<p class="work-flow-menu-support-copy">Delete one or more pages from a document</p>
+							<p>See our public <a href="https://www.adobe.com/go/dcsdk_APIdocs#post-pageManipulation" target="_blank">API Reference</a> and quickly try our APIs using the Postman collections</p>
+							<a href="https://www.adobe.com/go/pdftoolsapi_doc" target="_blank"  class="button-link">See Documentation</a>
+						</div>
+					</li>
+
+					<!-- Rotate -->
+					<li id="rotate" class="dctsdk">
+						<div class="work-flow-menu-item">
+							<div class="chev-arrow-right"></div>
+							<div class="shadow-box dctsdk">
+								<div class="work-flow-icon icon-align dctsdk rotate" title="Rotate"></div>
+								<div class="work-flow-menu-copy">Rotate PDF Pages</div>
+							</div>
+						</div>
+
+						<!-- Shared with code area -->
+						<div class="work-flow-menu-support work-flow-support-mode-mobile">
+							<h4>Rotate a page in a PDF file</h4>
+							<p class="work-flow-menu-support-copy">Rotate a page in an existing document</p>
+							<p>See our public <a href="https://www.adobe.com/go/dcsdk_APIdocs#post-pageManipulation" target="_blank">API Reference</a> and quickly try our APIs using the Postman collections</p>
+							<a href="https://www.adobe.com/go/pdftoolsapi_doc" target="_blank"  class="button-link">See Documentation</a>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+
+			<div class="work-flow_code">
+				<div id="sdk-support" class="menu-item-info-content">
+					<div class="work-flow-menu-support">
+						<h4>Create a PDF File</h4>
+						<p class="work-flow-menu-support-copy">Create PDFs from a variety of formats, including static and dynamic HTML; Microsoft Word, PowerPoint, and Excel; as well as text, image, and, Zip<br>Support for HTML to PDF, DOC to PDF, DOCX to PDF, PPT to PDF, PPTX to PDF, XLS to PDF, XLSX to PDF, TXT to PDF, RTF to PDF, BMP to PDF, JPEG to PDF, GIF to PDF, TIFF to PDF, PNG to PDF</p>
+						<p>See our public <a href="https://www.adobe.com/go/dcsdk_APIdocs#post-createPDF">API Reference</a> and quickly try our APIs using the Postman collections</p>
+						<a href="https://www.adobe.com/go/pdftoolsapi_doc" target="_blank" class="button-link">See Documentation</a>
+					</div>
+					<div class="code-viewer-wrapper">
+						<!-- Code Viewer -->
+						{% include code-sample.html %}
+						<!-- /Code Viewer -->
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
+	<!-- work-flow end -->
+
+
+
+	<!-- pdf extract -->
+	<section class='grey-bar-extract'>
+		<div class="extract-container">
+			<h3>Adobe PDF Extract API</h3>
+			<div class="extract-copy">
+				<p>A new web service that allows you to unlock content structure and table data from any PDF document with machine learning</p>
+				<p><a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-extract.html" target="_blank" class="spectrum-Button spectrum-Button--cta">Learn more</a></p>
+			</div>
+			<div class="extract-img"></div>
+			<div class="extract-copy-lst">
+				<ul>
+					<li>
+						<div>Leverage Adobe Sensei for a rich understanding of <span>content structure</span> with higher quality input to other systems</div>
+					</li>
+					<li>
+						<div><span>Easily Extract content to JSON</span> format for further processing into other applications or databases</div>
+					</li>
+					<li>
+						<div><span>Identify more document elements</span> than OCR with extraction of headings, paragraphs, lists, and more</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<!-- pdf extract end-->
+
+
+	<!-- Get Started start -->
+	<section class="switch-white get-started">
+
+		<h3>Start Modifying PDFs in a few Minutes</h3>
+		<p class="title">Start your free 6-month trial today with 1,000 PDF transactions</p>
+		<ol>
+			<li>
+				<div>
+					<p>Obtain free credentials</p>
+					<p>
+						<a title="Get started" alt="Get started" href="https://www.adobe.com/go/dcsdks_credentials" target="_balnk" class="spectrum-Button spectrum-Button--cta">
+							Get started
+						</a>
+					</p>
+				</div>
+			</li>
+			<li>
+				<div>
+					<p>Download ready to run samples for Node.js, Java, and .NET</p>
+					<p class="gs-callout-item">
+						<a title="Node.js" alt="Node.js" href="https://www.adobe.com/go/pdftoolsapi_node_sample" target="_blank" class="button-link step2">Node.js</a>
+						<a title="Java" alt="Java" href="https://www.adobe.com/go/pdftoolsapi_java_sample" target="_blank" class="button-link step2">Java</a>
+						<a title=".Net" alt=".Net" href="https://www.adobe.com/go/pdftoolsapi_net_sample" target="_blank" class="button-link  step2">.Net</a>
+					</p>
+				</div>
+			<li>
+				<div>
+					<p>Add credentials to your code and run!<br> <a href="https://www.adobe.com/go/dcsdk_APIdocs" alt="API Reference" target="_blank">API Reference</a></p>
+					<p>
+						<a title="See documentation" alt="See documentation" href="https://www.adobe.com/go/pdftoolsapi_doc" target="_blank" class="button-link">
+							See documentation
+						</a>
+					</p>
+				</div>
+			</li>
+		</ol>
+
+	</section>
+	<!-- Get Started end -->
+
+
+	<!-- Use Cases  -->
+	<section class="grey-bar use-case-blade">
+		<div class="use-case-container">
+			<div class="use-case-wrapper">
+				<h3>Use Cases for PDF Services API</h3>
+
+				<div class="case-item-wrapper">
+					<div class="case-item" data-href="report-creation-and-editing.html">
+						<div class="case-icon"><img src="{{ baseurl }}/gh-assets/svg/ic-sales-proposals.svg"></div>
+						<h4>Report Creation and Editing</h4>
+						<p>Create and embed reports for internal or external consumption, sharing, and review.</p>
+					</div>
+
+					<div class="case-item" data-href="search-and-indexing.html">
+						<div class="case-icon"><img src="{{ baseurl }}/gh-assets/svg/ic-legal-contracts.svg"></div>
+						<h4>Search and Indexing</h4>
+						<p>Create searchable indexes from digital documents to quickly locate critical content for compliance and
+							other downstream processing.</p>
+					</div>
+
+					<div class="case-item" data-href="digital-content-publishing.html">
+						<div class="case-icon"><img src="{{ baseurl }}/gh-assets/svg/ic-invoices.svg"></div>
+						<h4>Digital Content Publishing</h4>
+						<p>Publish whitepapers and marketing content with end-user interactivity, security controls, and analytics.</p>
+					</div>
+
+					<div class="case-item" data-href="job-posting.html">
+						<div class="case-icon"><img src="{{ baseurl }}/gh-assets/svg/ic-nda.svg"></div>
+						<h4>Job Posting</h4>
+						<p>Automate job posting with supporting documents such as PDF brochures, relevant job supplements, and
+							company details.</p>
+					</div>
+
+				</div>
+				<div class="cta-wrapper">
+					<a href="sales-proposals-and-contracts.html" target="_self" class="button-link">
+						See all Use Cases
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- use case end -->
+
+
+	<!-- learn -->
+	<section class="switch-white no-max-width" >
+		<p>Learn about our <a href="pdf-embed.html" target="_blank" class="section-links">PDF Embed API</a> to embed high-fidelity PDFs and control appearance, enable collaboration, and see analytics</p>
+	</section>
+	<!-- learn end -->
+
+
+	<!-- help -->
+	<section class="dcs-help">
+		<div class="dcs-help-wrapper">
+			<div class="dcs-help-container">
+		<h3>We're ready to help</h3>
+		<p>Have questions about the Document Services APIs? <a href="https://www.adobe.com/go/pdftoolsapi_requestform" target="_blank">Contact us</a></p>
+		<p>
+			<a href="https://www.adobe.com/go/pdftoolsapi_forum" target="_blank" class="button-link">
+				Go to the Adobe Forum
+			</a>
+		</p>
+		<div class="dcs-help-img"><img src="{{ baseurl }}/gh-assets/img/dcsdk.png"></div>
+			</div>
+		</div>
+	</section>
+
+
+</div>
