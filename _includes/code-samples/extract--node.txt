@@ -1,0 +1,27 @@
+// Create an ExecutionContext using credentials
+const executionContext = PDFServicesSdk.ExecutionContext.create(credentials);
+
+// Create a new operation instance.
+const extractPDFOperation = PDFServicesSdk.ExtractPDF.Operation.createNew(),
+  input = PDFServicesSdk.FileRef.createFromLocalFile(
+    'resources/extractPDFInput.pdf',
+    PDFServicesSdk.ExtractPDF.SupportedSourceFormat.pdf
+  );
+
+// Set operation input from a source file.
+extractPDFOperation.setInput(input);
+
+// Build and set extractPDF options
+const options = new PDFServicesSdk.ExtractPDF.options.ExtractPdfOptions.Builder()
+  .addElementsToExtract(
+    PDFServicesSdk.ExtractPDF.options.ExtractElementType.TEXT)
+  .addElementsToExtractRenditions(
+    PDFServicesSdk.ExtractPDF.options.ExtractRenditionsElementType.FIGURES)
+  .addCharInfo(true)
+  .build()
+extractPDFOperation.setOptions(options);
+
+// Execute the operation and Save the result to the specified location.
+extractPDFOperation.execute(executionContext)
+  .then(result => result.saveAsFile('output/extractPdf.zip'))
+
