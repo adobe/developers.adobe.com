@@ -49,132 +49,22 @@
 
 <!-- EXTRACT -->
 <p>
-<div id="extract-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest code-window-opened">
-	<coral-tabview>
-		<coral-tablist size="S">
-			<coral-tab class="is-selected">REST API</coral-tab>
-			<coral-tab>Node.js</coral-tab>
-			<coral-tab>Java</coral-tab>
-			<coral-tab>Python</coral-tab>
-			<!-- <div class="tab-item-copy copy">Copy</div> -->
-		</coral-tablist>
-		<coral-panelstack>
-			<coral-panel>
-<pre><code class="language-shell">curl --location --request POST 'https://cpf-stage-ue1.adobe.io/ops/:create' \
---header 'Accept: application/json, text/plain, /' \
---header 'Authorization: Bearer {{Placeholder for token}}' \
---header 'x-api-key: {{Placeholder for client_id}}' \
---form 'contentAnalyzerRequests={
-    \"cpf:engine\": {
-        \"repo:assetId\": \"urn:aaid:cpf:58af6e2c-1f0c-400d-9188-078000185695\"
-    },
-    \"cpf:inputs\": {
-        \"documentIn\": {
-            \"cpf:location\": \"fileInput1\",
-            \"dc:format\": \"application/pdf\"
-        },
-        \"params\": {
-            \"cpf:inline\": {
-                \"elementsToExtract\": [
-                    \"text\", \"tables\"
-                ],
-                \"renditionsToExtract\": [ \"tables\", \"figures\"]
-            }
-        }
-    },
-    \"cpf:outputs\": {
-        \"elementsInfo\": {
-            \"cpf:location\": \"jsonoutput\",
-            \"dc:format\": \"application/json\"
-        },
-        \"elementsRenditions\": {
-            \"cpf:location\": \"fileoutpart\",
-            \"dc:format\": \"text/directory\"
-        }
-    }
-}' \
---form 'fileInput1=@"{{Placeholder for the input document template (absolute path)}}"'
-
-</code></pre>
-			</coral-panel>
-			<coral-panel>
-<pre><code class="language-javascript">// Create an ExecutionContext using credentials
-  const executionContext = PDFServicesSdk.ExecutionContext.create(credentials);
-  
-// Build extractPDF options
-  const options = new PDFServicesSdk.ExtractPDF.options.ExtractPdfOptions.Builder()
-      .addElementsToExtract(PDFServicesSdk.ExtractPDF.options.ExtractElementType.TEXT, PDFServicesSdk.ExtractPDF.options.ExtractElementType.TABLES)
-      .addElementsToExtractRenditions(PDFServicesSdk.ExtractPDF.options.ExtractRenditionsElementType.FIGURES, PDFServicesSdk.ExtractPDF.options.ExtractRenditionsElementType.TABLES)
-      .build()
-  
-// Create a new operation instance.
-  const extractPDFOperation = PDFServicesSdk.ExtractPDF.Operation.createNew(),
-      input = PDFServicesSdk.FileRef.createFromLocalFile(
-          'resources/extractPDFInput.pdf',
-          PDFServicesSdk.ExtractPDF.SupportedSourceFormat.pdf
-      );
-  
-// Set operation input from a source file.
-  extractPDFOperation.setInput(input);
-  
-// Set options
-  extractPDFOperation.setOptions(options);
-  
-  extractPDFOperation.execute(executionContext)
-      .then(result => result.saveAsFile('output/extractOutput.zip'))
-</code></pre>
-			</coral-panel>
-			<coral-panel>
-<pre><code class="language-java">// Create an ExecutionContext using credentials.
-  ExecutionContext executionContext = ExecutionContext.create(credentials);
-  
-  ExtractPDFOperation extractPDFOperation = ExtractPDFOperation.createNew();
-  
-// Set operation input from a source file
-  FileRef source = FileRef.createFromLocalFile("src/main/resources/extractPdfInput.pdf");
-  extractPDFOperation.setInputFile(source);
-  
-// Build ExtractPDF options and set them into the operation
-  ExtractPDFOptions extractPDFOptions = ExtractPDFOptions.extractPdfOptionsBuilder()
-          .addElementsToExtract(Arrays.asList(ExtractElementType.TEXT, ExtractElementType.TABLES))
-          .addElementsToExtractRenditions(Arrays.asList(ExtractRenditionsElementType.TABLES, ExtractRenditionsElementType.FIGURES))
-          .build();
-  extractPDFOperation.setOptions(extractPDFOptions);
-  
-// Execute the operation
-  FileRef result = extractPDFOperation.execute(executionContext);
-  
-// Save the result at the specified location
-  result.saveAs("output/extractOutput.zip");
-</code></pre>
-			</coral-panel>
-
-			<coral-panel>
-<pre><code class="language-py"># Create an ExecutionContext using credentials and create a new operation instance.
-  execution_context = ExecutionContext.create(credentials)
-  extract_pdf_operation = ExtractPDFOperation.create_new()
-  
-# Set operation input from a source file.
-  source = FileRef.create_from_local_file(base_path + "/resources/extractPdfInput.pdf")
-  extract_pdf_operation.set_input(source)
-  
-# Build ExtractPDF options and set them into the operation
-  extract_pdf_options: ExtractPDFOptions = ExtractPDFOptions.builder() \
-      .with_elements_to_extract([ExtractElementType.TEXT, ExtractElementType.TABLES]) \
-      .with_elements_to_extract_renditions([ExtractRenditionsElementType.TABLES, ExtractRenditionsElementType.FIGURES]) \
-      .build()
-  extract_pdf_operation.set_options(extract_pdf_options)
-  
-# Execute the operation.
-  result: FileRef = extract_pdf_operation.execute(execution_context)
-  
-# Save the result to the specified location.
-  result.save_as(base_path + "/output/extractOutput.zip")
-</code></pre>
-			</coral-panel>
-		</coral-panelstack>
-	</coral-tabview>
-</div>
+	<div id="extract-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest code-window-opened">
+		<coral-tabview>
+			<coral-tablist size="S">
+				<coral-tab class="is-selected">REST API</coral-tab>
+				<coral-tab>Node.js</coral-tab>
+				<coral-tab>Java</coral-tab>
+				<coral-tab>Python</coral-tab>
+			</coral-tablist>
+			<coral-panelstack>
+				<coral-panel><pre><code class="language-shell">{% include code-samples/extract--rest-api.txt %}</code></pre></coral-panel>
+				<coral-panel><pre><code class="language-javascript">{% include code-samples/extract--node.txt %}</code></pre></coral-panel>
+				<coral-panel><pre><code class="language-java">{% include code-samples/extract--java.txt %}</code></pre></coral-panel>
+				<coral-panel><pre><code class="language-py">{% include code-samples/extract--python.txt %}</code></pre></coral-panel>
+			</coral-panelstack>
+		</coral-tabview>
+	</div>
 </p>
 <!-- /EXTRACT -->
 
