@@ -1,16 +1,17 @@
 
 section.platform {
-	width: 100%;
 	margin: 0px !important;
 	padding: 0px !important;
+	width: 100%;
 
 	.slick-track {
 		padding: 0 !important;
+		display: flex !important;
 	}
 
 	.slick-dots li button:before {
 		font-size: 9px !important;
-		margin-top:2.8rem;
+		margin-top: 2.8rem;
 	}
 
 	.slick-dots li.slick-active button:before {
@@ -35,28 +36,22 @@ section.platform {
 		}
 	}
 
-    /* Market Place */
-  section.market-place {
-    margin:0px !important;
-    padding-bottom: 0.75rem;
-    background: #1B5496 url('../img/mp_aws_bkg@2x.png');
-    background-repeat:no-repeat;
-    background-position:center center;
-    background-size:cover;     
-
-    &.ms-blade{
-        background: #000 url('../img/ms_power_bkg.jpg');
-        background-repeat:no-repeat;
-        background-position:center center;
-        background-size:cover;    
-    }
+	/* Market Place */
+	section.market-place {
+		margin: 0 !important;
+		padding-bottom: 0.75rem;
+		background: #1B5496 url('../img/mp_aws_bkg@2x.png');
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		height: inherit !important;
 
     .market-place-container{
         padding-top:4.1875rem;
         margin: 0 auto;
 
         .market-place-wrapper{
-            max-height:331px;
+            max-height: 331px;
             
             color: $white;
 
@@ -121,17 +116,17 @@ section.platform {
                 }
     
                 .mp-copy-wrapper{
-                    margin:0 auto;
-                    width:284px;
+                    margin: 0 auto;
+                    width: 284px;
 
                     @media screen and (min-width: 768px) {
-                        width:100%;
+                        width: 100%;
                     }
                     
                     h4 {
                         font-size:1.1875rem;
                         color: $white;
-                        font-family: 'Adobe Clean Black';
+                        font-family: 'Adobe Clean Black',sans-serif;
                         font-weight: 900;
                         text-align: center;
                         text-transform:none !important;
@@ -188,4 +183,38 @@ section.platform {
         }
         
     }
+}
+
+
+
+// ......................................................
+// Microsoft × Adobe – Power Automate
+
+section.platform {
+	section.market-place {
+
+		&.ms-blade{
+			background: #000 url('../img/ms_power_bkg.jpg');
+			background-repeat:no-repeat;
+			background-position:center center;
+			background-size:cover;
+		}
+
+	}
+}
+
+
+
+// ......................................................
+// Liquid Mode panel
+
+section.platform {
+	section.market-place {
+
+		&.liquid-mode {
+			background-color: #f00;
+			height: 100%;
+		}
+
+	}
 }
