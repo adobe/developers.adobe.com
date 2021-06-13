@@ -1,39 +1,39 @@
 
 section.platform {
-    width:100%;
-    margin:0px !important;
-    padding:0px !important;
-    
-    .slick-track {
-        padding: 0 !important;
-    }
+	width: 100%;
+	margin: 0px !important;
+	padding: 0px !important;
 
-    .slick-dots li button:before {
-        font-size: 9px !important;
-        margin-top:2.8rem;
-    }
-    
-    .slick-dots li.slick-active button:before {
-        color: #1473E6 !important;
-        }
-    
-    .slick-dots {
-        bottom: 0.25rem !important;
-    
-        li {
-        margin: 0 -2px !important;
-        }
-    }
+	.slick-track {
+		padding: 0 !important;
+	}
 
-    &.slick-dotted.slick-slider {
-        margin-bottom: 0;
-        @media screen and (min-width: 768px) {
-          margin-bottom: 1.5rem;
-        }
-        @media screen and (min-width: 1024px) {
-          margin-bottom: 4.5rem;
-        }
-      }
+	.slick-dots li button:before {
+		font-size: 9px !important;
+		margin-top:2.8rem;
+	}
+
+	.slick-dots li.slick-active button:before {
+		color: #1473E6 !important;
+	}
+
+	.slick-dots {
+	  bottom: 0.25rem !important;
+
+	  li {
+		  margin: 0 -2px !important;
+	  }
+	}
+
+	&.slick-dotted.slick-slider {
+		margin-bottom: 0;
+		@media screen and (min-width: 768px) {
+			margin-bottom: 1.5rem;
+		}
+		@media screen and (min-width: 1024px) {
+			margin-bottom: 4.5rem;
+		}
+	}
 
     /* Market Place */
   section.market-place {
