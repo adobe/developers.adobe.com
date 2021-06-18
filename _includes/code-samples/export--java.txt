@@ -1,0 +1,19 @@
+// Create an ExecutionContext using 
+// credentials and create a new 
+// operation instance.
+ExecutionContext executionContext = ExecutionContext.create(credentials);
+ExportPDFOperation exportPdfOperation = ExportPDFOperation
+  .createNew(ExportPDFTargetFormat.DOCX);
+
+// Set operation input from a local PDF file
+FileRef sourceFileRef = FileRef
+  .createFromLocalFile(
+    "src/main/resources/exportPDFInput.pdf"
+  );
+exportPdfOperation.setInput(sourceFileRef);
+
+// Execute the operation.
+FileRef result = exportPdfOperation.execute(executionContext);
+
+// Save the result to the specified location.
+result.saveAs("output/exportPdfOutput.docx");

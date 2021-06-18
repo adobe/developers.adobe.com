@@ -71,612 +71,144 @@
 <!-- CREATE -->
 <p>
 <div id="create-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest code-window-opened">
-  <coral-tabview>
-    <coral-tablist size="S">
-      <coral-tab class="is-selected">REST API</coral-tab>
-      <coral-tab>Node.js</coral-tab>
-      <coral-tab>.Net</coral-tab>
-      <coral-tab>Java</coral-tab>
-      <!-- <div class="tab-item-copy copy">Copy</div> -->
-    </coral-tablist>
-    <coral-panelstack>
-      <coral-panel>
-<pre><code class="language-shell">curl --location --request POST 'https://cpf-ue1.adobe.io/ops/:create?respondWith=%7B%22reltype%22%3A%20%22http%3A%2F%2Fns.adobe.com%2Frel%2Fprimary%22%7D' \
-  --header 'Authorization: Bearer {{Placeholder for token}}' \
-  --header 'Accept: application/json, text/plain, */*' \
-  --header 'x-api-key: {{Placeholder for client_id}}' \
-  --header 'Prefer: respond-async,wait=0' \
-  --form 'contentAnalyzerRequests="{
-    \"cpf:inputs\": {
-      \"documentIn\": {
-        \"cpf:location\": \"InputFile0\",
-        \"dc:format\": \"application/vnd.openxmlformats-officedocument.wordprocessingml.document\"
-      }
-    },
-    \"cpf:engine\": {
-      \"repo:assetId\": \"urn:aaid:cpf:Service-1538ece812254acaac2a07799503a430\"
-    },
-    \"cpf:outputs\": {
-      \"documentOut\": {
-        \"cpf:location\": \"multipartLabelOut\",
-        \"dc:format\": \"application/pdf\"
-      }
-    }
-  }"' \
-  --form 'InputFile0=@"{{Placeholder for input file (absolute path)}}"'
-</code></pre>
-      </coral-panel>
-
-      <coral-panel>
-<pre><code class="language-javascript">// Create an ExecutionContext using credentials and create a new operation instance.
-const executionContext = PDFServicesSdk.ExecutionContext.create( credentials ),
-createPdfOperation = PDFServicesSdk.CreatePDF.Operation.createNew();
-
-// Set operation input from a source file.
-const input = PDFServicesSdk.FileRef.createFromLocalFile('resources/createPDFInput.docx');
-createPdfOperation.setInput(input);
-  
-// Execute the operation and Save the result to the specified location.
-createPdfOperation.execute(executionContext)
-.then(result => result.saveAsFile('output/createPDFFromDOCX.pdf'))
-</code></pre>
-      </coral-panel>
-
-      <coral-panel>
-<pre><code class="language-clike">// Create an ExecutionContext using credentials and create a new operation instance.
-  ExecutionContext executionContext = ExecutionContext.Create(credentials);
-  CreatePDFOperation createPdfOperation = CreatePDFOperation.CreateNew();
-    
-// Set operation input from a source file.
-  FileRef source = FileRef.CreateFromLocalFile(@"createPdfInput.docx");
-  createPdfOperation.SetInput(source);
-    
-// Execute the operation.
-  FileRef result = createPdfOperation.Execute(executionContext);
-    
-// Save the result to the specified location.
-  result.SaveAs(Directory.GetCurrentDirectory() + "/output/createPdfOutput.pdf");
-</code></pre>
-      </coral-panel>
-
-      <coral-panel>
-<pre><code class="language-java">// Create an ExecutionContext using credentials and create a new operation instance.
-ExecutionContext executionContext = ExecutionContext.create(credentials);
-CreatePDFOperation createPdfOperation = CreatePDFOperation.createNew();
-  
-// Set operation input from a source file.
-FileRef source = FileRef.createFromLocalFile("src/main/resources/createPDFInput.docx");
-createPdfOperation.setInput(source);
-  
-// Execute the operation.
-FileRef result = createPdfOperation.execute(executionContext);
-  
-// Save the result to the specified location.
-result.saveAs("output/createPDFFromDOCX.pdf");
-</code></pre>
-      </coral-panel>
-    </coral-panelstack>
-  </coral-tabview>
+	<coral-tabview>
+		<coral-tablist size="S">
+			<coral-tab class="is-selected">REST API</coral-tab>
+			<coral-tab>Node.js</coral-tab>
+			<coral-tab>.Net</coral-tab>
+			<coral-tab>Java</coral-tab>
+		</coral-tablist>
+		<coral-panelstack>
+			<coral-panel><pre><code class="language-shell">{% include code-samples/create--rest-api.txt %}</code></pre></coral-panel>
+			<coral-panel><pre><code class="language-javascript">{% include code-samples/create--node.txt %}</code></pre></coral-panel>
+			<coral-panel><pre><code class="language-clike">{% include code-samples/create--net.txt %}</code></pre></coral-panel>
+			<coral-panel><pre><code class="language-java">{% include code-samples/create--java.txt %}</code></pre></coral-panel>
+		</coral-panelstack>
+	</coral-tabview>
 </div>
 </p>
 <!-- /CREATE -->
 
+
 <!-- EXPORT -->
 <p>
-  <div id="export-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
-    <coral-tabview>
-      <coral-tablist size="S">
-        <coral-tab class="is-selected">Node.js</coral-tab>
-        <coral-tab>.Net</coral-tab>
-        <coral-tab>Java</coral-tab>
-      </coral-tablist>
-      <coral-panelstack>
-        <coral-panel id="panel1">
-<pre><code class="language-javascript">// Create an ExecutionContext using 
-// credentials and create a new 
-// operation instance.
-const executionContext = PDFServicesSdk.ExecutionContext.create(credentials),
-exportPDF = PDFServicesSdk.ExportPDF,
-exportPdfOperation = exportPDF.Operation.createNew(exportPDF.SupportedTargetFormats.DOCX);
-
-// Set operation input from a source file
-const input = PDFServicesSdk.FileRef.createFromLocalFile('resources/exportPDFInput.pdf');
-exportPdfOperation.setInput(input);
-
-// Execute the operation and Save the result to the specified location.
-exportPdfOperation.execute(executionContext)
-.then(result => result.saveAsFile('output/exportPdfOutput.docx'))
-</code></pre>
-        </coral-panel>
-
-        <coral-panel >
-<pre><code class="language-clike">// Create an ExecutionContext using 
-// credentials and create a new 
-// operation instance.
-ExecutionContext executionContext = ExecutionContext.Create(credentials);
-ExportPDFOperation exportPdfOperation = ExportPDFOperation.CreateNew( ExportPDFTargetFormat.DOCX );
-
-// Set operation input from a local PDF file
-FileRef sourceFileRef = FileRef.CreateFromLocalFile(@"exportPdfInput.pdf");
-exportPdfOperation.SetInput(sourceFileRef);
-
-// Execute the operation.
-FileRef result = exportPdfOperation.Execute(executionContext);
-
-// Save the result to the specified location.
-result.SaveAs(Directory.GetCurrentDirectory() 
-  + "/output/exportPdfOutput.docx");
-</code></pre>
-        </coral-panel>
-
-        <coral-panel>
-<pre><code class="language-java">// Create an ExecutionContext using 
-// credentials and create a new 
-// operation instance.
-ExecutionContext executionContext = ExecutionContext.create(credentials);
-ExportPDFOperation exportPdfOperation = ExportPDFOperation
-  .createNew(ExportPDFTargetFormat.DOCX);
-
-// Set operation input from a local PDF file
-FileRef sourceFileRef = FileRef
-  .createFromLocalFile(
-    "src/main/resources/exportPDFInput.pdf"
-  );
-exportPdfOperation.setInput(sourceFileRef);
-
-// Execute the operation.
-FileRef result = exportPdfOperation.execute(executionContext);
-
-// Save the result to the specified location.
-result.saveAs("output/exportPdfOutput.docx");
-</code></pre>
-        </coral-panel>
-      </coral-panelstack>
-    </coral-tabview>
-  </div>
+<div id="export-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
+	<coral-tabview>
+		<coral-tablist size="S">
+			<coral-tab class="is-selected">Node.js</coral-tab>
+			<coral-tab>.Net</coral-tab>
+			<coral-tab>Java</coral-tab>
+		</coral-tablist>
+		<coral-panelstack>
+			<coral-panel><pre><code class="language-javascript">{% include code-samples/export--node.txt %}</code></pre></coral-panel>
+			<coral-panel><pre><code class="language-clike">{% include code-samples/export--net.txt %}</code></pre></coral-panel>
+			<coral-panel><pre><code class="language-java">{% include code-samples/export--java.txt %}</code></pre></coral-panel>
+		</coral-panelstack>
+	</coral-tabview>
+</div>
 </p>
 <!-- /EXPORT -->
 
+
 <!-- OCR -->
 <p>
-  <div id="ocr-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
-    <coral-tabview>
-      <coral-tablist size="S">
-        <coral-tab class="is-selected">Node.js</coral-tab>
-        <coral-tab>.Net</coral-tab>
-        <coral-tab>Java</coral-tab>
-      </coral-tablist>
-      <coral-panelstack>
-        <coral-panel id="panel1">
-<pre><code class="language-javascript">// Create an ExecutionContext using credentials and create a new operation instance.            
-const executionContext = PDFServicesSdk.ExecutionContext.create(credentials),
-  ocrOperation = PDFServicesSdk.OCR.Operation.createNew();
-
-// Set operation input from a source file.
-const input = PDFServicesSdk.FileRef.createFromLocalFile( 'resources/ocrInput.pdf', PDFServicesSdk.OCR.SupportedMediaTypes.pdf );
-ocrOperation.setInput(input);
-
-// Execute the operation and Save the result to the specified location.
-ocrOperation.execute(executionContext)
-  .then(result => result.saveAsFile('output/ocrOutput.pdf'));
-</code></pre>
-        </coral-panel>
-
-        <coral-panel >
-<pre><code class="language-clike">// Create an ExecutionContext using credentials and create a new operation instance.               
-ExecutionContext executionContext = ExecutionContext.Create(credentials);
-OCROperation ocrOperation = OCROperation.CreateNew();
-
-// Set operation input from a source file.
-FileRef sourceFileRef = FileRef.CreateFromLocalFile(@"ocrInput.pdf");
-ocrOperation.SetInput(sourceFileRef);
-
-// Execute the operation.
-FileRef result = ocrOperation.Execute(executionContext);
-
-// Save the result to the specified location.
-result.SaveAs(Directory.GetCurrentDirectory() + "/output/ocrOperationOutput.pdf");
-</code></pre>
-        </coral-panel>
-
-        <coral-panel>
-<pre><code class="language-java">// Create an ExecutionContext using credentials and create a new operation instance.                
-ExecutionContext executionContext = ExecutionContext.create(credentials);
-OCROperation ocrOperation = OCROperation.createNew();
-
-// Set operation input from a source file.
-FileRef source = FileRef.createFromLocalFile( "src/main/resources/ocrInput.pdf" );
-ocrOperation.setInput(source);
-
-// Execute the operation
-FileRef result = ocrOperation.execute(executionContext);
-
-// Save the result at the specified location
-result.saveAs("output/ocrOutput.pdf");
-</code></pre>
-        </coral-panel>
-      </coral-panelstack>
-    </coral-tabview>
-  </div>
+<div id="ocr-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
+	<coral-tabview>
+		<coral-tablist size="S">
+			<coral-tab class="is-selected">Node.js</coral-tab>
+			<coral-tab>.Net</coral-tab>
+			<coral-tab>Java</coral-tab>
+		</coral-tablist>
+		<coral-panelstack>
+			<coral-panel><pre><code class="language-javascript">{% include code-samples/ocr--node.txt %}</code></pre></coral-panel>
+			<coral-panel><pre><code class="language-clike">{% include code-samples/ocr--net.txt %}</code></pre></coral-panel>
+			<coral-panel><pre><code class="language-java">{% include code-samples/ocr--java.txt %}</code></pre></coral-panel>
+		</coral-panelstack>
+	</coral-tabview>
+</div>
 </p>
 <!-- /OCR -->
 
 
-<!-- Rotate -->
+<!-- Rotate Pages -->
 <p>
-  <div id="rotate-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
-    <coral-tabview>
-      <coral-tablist size="S">
-        <coral-tab class="is-selected">Node.js</coral-tab>
-        <coral-tab>.Net</coral-tab>
-        <coral-tab>Java</coral-tab>
-      </coral-tablist>
-      <coral-panelstack>
-        <coral-panel>
-<pre><code class="language-javascript">// Create an ExecutionContext using credentials and create a new operation instance.
-const executionContext = PDFServicesSdk.ExecutionContext.create(credentials),
-  rotatePagesOperation = PDFServicesSdk.RotatePages.Operation.createNew();
-
-// Set operation input from a source file.
-const input = PDFServicesSdk.FileRef.createFromLocalFile('resources/rotatePagesInput.pdf');
-rotatePagesOperation.setInput(input);
-
-// Sets angle by 90 degrees (in clockwise direction) for rotating the specified pages of the input PDF file.
-const firstPageRange = getFirstPageRangeForRotation();
-rotatePagesOperation.setAngleToRotatePagesBy(PDFServicesSdk.RotatePages.Angle._90, firstPageRange);
-
-// Sets angle by 180 degrees (in clockwise direction) for rotating the specified pages of the input PDF file.
-const secondPageRange = getSecondPageRangeForRotation();
-rotatePagesOperation.setAngleToRotatePagesBy(PDFServicesSdk.RotatePages.Angle._180,secondPageRange);
-
-// Execute the operation and Save the result to the specified location.
-rotatePagesOperation.execute(executionContext)
-  .then(result => result.saveAsFile('output/rotatePagesOutput.pdf'));
-</code></pre>
-        </coral-panel>
-
-        <coral-panel>
-<pre><code class="language-clike">// Create an ExecutionContext using credentials.
-ExecutionContext executionContext = ExecutionContext.Create(credentials);
-
-// Create a new operation instance
-RotatePagesOperation rotatePagesOperation = RotatePagesOperation.CreateNew();
-
-// Set operation input from a source file.
-FileRef sourceFileRef = FileRef.CreateFromLocalFile(
-    @"rotatePagesInput.pdf"
-  );
-rotatePagesOperation.SetInput(sourceFileRef);
-
-// Sets angle by 90 degrees (in clockwise direction) for rotating the specified pages of the input PDF file.
-PageRanges firstPageRange = GetFirstPageRangeForRotation();
-rotatePagesOperation.SetAngleToRotatePagesBy(
-    Angle._90, firstPageRange
-  );
-
-// Sets angle by 180 degrees (in clockwise direction) for rotating the specified pages of the input PDF file.
-PageRanges secondPageRange = GetSecondPageRangeForRotation();
-rotatePagesOperation
-  .SetAngleToRotatePagesBy(Angle._180, secondPageRange);
-
-// Execute the operation.
-FileRef result = rotatePagesOperation.Execute(executionContext);
-
-// Save the result to the specified location.
-result.SaveAs(Directory.GetCurrentDirectory() +
-  "/output/rotatePagesOutput.pdf");
-</code></pre>
-        </coral-panel>
-
-        <coral-panel>
-<pre><code class="language-java">// Create an ExecutionContext using credentials and create a new operation instance.
-ExecutionContext executionContext = ExecutionContext.create(credentials);
-RotatePagesOperation rotatePagesOperation = RotatePagesOperation.createNew();
-
-// Set operation input from a source file.
-FileRef source = FileRef.createFromLocalFile(
-    "src/main/resources/rotatePagesInput.pdf"
-  );
-rotatePagesOperation.setInput(source);
-
-// Sets angle by 90 degrees (in clockwise direction) for rotating the specified pages of the input PDF file.
-PageRanges firstPageRange = getFirstPageRangeForRotation();
-rotatePagesOperation.setAngleToRotatePagesBy(
-    Angle._90, firstPageRange
-  );
-
-// Sets angle by 180 degrees (in clockwise direction) for rotating the specified pages of the input PDF file.
-PageRanges secondPageRange = getSecondPageRangeForRotation();
-rotatePagesOperation
-.setAngleToRotatePagesBy(
-  Angle._180, secondPageRange
-);
-
-// Execute the operation.
-FileRef result = rotatePagesOperation.execute(executionContext);
-
-// Save the result to the specified location.
-result.saveAs("output/rotatePagesOutput.pdf");
-</code></pre>
-        </coral-panel>
-        </coral-panelstack>
-      </coral-tabview>
-  </div>
+<div id="rotate-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
+	<coral-tabview>
+		<coral-tablist size="S">
+			<coral-tab class="is-selected">Node.js</coral-tab>
+			<coral-tab>.Net</coral-tab>
+			<coral-tab>Java</coral-tab>
+		</coral-tablist>
+		<coral-panelstack>
+			<coral-panel><pre><code class="language-javascript">{% include code-samples/rotate-pages--node.txt %}</code></pre></coral-panel>
+			<coral-panel><pre><code class="language-clike">{% include code-samples/rotate-pages--net.txt %}</code></pre></coral-panel>
+			<coral-panel><pre><code class="language-java">{% include code-samples/rotate-pages--java.txt %}</code></pre></coral-panel>
+		</coral-panelstack>
+	</coral-tabview>
+</div>
 </p>
-<!-- /Rotate -->
+<!-- /Rotate Pages -->
 
-<!-- Delete -->
+
+<!-- Delete Plages -->
 <p>
-  <div id="delete-code"  class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
-    <coral-tabview>
-      <coral-tablist size="S">
-        <coral-tab class="is-selected">Node.js</coral-tab>
-        <coral-tab>.Net</coral-tab>
-        <coral-tab>Java</coral-tab>
-      </coral-tablist>
-      <coral-panelstack>
-        <coral-panel>
-<pre><code class="language-javascript">// Create an ExecutionContext using credentials and create a new operation instance.                              
-const executionContext = PDFServicesSdk.ExecutionContext.create(credentials),
-  deletePagesOperation = PDFServicesSdk.DeletePages.Operation.createNew();
-
-// Set operation input from a source file.
-const input = PDFServicesSdk.FileRef.createFromLocalFile('resources/deletePagesInput.pdf');
-deletePagesOperation.setInput(input);
-
-// Delete pages of the document (as specified by PageRanges).
-const pageRangesForDeletion = getPageRangesForDeletion();
-deletePagesOperation.setPageRanges(pageRangesForDeletion);
-
-// Execute the operation and Save the result to the specified location.
-deletePagesOperation.execute(executionContext)
-  .then(result => result.saveAsFile('output/deletePagesOutput.pdf'))
-</code></pre>
-        </coral-panel>
-
-        <coral-panel>
-<pre><code class="language-clike">// Create an ExecutionContext using credentials.
-ExecutionContext executionContext = ExecutionContext.Create(credentials);
-
-// Create a new operation instance
-DeletePagesOperation deletePagesOperation = DeletePagesOperation.CreateNew();             
-
-// Set operation input from a source file.
-FileRef sourceFileRef = FileRef.CreateFromLocalFile(
-    @"deletePagesInput.pdf"
-  );
-deletePagesOperation.SetInput(sourceFileRef);
-
-// Delete pages of the document 
-// (as specified by PageRanges).
-PageRanges pageRangeForDeletion = GetPageRangeForDeletion();
-deletePagesOperation
-  .SetPageRanges(pageRangeForDeletion);
-
-// Execute the operation.
-FileRef result = deletePagesOperation
-  .Execute(executionContext);
-
-// Save the result to the specified location.
-result.SaveAs(Directory.GetCurrentDirectory() +
-  "/output/deletePagesOutput.pdf");
-</code></pre>
-          </coral-panel>
-
-          <coral-panel>
-<pre><code class="language-java">// Create an ExecutionContext using credentials and create a new operation instance.                              
-ExecutionContext executionContext = ExecutionContext.create(credentials);
-DeletePagesOperation deletePagesOperation = DeletePagesOperation.createNew();
-
-// Set operation input from a source file.
-FileRef source = FileRef.createFromLocalFile(
-    "src/main/resources/deletePagesInput.pdf"
-  );
-deletePagesOperation.setInput(source);
-
-// Delete pages of the document (as specified by PageRanges).
-PageRanges pageRangeForDeletion = getPageRangeForDeletion();
-deletePagesOperation.setPageRanges(pageRangeForDeletion);
-
-// Execute the operation.
-FileRef result = deletePagesOperation.execute(executionContext);
-
-// Save the result to the specified location.
-result.saveAs("output/deletePagesOutput.pdf");
-</code></pre>
-        </coral-panel>
-        </coral-panelstack>
-      </coral-tabview>
-  </div>
+<div id="delete-code"  class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
+	<coral-tabview>
+		<coral-tablist size="S">
+			<coral-tab class="is-selected">Node.js</coral-tab>
+			<coral-tab>.Net</coral-tab>
+			<coral-tab>Java</coral-tab>
+		</coral-tablist>
+		<coral-panelstack>
+			<coral-panel><pre><code class="language-javascript">{% include code-samples/delete-pages--node.txt %}</code></pre></coral-panel>
+			<coral-panel><pre><code class="language-clike">{% include code-samples/delete-pages--net.txt %}</code></pre></coral-panel>
+			<coral-panel><pre><code class="language-java">{% include code-samples/delete-pages--java.txt %}</code></pre></coral-panel>
+		</coral-panelstack>
+	</coral-tabview>
+</div>
 </p>
-<!-- /Delete -->
+<!-- /Delete Pages -->
 
-<!-- Replace -->
+
+<!-- Replace Pages -->
 <p>
-  <div id="replace-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
-    <coral-tabview>
-      <coral-tablist size="S">
-        <coral-tab class="is-selected">Node.js</coral-tab>
-        <coral-tab>.Net</coral-tab>
-        <coral-tab>Java</coral-tab>
-      </coral-tablist>
-      <coral-panelstack>
-        <coral-panel>
-<pre><code class="language-javascript">// Create an ExecutionContext using credentials and create a new operation instance.          
-const executionContext = PDFServicesSdk.ExecutionContext.create(credentials),
-replacePagesOperation = PDFServicesSdk.ReplacePages.Operation.createNew();
-
-// Set operation base input from a source file.
-const baseInputFile = PDFServicesSdk.FileRef.createFromLocalFile('resources/baseInput.pdf');
-replacePagesOperation.setBaseInput(baseInputFile);
-
-// Create a FileRef instance using a local file.
-const firstInputFile = PDFServicesSdk.FileRef.createFromLocalFile('resources/replacePagesInput1.pdf'),
-pageRanges = getPageRangesForFirstFile();
-
-// Adds the pages (specified by the page ranges) of the input PDF file for replacing the page of the base PDF file.
-replacePagesOperation.addPagesForReplace(1, firstInputFile, pageRanges);
-
-// Create a FileRef instance using a local file.
-const secondInputFile = PDFServicesSdk.FileRef.createFromLocalFile('resources/replacePagesInput2.pdf');
-
-// Adds all the pages of the input PDF file for replacing the page of the base PDF file.
-replacePagesOperation.addPagesForReplace(3, secondInputFile);
-
-// Execute the operation and Save the result to the specified location.
-replacePagesOperation.execute(executionContext)
-  .then(result => result.saveAsFile('output/replacePagesOutput.pdf'))
-</code></pre>
-        </coral-panel>
-        <coral-panel>
-<pre><code class="language-clike">// Create an ExecutionContext using credentials.
-ExecutionContext executionContext = ExecutionContext.Create(credentials);
-
-// Create a new operation instance
-ReplacePagesOperation replacePagesOperation = ReplacePagesOperation.CreateNew();
-
-// Set operation base input from a source file.
-FileRef baseSourceFile = FileRef.CreateFromLocalFile(@"baseInput.pdf");
-replacePagesOperation.SetBaseInput(baseSourceFile);
-
-// Create a FileRef instance using a local file.
-FileRef firstInputFile = FileRef.CreateFromLocalFile(
-    @"replacePagesInput1.pdf"
-  );
-PageRanges pageRanges = GetPageRangeForFirstFile();
-
-// Adds the pages (specified by the page ranges) of the input PDF file for replacing the page of the base PDF file.
-replacePagesOperation
-  .AddPagesForReplace(firstInputFile, pageRanges, 1);
-
-// Create a FileRef instance using a local file.
-FileRef secondInputFile = FileRef.CreateFromLocalFile(
-    @"replacePagesInput2.pdf"
-  );
-
-// Adds all the pages of the input PDF file for replacing the page of the base PDF file.
-replacePagesOperation
-  .AddPagesForReplace(secondInputFile, 3);
-
-// Execute the operation.
-FileRef result = replacePagesOperation.Execute(executionContext);
-
-// Save the result to the specified location.
-result.SaveAs(Directory.GetCurrentDirectory() +
-  "/output/replacePagesOutput.pdf");
-</code></pre>
-        </coral-panel>
-
-        <coral-panel>
-<pre><code class="language-java">// Create an ExecutionContext using credentials and create a new operation instance.
-ExecutionContext executionContext = ExecutionContext.create(credentials);
-ReplacePagesOperation replacePagesOperation = ReplacePagesOperation.createNew();
-
-// Set operation base input from a source file.
-FileRef baseSourceFile = FileRef.createFromLocalFile(
-    "src/main/resources/baseInput.pdf"
-  );
-replacePagesOperation.setBaseInput(baseSourceFile);
-
-// Create a FileRef instance using a local file.
-FileRef firstInputFile = FileRef.createFromLocalFile(
-    "src/main/resources/replacePagesInput1.pdf"
-  );
-PageRanges pageRanges = getPageRangeForFirstFile();
-
-// Adds the pages (specified by the page ranges) of the input PDF file for replacing the page of the base PDF file.
-replacePagesOperation.addPagesForReplace(
-    firstInputFile, pageRanges, 1
-  );
-
-// Create a FileRef instance using a local file.
-FileRef secondInputFile = FileRef.createFromLocalFile(
-    "src/main/resources/replacePagesInput2.pdf"
-  );
-
-// Adds all the pages of the input PDF file for replacing the page of the base PDF file.
-replacePagesOperation
-  .addPagesForReplace(secondInputFile, 3);
-
-// Execute the operation
-FileRef result = replacePagesOperation.execute(executionContext);
-
-// Save the result at the specified location
-result.saveAs("output/replacePagesOutput.pdf");
-</code></pre>
-        </coral-panel>
-      </coral-panelstack>
-    </coral-tabview>
-  </div>
+<div id="replace-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
+	<coral-tabview>
+		<coral-tablist size="S">
+			<coral-tab class="is-selected">Node.js</coral-tab>
+			<coral-tab>.Net</coral-tab>
+			<coral-tab>Java</coral-tab>
+		</coral-tablist>
+		<coral-panelstack>
+			<coral-panel><pre><code class="language-javascript">{% include code-samples/replace-pages--node.txt %}</code></pre></coral-panel>
+			<coral-panel><pre><code class="language-clike">{% include code-samples/replace-pages--net.txt %}</code></pre></coral-panel>
+			<coral-panel><pre><code class="language-java">{% include code-samples/replace-pages--java.txt %}</code></pre></coral-panel>
+		</coral-panelstack>
+	</coral-tabview>
+</div>
 </p>
 <!-- /Replace -->
 
+
 <!-- Linearize -->
 <p>
-  <div id="linearize-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
-    <coral-tabview>
-      <coral-tablist size="S">
-        <coral-tab class="is-selected">Node.js</coral-tab>
-        <coral-tab>.Net</coral-tab>
-        <coral-tab>Java</coral-tab>
-      </coral-tablist>
-      <coral-panelstack>
-        <coral-panel>
-<pre><code class="language-javascript">// Create an ExecutionContext using credentials and create a new operation instance.          
-const executionContext = PDFServicesSdk.ExecutionContext.create(credentials),
-  linearizePDF = PDFServicesSdk.LinearizePDF,
-  linearizePDFOperation = linearizePDF.Operation.createNew();
-
-// Set operation input from a source file.
-const input = PDFServicesSdk.FileRef.createFromLocalFile('resources/linearizePDFInput.pdf');
-linearizePDFOperation.setInput(input);
-
-// Execute the operation and Save the result to the specified location.
-linearizePDFOperation.execute(executionContext)
-  .then(result => result.saveAsFile('output/linearizePDFOutput.pdf'))
-</code></pre>
-        </coral-panel>
-        <coral-panel>
-<pre><code class="language-clike">// Create an ExecutionContext using credentials and create a new operation instance.          
-ExecutionContext executionContext = ExecutionContext.Create(credentials);
-LinearizePDFOperation linearizePDFOperation = LinearizePDFOperation.CreateNew();
-
-// Set operation input from a source file.
-FileRef sourceFileRef = FileRef.CreateFromLocalFile(
-    @"linearizePDFInput.pdf"
-  );
-linearizePDFOperation.SetInput(sourceFileRef);
-
-// Execute the operation.
-FileRef result = linearizePDFOperation.Execute(executionContext);
-
-// Save the result to the specified location.
-result.SaveAs(Directory.GetCurrentDirectory() +
-  "/output/linearizePDFOutput.pdf");
-</code></pre>
-        </coral-panel>
-        <coral-panel>
-<pre><code class="language-java">// Create an ExecutionContext using credentials and create a new operation instance.          
-ExecutionContext executionContext = ExecutionContext.create(credentials);
-LinearizePDFOperation linearizePDFOperation = LinearizePDFOperation.createNew();
-
-// Set operation input from a source file.
-FileRef source = FileRef.createFromLocalFile( 
-  "src/main/resources/linearizePDFInput.pdf" );
-linearizePDFOperation.setInput(source);
-
-// Execute the operation
-FileRef result = linearizePDFOperation.execute(executionContext);
-
-// Save the result at the specified location
-result.saveAs("output/linearizePDFOutput.pdf");
-</code></pre>
-        </coral-panel>
-      </coral-panelstack>
-    </coral-tabview>
-  </div>
+<div id="linearize-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
+	<coral-tabview>
+		<coral-tablist size="S">
+			<coral-tab class="is-selected">Node.js</coral-tab>
+			<coral-tab>.Net</coral-tab>
+			<coral-tab>Java</coral-tab>
+		</coral-tablist>
+		<coral-panelstack>
+			<coral-panel><pre><code class="language-javascript">{% include code-samples/linearize--node.txt %}</code></pre></coral-panel>
+			<coral-panel><pre><code class="language-clike">{% include code-samples/linearize--net.txt %}</code></pre></coral-panel>
+			<coral-panel><pre><code class="language-java">{% include code-samples/linearize--java.txt %}</code></pre></coral-panel>
+		</coral-panelstack>
+	</coral-tabview>
+</div>
 </p>
 <!-- /Linearize -->
+
 
 <!-- Compress -->
 <p>

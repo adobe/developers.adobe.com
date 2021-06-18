@@ -1,7 +1,7 @@
 // Create an ExecutionContext using credentials and create a new operation instance.
 const executionContext = PDFServicesSdk.ExecutionContext.create( credentials ),
 createPdfOperation = PDFServicesSdk.CreatePDF.Operation.createNew();
-  
+
 // Set operation input from a source file.
 const input = PDFServicesSdk.FileRef.createFromLocalFile('resources/createPDFInput.docx');
 createPdfOperation.setInput(input);
