@@ -1,6 +1,6 @@
 // Create an ExecutionContext using credentials
 const executionContext = PDFServicesSdk.ExecutionContext.create(credentials);
-   
+
 // Create a new operation instance.
 const splitPDFOperation = PDFServicesSdk.SplitPDF.Operation.createNew(),
 input = PDFServicesSdk.FileRef.createFromLocalFile('resources/splitPDFInput.pdf',

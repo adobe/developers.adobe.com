@@ -1,0 +1,36 @@
+// Create an ExecutionContext using credentials and create a new operation instance.
+ExecutionContext executionContext = ExecutionContext.create(credentials);
+InsertPagesOperation insertPagesOperation = InsertPagesOperation.createNew();
+
+// Set operation base input from a source file.
+FileRef baseSourceFile = FileRef.createFromLocalFile(
+    "src/main/resources/baseInput.pdf"
+  );
+insertPagesOperation.setBaseInput(baseSourceFile);
+
+// Create a FileRef instance using a local file.
+FileRef firstFileToInsert =
+  FileRef.createFromLocalFile(
+    "src/main/resources/firstFileToInsertInput.pdf"
+  );
+PageRanges pageRanges =
+  getPageRangeForFirstFile ();
+
+// Adds the pages (specified by the page ranges) of the input PDF file to be inserted at the specified page of the base PDF file.
+insertPagesOperation
+  .addPagesToInsertAt(firstFileToInsert, pageRanges, 2);
+
+// Create a FileRef instance using a local file.
+FileRef secondFileToInsert = FileRef.createFromLocalFile(
+    "src/main/resources/secondFileToInsertInput.pdf"
+  );
+
+// Adds all the pages of the input PDF file to be inserted at the specified page of the base PDF file.
+insertPagesOperation
+  .addPagesToInsertAt(secondFileToInsert, 3);
+
+// Execute the operation.
+FileRef result = insertPagesOperation.execute(executionContext);
+
+// Save the result to the specified location.
+result.saveAs("output/insertPagesOutput.pdf");

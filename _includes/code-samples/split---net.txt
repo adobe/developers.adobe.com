@@ -1,0 +1,24 @@
+// Create an ExecutionContext using credentials.
+ExecutionContext executionContext = ExecutionContext.Create(credentials);
+
+// Create a new operation instance
+SplitPDFOperation splitPDFOperation = SplitPDFOperation.CreateNew();
+
+// Set operation input from a source file.
+FileRef sourceFileRef = FileRef.CreateFromLocalFile(@"splitPDFInput.pdf");
+splitPDFOperation.SetInput(sourceFileRef);
+
+// Set the number of documents to split the input PDF file into.
+splitPDFOperation.SetFileCount(2);
+
+// Execute the operation.
+List<FileRef> result = splitPDFOperation.Execute(executionContext);
+
+// Save the result to the specified location.
+int index = 0;
+foreach (FileRef fileRef in result)
+{
+  fileRef.SaveAs(Directory.GetCurrentDirectory() + "/output/splitPDFOutput_" +
+    index + ".pdf");
+  index++;
+}
