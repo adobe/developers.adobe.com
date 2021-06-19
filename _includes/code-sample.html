@@ -66,7 +66,7 @@
 		</coral-tabview>
 	</div>
 </p>
-<!-- /EXTRACT -->
+
 
 <!-- CREATE -->
 <p>
@@ -87,7 +87,6 @@
 	</coral-tabview>
 </div>
 </p>
-<!-- /CREATE -->
 
 
 <!-- EXPORT -->
@@ -107,7 +106,6 @@
 	</coral-tabview>
 </div>
 </p>
-<!-- /EXPORT -->
 
 
 <!-- OCR -->
@@ -127,7 +125,6 @@
 	</coral-tabview>
 </div>
 </p>
-<!-- /OCR -->
 
 
 <!-- Rotate Pages -->
@@ -147,7 +144,6 @@
 	</coral-tabview>
 </div>
 </p>
-<!-- /Rotate Pages -->
 
 
 <!-- Delete Plages -->
@@ -167,7 +163,6 @@
 	</coral-tabview>
 </div>
 </p>
-<!-- /Delete Pages -->
 
 
 <!-- Replace Pages -->
@@ -187,7 +182,6 @@
 	</coral-tabview>
 </div>
 </p>
-<!-- /Replace -->
 
 
 <!-- Linearize -->
@@ -207,7 +201,6 @@
 	</coral-tabview>
 </div>
 </p>
-<!-- /Linearize -->
 
 
 <!-- Compress -->
@@ -227,7 +220,6 @@
 	</coral-tabview>
 </div>
 </p>
-<!-- /Compress -->
 
 
 <!-- Reorder -->
@@ -247,10 +239,9 @@
 	</coral-tabview>
 </div>
 </p>
-<!--  /Reorder-->
 
 
-<!--  Extraction -->
+<!--  Extraction //TODO remove this? -->
 <p>
   <div id="extraction-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
     <coral-tabview>
@@ -316,7 +307,6 @@
 	</coral-tabview>
 </div>
 </p>
-<!-- /split -->
 
 
 <!-- Insert -->
@@ -336,614 +326,152 @@
 	</coral-tabview>
 </div>
 </p>
-<!-- /Insert -->
 
 
 <!-- Generate -->
 <p>
-  <div id="generate-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
-    <coral-tabview>
-      <coral-tablist size="S">
-        <coral-tab class="is-selected">REST API</coral-tab>
-        <coral-tab>Node.js</coral-tab>
-        <coral-tab>.Net</coral-tab>
-        <coral-tab>Java</coral-tab>
-      </coral-tablist>
-      <coral-panelstack>
-        <coral-panel>
-<pre><code class="language-shell">curl --location --request POST 'https://cpf-ue1.adobe.io/ops/:create?respondWith=%7B%22reltype%22%3A%20%22http%3A%2F%2Fns.adobe.com%2Frel%2Fprimary%22%7D' \
-  --header 'Authorization: Bearer {{Placeholder for token}}' \
-  --header 'Accept: application/json, text/plain, */*' \
-  --header 'x-api-key: {{Placeholder for client_id}}' \
-  --header 'Prefer: respond-async,wait=0' \
-  --form 'contentAnalyzerRequests="{
-     \"cpf:engine\":{
-        \"repo:assetId\":\"urn:aaid:cpf:Service-52d5db6097ed436ebb96f13a4c7bf8fb\"
-     },
-     \"cpf:inputs\":{
-        \"documentIn\":{
-           \"cpf:location\":\"InputFile0\",
-           \"dc:format\":\"application/vnd.openxmlformats-officedocument.wordprocessingml.document\"
-        },
-        \"params\":{
-           \"cpf:inline\":{
-              \"outputFormat\": \"pdf\",
-              \"jsonDataForMerge\": {
-                \"customerName\": \"Kane Miller\",
-                \"customerVisits\": 100,
-                \"itemsBought\": [
-                  {
-                    \"name\": \"Sprays\",
-                    \"quantity\": 50,
-                    \"amount\": 100
-                  },
-                  {
-                    \"name\": \"Chemicals\",
-                    \"quantity\": 100,
-                    \"amount\": 200
-                  }
-                ],
-                \"totalAmount\": 300,
-                \"previousBalance\": 50,
-                \"lastThreeBillings\": [100, 200, 300],
-                \"photograph\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP88h8AAu0B9XNPCQQAAAAASUVORK5CYII=\"
-              }
-           }
-        }
-     },
-     \"cpf:outputs\":{
-        \"documentOut\":{
-           \"cpf:location\":\"OutputFile\",
-           \"dc:format\":\"application/pdf\"
-        }
-     }
-  }"' \
-  --form 'InputFile0=@"{{Placeholder for the input document template (absolute path of the file)}}"'
-</code></pre>
-        </coral-panel>
-        <coral-panel>
-<pre><code class="language-javascript">// Get the samples from https://www.adobe.com/go/pdfservicesapi_node_sample
-const PDFServicesSdk = require('@adobe/pdfservices-node-sdk'),
-  fs = require('fs');
-
-try {
-  // Initial setup, create credentials instance.
-  const credentials =  PDFServicesSdk.Credentials
-    .serviceAccountCredentialsBuilder()
-    .fromFile("pdfservices-api-credentials.json")
-    .build();
-
-  // Setup input data for the document merge process
-  const jsonString = fs.readFileSync('resources/salesOrder.json'),
-    jsonDataForMerge = JSON.parse(jsonString);
-
-  // Create an ExecutionContext using credentials
-  const executionContext = PDFServicesSdk.ExecutionContext.create(credentials);
-
-  // Create a new DocumentMerge options instance
-  const documentMerge = PDFServicesSdk.DocumentMerge,
-    documentMergeOptions = documentMerge.options,
-    options = new documentMergeOptions
-      .DocumentMergeOptions(jsonDataForMerge, documentMergeOptions.OutputFormat.PDF);
-
-  // Create a new operation instance using the options instance
-  const documentMergeOperation = documentMerge.Operation.createNew(options)
-
-  // Set operation input document template from a source file.
-  const input = PDFServicesSdk
-    .FileRef.createFromLocalFile('resources/salesOrderTemplate.docx');
-  documentMergeOperation.setInput(input);
-
-  // Execute the operation and Save the result to the specified location.
-  documentMergeOperation.execute(executionContext)
-    .then(result => result.saveAsFile('output/salesOrderOutput.pdf'))
-    .catch(err => {
-      if(err instanceof PDFServicesSdk.Error.ServiceApiError
-          || err instanceof PDFServicesSdk.Error.ServiceUsageError) {
-          console.log('Exception encountered while executing operation', err);
-      } else {
-          console.log('Exception encountered while executing operation', err);
-      }
-  });
-} catch (err) {
-  console.log('Exception encountered while executing operation', err);
-}
-</code></pre>
-        </coral-panel>
-        <coral-panel>
-<pre><code class="language-clike">// Get the samples from https://www.adobe.com/go/pdfservicesapi_net_samples
-namespace MergeDocumentToPDF
-{
-  class Program
-  {
-    private static readonly ILog log = LogManager.GetLogger(typeof(Program));
-    static void Main()
-    {
-      //Configure the logging
-      ConfigureLogging();
-      try
-      {
-        // Initial setup, create credentials instance.
-        Credentials credentials = Credentials.ServiceAccountCredentialsBuilder()
-          .FromFile(Directory.GetCurrentDirectory() + "/pdfservices-api-credentials.json")
-          .Build();
-
-        // Create an ExecutionContext using credentials.
-        ExecutionContext executionContext = ExecutionContext.Create(credentials);
-
-        // Setup input data for the document merge process
-        var content = File.ReadAllText(@"salesOrder.json");
-        JObject jsonDataForMerge = JObject.Parse(content);
-
-        // Create a new DocumentMerge Options instance
-        DocumentMergeOptions documentMergeOptions = 
-          new DocumentMergeOptions(jsonDataForMerge, OutputFormat.PDF);
-
-        // Create a new DocumentMerge Operation instance with the DocumentMerge Options instance
-        DocumentMergeOperation documentMergeOperation = 
-          DocumentMergeOperation.CreateNew(documentMergeOptions);
-
-        // Set the operation input document template from a source file.
-        documentMergeOperation
-          .SetInput(FileRef.CreateFromLocalFile(@"salesOrderTemplate.docx"));
-
-        // Execute the operation.
-        FileRef result = documentMergeOperation.Execute(executionContext);
-
-        // Save the result to the specified location
-        result.SaveAs(Directory.GetCurrentDirectory() + "/output/salesOrderOutput.pdf");
-      }
-      catch (ServiceUsageException ex)
-      {
-        log.Error("Exception encountered while executing operation", ex);
-      }
-      // Catch more errors here. . .
-    }
-
-    static void ConfigureLogging()
-    {
-      ILoggerRepository logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
-      XmlConfigurator.Configure(logRepository, new FileInfo("log4net.config"));
-    }
-  }
-} 
-</code></pre>
-        </coral-panel>
-
-        <coral-panel>
-<pre><code class="language-java">// Get the samples from https://www.adobe.com/go/pdfservicesapi_java_samples
-public class MergeDocumentToPDF {
-
-  // Initialize the logger.
-  private static final Logger LOGGER = LoggerFactory.getLogger(MergeDocumentToPDF.class);
-
-  public static void main(String[] args) {
-
-    try {
-      // Initial setup, create credentials instance.
-      Credentials credentials = Credentials.serviceAccountCredentialsBuilder()
-        .fromFile("pdfservices-api-credentials.json")
-        .build();
-
-      // Setup input data for the document merge process
-      String content = new String(Files.readAllBytes(
-        Paths.get("src/main/resources/salesOrder.json")));
-      JSONObject jsonDataForMerge=new JSONObject(content);
-
-      // Create an ExecutionContext using credentials.
-      ExecutionContext executionContext = ExecutionContext.create(credentials);
-
-      //Create a new DocumentMergeOptions instance
-      DocumentMergeOptions documentMergeOptions = 
-        new DocumentMergeOptions(jsonDataForMerge, OutputFormat.PDF);
-
-      // Create a new DocumentMergeOperation instance with the DocumentMergeOptions instance
-      DocumentMergeOperation documentMergeOperation = 
-        DocumentMergeOperation.createNew(documentMergeOptions);
-
-      // Set the operation input document template from a source file.
-      FileRef documentTemplate = 
-        FileRef.createFromLocalFile("src/main/resources/salesOrderTemplate.docx");
-      documentMergeOperation.setInput(documentTemplate);
-
-      // Execute the operation
-      FileRef result = documentMergeOperation.execute(executionContext);
-
-      // Save the result to the specified location.
-      result.saveAs("output/salesOrderOutput.pdf");
-    } catch (ServiceApiException | IOException | ServiceUsageException e) {
-      System.out.println(e);
-    }
-  }
-} 
-</code></pre>
-        </coral-panel>
-      </coral-panelstack>
-    </coral-tabview>
-  </div>
+<div id="generate-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
+	<coral-tabview>
+		<coral-tablist size="S">
+			<coral-tab class="is-selected">REST API</coral-tab>
+			<coral-tab>Node.js</coral-tab>
+			<coral-tab>.Net</coral-tab>
+			<coral-tab>Java</coral-tab>
+		</coral-tablist>
+		<coral-panelstack>
+			<coral-panel><pre><code class="language-shell">{% include code-samples/generate---rest-api.txt %}</code></pre></coral-panel>
+			<coral-panel><pre><code class="language-javascript">{% include code-samples/generate---node.txt %}</code></pre></coral-panel>
+			<coral-panel><pre><code class="language-clike">{% include code-samples/generate---net.txt %}</code></pre></coral-panel>
+			<coral-panel><pre><code class="language-java">{% include code-samples/generate---java.txt %}</code></pre></coral-panel>
+		</coral-panelstack>
+	</coral-tabview>
+</div>
 </p>
-<!-- /Generate -->
 
-<!-- Protect -->
+
+<!-- Secure (Protect) -->
 <p>
-  <div id="protect-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
-    <coral-tabview>
-      <coral-tablist size="S">
-        <coral-tab class="is-selected">Node.js</coral-tab>
-        <coral-tab>.Net</coral-tab>
-        <coral-tab>Java</coral-tab>
-      </coral-tablist>
-      <coral-panelstack>
-        <coral-panel>
-<pre><code class="language-javascript">// Create an ExecutionContext using credentials
-const executionContext = PDFServicesSdk.ExecutionContext.create(credentials);
-
-// Create new permissions instance and add the required permissions
-const protectPDF = PDFServicesSdk.ProtectPDF,
-  protectPDFOptions = protectPDF.options,
-  permissions = protectPDFOptions.Permissions.createNew();
-    permissions.addPermission(protectPDFOptions.Permission.PRINT_LOW_QUALITY);
-    permissions.addPermission(protectPDFOptions.Permission.EDIT_DOCUMENT_ASSEMBLY);
-    permissions.addPermission(protectPDFOptions.Permission.COPY_CONTENT);
-
-// Build ProtectPDF options by setting a User as well as an Owner/Permissions Password, Permissions,
-// Encryption Algorithm (used for encrypting the PDF file) and specifying the type of content to encrypt.
-const options = new protectPDFOptions.PasswordProtectOptions.Builder()
-  .setUserPassword("openpassword")
-  .setOwnerPassword("permissionspassword")
-  .setPermissions(permissions)
-  .setEncryptionAlgorithm(protectPDFOptions.EncryptionAlgorithm.AES_256)
-  .setContentEncryption(protectPDFOptions.ContentEncryption.ALL_CONTENT_EXCEPT_METADATA)
-  .build();
-
-// Create a new operation instance.
-const protectPDFOperation = protectPDF.Operation.createNew(options);
-
-// Set operation input from a source file.
-const input = PDFServicesSdk.FileRef.createFromLocalFile('resources/protectPDFInput.pdf');
-  protectPDFOperation.setInput(input);
-   
-// Execute the operation and Save the result to the specified location.
-protectPDFOperation.execute(executionContext)
-  .then(result => result.saveAsFile('output/protectPDFOutput.pdf'))
-</code></pre>
-        </coral-panel>
-        <coral-panel>
-<pre><code class="language-clike">// Create an ExecutionContext using credentials.
-ExecutionContext executionContext = ExecutionContext.Create(credentials);
-   
-// Create new permissions instance and add the required permissions
-Permissions permissions = Permissions.CreateNew();
-  permissions.AddPermission(Permission.PRINT_LOW_QUALITY);
-  permissions.AddPermission(Permission.EDIT_DOCUMENT_ASSEMBLY);
-  permissions.AddPermission(Permission.COPY_CONTENT);
-   
-// Build ProtectPDF options by setting a User as well as Owner/Permissions Password, Permissions,
-// Encryption Algorithm (used for encrypting the PDF file) and specifying the type of content to encrypt.
-ProtectPDFOptions protectPDFOptions = ProtectPDFOptions.PasswordProtectOptionsBuilder()
-  .SetUserPassword("openpassword")
-  .SetOwnerPassword("permissionspassword")
-  .SetPermissions(permissions)
-  .SetEncryptionAlgorithm(EncryptionAlgorithm.AES_256)
-  .SetContentEncryption(ContentEncryption.ALL_CONTENT_EXCEPT_METADATA)
-  .Build();
-   
-// Create a new operation instance
-ProtectPDFOperation protectPDFOperation = ProtectPDFOperation.CreateNew(protectPDFOptions);
-   
-// Set operation input from a source file.
-FileRef sourceFileRef = FileRef.CreateFromLocalFile(@"protectPDFInput.pdf");
-  protectPDFOperation.SetInput(sourceFileRef);
-   
-// Execute the operation.
-FileRef result = protectPDFOperation.Execute(executionContext);
-   
-// Save the result to the specified location.
-result.SaveAs(Directory.GetCurrentDirectory() + "/output/protectPDFOutput.pdf");
-</code></pre>
-        </coral-panel>
-
-        <coral-panel>
-<pre><code class="language-java">// Create an ExecutionContext using credentials.
-ExecutionContext executionContext = ExecutionContext.create(credentials);
-   
-// Create new permissions instance and add the required permissions
-Permissions permissions = Permissions.createNew();
-permissions.addPermission(Permission.PRINT_LOW_QUALITY);
-permissions.addPermission(Permission.EDIT_DOCUMENT_ASSEMBLY);
-permissions.addPermission(Permission.COPY_CONTENT);
-   
-// Build ProtectPDF options by setting a User as well as Owner/Permissions Password, Permissions,
-// Encryption Algorithm (used for encrypting the PDF file) and specifying the type of content to encrypt.
-ProtectPDFOptions protectPDFOptions = ProtectPDFOptions.passwordProtectOptionsBuilder()
-  .setOwnerPassword("openpassword")
-  .setUserPassword("permissionspassword")
-  .setPermissions(permissions)
-  .setEncryptionAlgorithm(EncryptionAlgorithm.AES_256)
-  .setContentEncryption(ContentEncryption.ALL_CONTENT_EXCEPT_METADATA)
-  .build();
-   
-// Create a new operation instance.
-ProtectPDFOperation protectPDFOperation = ProtectPDFOperation.createNew(protectPDFOptions);
-   
-// Set operation input from a source file.
-FileRef source = FileRef.createFromLocalFile("src/main/resources/protectPDFInput.pdf");
-protectPDFOperation.setInput(source);
-   
-// Execute the operation
-FileRef result = protectPDFOperation.execute(executionContext);
-   
-// Save the result at the specified location
-result.saveAs("output/protectPDFOutput.pdf");
-</code></pre>
-        </coral-panel>
-      </coral-panelstack>
-    </coral-tabview>
-  </div>
+<div id="protect-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
+	<coral-tabview>
+		<coral-tablist size="S">
+			<coral-tab class="is-selected">Node.js</coral-tab>
+			<coral-tab>.Net</coral-tab>
+			<coral-tab>Java</coral-tab>
+		</coral-tablist>
+		<coral-panelstack>
+			<coral-panel><pre><code class="language-javascript">{% include code-samples/protect---node.txt %}</code></pre></coral-panel>
+			<coral-panel><pre><code class="language-clike">{% include code-samples/protect---net.txt %}</code></pre></coral-panel>
+			<coral-panel><pre><code class="language-java">{% include code-samples/protect---java.txt %}</code></pre></coral-panel>
+		</coral-panelstack>
+	</coral-tabview>
+</div>
 </p>
-<!-- /Protect -->
 
-<!-- Unlock (Remove PDF Password) -->
+
+<!-- Remove Protection (Unlock / Remove PDF Password) -->
 <p>
-  <div id="unlock-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
-    <coral-tabview>
-      <coral-tablist size="S">
-        <coral-tab class="is-selected">Node.js</coral-tab>
-        <coral-tab>.Net</coral-tab>
-        <coral-tab>Java</coral-tab>
-      </coral-tablist>
-      <coral-panelstack>
-        <coral-panel>
-<pre><code class="language-javascript">// Create an ExecutionContext using credentials
-const executionContext = PDFServicesSdk.ExecutionContext.create(credentials);
-
-// Create a new operation instance.
-const removeProtectionOperation = PDFServicesSdk.RemoveProtection.Operation.createNew(),
-  input = PDFServicesSdk.FileRef.createFromLocalFile(
-    'resources/removeProtectionInput.pdf',
-    PDFServicesSdk.RemoveProtection.SupportedSourceFormat.pdf);
-   
-// Set operation input from a source file.
-removeProtectionOperation.setInput(input);
-   
-// Set the password for removing security from a PDF document.
-removeProtectionOperation.setPassword("password");
-   
-// Execute the operation and Save the result to the specified location.
-removeProtectionOperation.execute(executionContext)
-  .then(result => result.saveAsFile('output/removeProtectionOutput.pdf'))
-</code></pre>
-        </coral-panel>
-        <coral-panel>
-<pre><code class="language-clike">// Create an ExecutionContext using credentials.
-ExecutionContext executionContext = ExecutionContext.Create(credentials);
-   
-// Create a new operation instance
-RemoveProtectionOperation removeProtectionOperation = RemoveProtectionOperation.CreateNew();
-   
-// Set operation input from a source file.
-FileRef sourceFileRef = FileRef.CreateFromLocalFile(@"removeProtectionInput.pdf");
-removeProtectionOperation.SetInput(sourceFileRef);
-   
-// Set the password for removing security from a PDF document.
-removeProtectionOperation.SetPassword("password");
-   
-// Execute the operation.
-FileRef result = removeProtectionOperation.Execute(executionContext);
-   
-// Save the result to the specified location.
-result.SaveAs(Directory.GetCurrentDirectory() + 
-  "/output/removeProtectionOutput.pdf");
-</code></pre>
-        </coral-panel>
-
-        <coral-panel>
-<pre><code class="language-java">// Create an ExecutionContext using credentials and create a new operation instance.
-ExecutionContext executionContext = ExecutionContext.create(credentials);
-RemoveProtectionOperation removeProtectionOperation = RemoveProtectionOperation.createNew();
-   
-// Set operation input from a source file.
-FileRef source = FileRef.createFromLocalFile("src/main/resources/removeProtectionInput.pdf");
-removeProtectionOperation.setInput(source);
-   
-// Set the password for removing security from a PDF document.
-removeProtectionOperation.setPassword("password");
-   
-// Execute the operation.
-FileRef result = removeProtectionOperation.execute(executionContext);
-   
-// Save the result to the specified location.
-result.saveAs("output/removeProtectionOutput.pdf");
-</code></pre>
-        </coral-panel>
-      </coral-panelstack>
-    </coral-tabview>
-  </div>
+<div id="unlock-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
+	<coral-tabview>
+		<coral-tablist size="S">
+			<coral-tab class="is-selected">Node.js</coral-tab>
+			<coral-tab>.Net</coral-tab>
+			<coral-tab>Java</coral-tab>
+		</coral-tablist>
+		<coral-panelstack>
+			<coral-panel><pre><code class="language-javascript">{% include code-samples/remove-protection---node.txt %}</code></pre></coral-panel>
+			<coral-panel><pre><code class="language-clike">{% include code-samples/remove-protection---net.txt %}</code></pre></coral-panel>
+			<coral-panel><pre><code class="language-java">{% include code-samples/remove-protection---java.txt %}</code></pre></coral-panel>
+		</coral-panelstack>
+	</coral-tabview>
+</div>
 </p>
-<!-- /Unlock -->
+
 
 <!-- Embed -->
 <p>
-  <div id="embed-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
-    <coral-tabview>
-      <coral-tablist size="S">
-        <coral-tab>HTML</coral-tab>
-      </coral-tablist>
-      <coral-panelstack>
-        <coral-panel>
-<pre><code class="language-markup">&ltdiv id="adobe-dc-view" style="height: 360px; width: 500px;">&lt;/div>
-&lt;script src="https://documentcloud.adobe.com/view-sdk/main.js">&lt;/script>
-&lt;script type="text/javascript">
-  document.addEventListener("adobe_dc_view_sdk.ready", function(){
-    var adobeDCView = new AdobeDC.View({clientId: "&lt;YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
-    adobeDCView.previewFile({
-      content:{ location: 
-        { url: "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea%20Brochure.pdf"}},
-      metaData:{fileName: "Bodea Brochure.pdf"}
-    },
-    {
-      embedMode: "SIZED_CONTAINER"
-    });
-  });
-&lt;/script>
-</code></pre>
-        </coral-panel>
-      </coral-panelstack>
-    </coral-tabview>
-  </div>
+<div id="embed-code" class="sdk-embed-wrapper tab-container-embed spectrum spectrum--darkest">
+	<coral-tabview>
+		<coral-tablist size="S">
+			<coral-tab>HTML</coral-tab>
+		</coral-tablist>
+		<coral-panelstack>
+			<coral-panel><pre><code class="language-markup">{% include code-samples/embed---html.txt %}</code></pre></coral-panel>
+		</coral-panelstack>
+	</coral-tabview>
+</div>
 </p>
-<!-- /Embed -->
+
 
 <!-- Annotations -->
 <p>
-  <div id="annotations-code" class="sdk-embed-wrapper tab-container-annotations spectrum spectrum--darkest">
-    <coral-tabview>
-      <coral-tablist size="S">
-        <coral-tab>JavaScript</coral-tab>
-      </coral-tablist>
-      <coral-panelstack>
-        <coral-panel>
-<pre><code class="language-js">document.addEventListener("adobe_dc_view_sdk.ready", function() {
-  var adobeDCView = new AdobeDC.View({clientId: "&lt;YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
-  adobeDCView.previewFile({
-    content: {location: {url: "(path to your PDF)/yourfilename.pdf"}},
-    metaData: {fileName: "yourfilename.pdf"}
-  },
-  {showAnnotationTools: true});
-});
-</code></pre>
-        </coral-panel>
-      </coral-panelstack>
-    </coral-tabview>
-  </div>
+<div id="annotations-code" class="sdk-embed-wrapper tab-container-annotations spectrum spectrum--darkest">
+	<coral-tabview>
+		<coral-tablist size="S">
+			<coral-tab>JavaScript</coral-tab>
+		</coral-tablist>
+		<coral-panelstack>
+			<coral-panel><pre><code class="language-javascript">{% include code-samples/annotations---js.txt %}</code></pre></coral-panel>
+		</coral-panelstack>
+	</coral-tabview>
+</div>
 </p>
-<!-- /Annotations -->
+
 
 <!-- Analytics -->
 <p>
-  <div id="analytics-code"  class="sdk-embed-wrapper tab-container-annotations spectrum spectrum--darkest">
-    <coral-tabview>
-      <coral-tablist size="S">
-        <coral-tab>JavaScript</coral-tab>
-      </coral-tablist>
-      <coral-panelstack>
-        <coral-panel>
-<pre><code class="language-js">adobeDCView.registerCallback(
-  /* Type of call back */
-  AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
-  /* call back function */
-  function(event) {
-    console.log(event);
-  },
-  { enablePDFAnalytics: true }
-);
-</code></pre>
-        </coral-panel>
-      </coral-panelstack>
-    </coral-tabview>
-  </div>
+<div id="analytics-code"  class="sdk-embed-wrapper tab-container-annotations spectrum spectrum--darkest">
+	<coral-tabview>
+		<coral-tablist size="S">
+			<coral-tab>JavaScript</coral-tab>
+		</coral-tablist>
+		<coral-panelstack>
+			<coral-panel><pre><code class="language-javascript">{% include code-samples/analytics---js.txt %}</code></pre></coral-panel>
+		</coral-panelstack>
+	</coral-tabview>
+</div>
 </p>
-<!-- /Analytics -->
+
 
 <!-- Collaborative -->
 <p>
-  <div id = "collaborative-code" class="sdk-embed-wrapper tab-container-annotations spectrum spectrum--darkest">
-    <coral-tabview>
-      <coral-tablist size="S">
-        <coral-tab>JavaScript</coral-tab>
-      </coral-tablist>
-      <coral-panelstack>
-        <coral-panel>
-<pre><code class="language-js">const profile = {
-  userProfile: {
-    name: '<name of user>',
-    firstName: '<first name>',
-    lastName: '<last name>',
-    email: '<user email>'
-  }
-};
-
-adobeDCView.registerCallback(
-  AdobeDC.View.Enum.CallbackType.GET_USER_PROFILE_API,
-  function() {
-    return new Promise((resolve, reject) => {
-      resolve({
-        code: AdobeDC.View.Enum.ApiResponseCode.SUCCESS,
-        data: profile
-    });
-  });
-  }
-);
-</code></pre>
-        </coral-panel>
-      </coral-panelstack>
-    </coral-tabview>
-  </div>
+<div id="collaborative-code" class="sdk-embed-wrapper tab-container-annotations spectrum spectrum--darkest">
+	<coral-tabview>
+		<coral-tablist size="S">
+			<coral-tab>JavaScript</coral-tab>
+		</coral-tablist>
+		<coral-panelstack>
+			<coral-panel><pre><code class="language-javascript">{% include code-samples/collaboration---js.txt %}</code></pre></coral-panel>
+		</coral-panelstack>
+	</coral-tabview>
+</div>
 </p>
-<!-- /Collaborative -->
 
 
 <!-- Save Controls-->
 <p>
-  <div id="Save-code" class="sdk-embed-wrapper tab-container-annotations spectrum spectrum--darkest">
-    <coral-tabview>
-      <coral-tablist size="S">
-        <coral-tab>JavaScript</coral-tab>
-      </coral-tablist>
-      <coral-panelstack>
-        <coral-panel>
-<pre><code class="language-js">const saveOptions = {
-  autoSaveFrequency: &lt;Number, default=0>,
-  enableFocusPolling: &lt;Boolean, default=false>,
-  showSaveButton: &lt;Boolean, default=true>
-}
-
-adobeDCView.registerCallback(
-  AdobeDC.View.Enum.CallbackType.SAVE_API,
-  function(metadata, content, options) {
-    return new Promise((resolve, reject) => {
-      resolve({
-        code: AdobeDC.View.Enum.ApiResponseCode.SUCCESS,
-        data: {
-          metaData: &lt;File MetaData>
-        }
-      });
-    });
-  }, 
-saveOptions);
-</code></pre>
-        </coral-panel>
-      </coral-panelstack>
-    </coral-tabview>
-  </div>
+<div id="Save-code" class="sdk-embed-wrapper tab-container-annotations spectrum spectrum--darkest">
+	<coral-tabview>
+		<coral-tablist size="S">
+			<coral-tab>JavaScript</coral-tab>
+		</coral-tablist>
+		<coral-panelstack>
+			<coral-panel><pre><code class="language-javascript">{% include code-samples/save-controls---js.txt %}</code></pre></coral-panel>
+		</coral-panelstack>
+	</coral-tabview>
+</div>
 </p>
-<!-- /Save COntrols-->
+
 
 <!-- Menu Tools Options -->
 <p>
-  <div id="tools-code" class="sdk-embed-wrapper tab-container-annotations spectrum spectrum--darkest">
-    <coral-tabview>
-      <coral-tablist size="S">
-        <coral-tab>HTML</coral-tab>
-      </coral-tablist>
-      <coral-panelstack>
-        <coral-panel>
-<pre><code class="language-html">&lt;div id="adobe-dc-view">&lt;/div>
-&lt;script src="https://documentcloud.adobe.com/view-sdk/main.js">&lt;/script>
-&lt;script type="text/javascript">
-  document.addEventListener("adobe_dc_view_sdk.ready", function () {
-    var adobeDCView = new AdobeDC.View({clientId: "&lt;YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
-    adobeDCView.previewFile({
-      content:{location: {url: "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf"}},
-      metaData:{fileName: "Bodea Brochure.pdf"}
-    }, {"showLeftHandPanel": true, "showPageControls": false});
-  });
-&lt;/script>
-</code></pre>
-        </coral-panel>
-      </coral-panelstack>
-    </coral-tabview>
-  </div>
+<div id="tools-code" class="sdk-embed-wrapper tab-container-annotations spectrum spectrum--darkest">
+	<coral-tabview>
+		<coral-tablist size="S">
+			<coral-tab>HTML</coral-tab>
+		</coral-tablist>
+		<coral-panelstack>
+			<coral-panel><pre><code class="language-markup">{% include code-samples/menu-and-tool-options---html.txt %}</code></pre></coral-panel>
+		</coral-panelstack>
+	</coral-tabview>
+</div>
 </p>
-<!-- /Menu Tools Options -->
-

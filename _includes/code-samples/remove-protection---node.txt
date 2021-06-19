@@ -1,6 +1,6 @@
 // Create an ExecutionContext using credentials
 const executionContext = PDFServicesSdk.ExecutionContext.create(credentials);
-   
+
 // Create a new operation instance.
 const removeProtectionOperation = PDFServicesSdk.RemoveProtection.Operation.createNew(),
   input = PDFServicesSdk.FileRef.createFromLocalFile(
