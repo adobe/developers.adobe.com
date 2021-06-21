@@ -1,0 +1,12 @@
+// Create an ExecutionContext using credentials and create a new operation instance.          
+const executionContext = PDFServicesSdk.ExecutionContext.create(credentials),
+    compressPDF = PDFServicesSdk.CompressPDF,
+    compressPDFOperation = compressPDF.Operation.createNew();
+
+// Set operation input from a source file.
+const input = PDFServicesSdk.FileRef.createFromLocalFile('resources/compressPDFInput.pdf');
+compressPDFOperation.setInput(input);
+
+// Execute the operation and Save the result to the specified location.
+compressPDFOperation.execute(executionContext)
+  .then(result => result.saveAsFile('output/compressPDFOutput.pdf'))

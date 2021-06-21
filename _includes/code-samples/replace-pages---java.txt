@@ -1,0 +1,35 @@
+// Create an ExecutionContext using credentials and create a new operation instance.
+ExecutionContext executionContext = ExecutionContext.create(credentials);
+ReplacePagesOperation replacePagesOperation = ReplacePagesOperation.createNew();
+
+// Set operation base input from a source file.
+FileRef baseSourceFile = FileRef.createFromLocalFile(
+    "src/main/resources/baseInput.pdf"
+  );
+replacePagesOperation.setBaseInput(baseSourceFile);
+
+// Create a FileRef instance using a local file.
+FileRef firstInputFile = FileRef.createFromLocalFile(
+    "src/main/resources/replacePagesInput1.pdf"
+  );
+PageRanges pageRanges = getPageRangeForFirstFile();
+
+// Adds the pages (specified by the page ranges) of the input PDF file for replacing the page of the base PDF file.
+replacePagesOperation.addPagesForReplace(
+    firstInputFile, pageRanges, 1
+  );
+
+// Create a FileRef instance using a local file.
+FileRef secondInputFile = FileRef.createFromLocalFile(
+    "src/main/resources/replacePagesInput2.pdf"
+  );
+
+// Adds all the pages of the input PDF file for replacing the page of the base PDF file.
+replacePagesOperation
+  .addPagesForReplace(secondInputFile, 3);
+
+// Execute the operation
+FileRef result = replacePagesOperation.execute(executionContext);
+
+// Save the result at the specified location
+result.saveAs("output/replacePagesOutput.pdf");

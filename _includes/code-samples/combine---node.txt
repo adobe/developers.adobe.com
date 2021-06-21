@@ -1,0 +1,13 @@
+// Create an ExecutionContext using credentials and create a new operation instance.          
+const executionContext = PDFServicesSdk.ExecutionContext.create( credentials ),
+  combineFilesOperation = PDFServicesSdk.CombineFiles.Operation.createNew();
+
+// Set operation input from a source file.
+const combineSource1 = PDFServicesSdk.FileRef.createFromLocalFile( 'resources/combineFilesInput1.pdf' ),
+  combineSource2 = PDFServicesSdk.FileRef.createFromLocalFile( 'resources/combineFilesInput2.pdf' );
+combineFilesOperation.addInput( combineSource1 );
+combineFilesOperation.addInput( combineSource2 );
+
+// Execute the operation and Save the result to the specified location.
+combineFilesOperation.execute( executionContext )
+  .then(result => result.saveAsFile( 'output/combineFilesOutput.pdf' ));

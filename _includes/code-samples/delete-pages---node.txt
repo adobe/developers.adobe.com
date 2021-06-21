@@ -1,0 +1,15 @@
+// Create an ExecutionContext using credentials and create a new operation instance.                              
+const executionContext = PDFServicesSdk.ExecutionContext.create(credentials),
+  deletePagesOperation = PDFServicesSdk.DeletePages.Operation.createNew();
+
+// Set operation input from a source file.
+const input = PDFServicesSdk.FileRef.createFromLocalFile('resources/deletePagesInput.pdf');
+deletePagesOperation.setInput(input);
+
+// Delete pages of the document (as specified by PageRanges).
+const pageRangesForDeletion = getPageRangesForDeletion();
+deletePagesOperation.setPageRanges(pageRangesForDeletion);
+
+// Execute the operation and Save the result to the specified location.
+deletePagesOperation.execute(executionContext)
+  .then(result => result.saveAsFile('output/deletePagesOutput.pdf'))

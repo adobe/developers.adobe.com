@@ -1,0 +1,20 @@
+// Create an ExecutionContext using credentials and create a new operation instance.          
+ExecutionContext executionContext =
+ ExecutionContext.Create(credentials);
+CompressPDFOperation compressPDFOperation =
+  CompressPDFOperation.CreateNew();
+
+// Set operation input from a source file.
+FileRef sourceFileRef =
+  FileRef.CreateFromLocalFile(
+      @"compressPDFInput.pdf"
+    );
+compressPDFOperation.SetInput(sourceFileRef);
+
+// Execute the operation.
+FileRef result = compressPDFOperation.Execute(executionContext);
+
+// Save the result to the specified location.
+result.SaveAs(Directory
+  .GetCurrentDirectory()
+  + "/output/compressPDFOutput.pdf");

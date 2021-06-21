@@ -1,0 +1,29 @@
+// Create an ExecutionContext using credentials and create a new operation instance.          
+const executionContext = PDFServicesSdk.ExecutionContext.create(credentials),
+  insertPagesOperation = PDFServicesSdk.InsertPages.Operation.createNew();
+
+// Set operation base input from a source file.
+const baseInputFile = PDFServicesSdk.FileRef.createFromLocalFile('resources/baseInput.pdf');
+insertPagesOperation.setBaseInput(baseInputFile);
+
+// Create a FileRef instance using a local file.
+const firstFileToInsert = PDFServicesSdk.FileRef.createFromLocalFile('resources/firstFileToInsertInput.pdf'),
+  pageRanges = getPageRangesForFirstFile();
+
+// Adds the pages (specified by the page ranges)
+// of the input PDF file to be
+// inserted at the specified page of the base PDF file.
+insertPagesOperation.addPagesToInsertAt(2, firstFileToInsert, pageRanges);
+
+// Create a FileRef instance using a local file.
+const secondFileToInsert = PDFServicesSdk.FileRef.createFromLocalFile('resources/secondFileToInsertInput.pdf');
+
+// Adds all the pages of the input PDF file
+// to be inserted at the specified
+// page of the base PDF file.
+insertPagesOperation.addPagesToInsertAt(3, secondFileToInsert);
+
+// Execute the operation and Save the
+// result to the specified location.
+insertPagesOperation.execute(executionContext)
+  .then(result => result.saveAsFile('output/insertPagesOutput.pdf'))

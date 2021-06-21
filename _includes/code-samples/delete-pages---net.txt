@@ -1,0 +1,25 @@
+// Create an ExecutionContext using credentials.
+ExecutionContext executionContext = ExecutionContext.Create(credentials);
+
+// Create a new operation instance
+DeletePagesOperation deletePagesOperation = DeletePagesOperation.CreateNew();
+
+// Set operation input from a source file.
+FileRef sourceFileRef = FileRef.CreateFromLocalFile(
+    @"deletePagesInput.pdf"
+  );
+deletePagesOperation.SetInput(sourceFileRef);
+
+// Delete pages of the document
+// (as specified by PageRanges).
+PageRanges pageRangeForDeletion = GetPageRangeForDeletion();
+deletePagesOperation
+  .SetPageRanges(pageRangeForDeletion);
+
+// Execute the operation.
+FileRef result = deletePagesOperation
+  .Execute(executionContext);
+
+// Save the result to the specified location.
+result.SaveAs(Directory.GetCurrentDirectory() +
+  "/output/deletePagesOutput.pdf");

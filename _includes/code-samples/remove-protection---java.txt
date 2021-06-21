@@ -1,0 +1,16 @@
+// Create an ExecutionContext using credentials and create a new operation instance.
+ExecutionContext executionContext = ExecutionContext.create(credentials);
+RemoveProtectionOperation removeProtectionOperation = RemoveProtectionOperation.createNew();
+
+// Set operation input from a source file.
+FileRef source = FileRef.createFromLocalFile("src/main/resources/removeProtectionInput.pdf");
+removeProtectionOperation.setInput(source);
+
+// Set the password for removing security from a PDF document.
+removeProtectionOperation.setPassword("password");
+
+// Execute the operation.
+FileRef result = removeProtectionOperation.execute(executionContext);
+
+// Save the result to the specified location.
+result.saveAs("output/removeProtectionOutput.pdf");

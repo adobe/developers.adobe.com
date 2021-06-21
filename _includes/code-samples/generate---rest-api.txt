@@ -1,0 +1,48 @@
+curl --location --request POST 'https://cpf-ue1.adobe.io/ops/:create?respondWith=%7B%22reltype%22%3A%20%22http%3A%2F%2Fns.adobe.com%2Frel%2Fprimary%22%7D' \
+  --header 'Authorization: Bearer {{Placeholder for token}}' \
+  --header 'Accept: application/json, text/plain, */*' \
+  --header 'x-api-key: {{Placeholder for client_id}}' \
+  --header 'Prefer: respond-async,wait=0' \
+  --form 'contentAnalyzerRequests="{
+     \"cpf:engine\":{
+        \"repo:assetId\":\"urn:aaid:cpf:Service-52d5db6097ed436ebb96f13a4c7bf8fb\"
+     },
+     \"cpf:inputs\":{
+        \"documentIn\":{
+           \"cpf:location\":\"InputFile0\",
+           \"dc:format\":\"application/vnd.openxmlformats-officedocument.wordprocessingml.document\"
+        },
+        \"params\":{
+           \"cpf:inline\":{
+              \"outputFormat\": \"pdf\",
+              \"jsonDataForMerge\": {
+                \"customerName\": \"Kane Miller\",
+                \"customerVisits\": 100,
+                \"itemsBought\": [
+                  {
+                    \"name\": \"Sprays\",
+                    \"quantity\": 50,
+                    \"amount\": 100
+                  },
+                  {
+                    \"name\": \"Chemicals\",
+                    \"quantity\": 100,
+                    \"amount\": 200
+                  }
+                ],
+                \"totalAmount\": 300,
+                \"previousBalance\": 50,
+                \"lastThreeBillings\": [100, 200, 300],
+                \"photograph\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP88h8AAu0B9XNPCQQAAAAASUVORK5CYII=\"
+              }
+           }
+        }
+     },
+     \"cpf:outputs\":{
+        \"documentOut\":{
+           \"cpf:location\":\"OutputFile\",
+           \"dc:format\":\"application/pdf\"
+        }
+     }
+  }"' \
+  --form 'InputFile0=@"{{Placeholder for the input document template (absolute path of the file)}}"'

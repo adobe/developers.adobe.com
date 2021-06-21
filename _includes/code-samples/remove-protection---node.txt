@@ -1,0 +1,18 @@
+// Create an ExecutionContext using credentials
+const executionContext = PDFServicesSdk.ExecutionContext.create(credentials);
+
+// Create a new operation instance.
+const removeProtectionOperation = PDFServicesSdk.RemoveProtection.Operation.createNew(),
+  input = PDFServicesSdk.FileRef.createFromLocalFile(
+    'resources/removeProtectionInput.pdf',
+    PDFServicesSdk.RemoveProtection.SupportedSourceFormat.pdf);
+   
+// Set operation input from a source file.
+removeProtectionOperation.setInput(input);
+   
+// Set the password for removing security from a PDF document.
+removeProtectionOperation.setPassword("password");
+   
+// Execute the operation and Save the result to the specified location.
+removeProtectionOperation.execute(executionContext)
+  .then(result => result.saveAsFile('output/removeProtectionOutput.pdf'))
