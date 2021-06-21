@@ -1,45 +1,22 @@
-// Get the samples from https://www.adobe.com/go/pdfservicesapi_java_samples
-public class MergeDocumentToPDF {
+// Setup input data for the document merge process
+String content = new String(Files.readAllBytes(Paths.get("src/main/resources/salesOrder.json")));
+JSONObject jsonDataForMerge = new JSONObject(content);
 
-  // Initialize the logger.
-  private static final Logger LOGGER = LoggerFactory.getLogger(MergeDocumentToPDF.class);
+// Create an ExecutionContext using credentials.
+ExecutionContext executionContext = ExecutionContext.create(credentials);
 
-  public static void main(String[] args) {
+//Create a new DocumentMergeOptions instance
+DocumentMergeOptions documentMergeOptions = new DocumentMergeOptions(jsonDataForMerge, OutputFormat.PDF);
 
-    try {
-      // Initial setup, create credentials instance.
-      Credentials credentials = Credentials.serviceAccountCredentialsBuilder()
-        .fromFile("pdfservices-api-credentials.json")
-        .build();
+// Create a new DocumentMergeOperation instance with the DocumentMergeOptions instance
+DocumentMergeOperation documentMergeOperation = DocumentMergeOperation.createNew(documentMergeOptions);
 
-      // Setup input data for the document merge process
-      String content = new String(Files.readAllBytes(
-        Paths.get("src/main/resources/salesOrder.json")));
-      JSONObject jsonDataForMerge=new JSONObject(content);
+// Set the operation input document template from a source file.
+FileRef documentTemplate = FileRef.createFromLocalFile("src/main/resources/salesOrderTemplate.docx");
+documentMergeOperation.setInput(documentTemplate);
 
-      // Create an ExecutionContext using credentials.
-      ExecutionContext executionContext = ExecutionContext.create(credentials);
+// Execute the operation
+FileRef result = documentMergeOperation.execute(executionContext);
 
-      //Create a new DocumentMergeOptions instance
-      DocumentMergeOptions documentMergeOptions =
-        new DocumentMergeOptions(jsonDataForMerge, OutputFormat.PDF);
-
-      // Create a new DocumentMergeOperation instance with the DocumentMergeOptions instance
-      DocumentMergeOperation documentMergeOperation =
-        DocumentMergeOperation.createNew(documentMergeOptions);
-
-      // Set the operation input document template from a source file.
-      FileRef documentTemplate =
-        FileRef.createFromLocalFile("src/main/resources/salesOrderTemplate.docx");
-      documentMergeOperation.setInput(documentTemplate);
-
-      // Execute the operation
-      FileRef result = documentMergeOperation.execute(executionContext);
-
-      // Save the result to the specified location.
-      result.saveAs("output/salesOrderOutput.pdf");
-    } catch (ServiceApiException | IOException | ServiceUsageException e) {
-      System.out.println(e);
-    }
-  }
-} 
+// Save the result to the specified location.
+result.saveAs("output/salesOrderOutput.pdf");
