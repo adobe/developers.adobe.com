@@ -1,7 +1,9 @@
 <!doctype html>
 
-{% capture this_page_title %}{{site.title}} — {{ page.title }}{% endcapture %}
+{% capture this_page_title %} {{ page.title }} - {{site.title}} {% endcapture %}
+
 {% assign this_page_image = 'dcsdk-main.jpg' %}
+
 {% assign this_date = "now" | date: "%Y-%m-%d" %}
 
 
@@ -12,6 +14,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="robots" content="noodp">
+		<link rel="canonical" href="{{ site.url }}{{ baseurl }}{{ page.url }}" />
 		<!-- primary -->
 		<title>{{ this_page_title }}</title>
 		<meta name="title" content="{{ this_page_title }}" />
@@ -70,6 +73,7 @@
 					"@type" : "Adobe, Inc.",
 					"name" : "{{ site.title }}"
 				},
+				"thumbnailUrl": "{{ site.url }}{{ baseurl }}/gh-assets/img/page-thumbnails/{{ this_page_image }}",
 				"datePublished" : "{{ this_date }}",
 				"articleBody" : "{{ page.meta }}"
 			}
