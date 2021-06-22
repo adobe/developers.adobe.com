@@ -208,13 +208,73 @@ section.platform {
 // ......................................................
 // Liquid Mode panel
 
-section.platform {
-	section.market-place {
-
-		&.liquid-mode {
-			background-color: #f00;
-			height: 100%;
-		}
-
-	}
+section.platform section.market-place.liquid-mode {
+	background: linear-gradient(#e61305, #f18a72);
+	height: 100%;
 }
+section.platform section.market-place.liquid-mode a.button-link {
+  border-color: #fff;
+  color: #fff !important;
+}
+section.platform section.market-place.liquid-mode a.button-link:hover {
+  background-color: #fff;
+  color: #e61305 !important;
+}
+section.platform section.market-place.liquid-mode .market-place-container {
+	padding-top: 2.5em;
+}
+section.platform section.market-place.liquid-mode .market-place-wrapper {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 0 2em;
+}
+section.platform section.market-place.liquid-mode .content-container {
+	display: flex;
+}
+section.platform section.market-place.liquid-mode .content-container > div:nth-child(1){
+	width: 28%;
+}
+section.platform section.market-place.liquid-mode .content-container > div:nth-child(2){
+	text-align: left;
+	padding-left: 3em;
+}
+section.platform section.market-place.liquid-mode .content-container > div * {
+	text-align: left;
+	color: #fff;
+	margin: 0;
+}
+section.platform section.market-place.liquid-mode .content-container > div h3 {
+	font-size: 1.75em;
+	line-height: 1;
+	margin-bottom: 1.5em;
+	padding: 0;
+}
+section.platform section.market-place.liquid-mode .content-container > div h3 span {
+  font-size: .65em;
+  font-weight: normal;
+  letter-spacing: 4px;
+  display: block;
+  text-transform: uppercase;
+  margin-bottom: .4em;
+}
+section.platform section.market-place.liquid-mode .content-container > div h4 {
+	font-size: 1.3em;
+	font-weight: bold;
+	padding: 0;
+}
+section.platform section.market-place.liquid-mode .content-container > div * + h4 {
+	margin-top: 1em;
+}
+section.platform section.market-place.liquid-mode .content-container > div p {
+	padding: 0;
+	margin: 0;
+  	line-height: 1.1;
+}
+
+section.platform section.market-place.liquid-mode .content-container > div .mp-cta-wrapper {
+	margin-top: 2em;
+}
+
+
+
+
