@@ -14,35 +14,35 @@
 }
 
 .dcsdk .cta-wrapper .spectrum-Button.spectrum-Button--cta {
-	font-size: 1.065em;
+  font-size: 1.065em;
 }
 
 
 .title-with-cta {
-	display: grid;
-	grid-template-columns: 1fr auto;
-	margin-bottom: 4em;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  margin-bottom: 4em;
 }
 
 .title-with-cta .spectrum-Button.spectrum-Button--cta {
-	margin-top: .5em;
-	margin-left: 2em;
+  margin-top: .5em;
+  margin-left: 2em;
 }
 
 section.dctsdk-work-flow .title-with-cta h3 {
-	padding-bottom: .5em;
+  padding-bottom: .5em;
 }
 
 @media screen and (max-width: 525px) {
-	.title-with-cta {
-		display: block;
-	}
-	.title-with-cta h3 {
-		margin-bottom: .5em;
-	}
-	.title-with-cta div {
-		text-align: center;
-	}
+  .title-with-cta {
+	display: block;
+  }
+  .title-with-cta h3 {
+	margin-bottom: .5em;
+  }
+  .title-with-cta div {
+	text-align: center;
+  }
 }
 
 
@@ -55,3 +55,35 @@ section.doc-gen-blade .cta-wrapper a + a {
 section.doc-gen-blade .cta-wrapper .button-link {
   font-size: 1em;
 }
+
+
+
+
+// Refactoring
+
+.dcsdk-button {
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 2em;
+  display: inline-block;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 14px;  //should not be absolute when refactoring
+  padding: 4px 18px 4px;
+  margin: 0 .25em;
+}
+.dcsdk-button:hover {
+  text-decoration: none !important;
+}
+
+.dcsdk-button.primary {
+  color: #fff;
+  border-color: #0e6de0;
+  background-color: #0e6de0;
+}
+
+.dcsdk-button.secondary {
+  border-color: #4b4b4b;
+  color: #4b4b4b;
+}
+
