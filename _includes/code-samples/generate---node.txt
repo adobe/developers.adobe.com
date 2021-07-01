@@ -1,0 +1,22 @@
+// Setup input data for the document merge process
+const jsonString = fs.readFileSync('resources/salesOrder.json'),
+  jsonDataForMerge = JSON.parse(jsonString);
+
+// Create an ExecutionContext using credentials
+const executionContext = PDFToolsSdk.ExecutionContext.create(credentials);
+
+// Create a new DocumentMerge options instance
+const documentMerge = PDFToolsSdk.DocumentMerge,
+  documentMergeOptions = documentMerge.options,
+  options = new documentMergeOptions.DocumentMergeOptions(jsonDataForMerge, documentMergeOptions.OutputFormat.PDF);
+
+// Create a new operation instance using the options instance
+const documentMergeOperation = documentMerge.Operation.createNew(options)
+
+// Set operation input document template from a source file.
+const input = PDFToolsSdk.FileRef.createFromLocalFile('resources/salesOrderTemplate.docx');
+documentMergeOperation.setInput(input);
+
+// Execute the operation and Save the result to the specified location.
+documentMergeOperation.execute(executionContext)
+  .then(result => result.saveAsFile('output/salesOrderOutput.pdf'))

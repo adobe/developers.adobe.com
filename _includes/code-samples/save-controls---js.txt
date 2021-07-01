@@ -1,0 +1,19 @@
+const saveOptions = {
+  autoSaveFrequency: &lt;Number, default=0>,
+  enableFocusPolling: &lt;Boolean, default=false>,
+  showSaveButton: &lt;Boolean, default=true>
+}
+
+adobeDCView.registerCallback(
+  AdobeDC.View.Enum.CallbackType.SAVE_API,
+  function(metadata, content, options) {
+    return new Promise((resolve, reject) => {
+      resolve({
+        code: AdobeDC.View.Enum.ApiResponseCode.SUCCESS,
+        data: {
+          metaData: &lt;File MetaData>
+        }
+      });
+    });
+  }, 
+saveOptions);

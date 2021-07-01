@@ -1,0 +1,12 @@
+// Create an ExecutionContext using credentials and create a new operation instance.          
+const executionContext = PDFServicesSdk.ExecutionContext.create(credentials),
+  linearizePDF = PDFServicesSdk.LinearizePDF,
+  linearizePDFOperation = linearizePDF.Operation.createNew();
+
+// Set operation input from a source file.
+const input = PDFServicesSdk.FileRef.createFromLocalFile('resources/linearizePDFInput.pdf');
+linearizePDFOperation.setInput(input);
+
+// Execute the operation and Save the result to the specified location.
+linearizePDFOperation.execute(executionContext)
+  .then(result => result.saveAsFile('output/linearizePDFOutput.pdf'))

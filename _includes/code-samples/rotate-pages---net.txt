@@ -1,0 +1,29 @@
+// Create an ExecutionContext using credentials.
+ExecutionContext executionContext = ExecutionContext.Create(credentials);
+
+// Create a new operation instance
+RotatePagesOperation rotatePagesOperation = RotatePagesOperation.CreateNew();
+
+// Set operation input from a source file.
+FileRef sourceFileRef = FileRef.CreateFromLocalFile(
+    @"rotatePagesInput.pdf"
+  );
+rotatePagesOperation.SetInput(sourceFileRef);
+
+// Sets angle by 90 degrees (in clockwise direction) for rotating the specified pages of the input PDF file.
+PageRanges firstPageRange = GetFirstPageRangeForRotation();
+rotatePagesOperation.SetAngleToRotatePagesBy(
+    Angle._90, firstPageRange
+  );
+
+// Sets angle by 180 degrees (in clockwise direction) for rotating the specified pages of the input PDF file.
+PageRanges secondPageRange = GetSecondPageRangeForRotation();
+rotatePagesOperation
+  .SetAngleToRotatePagesBy(Angle._180, secondPageRange);
+
+// Execute the operation.
+FileRef result = rotatePagesOperation.Execute(executionContext);
+
+// Save the result to the specified location.
+result.SaveAs(Directory.GetCurrentDirectory() +
+  "/output/rotatePagesOutput.pdf");

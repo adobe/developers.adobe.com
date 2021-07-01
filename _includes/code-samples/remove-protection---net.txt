@@ -1,0 +1,19 @@
+// Create an ExecutionContext using credentials.
+ExecutionContext executionContext = ExecutionContext.Create(credentials);
+
+// Create a new operation instance
+RemoveProtectionOperation removeProtectionOperation = RemoveProtectionOperation.CreateNew();
+
+// Set operation input from a source file.
+FileRef sourceFileRef = FileRef.CreateFromLocalFile(@"removeProtectionInput.pdf");
+removeProtectionOperation.SetInput(sourceFileRef);
+
+// Set the password for removing security from a PDF document.
+removeProtectionOperation.SetPassword("password");
+
+// Execute the operation.
+FileRef result = removeProtectionOperation.Execute(executionContext);
+
+// Save the result to the specified location.
+result.SaveAs(Directory.GetCurrentDirectory() +
+  "/output/removeProtectionOutput.pdf");

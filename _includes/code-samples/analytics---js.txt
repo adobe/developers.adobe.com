@@ -1,0 +1,9 @@
+adobeDCView.registerCallback(
+  /* Type of call back */
+  AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
+  /* call back function */
+  function(event) {
+    console.log(event);
+  },
+  { enablePDFAnalytics: true }
+);

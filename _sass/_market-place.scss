@@ -1,62 +1,57 @@
 
 section.platform {
-    width:100%;
-    margin:0px !important;
-    padding:0px !important;
-    
-    .slick-track {
-        padding: 0 !important;
-    }
+	margin: 0px !important;
+	padding: 0px !important;
+	width: 100%;
 
-    .slick-dots li button:before {
-        font-size: 9px !important;
-        margin-top:2.8rem;
-    }
-    
-    .slick-dots li.slick-active button:before {
-        color: #1473E6 !important;
-        }
-    
-    .slick-dots {
-        bottom: 0.25rem !important;
-    
-        li {
-        margin: 0 -2px !important;
-        }
-    }
+	.slick-track {
+		padding: 0 !important;
+		display: flex !important;
+	}
 
-    &.slick-dotted.slick-slider {
-        margin-bottom: 0;
-        @media screen and (min-width: 768px) {
-          margin-bottom: 1.5rem;
-        }
-        @media screen and (min-width: 1024px) {
-          margin-bottom: 4.5rem;
-        }
-      }
+	.slick-dots li button:before {
+		font-size: 9px !important;
+		margin-top: 2.8rem;
+	}
 
-    /* Market Place */
-  section.market-place {
-    margin:0px !important;
-    padding-bottom: 0.75rem;
-    background: #1B5496 url('../img/mp_aws_bkg@2x.png');
-    background-repeat:no-repeat;
-    background-position:center center;
-    background-size:cover;     
+	.slick-dots li.slick-active button:before {
+		color: #1473E6 !important;
+	}
 
-    &.ms-blade{
-        background: #000 url('../img/ms_power_bkg.png');
-        background-repeat:no-repeat;
-        background-position:center center;
-        background-size:cover;    
-    }
+	.slick-dots {
+	  bottom: 0.25rem !important;
+
+	  li {
+		  margin: 0 -2px !important;
+	  }
+	}
+
+	&.slick-dotted.slick-slider {
+		margin-bottom: 0;
+		@media screen and (min-width: 768px) {
+			margin-bottom: 1.5rem;
+		}
+		@media screen and (min-width: 1024px) {
+			margin-bottom: 4.5rem;
+		}
+	}
+
+	/* Market Place */
+	section.market-place {
+		margin: 0 !important;
+		padding-bottom: 0.75rem;
+		background: #1B5496 url('../img/mp_aws_bkg@2x.png');
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		height: inherit !important;
 
     .market-place-container{
         padding-top:4.1875rem;
         margin: 0 auto;
 
         .market-place-wrapper{
-            max-height:331px;
+            max-height: 331px;
             
             color: $white;
 
@@ -121,17 +116,17 @@ section.platform {
                 }
     
                 .mp-copy-wrapper{
-                    margin:0 auto;
-                    width:284px;
+                    margin: 0 auto;
+                    width: 284px;
 
                     @media screen and (min-width: 768px) {
-                        width:100%;
+                        width: 100%;
                     }
                     
                     h4 {
                         font-size:1.1875rem;
                         color: $white;
-                        font-family: 'Adobe Clean Black';
+                        font-family: 'Adobe Clean Black',sans-serif;
                         font-weight: 900;
                         text-align: center;
                         text-transform:none !important;
@@ -189,3 +184,119 @@ section.platform {
         
     }
 }
+
+
+
+// ......................................................
+// Microsoft × Adobe – Power Automate
+
+section.platform {
+	section.market-place {
+
+		&.ms-blade{
+			background: #000 url('../img/ms_power_bkg.jpg');
+			background-repeat:no-repeat;
+			background-position:center center;
+			background-size:cover;
+		}
+
+	}
+}
+
+
+
+// ......................................................
+// Liquid Mode panel
+
+section.platform section.market-place.liquid-mode {
+	background: linear-gradient(#e61305, #f18a72 65%);
+	height: 100%;
+}
+section.platform section.market-place.liquid-mode a {
+  color: rgba(255,255,255,.8) !important;
+ // font-weight: bold;
+  text-decoration: underline;
+}
+section.platform section.market-place.liquid-mode a:hover {
+  color: #fff !important;
+}
+section.platform section.market-place.liquid-mode a.button-link {
+	border-color: #fff;
+	color: #fff !important;
+ 	 text-decoration: none;
+}
+section.platform section.market-place.liquid-mode a.button-link:hover {
+	background-color: #fff;
+	color: #e61305 !important;
+}
+section.platform section.market-place.liquid-mode .market-place-container {
+	padding-top: 2.5em;
+}
+section.platform section.market-place.liquid-mode .market-place-wrapper {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 0 2em;
+}
+section.platform section.market-place.liquid-mode .content-container {
+	display: flex;
+}
+section.platform section.market-place.liquid-mode .content-container > div:nth-child(1){
+	width: 28%;
+	min-width: 150px;
+}
+section.platform section.market-place.liquid-mode .content-container > div:nth-child(2){
+	text-align: left;
+	padding-left: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+section.platform section.market-place.liquid-mode .content-container > div * {
+	text-align: left;
+	color: #fff;
+	margin: 0;
+}
+section.platform section.market-place.liquid-mode .content-container > div h3 {
+	font-size: 1.9em;
+	line-height: 1;
+	margin-bottom: .5em;
+	padding: 0;
+}
+section.platform section.market-place.liquid-mode .content-container > div h4 {
+	font-size: 1.3em;
+	font-weight: bold;
+	padding: 0;
+  letter-spacing: 1px;
+}
+section.platform section.market-place.liquid-mode .content-container > div * + h4 {
+	margin-top: 1.5em;
+}
+section.platform section.market-place.liquid-mode .content-container > div p {
+	padding: 0;
+	margin: 0;
+  	line-height: 1.1;
+	color: rgba(0,0,0,.7);
+  font-size: 1.4em;
+}
+
+section.platform section.market-place.liquid-mode .content-container > div .mp-cta-wrapper {
+	margin-top: 3em;
+  margin-bottom: 2em;
+}
+
+
+@media screen and (max-width: 575px) {
+  section.platform section.market-place.liquid-mode .content-container > div {
+	font-size: .8em;
+  }
+  section.platform section.market-place.liquid-mode .content-container > div:nth-child(2){
+	padding-left: 1.5em;
+  }
+  section.platform section.market-place.liquid-mode .market-place-wrapper {
+	padding: 0 .75em 0 1em;
+  }
+
+}
+
+
+

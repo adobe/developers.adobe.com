@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Automate Document Generation | Contract Generation | Adobe
+title: Automate Document Generation | Contract Generation
 meta: Automatically generate custom branded sales proposals, legal contracts, and invoices from Word templates and your dynamic data. Learn more today.
 active:
 ---
@@ -15,6 +15,11 @@ active:
 				<div class="intro-copy-wrapper">
 					<h1>Adobe Document Generation API</h1>
 					<p>Generate PDF and Word documents from Word templates and JSON data</p>
+					<div style="text-align: center; margin-top: -1em; margin-bottom: 1em;">
+						<a href="https://adobe.com/go/dcdocgen_api_demo" target="_blank" class="dcsdk-button primary">
+							Try the demo
+						</a>
+					</div>
 					<p class="doc-gen-invoice"></p>
 				</div>
 			</div>
@@ -33,7 +38,7 @@ active:
 					<a href="https://video.tv.adobe.com/v/332120" target="_blank" class="button-link">
 						Product overview video
 					</a>
-					<a href="https://www.adobe.com/go/dcsdks_credentials" target="_blank" class="spectrum-Button spectrum-Button--cta">
+					<a href="https://www.adobe.com/go/dcsdks_credentials?ref=getStartedWithServicesSDK" target="_blank" class="spectrum-Button spectrum-Button--cta">
 						Start free trial
 					</a>
 				</div>
@@ -44,21 +49,21 @@ active:
 							<img src="{{ baseurl }}/gh-assets/svg/rapid-results.svg" alt="doc generation software">
 						</div>
 						<h4>Authoring Tools for Improved Productivity</h4>
-						<p>Use our Adobe Document Generation Tagger to quickly build your custom branded Microsoft Word templates</p>
+						<p>Use our Adobe Document Generation Tagger Word add-in to quickly build custom branded Microsoft Word or PDF documents with data</p>
 					</div>
 					<div class="gen-item">
 						<div class="gen-icon">
 							<img src="{{ baseurl }}/gh-assets/svg/modify-pages.svg" alt="document generation tools">
 						</div>
 						<h4>Manipulate and Merge Dynamic Data</h4>
-						<p>Process text tags, calculations, repeating elements, and conditional statements at runtime</p>
+						<p>Process text tags, calculations, repeating elements, and conditional statements at runtime.</p>
 					</div>
 					<div class="gen-item">
 						<div class="gen-icon">
 							<img src="{{ baseurl }}/gh-assets/svg/high-fidelity.svg" alt="contract generation API">
 						</div>
-						<h4>High Fidelity Document Generation</h4>
-						<p>Generate pixel perfect documents with signatures using Adobe Sign</p>
+						<h4>Document Generation with Signatures</h4>
+						<p>Adobe Sign integration allows you to generate documents with signatures including conditional logic for signature text tags</p>
 					</div>
 				</div>
 
@@ -81,7 +86,7 @@ active:
 							<img src="{{ baseurl }}/gh-assets/svg/ic-msword.svg">
 						</div>
 						<h4>Rapid template tagging from uploaded JSON data</h4>
-						<p>Automatically generate text tags from your JSON data model using our Document Generation Tagger Microsoft Word add-in</p>
+						<p>Automatically generate tags from your JSON data model or create reusable tags using our Document Generation Tagger Microsoft Word add-in. Preview your document by generating it within Word.</p>
 						<div class="cta-wrapper">
 							<a href="https://www.adobe.com/go/dcdg_Tagger" target="_blank" class="button-link">
 								Get Microsoft Word add-in
@@ -100,7 +105,7 @@ active:
 							<img src="{{ baseurl }}/gh-assets/svg/ic-sign.svg">
 						</div>
 						<h4>Out of the box integration with Adobe Sign</h4>
-						<p>Accelerated text tag creation to generate documents that are ready for processing in Adobe Sign.</p>
+						<p>Accelerated text tag creation with the ability to conditionally show and hide signatures or content, mark fields as required, read only, and generate documents that are ready for processing in Adobe&nbsp;Sign.</p>
 					</div>
 					<div class="key-item">
 						<div class="key-icon">
@@ -111,7 +116,7 @@ active:
 					</div>
 				</div>
 				<div class="cta-wrapper">
-					<a href="https://www.adobe.com/go/dcsdks_credentials" target="_blank" class="button-link blue">
+					<a href="https://www.adobe.com/go/dcsdks_credentials?ref=getStartedWithServicesSDK" target="_blank" class="button-link blue">
 						Start free trial
 					</a>
 				</div>
@@ -125,6 +130,8 @@ active:
 	<!-- partnership marquee -->
 	<section class="platform market-slider-container">
 
+{% comment %}
+{% endcomment %}
 		<!-- Microsoft power (Apr 2021) -->
 		<section class="market-place ms-blade">
 			<div class="market-place-container">
@@ -133,7 +140,7 @@ active:
 						<div class="mp-adobe-logo">
 							<img src="{{ baseurl }}/gh-assets/img/adobe_logo_partnership@2x.png" alt="Adobe logo partnership banner">
 						</div>
-						<div class="mp-plus">+</div>
+						<div class="mp-plus">×</div>
 						<div class="mp-logo ms-power-logo">
 							<img src="{{ baseurl }}/gh-assets/svg/ms_power_logo.svg" alt="Microsoft Power Platform logo"/>
 						</div>
@@ -153,12 +160,42 @@ active:
 			</div>
 		</section>
 
+		<!-- Liquid Mode -->
+		<section class="market-place liquid-mode">
+			<div class="market-place-container">
+				<div class="market-place-wrapper">
+
+					<div class="content-container">
+						<div>
+							<img src="{{ baseurl }}/gh-assets/img/liquid-mode-mobile.png" alt="Adobe Acrobat Liquid Mode">
+						</div>
+						<div>
+							<h3>Liquid Mode PDF Creation Coming Soon</h3>
+							<h4>Easy to Read on Mobile</h4>
+							<p>Leverage AI to easily reformat documents for viewing on small screens</p>
+							<h4>Improved Accessibility</h4>
+							<p>Documents are tagged for improved accessibility with assistive technologies</p>
+							<div class="mp-cta-wrapper">
+								<a href="https://www.adobe.io/apis/documentcloud/dcsdk/form.html" target="_blank" class="button-link">
+									I’m interested
+								</a>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</section>
+
 	</section>
+	{% comment %}
 		<style>
 			.platform.market-slider-container.slick-initialized.slick-slider.slick-dotted .slick-dots {
 				display: none;
 			}
 		</style>
+	{% endcomment %}
 
 
 	<!-- use cases -->
@@ -216,7 +253,12 @@ active:
 
 			<div class="sample-header sample-header-desktop">
 				<h3>Download Sample Templates and Data to Get Started</h3>
-				<p>Review our sample Word templates with JSON data and <a href="https://www.adobe.com/go/dcdg_Tagger" target="_blank">get Microsoft Word add-in</a></p>
+				<p>Review our sample Word templates with JSON data and <a href="https://www.adobe.com/go/dcdg_Tagger" target="_blank">try the demo</a>.</p>
+			</div>
+			<div class="cta-wrapper" style="margin-bottom: 3em;">
+				<a href="https://www.adobe.com/go/dcdg_Tagger" target="_blank" class="button-link blue">
+					Get the Microsoft Word add-in
+				</a>
 			</div>
 
 			<div class="sample-header sample-header-touch">
@@ -357,7 +399,7 @@ active:
 				<div>
 					<p>Start a free trial and download code samples for Node.js, Java, and .Net</p>
 					<div class="cta-wrapper">
-						<a href="https://www.adobe.com/go/dcsdks_credentials" target="_blank" class="button-link blue">
+						<a href="https://www.adobe.com/go/dcsdks_credentials?ref=getStartedWithServicesSDK" target="_blank" class="button-link blue">
 							Start free trial
 						</a>
 					</div>

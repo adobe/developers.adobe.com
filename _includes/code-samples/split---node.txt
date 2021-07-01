@@ -1,0 +1,23 @@
+// Create an ExecutionContext using credentials
+const executionContext = PDFServicesSdk.ExecutionContext.create(credentials);
+
+// Create a new operation instance.
+const splitPDFOperation = PDFServicesSdk.SplitPDF.Operation.createNew(),
+input = PDFServicesSdk.FileRef.createFromLocalFile('resources/splitPDFInput.pdf',
+PDFServicesSdk.SplitPDF.SupportedSourceFormat.pdf);
+   
+// Set operation input from a source file.
+splitPDFOperation.setInput(input);
+   
+// Set the number of documents to split the input PDF file into.
+splitPDFOperation.setFileCount(2);
+   
+// Execute the operation and Save the result to the specified location.
+splitPDFOperation.execute(executionContext)
+  .then(result => {
+  let saveFilesPromises = [];
+  for(let i = 0; i < result.length; i++){
+    saveFilesPromises.push(result[i].saveAsFile(`output/splitPDFOutput_${i}.pdf`));
+  }
+  return Promise.all(saveFilesPromises);
+});

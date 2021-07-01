@@ -1,10 +1,7 @@
 <!doctype html>
-
-{% capture this_page_title %}{{site.title}} — {{ page.title }}{% endcapture %}
+{% capture this_page_title %} {{ page.title }} - {{site.title}} {% endcapture %}
 {% assign this_page_image = 'dcsdk-main.jpg' %}
 {% assign this_date = "now" | date: "%Y-%m-%d" %}
-
-
 <html class="spectrum--medium">
 	{% include paths.html %}
 	<head>
@@ -12,6 +9,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="robots" content="noodp">
+		<link rel="canonical" href="{{ production_domain }}{{ page.url }}" />
 		<!-- primary -->
 		<title>{{ this_page_title }}</title>
 		<meta name="title" content="{{ this_page_title }}" />
@@ -19,19 +17,24 @@
 		<!-- props -->
 		<meta itemprop="name" content="{{ this_page_title }}">
 		<meta itemprop="description" content="{{ page.meta }}">
-		<meta itemprop="image" content="{{ site.url }}{{ baseurl }}/gh-assets/img/page-thumbnails/{{ this_page_image }}">
+		<meta itemprop="image" content="{{ production_domain }}/gh-assets/img/page-thumbnails/{{ this_page_image }}">
+		<meta property="article:author" content="Adobe I/O — Adobe Developers">
+		<meta property="article:published_time" content="{{this_date}}">
 		<!-- open graph -->
 		<meta property="og:type" content="website">
 		<meta property="og:url" content="{{ site.url }}{{ baseurl }}{{ page.url }}">
 		<meta property="og:title" content="{{ this_page_title }}">
 		<meta property="og:description" content="{{ page.meta }}">
-		<meta property="og:image" content="{{ site.url }}{{ baseurl }}/gh-assets/img/page-thumbnails/{{ this_page_image }}">
+		<meta property="og:image" content="{{ production_domain }}/gh-assets/img/page-thumbnails/{{ this_page_image }}">
+		<meta property="og:publish_date" content="{{this_date}}">
 		<!-- twitter -->
-		<meta property="twitter:card" content="{{ page.meta }}">
+		<meta property="twitter:card" content="summary">
+		<meta property="twitter:site" content="@adobedevs">
 		<meta property="twitter:url" content="{{ site.url }}{{ baseurl }}{{ page.url }}">
 		<meta property="twitter:title" content="{{ this_page_title }}">
+		<meta property="twitter:creator" content="@adobedevs">
 		<meta property="twitter:description" content="{{ page.meta }}">
-		<meta property="twitter:image" content="{{ site.url }}{{ baseurl }}/gh-assets/img/page-thumbnails/{{ this_page_image }}">
+		<meta property="twitter:image:src" content="{{ production_domain }}/gh-assets/img/page-thumbnails/{{ this_page_image }}">
 
 		<link rel="icon" href="https://www.adobe.com/favicon.ico" type="image/x-icon">
 
@@ -51,8 +54,8 @@
 		<link rel="stylesheet" href="{{ baseurl }}/gh-assets/stylesheets/prism-adobe.css">
 
 		<!-- Top main nav support -->
-		<link rel="stylesheet" href="https://www.adobe.io/etc.clientlibs/dexter/clientlibs/base/theme.css" type="text/css">
-		<link rel="stylesheet" href="https://www.adobe.io/etc.clientlibs/udp/clientlibs/base/theme.css" type="text/css">
+		<link rel="stylesheet" href="{{ production_domain }}/etc.clientlibs/dexter/clientlibs/base/theme.css" type="text/css">
+		<link rel="stylesheet" href="{{ production_domain }}/etc.clientlibs/udp/clientlibs/base/theme.css" type="text/css">
 
 		<link rel="stylesheet" type="text/css" href="{{ baseurl }}/gh-assets/stylesheets/main.css">
 		<link rel="stylesheet" type="text/css" href="{{ baseurl }}/gh-assets/stylesheets/slick/slick.css" />
@@ -70,6 +73,7 @@
 					"@type" : "Adobe, Inc.",
 					"name" : "{{ site.title }}"
 				},
+				"thumbnailUrl": "https://www.adobe.io/gh-assets/img/page-thumbnails/{{ this_page_image }}",
 				"datePublished" : "{{ this_date }}",
 				"articleBody" : "{{ page.meta }}"
 			}

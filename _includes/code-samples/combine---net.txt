@@ -1,0 +1,18 @@
+// Create an ExecutionContext using credentials and create a new operation instance.          
+ExecutionContext executionContext = ExecutionContext.Create( credentials );
+CombineFilesOperation combineFilesOperation = CombineFilesOperation.CreateNew();
+
+// Add operation input from source files.
+FileRef combineSource1 = FileRef
+  .CreateFromLocalFile( @"combineFilesInput1.pdf" );
+FileRef combineSource2 = FileRef
+  .CreateFromLocalFile( @"combineFilesInput2.pdf" );
+combineFilesOperation.AddInput( combineSource1 );
+combineFilesOperation.AddInput( combineSource2 );
+
+// Execute the operation.
+FileRef result = combineFilesOperation.Execute( executionContext );
+
+// Save the result to the specified location.
+result.SaveAs( Directory.GetCurrentDirectory() +
+  "/output/combineFilesOutput.pdf" );

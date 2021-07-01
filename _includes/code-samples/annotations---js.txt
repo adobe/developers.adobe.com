@@ -1,0 +1,8 @@
+document.addEventListener("adobe_dc_view_sdk.ready", function() {
+  var adobeDCView = new AdobeDC.View({clientId: "&lt;YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
+  adobeDCView.previewFile({
+    content: {location: {url: "(path to your PDF)/yourfilename.pdf"}},
+    metaData: {fileName: "yourfilename.pdf"}
+  },
+  {showAnnotationTools: true});
+});

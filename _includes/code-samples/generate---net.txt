@@ -1,0 +1,21 @@
+// Create an ExecutionContext using credentials.
+ExecutionContext executionContext = ExecutionContext.Create(credentials);
+
+// Setup input data for the document merge process
+var content = File.ReadAllText(@"salesOrder.json");
+JObject jsonDataForMerge = JObject.Parse(content);
+
+// Create a new DocumentMerge Options instance
+DocumentMergeOptions documentMergeOptions = new DocumentMergeOptions(jsonDataForMerge, OutputFormat.PDF);
+
+// Create a new DocumentMerge Operation instance with the DocumentMerge Options instance
+DocumentMergeOperation documentMergeOperation = DocumentMergeOperation.CreateNew(documentMergeOptions);
+
+// Set the operation input document template from a source file.
+documentMergeOperation.SetInput(FileRef.CreateFromLocalFile(@"salesOrderTemplate.docx"));
+
+// Execute the operation.
+FileRef result = documentMergeOperation.Execute(executionContext);
+
+// Save the result to the specified location
+result.SaveAs(Directory.GetCurrentDirectory() + "/output/salesOrderOutput.pdf");

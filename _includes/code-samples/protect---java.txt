@@ -1,0 +1,31 @@
+// Create an ExecutionContext using credentials.
+ExecutionContext executionContext = ExecutionContext.create(credentials);
+
+// Create new permissions instance and add the required permissions
+Permissions permissions = Permissions.createNew();
+permissions.addPermission(Permission.PRINT_LOW_QUALITY);
+permissions.addPermission(Permission.EDIT_DOCUMENT_ASSEMBLY);
+permissions.addPermission(Permission.COPY_CONTENT);
+
+// Build ProtectPDF options by setting a User as well as Owner/Permissions Password, Permissions,
+// Encryption Algorithm (used for encrypting the PDF file) and specifying the type of content to encrypt.
+ProtectPDFOptions protectPDFOptions = ProtectPDFOptions.passwordProtectOptionsBuilder()
+  .setOwnerPassword("openpassword")
+  .setUserPassword("permissionspassword")
+  .setPermissions(permissions)
+  .setEncryptionAlgorithm(EncryptionAlgorithm.AES_256)
+  .setContentEncryption(ContentEncryption.ALL_CONTENT_EXCEPT_METADATA)
+  .build();
+
+// Create a new operation instance.
+ProtectPDFOperation protectPDFOperation = ProtectPDFOperation.createNew(protectPDFOptions);
+
+// Set operation input from a source file.
+FileRef source = FileRef.createFromLocalFile("src/main/resources/protectPDFInput.pdf");
+protectPDFOperation.setInput(source);
+
+// Execute the operation
+FileRef result = protectPDFOperation.execute(executionContext);
+
+// Save the result at the specified location
+result.saveAs("output/protectPDFOutput.pdf");

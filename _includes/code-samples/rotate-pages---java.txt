@@ -1,0 +1,28 @@
+// Create an ExecutionContext using credentials and create a new operation instance.
+ExecutionContext executionContext = ExecutionContext.create(credentials);
+RotatePagesOperation rotatePagesOperation = RotatePagesOperation.createNew();
+
+// Set operation input from a source file.
+FileRef source = FileRef.createFromLocalFile(
+    "src/main/resources/rotatePagesInput.pdf"
+  );
+rotatePagesOperation.setInput(source);
+
+// Sets angle by 90 degrees (in clockwise direction) for rotating the specified pages of the input PDF file.
+PageRanges firstPageRange = getFirstPageRangeForRotation();
+rotatePagesOperation.setAngleToRotatePagesBy(
+    Angle._90, firstPageRange
+  );
+
+// Sets angle by 180 degrees (in clockwise direction) for rotating the specified pages of the input PDF file.
+PageRanges secondPageRange = getSecondPageRangeForRotation();
+rotatePagesOperation
+.setAngleToRotatePagesBy(
+  Angle._180, secondPageRange
+);
+
+// Execute the operation.
+FileRef result = rotatePagesOperation.execute(executionContext);
+
+// Save the result to the specified location.
+result.saveAs("output/rotatePagesOutput.pdf");

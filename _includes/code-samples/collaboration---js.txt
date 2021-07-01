@@ -1,0 +1,20 @@
+const profile = {
+  userProfile: {
+    name: '<name of user>',
+    firstName: '<first name>',
+    lastName: '<last name>',
+    email: '<user email>'
+  }
+};
+
+adobeDCView.registerCallback(
+  AdobeDC.View.Enum.CallbackType.GET_USER_PROFILE_API,
+  function() {
+    return new Promise((resolve, reject) => {
+      resolve({
+        code: AdobeDC.View.Enum.ApiResponseCode.SUCCESS,
+        data: profile
+    });
+  });
+  }
+);

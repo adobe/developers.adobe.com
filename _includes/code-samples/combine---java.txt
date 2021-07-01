@@ -1,0 +1,17 @@
+// Create an ExecutionContext using credentials and create a new operation instance.          
+ExecutionContext executionContext = ExecutionContext.create( credentials );
+CombineFilesOperation combineFilesOperation = CombineFilesOperation.createNew();
+
+// Add operation input from source files.
+FileRef combineSource1 = FileRef
+  .createFromLocalFile( "src/main/resources/combineFilesInput1.pdf" );
+FileRef combineSource2 = FileRef
+  .createFromLocalFile( "src/main/resources/combineFilesInput2.pdf" );
+combineFilesOperation.addInput( combineSource1 );
+combineFilesOperation.addInput( combineSource2 );
+
+// Execute the operation.
+FileRef result = combineFilesOperation.execute( executionContext );
+
+// Save the result to the specified location.
+result.saveAs( "output/combineFilesOutput.pdf" );
