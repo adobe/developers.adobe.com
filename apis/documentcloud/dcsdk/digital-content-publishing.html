@@ -32,7 +32,8 @@ active: digital-content-publishing
 
 						<h3>Overview</h3>
 						<p>There are more than 2.5 trillion PDFs on the Internet, and one of the main reasons is that
-							the format makes it extremely easy to publish well-designed content on the web and secure it. There is no
+							the format makes it extremely easy to publish well-designed content on the web and secure
+							it. There is no
 							need to redesign documents using HTML and CSS and lose granularity. With Adobe Document
 							Services, it is now even easier to embed PDF documents inside of web pages, as well as
 							understand exactly how users are consuming documents. Advanced features not found in
@@ -44,7 +45,7 @@ active: digital-content-publishing
 							<li>Support multiple user annotations (using the Adobe Annotations API)</li>
 							<li>Enable analytics integration to see how PDFs are viewed, including how long users spend
 								on pages</li>
-							<li>Include security and other controls to prevent editing, downloading, annotating, or printing</li>
+							<li>Secure PDFs to prevent editing, downloading, annotating, or printing</li>
 						</ul>
 
 						<h3>Relevant APIs</h3>
@@ -55,16 +56,19 @@ active: digital-content-publishing
 									API</a></li>
 						</ul>
 						<h3>Scenario</h3>
-						<p>A company plans to offer whitepapers on its website to help customers use various apps and
+						<p>A company plans to offer whitepapers on its website to provide details about various apps and
 							services. Marketing needs to understand how users interact with the content, and they want
-							to incorporate it into the rest of the web pages. Since some of the documents may be
-							restricted or behind a paywall, the company also wants to secure the documents with a password to prevent editing and control who can download
-							particular PDFs.</p>
+							to incorporate it into the rest of the web pages. Some of the PDF content includes prices
+							that change on a regular basis, so the company wants to secure the PDF to prevent users from
+							making changes to it after downloading. Additionally, some of the documents may be
+							restricted or behind a paywall, so the company also wants to add a password to certain PDFs
+							to control who can download and open them.</p>
 
 						<h3>Building this Solution</h3>
 						<ol>
 							<li>Get credentials for PDF Embed API and PDF Services APIs</li>
-							<li>Use PDF Services API to secure the whitepaper with a password using the protect PDF operation</li>
+							<li>Use PDF Services API to secure the whitepapers by adding editing restrictions and/or a password using the Protect PDF
+								operation</li>
 							<li>Access the Embed API demo to generate sample code</li>
 							<li>Change flags to allow / disallow printing, downloading, and other user actions</li>
 							<li>Enable events so that the viewer can be extended</li>
