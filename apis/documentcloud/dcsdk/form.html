@@ -37,7 +37,7 @@ active:
 				<li>Organize PDF documents by inserting, re-ordering, deleting, rotating pages</li>
 			</ul>
 			<p>Use this form to have an Adobe representative contact you to about any questions you may have or explain pricing options or point you to helpful resources.</p>
-			<p>You can also find more information in the <a title="FAQ Link" disablelinktracking="false" href="https://www.adobe.com/go/dcsdk_forum">FAQ</a> for the PDF Services API.</p>
+			<p>You can also find more information in the <a title="FAQ Link" href="https://www.adobe.com/go/dcsdk_forum">FAQ</a> for the PDF Services API.</p>
 		</div>
 
 		<div>
@@ -46,6 +46,17 @@ active:
 
 	</div>
 
-  {% include use-case-help.html %}
+	<script>
+		// look for parameters to pass into iframe url
+		const params = new URLSearchParams(window.location.search);
+
+		if( params.has('api') ){
+			const form_iframe = document.getElementById('lead-gen-form');
+			let url = form_iframe.getAttribute('src');
+			form_iframe.setAttribute('src', url+'?api='+params.get('api'));
+		}
+	</script>
+
+	{% include use-case-help.html %}
 
 </div>
