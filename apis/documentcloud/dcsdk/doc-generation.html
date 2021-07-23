@@ -150,7 +150,7 @@ active:
 							<h4>Improved Accessibility</h4>
 							<p>Documents are tagged for improved accessibility with assistive technologies</p>
 							<div class="mp-cta-wrapper">
-								<a href="https://www.adobe.io/apis/documentcloud/dcsdk/form.html" target="_blank" class="button-link">
+								<a href="form.html?api=dg" target="_blank" class="button-link">
 									I’m interested
 								</a>
 							</div>
@@ -284,7 +284,7 @@ active:
 
 				<div class="sample-item card-container">
 					<div class="sample-icon">
-						<img src="{{ baseurl }}/gh-assets/img/template-icons/grant_funding.jpg" alt="docgen for a grant funding application">
+						<img src="{{ baseurl }}/gh-assets/img/template-icons/grant_application.jpg" alt="docgen for a grant funding application">
 					</div>
 					<h5>Grant application</h5>
 					<div class="cta-wrapper">
@@ -296,7 +296,7 @@ active:
 
 				<div class="sample-item card-container">
 					<div class="sample-icon">
-						<img src="{{ baseurl }}/gh-assets/img/template-icons/sales_invoice.jpg" alt="invoice word template">
+						<img src="{{ baseurl }}/gh-assets/img/template-icons/invoice.jpg" alt="invoice word template">
 					</div>
 					<h5>Invoice</h5>
 					<div class="cta-wrapper">
@@ -308,11 +308,11 @@ active:
 
 				<div class="sample-item card-container">
 					<div class="sample-icon">
-						<img src="{{ baseurl }}/gh-assets/img/template-icons/project_proposal.jpg" alt="document generation software for sales proposal">
+						<img src="{{ baseurl }}/gh-assets/img/template-icons/sales_order.jpg" alt="document generation software for sales proposal">
 					</div>
-					<h5>Sales proposal</h5>
+					<h5>Sales order</h5>
 					<div class="cta-wrapper">
-						<a href="https://www.adobe.com/go/dcdg_sampleproposal" target="_blank" class="button-link">
+						<a href="https://www.adobe.com/go/dcdg_samplesalesorder" target="_blank" class="button-link">
 							Download
 						</a>
 					</div>
@@ -342,12 +342,14 @@ active:
 					</div>
 				</div>
 
-				<!-- These are three hidden items. The botton to show them is below. -->
+{% comment %}
+
+				<!-- These are three hidden items. The button to show them is below. -->
 				<div class="sample-more sample-item card-container">
 					<div class="sample-icon">
 						<img src="{{ baseurl }}/gh-assets/img/template-icons/service_receipt.jpg">
 					</div>
-					<h5>Receipt</h5>
+					<h5>Receipt template</h5>
 					<div class="cta-wrapper">
 						<a href="https://www.adobe.com/go/dcdg_samplereceipt" target="_blank" class="button-link">
 							Download
@@ -386,8 +388,16 @@ active:
 					Show more templates
 				</a>
 			</div>
+{% endcomment %}
 
 		</div>
+
+		<div class="cta-wrapper">
+			<a href="doc-gen-api-template.html" class="button-link">
+				See all templates
+			</a>
+		</div>
+
 	</section>
 	<!-- Document services end -->
 
