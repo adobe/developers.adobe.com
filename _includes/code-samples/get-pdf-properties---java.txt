@@ -1,0 +1,21 @@
+// Initial setup, create credentials instance.
+Credentials credentials = Credentials.serviceAccountCredentialsBuilder()
+    .fromFile("pdfservices-api-credentials.json")
+    .build();
+
+//Create an ExecutionContext using credentials and create a new operation instance.
+ExecutionContext executionContext = ExecutionContext.create(credentials);
+PDFPropertiesOperation pdfPropertiesOperation = PDFPropertiesOperation.createNew();
+
+// Provide an input FileRef for the operation
+FileRef source = FileRef.createFromLocalFile("src/main/resources/pdfPropertiesInput.pdf");
+pdfPropertiesOperation.setInputFile(source);
+
+// Build PDF Properties options to include page level properties and set them into the operation
+PDFPropertiesOptions pdfPropertiesOptions = PDFPropertiesOptions.PDFPropertiesOptionsBuilder()
+    .includePageLevelProperties(true)
+    .build();
+pdfPropertiesOperation.setOptions(pdfPropertiesOptions);
+
+// Execute the operation and return JSON Object
+JSONObject result = pdfPropertiesOperation.execute(executionContext);
