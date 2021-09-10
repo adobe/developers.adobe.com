@@ -87,3 +87,14 @@ section.doc-gen-blade .cta-wrapper .button-link {
   color: #4b4b4b;
 }
 
+
+// get started button in nav
+
+.sub-nav-menu-item.get-started .spectrum-Button.spectrum-Button--cta {
+	margin-top: 20px;
+}
+
+.sub-nav-menu-wrapper .sub-nav .sub-nav-menu-item.get-started:hover {
+  background: inherit;
+}
+
