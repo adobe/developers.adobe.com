@@ -1,0 +1,79 @@
+---
+layout: default
+title: 'Document Services API Use Case: Data Analysis for Finance'
+meta:
+active: loan-document-workflows
+---
+
+{% include paths.html %}
+
+<div class="main secondary-page">
+
+	<section id="api-use-cases-blade">
+		<div class="api-use-cases-container">
+			<div class="api-use-cases-wrapper">
+				<div class="intro-copy-wrapper">
+					<h1>Document Services API Use Cases</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="api-use-cases-body">
+		<div class="api-use-cases-content-container">
+			<div class="api-use-cases-content-wrapper">
+				<div class="api-use-cases-content-menu">
+					{% include use-case-nav.html %}
+				</div>
+				<div class="api-cases-content-wrapper">
+					<div class="api-cases-content">
+
+						<h2>Loan Document Workflows</h2>
+
+						<h3>Overview</h3>
+						<p>Loan industries are often overwhelmed with tedious administrative tasks, leading to slower transaction times and ultimately unhappy borrowers. This is further complicated by stringent regulations, which can pose high risk with financial penalties despite the labor-intensive verification process. The most pressing pain points around managing loan origination documents include</p>
+						<p>Adobe Document Services allow companies to:</p>
+						<ul>
+							<li>Manually processing large volumes of documents in a variety of formats.</li>
+							<li>Data entry errors and duplications of sensitive information in a high compliance environment</li>
+							<li>Borrowers feeling rushed to review and sign the overwhelming stack of paperwork at closing, and frustrated at the lack of transparency of the entire process</li>
+							<li>Borrower’s lack of understanding about the costs and risks from complex forms that are filled with legal and technical acronyms to fulfill federal, state and local government requirements</li>
+						</ul>
+						<p><br>Adobe Document Services can help these organizations simplify the complex process by:</p>
+						<ul>
+							<li>Standardizing on a single digital workflow that lets users assemble, manipulate, collaborate on, fill in, and sign documents</li>
+							<li>Making scanned PDFs searchable upon upload (OCR)</li>
+							<li>Reducing manual data entry by automatically assembling data into documents from various sources of input</li>
+							<li>Creating a seamless document viewing experience within the browser</li>
+							<li>Adding additional security to the PDF</li>
+						</ul>
+
+						<h3>Relevant APIs</h3>
+						<ul>
+							<li><a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-embed.html">Adobe PDF Embed API</a></li>
+							<li><a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-services.html">Adobe PDF Services API</a></li>
+							<li><a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-extract.html">Adobe PDF Extract API</a></li>
+						</ul>
+
+						<h3>Scenario</h3>
+						<p>A borrower applies for a loan. When they submit the loan application and supporting documents, the backend system converts uploaded documents to PDF format, compresses the files, and OCRs any scanned PDFs. Data is extracted from the uploaded documents and stored in a database. The borrower is then presented with a preview of the loan package as an embedded PDF and can add comments directly in case there are any questions to resolve with the loan officer. After application review and approval, the final loan documents are sent for signature using Adobe Sign</p>
+
+						<h3>Building this Solution</h3>
+						<p>In this solution, we will show how this process can be implemented within your organization to build a frictionless client service interface.</p>
+						<ol>
+							<li>Upon upload, the document(s) is passed to Create PDF, OCR, and Compress APIs to streamline and standardize PDFs coming into the service.</li>
+							<li>PDF documents are sent to PDF Extract API to extract data, which can be stored in a database.</li>
+							<li>Create a single loan package with Create PDF API.</li>
+							<li>Render the application using the PDF Embed API in a secure portal so that borrowers can review and add questions / comments through annotation.</li>
+							<li>Send final loan document for signatures with Adobe Sign.</li>
+						</ol>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{% include use-case-help.html %}
+
+</div>

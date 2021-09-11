@@ -151,7 +151,7 @@ body {
   border-radius: 16px;
   max-height: 32px;
   height: auto;
-  min-width: 72px;
+  //min-width: 72px;
   padding: 3.5px 14px 4.5px;
   font-size: 14px;
   font-weight: 700;
@@ -1049,6 +1049,13 @@ section.dctsdk-work-flow {
   .work-flow_menu ul li .unlock {
     background-size: 24px 23px;
     background-image: url("../svg/s_unlock-pdf_36.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .work-flow_menu ul li .properties {
+    background-size: 24px 23px;
+    background-image: url("../svg/s_properties.svg");
     background-repeat: no-repeat;
     background-position: center center;
   }

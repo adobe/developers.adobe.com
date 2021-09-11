@@ -1,0 +1,69 @@
+---
+layout: default
+title: 'Document Services API Use Case: Data Analysis for Finance'
+meta:
+active: managing-brand-assets
+---
+
+{% include paths.html %}
+
+<div class="main secondary-page">
+
+	<section id="api-use-cases-blade">
+		<div class="api-use-cases-container">
+			<div class="api-use-cases-wrapper">
+				<div class="intro-copy-wrapper">
+					<h1>Document Services API Use Cases</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="api-use-cases-body">
+		<div class="api-use-cases-content-container">
+			<div class="api-use-cases-content-wrapper">
+				<div class="api-use-cases-content-menu">
+					{% include use-case-nav.html %}
+				</div>
+				<div class="api-cases-content-wrapper">
+					<div class="api-cases-content">
+
+						<h2>Managing Brand Assets</h2>
+
+						<h3>Overview</h3>
+						<p>Marketing teams need to update documents regularly with new product information, messaging, and branding. It’s challenging to make updates broadly when rebranding occurs or when certain text strings need to be updated.
+						</p>
+						<p>Adobe Document Services allows organizations to:</p>
+						<ul>
+							<li>Create searchable PDF documents using OCR</li>
+							<li>Preview PDFs in a UI using PDF Embed API</li>
+							<li>Merge Microsoft Word templates with dynamic data fields that can be updated with new branding and messaging</li>
+						</ul>
+
+						<h3>Relevant APIs</h3>
+						<ul>
+							<li><a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-embed.html">Adobe PDF Embed API</a></li>
+							<li><a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-services.html">Adobe PDF Services API</a></li>
+							<li><a href="{{baseurl}}/apis/documentcloud/dcsdk/doc-generation">Adobe Document Generation API</a></li>
+						</ul>
+
+						<h3>Scenario</h3>
+						<p>A marketing team struggles to manage and update their many documents due to a recent branding change. They need an easy way to maintain internal- and external-facing marketing materials, search for terms, display documents, and edit dynamic fields to refresh and republish content.</p>
+
+						<h3>Building this Solution</h3>
+						<p>In this solution, see how your organization can utilize this process:</p>
+						<ol>
+							<li>Use PDF Services API Create PDF, OCR, and Compress services to streamline and standardize documents as PDFs</li>
+							<li>Adobe Document Generation API can be used to create templates for branded documents that need to be updated frequently. Dynamic data is pulled from various systems to inject into the templates and generate PDF or Word documents with updated images and text.</li>
+							<li>The search engine provides links to documents that use PDF Embed API to provide a consistent visual experience to the user</li>
+						</ol>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{% include use-case-help.html %}
+
+</div>

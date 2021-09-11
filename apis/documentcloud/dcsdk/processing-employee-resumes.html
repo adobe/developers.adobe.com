@@ -1,0 +1,71 @@
+---
+layout: default
+title: 'Document Services API Use Case: Data Analysis for Finance'
+meta:
+active: processing-employee-resumes
+---
+
+{% include paths.html %}
+
+<div class="main secondary-page">
+
+	<section id="api-use-cases-blade">
+		<div class="api-use-cases-container">
+			<div class="api-use-cases-wrapper">
+				<div class="intro-copy-wrapper">
+					<h1>Document Services API Use Cases</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="api-use-cases-body">
+		<div class="api-use-cases-content-container">
+			<div class="api-use-cases-content-wrapper">
+				<div class="api-use-cases-content-menu">
+					{% include use-case-nav.html %}
+				</div>
+				<div class="api-cases-content-wrapper">
+					<div class="api-cases-content">
+
+						<h2>Processing Employee Resumes</h2>
+
+						<h3>Overview</h3>
+						<p>Businesses face many challenges when accepting uploaded documents for job applications. Resumes may come in varying formats, be unsearchable, or be too large for storage. Organizations need to standardize and ingest data into other systems for processing, so they can find what they need when they need it.</p>
+						<p>Adobe Document Services allows organizations to:</p>
+						<ul>
+							<li>Preview PDFs when uploaded in a UI using Adobe PDF Embed API</li>
+							<li>Convert from other formats into PDF for consistency</li>
+							<li>Make scanned PDFs searchable upon upload (OCR)</li>
+							<li>Extract resume data for upload into a third-party system</li>
+							<li>Review resumes and supporting documents such as portfolios</li>
+						</ul>
+
+						<h3>Relevant APIs</h3>
+						<ul>
+							<li><a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-embed.html">Adobe PDF Embed API</a></li>
+							<li><a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-services.html">Adobe PDF Services API</a></li>
+							<li><a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-extract.html">Adobe PDF Extract API</a></li>
+						</ul>
+
+						<h3>Scenario</h3>
+						<p>A candidate applies online. The backend system converts their resume into PDF format that the candidate reviews and approves. If a portfolio is submitted, it can be previewed inline on the submission website. Instead of requiring job histories to be entered separately, information can be extracted from the uploaded resume and inserted into online form fields, saving time and improving user experience.</p>
+
+						<h3>Building this Solution</h3>
+						<p>In this solution, see how your organization can utilize this process:</p>
+						<ol>
+							<li>Create PDF, OCR, and Compress APIs streamline and standardize documents as PDFs</li>
+							<li>PDF Extract API obtains data, entering it into the system</li>
+							<li>PDF Embed API renders the PDFs on the submission page</li>
+							<li>Data from PDF Extract API is used to auto-populate a form of job history items for user approval</li>
+						</ol>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{% include use-case-help.html %}
+
+</div>

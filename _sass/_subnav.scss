@@ -257,6 +257,7 @@
           padding-bottom: 32px;
           @media screen and (min-width: 1024px) {
             max-width: 400px;
+            min-width: 325px;
             width: 100%;
           }
 
@@ -275,6 +276,7 @@
               a {
                 margin: 0;
                 padding: 0;
+				line-height: 1.25;
 
                 .dpd-sub-nav-menu-header {
                   font-size: 14px;
@@ -282,14 +284,14 @@
                   @media screen and (min-width: 900px) {
                     font-family: 'Adobe Clean Bold';
                   }
-                  white-space: nowrap;
+                  //white-space: nowrap;
                 }
 
                 .dpd-sub-nav-menu-copy {
                   display: none;
                   font-size: 13px;
                   font-family: 'Adobe Clean Light';
-                  white-space: nowrap;
+                  //white-space: nowrap;
                   @media screen and (min-width: 1024px) {
                     display: block;
                   }

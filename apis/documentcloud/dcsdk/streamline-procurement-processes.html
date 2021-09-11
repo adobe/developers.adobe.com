@@ -1,0 +1,75 @@
+---
+layout: default
+title: 'Document Services API Use Case: Data Analysis for Finance'
+meta:
+active: streamline-procurement-processes
+---
+
+{% include paths.html %}
+
+<div class="main secondary-page">
+
+	<section id="api-use-cases-blade">
+		<div class="api-use-cases-container">
+			<div class="api-use-cases-wrapper">
+				<div class="intro-copy-wrapper">
+					<h1>Document Services API Use Cases</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="api-use-cases-body">
+		<div class="api-use-cases-content-container">
+			<div class="api-use-cases-content-wrapper">
+				<div class="api-use-cases-content-menu">
+					{% include use-case-nav.html %}
+				</div>
+				<div class="api-cases-content-wrapper">
+					<div class="api-cases-content">
+
+						<h2>Streamline Procurement Processes</h2>
+
+						<h3>Overview</h3>
+						<p>Procurement departments have many document types that need to be shared with suppliers as PDFs. These include Purchase Orders, Requests for Proposal, Requests for Quote, and different agreement types. Creating, processing, and reviewing documents can be very time consuming. </p>
+						<p>With Adobe Document Services, companies save time by automating the following steps:</p>
+						<ul>
+							<li>Generate POs, RFPs, RFQs, or agreement documents in PDF from data in procurement management systems using Document Generation API</li>
+							<li>Combine, secure from editing, and view documents before sharing with suppliers using PDF Services API</li>
+							<li>View PDFs in procurement system for review using PDF Embed API</li>
+							<li>Send agreements for signature using Adobe Sign API</li>
+						</ul>
+
+						<h3>Relevant APIs</h3>
+						<ul>
+							<li><a href="{{baseurl}}/apis/documentcloud/dcsdk/doc-generation.html">Adobe Document Generation API</a></li>
+							<li><a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-embed.html">Adobe PDF Embed API</a></li>
+							<li><a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-services.html">Adobe PDF Services API</a></li>
+							<li><a href="{{baseurl}}/apis/documentcloud/dcsdk/pdf-extract.html">Adobe PDF Extract API</a></li>
+							<li><a href="https://www.adobe.com/sign.html" target="_blank">Adobe Sign</a></li>
+						</ul>
+
+						<h3>Scenario</h3>
+						<p>A procurement team needs to send signed purchase orders frequently to suppliers, and they track all information about suppliers and processes in their procurement system. Currently, sending a PO involves manually copying information from the system to a Microsoft Word document, converting to PDF, uploading for internal review, manually sending for signature, and then sharing with the supplier. Fully automating this process would give team members time back.</p>
+
+						<h3>Building this Solution</h3>
+						<p>Follow the steps below to automate PDF generation to streamline procurement processes: </p>
+						<ol>
+							<li>Identify the JSON data model used to export data from the procurement system</li>
+							<li>Tag a Purchase Order template (Word) by uploading the JSON model to the Adobe Document Generation Tagger Microsoft Word add-in, and adding tags where data should be filled automatically</li>
+							<li>Insert Adobe Sign text tags in the PO template to make it ready to be used by Adobe Sign</li>
+							<li>Use Adobe Document Generation API to automatically merge procurement system data and the Word template to generate a PDF</li>
+							<li>Use PDF Services API to combine PO with additional documents</li>
+							<li>Adobe PDF Embed API embeds the PDF in the application for review and approval</li>
+							<li>Use Adobe Sign API to send the document out for signature once approved</li>
+						</ol>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{% include use-case-help.html %}
+
+</div>

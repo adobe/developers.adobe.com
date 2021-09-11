@@ -1,0 +1,22 @@
+const credentials =  PDFServicesSdk.Credentials
+	.serviceAccountCredentialsBuilder()
+	.fromFile("pdfservices-api-credentials.json")
+	.build();
+
+// Create an ExecutionContext using credentials and create a new operation instance.
+const executionContext = PDFServicesSdk.ExecutionContext.create(credentials),
+	pdfPropertiesOperation = PDFServicesSdk.PDFProperties.Operation.createNew();
+
+// Set operation input from a source file.
+const input = PDFServicesSdk.FileRef.createFromLocalFile('resources/pdfPropertiesInput.pdf');
+pdfPropertiesOperation.setInput(input);
+
+// Provide any custom configuration options for the operation.
+const options = new PDFServicesSdk.PDFProperties.options.PDFPropertiesOptions.Builder()
+	.includePageLevelProperties(true)
+	.build();
+pdfPropertiesOperation.setOptions(options);
+
+// Execute the operation and log the JSON Object.
+pdfPropertiesOperation.execute(executionContext)
+	.then(result => console.log("The resultant json object is : " + JSON.stringify(result)))
