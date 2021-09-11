@@ -1,22 +1,21 @@
-// Initial setup, create credentials instance.
+// Initial setup, create credentials instance
 Credentials credentials = Credentials.ServiceAccountCredentialsBuilder()
     .FromFile(Directory.GetCurrentDirectory() + "/pdfservices-api-credentials.json")
     .Build();
+
+// Create an ExecutionContext using credentials and create a new operation instance
+   ExecutionContext executionContext = ExecutionContext.Create(credentials);
 PDFPropertiesOperation pdfPropertiesOperation = PDFPropertiesOperation.CreateNew();
 
-// Create an ExecutionContext using credentials and create a new operation instance.
-ExecutionContext executionContext = ExecutionContext.Create(credentials);
-
-// Setting optional parameter for page level properties.
-PDFPropertiesOptions pdfPropertiesOptions =
-PDFPropertiesOptions.PDFPropertiesOptionsBuilder()
-    .IncludePageLevelProperties(true)
-    .Build(); // use this optional property to get page level properties too.
-pdfPropertiesOperation.SetOptions(pdfPropertiesOptions);
-
-// Set operation input from a source file.
+// Provide an input FileRef for the operation
 FileRef source = FileRef.CreateFromLocalFile(@"pdfPropertiesInput.pdf");
 pdfPropertiesOperation.SetInput(source);
 
-// Execute the operation.
+// Build PDF Properties options to include page level properties and set them into the operation
+PDFPropertiesOptions pdfPropertiesOptions = PDFPropertiesOptions.PDFPropertiesOptionsBuilder()
+    .IncludePageLevelProperties(true)
+    .Build();
+pdfPropertiesOperation.SetOptions(pdfPropertiesOptions);
+
+// Execute the operation and return JSON Object
 JObject result = pdfPropertiesOperation.Execute(executionContext);
