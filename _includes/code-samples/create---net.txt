@@ -1,13 +1,17 @@
-// Create an ExecutionContext using credentials and create a new operation instance.
-  ExecutionContext executionContext = ExecutionContext.Create(credentials);
-  CreatePDFOperation createPdfOperation = CreatePDFOperation.CreateNew();
+//Create an ExecutionContext using credentials and create a new operation instance.
+ExecutionContext executionContext = ExecutionContext.Create(credentials);
+PDFPropertiesOperation pdfPropertiesOperation = PDFPropertiesOperation.CreateNew();
 
-// Set operation input from a source file.
-  FileRef source = FileRef.CreateFromLocalFile(@"createPdfInput.docx");
-  createPdfOperation.SetInput(source);
+// Provide an input FileRef for the operation
+FileRef source = FileRef.CreateFromLocalFile(@"pdfPropertiesInput.pdf");
+pdfPropertiesOperation.SetInput(source);
 
-// Execute the operation.
-  FileRef result = createPdfOperation.Execute(executionContext);
+// Build PDF Properties options to include page level properties and set them into the operation
+PDFPropertiesOptions pdfPropertiesOptions = PDFPropertiesOptions.PDFPropertiesOptionsBuilder()
+    .IncludePageLevelProperties(true)
+    .Build();
+pdfPropertiesOperation.SetOptions(pdfPropertiesOptions);
 
-// Save the result to the specified location.
-  result.SaveAs(Directory.GetCurrentDirectory() + "/output/createPdfOutput.pdf");
+// Execute the operation and return JSON Object
+JObject result = pdfPropertiesOperation.Execute(executionContext);
+Console.WriteLine("The resultant PDF Properties are: " + result.ToString());

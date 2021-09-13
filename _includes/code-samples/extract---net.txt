@@ -1,0 +1,22 @@
+//Create an ExecutionContext using credentials and create a new operation instance.
+ExecutionContext executionContext = ExecutionContext.Create(credentials);
+ExtractPDFOperation extractPdfOperation = ExtractPDFOperation.CreateNew();
+
+// Set operation input from a source file.
+FileRef sourceFileRef = FileRef.CreateFromLocalFile(@"extractPdfInput.pdf");
+extractPdfOperation.SetInputFile(sourceFileRef);
+
+// Build ExtractPDF options and set them into the operation
+ExtractPDFOptions extractPdfOptions = ExtractPDFOptions.ExtractPdfOptionsBuilder()
+    .AddElementsToExtract(new List<ExtractElementType>(new []{ ExtractElementType.TEXT, ExtractElementType.TABLES}))
+    .AddElementsToExtractRenditions(new List<ExtractRenditionsElementType> (new []{ExtractRenditionsElementType.FIGURES, ExtractRenditionsElementType.TABLES}))
+    .AddAddCharInfo(true)
+    .build();
+
+extractPdfOperation.SetOptions(extractPdfOptions);
+
+// Execute the operation.
+FileRef result = extractPdfOperation.Execute(executionContext);
+
+// Save the result to the specified location.
+result.SaveAs(Directory.GetCurrentDirectory() + "/output/ExtractTextTableInfoWithFiguresTablesRenditionsFromPDF.zip");
