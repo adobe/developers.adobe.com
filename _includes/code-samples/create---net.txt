@@ -1,17 +1,16 @@
 //Create an ExecutionContext using credentials and create a new operation instance.
 ExecutionContext executionContext = ExecutionContext.Create(credentials);
-PDFPropertiesOperation pdfPropertiesOperation = PDFPropertiesOperation.CreateNew();
+CreatePDFOperation htmlToPDFOperation = CreatePDFOperation.CreateNew();
 
-// Provide an input FileRef for the operation
-FileRef source = FileRef.CreateFromLocalFile(@"pdfPropertiesInput.pdf");
-pdfPropertiesOperation.SetInput(source);
+// Set operation input from a source URL.
+FileRef source = FileRef.CreateFromURI(new Uri("https://www.adobe.io"));
+htmlToPDFOperation.SetInput(source);
 
-// Build PDF Properties options to include page level properties and set them into the operation
-PDFPropertiesOptions pdfPropertiesOptions = PDFPropertiesOptions.PDFPropertiesOptionsBuilder()
-    .IncludePageLevelProperties(true)
-    .Build();
-pdfPropertiesOperation.SetOptions(pdfPropertiesOptions);
+// Provide any custom configuration options for the operation.
+SetCustomOptions(htmlToPDFOperation);
+                
+// Execute the operation.
+FileRef result = htmlToPDFOperation.Execute(executionContext);
 
-// Execute the operation and return JSON Object
-JObject result = pdfPropertiesOperation.Execute(executionContext);
-Console.WriteLine("The resultant PDF Properties are: " + result.ToString());
+// Save the result to the specified location.
+result.SaveAs(Directory.GetCurrentDirectory() + "/output/createPdfFromURLOutput.pdf");
